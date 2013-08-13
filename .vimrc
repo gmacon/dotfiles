@@ -1,6 +1,14 @@
-source ~/.dotfiles/vim-bundles/vim-pathogen/autoload/pathogen.vim
+set nocompatible
+filetype off
 
-execute pathogen#infect()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
-syntax on
+Bundle 'gmarik/vundle'
+
+Bundle 'klen/python-mode'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'tpope/vim-fugitive'
+
 filetype plugin indent on
+syntax on
