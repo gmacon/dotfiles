@@ -1,0 +1,19 @@
+# freshshell.com
+#
+# Examples:
+#
+#   fresh twe4ked/dotfiles shell/functions.sh
+#   fresh jasoncodes/dotfiles aliases/rails.sh
+#   fresh jasoncodes/dotfiles config/tmux.conf --file
+#
+# See http://freshshell.com/readme for documentation.
+
+fresh freshshell/fresh bin/fresh --bin
+# A full-featured & carefully designed adaptive prompt for Bash & Zsh
+# <https://github.com/nojhan/liquidprompt/blob/master/liquidprompt>
+fresh nojhan/liquidprompt liquidprompt
+
+# Literal files
+fresh .vimrc --file
+fresh .tmux.conf --file
+fresh .zshrc --file

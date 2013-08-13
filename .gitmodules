@@ -1,0 +1,9 @@
+[submodule "vim-bundles/python-mode"]
+	path = vim-bundles/python-mode
+	url = https://github.com/klen/python-mode.git
+[submodule "vim-bundles/vim-colors-solarized"]
+	path = vim-bundles/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "vim-bundles/vim-pathogen"]
+	path = vim-bundles/vim-pathogen
+	url = https://github.com/tpope/vim-pathogen.git
