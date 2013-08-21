@@ -17,3 +17,4 @@ fresh nojhan/liquidprompt liquidprompt
 fresh .vimrc --file
 fresh .tmux.conf --file
 fresh .zshrc --file
+fresh .xmodmap --file
