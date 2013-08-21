@@ -11,9 +11,26 @@ compinit
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
+set -o HIST_IGNORE_DUPS
+set -o HIST_IGNORE_SPACE
 bindkey -e
-setopt hist_ignore_space
 # End of lines configured by zsh-newuser-install
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
 export EDITOR=/usr/bin/vim
+
+export WORKON_HOME=~/.virtualenvs
+source /etc/bash_completion.d/virtualenvwrapper
 
 source ~/.fresh/build/shell.sh
