@@ -13,6 +13,8 @@ HISTSIZE=1000
 SAVEHIST=1000
 set -o HIST_IGNORE_DUPS
 set -o HIST_IGNORE_SPACE
+setopt appendhistory
+setopt sharehistory
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
