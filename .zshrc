@@ -35,4 +35,6 @@ export EDITOR=/usr/bin/vim
 export WORKON_HOME=~/.virtualenvs
 source /etc/bash_completion.d/virtualenvwrapper
 
+alias ssh='TERM=xterm-256color ssh'
+
 source ~/.fresh/build/shell.sh
