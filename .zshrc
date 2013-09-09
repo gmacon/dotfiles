@@ -37,4 +37,6 @@ source /etc/bash_completion.d/virtualenvwrapper
 
 alias ssh='TERM=xterm-256color ssh'
 
+export PATH=$PATH:/users/gmacon3/titan/src/mongo-config/mongodb-linux-x86_64-2.2.6/bin
+
 source ~/.fresh/build/shell.sh
