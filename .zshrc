@@ -30,7 +30,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-export EDITOR=/usr/bin/vim
+export EDITOR=$(which vim)
 
 export WORKON_HOME=~/.virtualenvs
 source /etc/bash_completion.d/virtualenvwrapper
