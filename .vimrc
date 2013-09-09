@@ -12,6 +12,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
+Bundle 'godlygeek/tabular'
 
 filetype plugin indent on
 
@@ -26,6 +27,9 @@ set background=dark
 colorscheme solarized
 
 set colorcolumn=80
+
+" Remove trailing whitespace
+autocmd FileType puppet autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " Python customizations
 let g:pymode_lint_checker = "pyflakes,pep8"
