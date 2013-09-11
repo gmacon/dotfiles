@@ -18,3 +18,5 @@ fresh .vimrc --file
 fresh .tmux.conf --file
 fresh .zshrc --file
 fresh .xmodmap --file
+fresh timecard --bin
+fresh dmenu_time --bin

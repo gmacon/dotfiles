@@ -8,5 +8,6 @@ while sleep 5; do
 		sleepwarning=""
 	fi
 	now=$(date '+%b %-d %-H:%M')
-	xsetroot -name "$sleepwarning[$vpn] $now"
+	project=$(timecard --current)
+	xsetroot -name "$sleepwarning{$project} [$vpn] $now"
 done
