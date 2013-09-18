@@ -105,7 +105,7 @@ def display_times(times, spec):
             summary[day][proj] += (t - prev[1]).total_seconds()
         prev = entry
 
-    for day in summary:
+    for day in sorted(summary):
         print '{0}:'.format(day)
         total = 0.0
         for proj in summary[day]:
