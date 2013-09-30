@@ -1,5 +1,6 @@
 #!/bin/bash
 xmodmap ~/.xmodmap
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 #xbindkeys &
 #feh --bg-scale /home/jmiller/mac-wallpaper.jpg &
 sh ~/.fehbg
