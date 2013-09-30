@@ -95,8 +95,14 @@ def clear_times(times, spec):
 
 
 def display_times(times, spec):
+    if not times:
+        return
+
     summary = collections.defaultdict(lambda: collections.defaultdict(float))
     prev = ('out', 0)
+    times = times[:]
+    if times[-1][0] != 'out':
+        times.append(('out', datetime.datetime.now()))
     for entry in times:
         t = entry[1]
         proj = prev[0]
