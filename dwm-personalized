@@ -1,16 +1,12 @@
 #!/bin/bash
 xmodmap ~/.xmodmap
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
-#xbindkeys &
-#feh --bg-scale /home/jmiller/mac-wallpaper.jpg &
 sh ~/.fehbg
 xrandr --output HDMI1 --mode 1680x1050 --pos 1680x0 --rotate normal --output DP1 --off --output VGA1 --mode 1680x1050 --pos 0x0 --rotate normal
-xset s 180 s blank s on
 firefox &
 thunderbird &
 pidgin &
 eval $(ssh-agent)
-#conky | while read -r; do xsetroot -name "$REPLY"; done &
 ~/.dotfiles/status.sh &
 export SHELL=/usr/bin/zsh
 exec ~/.dotfiles/continuous-dwm
