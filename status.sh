@@ -15,6 +15,7 @@ while sleep $sleepperiod; do
 			fi;;
 	esac
 	now=$(date '+%b %-d %-H:%M')
+	utcnow=$(date -u '+%-H:%MZ')
 	project=$(timecard --current)
-	xsetroot -name "$sleepwarning{$project} [$vpn] $now"
+	xsetroot -name "$sleepwarning{$project} [$vpn] $now $utcnow"
 done
