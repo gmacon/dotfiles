@@ -34,6 +34,16 @@ autocmd FileType puppet autocmd BufWritePre <buffer> :%s/\s\+$//e
 " Python customizations
 let g:pymode_lint_checker = "pyflakes,pep8"
 let g:pymode_lint_ignore = "E501"
+if has("python") && !empty($VIRTUAL_ENV)
+	python <<EOF
+import os
+import sys
+a = os.environ['VIRTUAL_ENV'] + '/bin/activate_this.py'
+execfile(a, dict(__file__=a))
+if 'PYTHONPATH' not in os.environ:
+    os.environ['PYTHONPATH'] = ':'.join(sys.path)
+EOF
+endif
 
 " Puppet customizations
 au FileType puppet setlocal tabstop=8 expandtab shiftwidth=2 softtabstop=2
