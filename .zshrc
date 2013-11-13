@@ -36,8 +36,6 @@ source /etc/bash_completion.d/virtualenvwrapper
 
 alias ssh='TERM=xterm-256color ssh'
 
-export PATH=$PATH:/users/gmacon3/titan/src/mongo-config/mongodb-linux-x86_64-2.2.6/bin
-
 export WINDOW_TITLE_FORMAT="$(tput tsl)%n@%M: %~\a"
 chpwd () {print -Pn $WINDOW_TITLE_FORMAT}
 print -Pn $WINDOW_TITLE_FORMAT
