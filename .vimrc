@@ -44,6 +44,7 @@ if 'PYTHONPATH' not in os.environ:
     os.environ['PYTHONPATH'] = ':'.join(sys.path)
 EOF
 endif
+au FileType python setlocal tabstop=8
 
 " Puppet customizations
 au FileType puppet setlocal tabstop=8 expandtab shiftwidth=2 softtabstop=2
