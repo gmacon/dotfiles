@@ -51,3 +51,8 @@ au FileType puppet setlocal tabstop=8 expandtab shiftwidth=2 softtabstop=2
 
 " RST customizations
 au FileType rst setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
+
+" Syntastic customizations
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'active_filetypes': [],
+			   \ 'passive_filetypes': ['python'] }
