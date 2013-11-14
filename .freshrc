@@ -19,5 +19,6 @@ fresh .tmux.conf --file
 fresh .zshrc --file
 fresh .xmodmap --file
 fresh .Xresources --file
+fresh .liquidpromptrc --file
 fresh timecard --bin
 fresh dmenu_time --bin
