@@ -13,6 +13,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
 Bundle 'godlygeek/tabular'
+Bundle 'AndrewRadev/linediff.vim'
 
 filetype plugin indent on
 
