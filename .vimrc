@@ -29,6 +29,8 @@ colorscheme solarized
 
 set colorcolumn=80
 
+set mouse=a
+
 " Remove trailing whitespace
 autocmd FileType puppet autocmd BufWritePre <buffer> :%s/\s\+$//e
 
