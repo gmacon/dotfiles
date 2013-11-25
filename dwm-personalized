@@ -2,7 +2,7 @@
 xmodmap ~/.xmodmap
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 sh ~/.fehbg
-xrandr --output HDMI1 --mode 1680x1050 --pos 1680x0 --rotate normal --primary --output DP1 --off --output VGA1 --mode 1680x1050 --pos 0x0 --rotate normal
+xrandr --output VGA1 --preferred --primary --output HDMI1 --preferred --right-of VGA1
 xset s 180
 firefox &
 thunderbird &
