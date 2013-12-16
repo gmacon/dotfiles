@@ -87,7 +87,10 @@ def enter_time(times, spec):
     else:
         time = datetime.datetime.now()
     project = ' '.join(spec)
-    times.append((project, time))
+    for i in xrange(len(times), -1, -1):
+        if times[i][1] < time:
+            break
+    times.insert(i, (project, time))
 
 
 def clear_times(times, spec):
