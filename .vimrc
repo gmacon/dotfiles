@@ -14,6 +14,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
 Bundle 'godlygeek/tabular'
 Bundle 'AndrewRadev/linediff.vim'
+Bundle 'rking/ag.vim'
 
 filetype plugin indent on
 
