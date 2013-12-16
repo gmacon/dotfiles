@@ -36,7 +36,7 @@ set mouse=a
 autocmd FileType puppet autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " Python customizations
-let g:pymode_lint_checker = "pyflakes,pep8"
+let g:pymode_lint_checkers = ['pyflakes', 'pep8']
 let g:pymode_lint_ignore = "E501"
 if has("python") && !empty($VIRTUAL_ENV)
 	python <<EOF
