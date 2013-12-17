@@ -40,4 +40,6 @@ export WINDOW_TITLE_FORMAT="$(tput tsl)%n@%M: %~\a"
 chpwd () {print -Pn $WINDOW_TITLE_FORMAT}
 print -Pn $WINDOW_TITLE_FORMAT
 
+unset GNOME_KEYRING_CONTROL
+
 source ~/.fresh/build/shell.sh
