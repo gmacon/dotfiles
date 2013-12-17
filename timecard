@@ -81,14 +81,21 @@ def enter_time(times, spec):
     if not spec:
         spec = raw_input().split()
     if spec[0].startswith('@'):
-        time = datetime.datetime.combine(
-            datetime.date.today(),
-            datetime.datetime.strptime(spec.pop(0)[1:], '%H%M').timetz())
+        xtime = spec.pop(0)[1:]
+        if len(xtime) == 4:
+            time = datetime.datetime.combine(
+                datetime.date.today(),
+                datetime.datetime.strptime(xtime, '%H%M').timetz())
+        elif len(xtime) == 12:
+            time = datetime.datetime.strptime(xtime, '%Y%m%d%H%M')
+        else:
+            print "Can't handle time spec %r" % xtime
+            return
     else:
         time = datetime.datetime.now()
     project = ' '.join(spec)
     for i in xrange(len(times), -1, -1):
-        if times[i][1] < time:
+        if i > 0 and times[i - 1][1] < time:
             break
     times.insert(i, (project, time))
 
