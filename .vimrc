@@ -15,6 +15,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'godlygeek/tabular'
 Bundle 'AndrewRadev/linediff.vim'
 Bundle 'rking/ag.vim'
+Bundle 'bling/vim-airline'
 
 filetype plugin indent on
 
