@@ -32,7 +32,7 @@ fi
 export EDITOR=$(which vim)
 
 export WORKON_HOME=~/.virtualenvs
-source /etc/bash_completion.d/virtualenvwrapper
+[ -f /etc/bash_completion.d/virtualenvwrapper ] && source /etc/bash_completion.d/virtualenvwrapper
 
 alias ssh='TERM=xterm-256color ssh'
 
