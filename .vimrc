@@ -34,6 +34,7 @@ set colorcolumn=80
 set mouse=a
 
 set laststatus=2
+let g:airline_powerline_fonts = 1
 
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
