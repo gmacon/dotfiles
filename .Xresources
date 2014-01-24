@@ -70,4 +70,4 @@ URxvt*color14:                 S_base1
 URxvt*color15:                 S_base3
 
 ! urxvt font
-URxvt.font: xft:Source Code Pro for Powerline:pixelsize=11:antialias=true
+URxvt.font: xft:Source Code Pro:pixelsize=11:antialias=true,xft:Source Code Pro for Powerline:pixelsize=11:antialias=true
