@@ -35,6 +35,7 @@ set mouse=a
 
 set laststatus=2
 let g:airline_powerline_fonts = 1
+set guifont=Sauce\ Code\ Powerline:h11
 
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
