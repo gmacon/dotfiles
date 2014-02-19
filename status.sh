@@ -1,7 +1,6 @@
 #!/bin/bash
 sleepperiod=5
 while sleep $sleepperiod; do
-	vpn=$(pgrep -lf openvpn | awk '{print $NF}' | sort -u | xargs)
 	sleepwarning=""
 	sleepperiod=5
 	case $(xssstate -s) in
@@ -17,5 +16,5 @@ while sleep $sleepperiod; do
 	now=$(date '+%a %b %-d %-H:%M')
 	utcnow=$(date -u '+%-H:%MZ')
 	project=$(timecard --current)
-	xsetroot -name "$sleepwarning{$project} [$vpn] $now $utcnow"
+	xsetroot -name "$sleepwarning{$project} $now $utcnow"
 done
