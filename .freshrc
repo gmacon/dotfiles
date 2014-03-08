@@ -23,3 +23,4 @@ fresh .xinitrc --file
 fresh .liquidpromptrc --file
 fresh timecard --bin
 fresh dmenu_time --bin
+fresh lock.sh --bin
