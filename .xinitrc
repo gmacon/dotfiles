@@ -3,6 +3,8 @@ xmodmap ~/.xmodmap
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 [[ -f ~/.fehbg ]] && sh ~/.fehbg
 xset s 180
+xset +fp /usr/share/fonts/local
+xset fp rehash
 eval $(ssh-agent)
 ~/.dotfiles/status.sh &
 export _JAVA_AWT_WM_NONREPARENTING=1
