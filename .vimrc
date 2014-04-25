@@ -39,6 +39,8 @@ set guifont=Sauce\ Code\ Powerline:h11
 
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
+set list listchars=tab:»-,trail:·
+
 " Remove trailing whitespace
 autocmd FileType puppet autocmd BufWritePre <buffer> :%s/\s\+$//e
 
