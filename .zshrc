@@ -36,9 +36,12 @@ export WORKON_HOME=~/.virtualenvs
 
 alias ssh='TERM=xterm-256color ssh'
 
-export WINDOW_TITLE_FORMAT="$(tput tsl)%n@%M: %~\a"
-chpwd () {print -Pn $WINDOW_TITLE_FORMAT}
-print -Pn $WINDOW_TITLE_FORMAT
+TSL=$(tput tsl)
+if [[ -n $TSL ]]; then
+	export WINDOW_TITLE_FORMAT="$(tput tsl)%n@%M: %~\a"
+	chpwd () {print -Pn $WINDOW_TITLE_FORMAT}
+	print -Pn $WINDOW_TITLE_FORMAT
+fi
 
 unset GNOME_KEYRING_CONTROL
 
