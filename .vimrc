@@ -6,16 +6,19 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-Bundle 'rodjek/vim-puppet'
-Bundle 'klen/python-mode'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'tpope/vim-fugitive'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'scrooloose/syntastic'
-Bundle 'godlygeek/tabular'
 Bundle 'AndrewRadev/linediff.vim'
-Bundle 'rking/ag.vim'
+Bundle 'LaTeX-Box-Team/LaTeX-Box'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
+Bundle 'godlygeek/tabular'
+Bundle 'klen/python-mode'
+Bundle 'rking/ag.vim'
+Bundle 'rodjek/vim-puppet'
+Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-markdown'
+Bundle 'vim-pandoc/vim-pandoc'
 
 filetype plugin indent on
 
