@@ -51,7 +51,7 @@ autocmd FileType puppet autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " Python customizations
 let g:pymode_lint_checkers = ['pyflakes', 'pep8']
-let g:pymode_lint_ignore = "E501"
+let g:pymode_lint_ignore = "E501,E265"
 let g:pymode_rope = 0
 if has("python") && !empty($VIRTUAL_ENV)
 	python <<EOF
