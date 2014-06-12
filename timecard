@@ -103,7 +103,7 @@ def enter_time(times, spec):
 def clear_times(times, spec):
     if spec:
         cutoff = datetime.datetime.strptime(spec[0], '%Y-%m-%d')
-        while times[0][1] < cutoff:
+        while times and times[0][1] < cutoff:
             del times[0]
     else:
         del times[:]
