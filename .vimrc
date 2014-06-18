@@ -19,14 +19,10 @@ Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
 Bundle 'vim-pandoc/vim-pandoc'
+Bundle 'tpope/vim-sleuth'
+Bundle 'tpope/vim-sensible'
 
-filetype plugin indent on
-
-syntax on
-
-set backspace=indent,eol,start
-
-set ai hlsearch
+set hlsearch
 
 set t_Co=256
 set background=dark
@@ -38,13 +34,13 @@ set mouse=a
 
 set number
 
-set laststatus=2
 let g:airline_powerline_fonts = 1
 set guifont=Sauce\ Code\ Powerline:h11
 
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
-set list listchars=tab:»-,trail:·
+set list listchars=tab:»-,trail:·,extends:>,precedes:<,nbsp:+
+
 " Toggle paste mode
 map <unique> <silent> <F2> :set paste!<CR>
 
@@ -65,17 +61,8 @@ if 'PYTHONPATH' not in os.environ:
     os.environ['PYTHONPATH'] = ':'.join(sys.path)
 EOF
 endif
-au FileType python setlocal tabstop=8
-
-" Puppet customizations
-au FileType puppet setlocal tabstop=8 expandtab shiftwidth=2 softtabstop=2
-
-" RST customizations
-au FileType rst setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
-
-au FileType ruby setlocal tabstop=8 expandtab shiftwidth=2 softtabstop=2
 
 " Syntastic customizations
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
-			   \ 'passive_filetypes': ['python'] }
+                           \ 'passive_filetypes': ['python'] }
