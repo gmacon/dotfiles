@@ -32,7 +32,6 @@ fi
 export EDITOR=$(which vim)
 
 export WORKON_HOME=~/.virtualenvs
-[ -f /etc/bash_completion.d/virtualenvwrapper ] && source /etc/bash_completion.d/virtualenvwrapper
 
 alias ssh='TERM=xterm-256color ssh'
 
@@ -46,3 +45,7 @@ fi
 unset GNOME_KEYRING_CONTROL
 
 source ~/.fresh/build/shell.sh
+source ~/.fresh/build/vendor/zsh-syntax-highlighting.zsh
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"

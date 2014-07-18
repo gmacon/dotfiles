@@ -9,9 +9,17 @@
 # See http://freshshell.com/readme for documentation.
 
 fresh freshshell/fresh bin/fresh --bin
+
 # A full-featured & carefully designed adaptive prompt for Bash & Zsh
 # <https://github.com/nojhan/liquidprompt/blob/master/liquidprompt>
 fresh nojhan/liquidprompt liquidprompt
+
+# Automatically enable virtualenvs on cd
+fresh robbyrussell/oh-my-zsh plugins/virtualenvwrapper/virtualenvwrapper.plugin.zsh
+
+# ZSH Syntax Highlighting
+fresh zsh-users/zsh-syntax-highlighting zsh-syntax-highlighting.zsh --file=vendor/zsh-syntax-highlighting.zsh
+fresh zsh-users/zsh-syntax-highlighting highlighters --file=vendor/highlighters/
 
 # Literal files
 fresh .vimrc --file
