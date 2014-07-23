@@ -1,0 +1,14 @@
+[user]
+	email = george.macon@gmail.com
+	name = George Macon
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore
+[color]
+	ui = auto
+[push]
+	default = simple
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false

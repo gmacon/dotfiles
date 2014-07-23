@@ -1,3 +1,4 @@
+# vim: ft=sh
 # freshshell.com
 #
 # Examples:
@@ -10,6 +11,10 @@
 
 fresh freshshell/fresh bin/fresh --bin
 
+# Shell Configuration ######################################
+fresh zshrc --file
+fresh liquidpromptrc --file
+
 # A full-featured & carefully designed adaptive prompt for Bash & Zsh
 # <https://github.com/nojhan/liquidprompt/blob/master/liquidprompt>
 fresh nojhan/liquidprompt liquidprompt
@@ -21,14 +26,32 @@ fresh robbyrussell/oh-my-zsh plugins/virtualenvwrapper/virtualenvwrapper.plugin.
 fresh zsh-users/zsh-syntax-highlighting zsh-syntax-highlighting.zsh --file=vendor/zsh-syntax-highlighting.zsh
 fresh zsh-users/zsh-syntax-highlighting highlighters --file=vendor/highlighters/
 
-# Literal files
-fresh vimrc --file
-fresh tmux.conf --file
-fresh zshrc --file
+# X Configuration ##########################################
 fresh xmodmap --file
 fresh Xresources --file
 fresh xinitrc --file
-fresh liquidpromptrc --file
+
+# DWM utilities ############################################
 fresh timecard --bin
 fresh dmenu_time --bin
 fresh lock.sh --bin
+
+# Editor Configuration #####################################
+fresh vimrc --file
+
+# Terminal Configuration ###################################
+fresh tmux.conf --file
+
+# Git Configuration ########################################
+fresh-options --file=~/.gitconfig
+  fresh gitconfig
+  fresh gitconfig.$(hostname) --ignore-missing
+fresh-options
+
+fresh-options --file=~/.gitignore --marker='#'
+  case $(uname) in
+    Darwin) fresh github/gitignore Global/OSX.gitignore;;
+    *) fresh github/gitignore Global/$(uname).gitignore;;
+  esac
+  fresh github/gitignore Global/vim.gitignore
+fresh-options
