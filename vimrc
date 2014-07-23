@@ -21,8 +21,11 @@ Bundle 'tpope/vim-markdown'
 Bundle 'vim-pandoc/vim-pandoc'
 Bundle 'tpope/vim-sleuth'
 Bundle 'tpope/vim-sensible'
+Bundle 'kien/ctrlp.vim'
 
 set hlsearch
+
+set hidden
 
 set t_Co=256
 set background=dark
