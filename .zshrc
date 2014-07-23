@@ -35,11 +35,29 @@ export WORKON_HOME=~/.virtualenvs
 
 alias ssh='TERM=xterm-256color ssh'
 
-TSL=$(tput tsl)
-if [[ -n $TSL ]]; then
-	export WINDOW_TITLE_FORMAT="$(tput tsl)%n@%M: %~\a"
-	chpwd () {print -Pn $WINDOW_TITLE_FORMAT}
-	print -Pn $WINDOW_TITLE_FORMAT
+# OS X compatibilty
+if [ $(uname) = "Darwin" ]; then
+    # This function is defined as part of the system-wide bash config on OS X
+    if [[ "$TERM_PROGRAM" == "Apple_Terminal" ]] && [ -z "$INSIDE_EMACS" ]; then
+	update_terminal_cwd() {
+	    # Identify the directory using a "file:" scheme URL,
+	    # including the host name to disambiguate local vs.
+	    # remote connections. Percent-escape spaces.
+	    local SEARCH=' '
+	    local REPLACE='%20'
+	    local PWD_URL="file://$HOSTNAME${PWD//$SEARCH/$REPLACE}"
+	    printf '\e]7;%s\a' "$PWD_URL"
+	}
+    fi
+
+    # path_helper is an OS X tool ton configure system-wide search path
+    if [ -x /usr/libexec/path_helper ]; then
+	    eval `/usr/libexec/path_helper -s`
+    fi
+
+    # Homebrew
+    export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
+    export HOMEBREW_EDITOR=/usr/local/bin/mvim
 fi
 
 unset GNOME_KEYRING_CONTROL
@@ -47,5 +65,13 @@ unset GNOME_KEYRING_CONTROL
 source ~/.fresh/build/shell.sh
 source ~/.fresh/build/vendor/zsh-syntax-highlighting.zsh
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+# Local ruby install
+if [ -d $HOME/.rbenv ]; then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+fi
+
+# Local perl install
+if [ -d $HOME/perl5 ]; then
+    eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
+fi
