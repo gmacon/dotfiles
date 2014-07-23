@@ -22,13 +22,13 @@ fresh zsh-users/zsh-syntax-highlighting zsh-syntax-highlighting.zsh --file=vendo
 fresh zsh-users/zsh-syntax-highlighting highlighters --file=vendor/highlighters/
 
 # Literal files
-fresh .vimrc --file
-fresh .tmux.conf --file
-fresh .zshrc --file
-fresh .xmodmap --file
-fresh .Xresources --file
-fresh .xinitrc --file
-fresh .liquidpromptrc --file
+fresh vimrc --file
+fresh tmux.conf --file
+fresh zshrc --file
+fresh xmodmap --file
+fresh Xresources --file
+fresh xinitrc --file
+fresh liquidpromptrc --file
 fresh timecard --bin
 fresh dmenu_time --bin
 fresh lock.sh --bin
