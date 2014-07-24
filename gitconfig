@@ -12,3 +12,10 @@
 	tool = vimdiff
 [difftool]
 	prompt = false
+[alias]
+	graph = log --graph --oneline --decorate
+	assume = update-index --assume-unchanged
+	unassume = update-index --no-assume-unchanged
+	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+	unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
+	up = pull --ff-only
