@@ -1,0 +1,2 @@
+[user]
+	email = george.macon@gtri.gatech.edu

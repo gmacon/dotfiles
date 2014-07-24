@@ -7,7 +7,7 @@
 [color]
 	ui = auto
 [push]
-	default = simple
+	default = current
 [diff]
 	tool = vimdiff
 [difftool]
