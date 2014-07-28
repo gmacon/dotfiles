@@ -7,7 +7,6 @@ xset s 180
 firefox &
 thunderbird &
 pidgin &
-eval $(ssh-agent)
 ~/.dotfiles/status.sh &
 export SHELL=/usr/bin/zsh
 export _JAVA_AWT_WM_NONREPARENTING=1
