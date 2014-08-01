@@ -22,6 +22,7 @@ Bundle 'vim-pandoc/vim-pandoc'
 Bundle 'tpope/vim-sleuth'
 Bundle 'tpope/vim-sensible'
 Bundle 'kien/ctrlp.vim'
+Bundle 'mitsuhiko/vim-jinja'
 
 set hlsearch
 
