@@ -26,15 +26,17 @@ fresh robbyrussell/oh-my-zsh plugins/virtualenvwrapper/virtualenvwrapper.plugin.
 fresh zsh-users/zsh-syntax-highlighting zsh-syntax-highlighting.zsh --file=vendor/zsh-syntax-highlighting.zsh
 fresh zsh-users/zsh-syntax-highlighting highlighters --file=vendor/highlighters/
 
-# X Configuration ##########################################
-fresh xmodmap --file
-fresh Xresources --file
-fresh xinitrc --file
+if [[ $(uname) != "Darwin" ]]; then
+  # X Configuration ########################################
+  fresh xmodmap --file
+  fresh Xresources --file
+  fresh xinitrc --file
 
-# DWM utilities ############################################
-fresh timecard --bin
-fresh dmenu_time --bin
-fresh lock.sh --bin
+  # DWM utilities ##########################################
+  fresh timecard --bin
+  fresh dmenu_time --bin
+  fresh lock.sh --bin
+fi
 
 # Editor Configuration #####################################
 fresh vimrc --file

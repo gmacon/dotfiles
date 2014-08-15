@@ -20,7 +20,7 @@ bindkey -e
 setopt correct
 
 # enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
+if [[ -x /usr/bin/dircolors ]]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
@@ -38,9 +38,9 @@ export WORKON_HOME=~/.virtualenvs
 alias ssh='TERM=xterm-256color ssh'
 
 # OS X compatibilty
-if [ $(uname) = "Darwin" ]; then
+if [[ $(uname) == "Darwin" ]]; then
     # This function is defined as part of the system-wide bash config on OS X
-    if [[ "$TERM_PROGRAM" == "Apple_Terminal" ]] && [ -z "$INSIDE_EMACS" ]; then
+    if [[ "$TERM_PROGRAM" == "Apple_Terminal" ]] && [[ -z "$INSIDE_EMACS" ]]; then
 	update_terminal_cwd() {
 	    # Identify the directory using a "file:" scheme URL,
 	    # including the host name to disambiguate local vs.
@@ -53,7 +53,7 @@ if [ $(uname) = "Darwin" ]; then
     fi
 
     # path_helper is an OS X tool ton configure system-wide search path
-    if [ -x /usr/libexec/path_helper ]; then
+    if [[ -x /usr/libexec/path_helper ]]; then
 	    eval `/usr/libexec/path_helper -s`
     fi
 
@@ -68,12 +68,12 @@ source ~/.fresh/build/shell.sh
 source ~/.fresh/build/vendor/zsh-syntax-highlighting.zsh
 
 # Local ruby install
-if [ -d $HOME/.rbenv ]; then
+if [[ -d $HOME/.rbenv ]]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
 fi
 
 # Local perl install
-if [ -d $HOME/perl5 ]; then
+if [[ -d $HOME/perl5 ]]; then
     eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
 fi
