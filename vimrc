@@ -1,28 +1,39 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle.vim'
 
-Bundle 'AndrewRadev/linediff.vim'
-Bundle 'LaTeX-Box-Team/LaTeX-Box'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'bling/vim-airline'
-Bundle 'godlygeek/tabular'
-Bundle 'klen/python-mode'
-Bundle 'rking/ag.vim'
-Bundle 'rodjek/vim-puppet'
-Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-markdown'
-Bundle 'vim-pandoc/vim-pandoc'
-Bundle 'tpope/vim-sleuth'
-Bundle 'tpope/vim-sensible'
-Bundle 'kien/ctrlp.vim'
-Bundle 'mitsuhiko/vim-jinja'
+" Generic
+Plugin 'AndrewRadev/linediff.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'bling/vim-airline'
+Plugin 'godlygeek/tabular'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-sleuth'
+Plugin 'tpope/vim-sensible'
+Plugin 'kien/ctrlp.vim'
+
+" LaTeX
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
+
+" Python
+Plugin 'klen/python-mode'
+
+" Puppet
+Plugin 'rodjek/vim-puppet'
+
+" Lightweight Markup Languages
+Plugin 'vim-pandoc/vim-pandoc'
+
+" HTML-Jinja2
+Plugin 'mitsuhiko/vim-jinja'
+
+call vundle#end()
 
 set hlsearch
 
