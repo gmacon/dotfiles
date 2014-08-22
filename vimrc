@@ -17,6 +17,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-sensible'
 Plugin 'kien/ctrlp.vim'
+Plugin 'Raimondi/delimitMate'
 
 " LaTeX
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
@@ -32,6 +33,11 @@ Plugin 'vim-pandoc/vim-pandoc'
 
 " HTML-Jinja2
 Plugin 'mitsuhiko/vim-jinja'
+
+" Javascript
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript'
+Plugin 'marijnh/tern_for_vim'
 
 call vundle#end()
 
