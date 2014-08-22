@@ -8,9 +8,10 @@
 	ui = auto
 [push]
 	default = current
-[diff]
+[merge]
+	conflictstyle = diff3
 	tool = vimdiff
-[difftool]
+[mergetool]
 	prompt = false
 [alias]
 	graph = log --graph --oneline --decorate
