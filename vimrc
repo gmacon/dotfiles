@@ -68,6 +68,9 @@ map <unique> <silent> <F2> :set paste!<CR>
 " Remove trailing whitespace
 autocmd FileType puppet autocmd BufWritePre <buffer> :%s/\s\+$//e
 
+" Split line at cursor
+imap <C-c> <CR><Esc>O
+
 " Python customizations
 let g:pymode_lint_checkers = ['pyflakes', 'pep8']
 let g:pymode_lint_ignore = "E501,E265"
