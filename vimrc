@@ -72,9 +72,7 @@ autocmd FileType puppet autocmd BufWritePre <buffer> :%s/\s\+$//e
 imap <C-c> <CR><Esc>O
 
 " Python customizations
-let g:pymode_lint_checkers = ['pyflakes', 'pep8']
-let g:pymode_lint_ignore = "E501,E265"
-let g:pymode_lint_on_fly = 1
+let g:pymode_lint_on_write = 0
 let g:pymode_rope = 0
 if has("python") && !empty($VIRTUAL_ENV)
 	python <<EOF
@@ -91,6 +89,7 @@ endif
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'active_filetypes': [],
-                           \ 'passive_filetypes': ['python'] }
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_python_checkers = ['pyflakes', 'pep8', 'python']
+let g:syntastic_python_pep8_quiet_messages = { 'type': 'style',
+                                             \ 'regex': '\m^\(E501\|E256\)' }
