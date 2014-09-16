@@ -13,11 +13,8 @@ fresh freshshell/fresh bin/fresh --bin
 
 # Shell Configuration ######################################
 fresh zshrc --file
-fresh liquidpromptrc --file
 
-# A full-featured & carefully designed adaptive prompt for Bash & Zsh
-# <https://github.com/nojhan/liquidprompt/blob/master/liquidprompt>
-fresh nojhan/liquidprompt liquidprompt
+fresh zsh_prompt
 
 # Automatically enable virtualenvs on cd
 fresh robbyrussell/oh-my-zsh plugins/virtualenvwrapper/virtualenvwrapper.plugin.zsh
