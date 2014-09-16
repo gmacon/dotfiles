@@ -1,0 +1,58 @@
+autoload -Uz vcs_info
+
++vi-git-extra-info() {
+	local PROMPT_VCS_EXTRA=''
+
+	if [ -n "$(command git status --porcelain --ignore-submodules -uno)" ]; then
+		# workdir is dirty
+		hook_com[branch]="%F{red}${hook_com[branch]}%f"
+	else
+		hook_com[branch]="%F{green}${hook_com[branch]}%f"
+	fi
+
+	if command git status --porcelain --ignore-submodules | grep -q '^\?\?'; then
+		# untracked files exist
+		PROMPT_VCS_EXTRA+='%F{red}*%f'
+	fi
+
+	PROMPT_VCS_EXTRA+='%F{yellow}'
+	if command git rev-parse --abbrev-ref 'stash@{0}' &>/dev/null; then
+		PROMPT_VCS_EXTRA+='+'
+	fi
+	if command git rev-parse --abbrev-ref @'{u}' &>/dev/null; then
+		(( $(command git rev-list --right-only --count HEAD...@'{u}' 2>/dev/null) > 0 )) && PROMPT_VCS_EXTRA='⇣'
+		(( $(command git rev-list --left-only --count HEAD...@'{u}' 2>/dev/null) > 0 )) && PROMPT_VCS_EXTRA+='⇡'
+	fi
+	PROMPT_VCS_EXTRA+='%f'
+
+	hook_com[misc]="$PROMPT_VCS_EXTRA"
+}
+
++vi-prompt-char() {
+	case $vcs in
+		git)
+			PROMPT_CHAR='±';;
+	esac
+}
+
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git*' formats ' %b%m'
+zstyle ':vcs_info:git*' actionformats ' %a %b%m'
+zstyle ':vcs_info:git*+post-backend:*' hooks git-extra-info
+zstyle ':vcs_info:*+pre-get-data:*' hooks prompt-char
+
+setopt prompt_subst
+
+precmd() {
+	PROMPT_CHAR='%%'
+	vcs_info
+}
+
+if [[ "$SSH_CONNECTION" != "" ]]; then
+	PROMPT_USER="%n@%F{blue}%m%f"
+else
+	PROMPT_USER="%n"
+fi
+
+PROMPT="${PROMPT_USER}:%(5~!%-1~/.../%2~!%~)%(?.. %F{magenta}%?%f) %(!.#.\${PROMPT_CHAR}) "
+RPROMPT='${vcs_info_msg_0_}${PROMPT_VCS_EXTRA}'

@@ -14,6 +14,8 @@ fresh freshshell/fresh bin/fresh --bin
 # Shell Configuration ######################################
 fresh zshrc --file
 
+fresh zsh_prompt
+
 # Automatically enable virtualenvs on cd
 fresh robbyrussell/oh-my-zsh plugins/virtualenvwrapper/virtualenvwrapper.plugin.zsh
 
