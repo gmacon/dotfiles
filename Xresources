@@ -71,6 +71,7 @@ URxvt*color15:                 S_base3
 
 ! urxvt font
 URxvt.font: xft:Source Code Pro:pixelsize=11:antialias=true,xft:Source Code Pro for Powerline:pixelsize=11:antialias=true
+URxvt.letterSpace: -1
 
 URxvt.iso14755: False
 URxvt.iso14755_52: False
