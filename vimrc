@@ -28,6 +28,9 @@ Plugin 'klen/python-mode'
 " Puppet
 Plugin 'rodjek/vim-puppet'
 
+" Ansible
+Plugin 'chase/vim-ansible-yaml'
+
 " Lightweight Markup Languages
 Plugin 'vim-pandoc/vim-pandoc'
 
