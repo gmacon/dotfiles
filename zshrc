@@ -52,7 +52,7 @@ if [[ $(uname) == "Darwin" ]]; then
 	}
     fi
 
-    # path_helper is an OS X tool ton configure system-wide search path
+    # path_helper is an OS X tool to configure system-wide search path
     if [[ -x /usr/libexec/path_helper ]]; then
 	    eval `/usr/libexec/path_helper -s`
     fi
