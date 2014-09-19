@@ -19,6 +19,9 @@ fresh zsh_prompt
 # Automatically enable virtualenvs on cd
 fresh robbyrussell/oh-my-zsh plugins/virtualenvwrapper/virtualenvwrapper.plugin.zsh
 
+# Extra completion
+fresh zsh-users/zsh-completions src --file=completion/
+
 # ZSH Syntax Highlighting
 fresh zsh-users/zsh-syntax-highlighting zsh-syntax-highlighting.zsh --file=vendor/zsh-syntax-highlighting.zsh
 fresh zsh-users/zsh-syntax-highlighting highlighters --file=vendor/highlighters/

@@ -1,3 +1,4 @@
+fpath=(~/.fresh/build/completion $fpath)
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _complete _ignored _correct _approximate
