@@ -60,6 +60,8 @@ if [[ $(uname) == "Darwin" ]]; then
     # Homebrew
     export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
     export HOMEBREW_EDITOR=/usr/local/bin/mvim
+
+    export CLICOLOR=1
 fi
 
 unset GNOME_KEYRING_CONTROL
