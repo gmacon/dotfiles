@@ -1,3 +1,4 @@
+fpath=(~/.fresh/build/completion $fpath)
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _complete _ignored _correct _approximate
@@ -52,7 +53,7 @@ if [[ $(uname) == "Darwin" ]]; then
 	}
     fi
 
-    # path_helper is an OS X tool ton configure system-wide search path
+    # path_helper is an OS X tool to configure system-wide search path
     if [[ -x /usr/libexec/path_helper ]]; then
 	    eval `/usr/libexec/path_helper -s`
     fi
@@ -60,6 +61,8 @@ if [[ $(uname) == "Darwin" ]]; then
     # Homebrew
     export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
     export HOMEBREW_EDITOR=/usr/local/bin/mvim
+
+    export CLICOLOR=1
 fi
 
 unset GNOME_KEYRING_CONTROL
