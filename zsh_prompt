@@ -55,4 +55,4 @@ else
 fi
 
 PROMPT="${PROMPT_USER}:%(5~!%-1~/.../%2~!%~)%(?.. %F{magenta}%?%f) %(!.#.\${PROMPT_CHAR}) "
-RPROMPT='${vcs_info_msg_0_}${PROMPT_VCS_EXTRA}'
+RPROMPT='${vcs_info_msg_0_}'
