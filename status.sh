@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 sleepperiod=5
 while sleep $sleepperiod; do
 	sleepwarning=""
