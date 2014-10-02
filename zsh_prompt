@@ -10,7 +10,7 @@ autoload -Uz vcs_info
 		hook_com[branch]="%F{green}${hook_com[branch]}%f"
 	fi
 
-	if command git status --porcelain --ignore-submodules | grep -q '^\?\?'; then
+	if command git status --porcelain --ignore-submodules | grep '^??' &>/dev/null; then
 		# untracked files exist
 		PROMPT_VCS_EXTRA+='%F{red}*%f'
 	fi
