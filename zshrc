@@ -37,6 +37,7 @@ export EDITOR=$(which vim)
 export WORKON_HOME=~/.virtualenvs
 
 alias ssh='TERM=xterm-256color ssh'
+alias vssh='TERM-xterm-256color vagrant ssh'
 
 # OS X compatibilty
 if [[ $(uname) == "Darwin" ]]; then
