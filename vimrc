@@ -94,5 +94,3 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_python_checkers = ['pyflakes', 'pep8', 'python']
-let g:syntastic_python_pep8_quiet_messages = { 'type': 'style',
-                                             \ 'regex': '\m^\(E501\|E256\)' }
