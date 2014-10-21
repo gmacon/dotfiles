@@ -41,6 +41,7 @@ Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-sensible'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Raimondi/delimitMate'
+Plugin 'dhruvasagar/vim-table-mode'
 
 call vundle#end()
 
