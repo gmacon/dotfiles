@@ -39,6 +39,8 @@ export WORKON_HOME=~/.virtualenvs
 alias ssh='TERM=xterm-256color ssh'
 alias vssh='TERM=xterm-256color vagrant ssh'
 
+upto() { while [ $(basename $(pwd)) != $1 ]; do cd ..; done }
+
 # OS X compatibilty
 if [[ $(uname) == "Darwin" ]]; then
     # This function is defined as part of the system-wide bash config on OS X
