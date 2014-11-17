@@ -149,6 +149,11 @@ def current_project(times, spec):
         print times[-1][0]
 
 
+def edit(times, spec):
+    import code
+    code.interact(local={'times': times})
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     command_group = parser.add_mutually_exclusive_group()
@@ -177,6 +182,11 @@ if __name__ == '__main__':
                                dest='action',
                                const=current_project,
                                help='Display the current project')
+    command_group.add_argument('--edit',
+                               action='store_const',
+                               dest='action',
+                               const=edit,
+                               help='Edit the data object')
     command_group.set_defaults(action=display_times)
     parser.add_argument('spec',
                         nargs='*')
