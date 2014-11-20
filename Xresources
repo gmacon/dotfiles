@@ -69,6 +69,9 @@ URxvt*color13:                 S_violet
 URxvt*color14:                 S_base1
 URxvt*color15:                 S_base3
 
+! plugins
+URxvt.perl-ext-common: default,matcher,font-size
+
 ! urxvt font
 URxvt.font: xft:Source Code Pro:pixelsize=11:antialias=true,xft:Source Code Pro for Powerline:pixelsize=11:antialias=true
 URxvt.letterSpace: -1
@@ -77,7 +80,13 @@ URxvt.iso14755: False
 URxvt.iso14755_52: False
 
 ! urxvt clickable urls
-URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
 URxvt.colorUL: S_blue
+
+! dynamic font size
+URxvt.keysym.C-Up:     perl:font-size:increase
+URxvt.keysym.C-Down:   perl:font-size:decrease
+URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+URxvt.keysym.C-S-Down: perl:font-size:decglobal
+URxvt.keysym.C-0:      perl:font-size:reset
