@@ -19,7 +19,7 @@
 	unassume = update-index --no-assume-unchanged
 	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
 	unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
-	up = pull --ff-only
+	up = "!git pull --ff-only && git submodule update --init --recursive"
 	co = checkout
 	ci = commit
 	topush = log @{u}..
