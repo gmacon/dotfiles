@@ -53,7 +53,7 @@ set t_Co=256
 set background=dark
 colorscheme solarized
 
-set colorcolumn=80
+set colorcolumn=+1
 
 set mouse=a
 
