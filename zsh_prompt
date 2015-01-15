@@ -20,7 +20,7 @@ autoload -Uz vcs_info
 		PROMPT_VCS_EXTRA+='+'
 	fi
 	if command git rev-parse --abbrev-ref @'{u}' &>/dev/null; then
-		(( $(command git rev-list --right-only --count HEAD...@'{u}' 2>/dev/null) > 0 )) && PROMPT_VCS_EXTRA='⇣'
+		(( $(command git rev-list --right-only --count HEAD...@'{u}' 2>/dev/null) > 0 )) && PROMPT_VCS_EXTRA+='⇣'
 		(( $(command git rev-list --left-only --count HEAD...@'{u}' 2>/dev/null) > 0 )) && PROMPT_VCS_EXTRA+='⇡'
 	fi
 	PROMPT_VCS_EXTRA+='%f'
