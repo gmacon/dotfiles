@@ -60,3 +60,11 @@ fresh-options --file=~/.gitignore --marker='#'
   esac
   fresh github/gitignore Global/vim.gitignore
 fresh-options
+
+# SSH Configuration
+# Since SSH takes the first answer, more specific things need to go to the top
+fresh-options --file=~/.ssh/config --marker='#'
+  fresh ssh_config.$(hostname) --ignore-missing
+  fresh ssh_config.local --ignore-missing
+  fresh ssh_config
+fresh-options
