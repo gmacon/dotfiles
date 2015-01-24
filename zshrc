@@ -66,6 +66,8 @@ if [[ $(uname) == "Darwin" ]]; then
     export HOMEBREW_EDITOR=/usr/local/bin/mvim
 
     export CLICOLOR=1
+
+    export K2PDFOPT='-ui- -x'
 fi
 
 unset GNOME_KEYRING_CONTROL
