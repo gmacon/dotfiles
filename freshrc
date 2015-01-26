@@ -58,7 +58,7 @@ fresh-options --file=~/.gitignore --marker='#'
     Darwin) fresh github/gitignore Global/OSX.gitignore;;
     *) fresh github/gitignore Global/$(uname).gitignore;;
   esac
-  fresh github/gitignore Global/vim.gitignore
+  fresh github/gitignore Global/Vim.gitignore
   fresh gitignore
 fresh-options
 
