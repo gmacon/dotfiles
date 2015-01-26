@@ -16,6 +16,9 @@ autoload -Uz vcs_info
 	fi
 
 	PROMPT_VCS_EXTRA+='%F{yellow}'
+	if command git submodule | grep -v '^ ' &>/dev/null; then
+		PROMPT_VCS_EXTRA+='$'
+	fi
 	if command git rev-parse --abbrev-ref 'stash@{0}' &>/dev/null; then
 		PROMPT_VCS_EXTRA+='+'
 	fi
