@@ -59,6 +59,7 @@ fresh-options --file=~/.gitignore --marker='#'
     *) fresh github/gitignore Global/$(uname).gitignore;;
   esac
   fresh github/gitignore Global/vim.gitignore
+  fresh gitignore
 fresh-options
 
 # SSH Configuration
