@@ -43,6 +43,8 @@ Plugin 'tpope/vim-sensible'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'dhruvasagar/vim-table-mode'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 
 call vundle#end()
 
