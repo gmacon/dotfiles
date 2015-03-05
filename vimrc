@@ -85,6 +85,7 @@ let g:pandoc#formatting#mode = 'hA'
 " Python customizations
 let g:pymode_lint_on_write = 0
 let g:pymode_rope = 0
+let g:pymode_options_max_line_length = 79
 if has("python") && !empty($VIRTUAL_ENV)
 	python <<EOF
 import os
