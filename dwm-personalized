@@ -11,4 +11,5 @@ ssh-add </dev/null
 ~/.dotfiles/status.sh &
 export SHELL=/usr/bin/zsh
 export _JAVA_AWT_WM_NONREPARENTING=1
+urxvtd -q -f -o
 exec ~/.dotfiles/continuous-dwm
