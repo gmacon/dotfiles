@@ -6,7 +6,7 @@ xrandr --output VGA1 --preferred --primary --output HDMI1 --preferred --right-of
 xset s 180
 firefox &
 thunderbird &
-pidgin &
+hexchat &
 ssh-add </dev/null
 ~/.dotfiles/status.sh &
 export SHELL=/usr/bin/zsh
