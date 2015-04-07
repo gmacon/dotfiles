@@ -19,6 +19,9 @@ fresh zsh_prompt
 # Automatically enable virtualenvs on cd
 fresh robbyrussell/oh-my-zsh plugins/virtualenvwrapper/virtualenvwrapper.plugin.zsh
 
+# go virtualenvwrapper
+fresh bbenne10/goenv goenv.plugin.zsh
+
 # Extra completion
 fresh zsh-users/zsh-completions src --file=completion/
 
