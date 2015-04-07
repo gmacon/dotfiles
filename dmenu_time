@@ -1,2 +1,2 @@
 #!/bin/sh
-timecard --projects | dmenu "$@" | timecard --enter
+cat ~/charge_numbers.txt | cut -d: -f1 | dmenu "$@" | timecard --enter
