@@ -30,6 +30,9 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'marijnh/tern_for_vim'
 
+" Go
+Plugin 'fatih/vim-go'
+
 " Generic
 Plugin 'AndrewRadev/linediff.vim'
 Plugin 'Valloric/YouCompleteMe'

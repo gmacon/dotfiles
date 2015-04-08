@@ -85,3 +85,8 @@ fi
 if [[ -d $HOME/perl5 ]]; then
     eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
 fi
+
+# Local go install
+if [[ -d /usr/local/go ]]; then
+    export PATH="$PATH:/usr/local/go/bin"
+fi
