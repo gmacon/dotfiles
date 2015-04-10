@@ -46,9 +46,39 @@ zstyle ':vcs_info:*+pre-get-data:*' hooks prompt-char
 
 setopt prompt_subst
 
+function ei_python {
+	local pyver="$(pyenv version-name)"
+	if [ $pyver != "system" ]; then
+		PROMPT_ENV_INFO+="🐍 ${pyver} "
+	fi
+}
+
+
+function ei_ruby {
+	local pyver="$(rbenv version-name)"
+	if [ $pyver != "system" ]; then
+		PROMPT_ENV_INFO+="💎 ${pyver} "
+	fi
+}
+
+function ei_golang {
+	if [ -n "$GOPATH" ]; then
+		PROMPT_ENV_INFO+="⇧$(basename ${GOPATH}) "
+	fi
+}
+
+typeset -g PROMPT_ENV_INFO
+function env_info {
+	PROMPT_ENV_INFO=""
+	ei_python
+	ei_ruby
+	ei_golang
+}
+
 precmd() {
 	PROMPT_CHAR='%%'
 	vcs_info
+	env_info
 }
 
 if [[ "$SSH_CONNECTION" != "" ]]; then
@@ -58,4 +88,4 @@ else
 fi
 
 PROMPT="${PROMPT_USER}:%(5~!%-1~/.../%2~!%~)%(?.. %F{magenta}%?%f) %(!.#.\${PROMPT_CHAR}) "
-RPROMPT='${vcs_info_msg_0_}'
+RPROMPT='${PROMPT_ENV_INFO}${vcs_info_msg_0_}'
