@@ -34,8 +34,6 @@ fi
 
 export EDITOR=$(which vim)
 
-export WORKON_HOME=~/.virtualenvs
-
 alias ssh='TERM=xterm-256color ssh'
 alias vssh='TERM=xterm-256color vagrant ssh'
 
@@ -89,4 +87,12 @@ fi
 # Local go install
 if [[ -d /usr/local/go ]]; then
     export PATH="$PATH:/usr/local/go/bin"
+fi
+
+# Local python install
+if which pyenv > /dev/null; then
+    eval "$(pyenv init -)";
+    if which pyenv-virtualenv-init > /dev/null; then
+	eval "$(pyenv-virtualenv-init -)"
+    fi
 fi
