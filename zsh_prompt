@@ -47,17 +47,21 @@ zstyle ':vcs_info:*+pre-get-data:*' hooks prompt-char
 setopt prompt_subst
 
 function ei_python {
-	local pyver="$(pyenv version-name)"
-	if [ $pyver != "system" ]; then
-		PROMPT_ENV_INFO+="🐍 ${pyver} "
+	if which pyenv &>/dev/null; then
+		local pyver="$(pyenv version-name)"
+		if [ $pyver != "system" ]; then
+			PROMPT_ENV_INFO+="🐍 ${pyver} "
+		fi
 	fi
 }
 
 
 function ei_ruby {
-	local pyver="$(rbenv version-name)"
-	if [ $pyver != "system" ]; then
-		PROMPT_ENV_INFO+="💎 ${pyver} "
+	if which rbenv &>/dev/null; then
+		local pyver="$(rbenv version-name)"
+		if [ $pyver != "system" ]; then
+			PROMPT_ENV_INFO+="💎 ${pyver} "
+		fi
 	fi
 }
 
