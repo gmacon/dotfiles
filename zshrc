@@ -39,35 +39,6 @@ alias vssh='TERM=xterm-256color vagrant ssh'
 
 upto() { while [ $(basename $(pwd)) != $1 ]; do cd ..; done }
 
-# OS X compatibilty
-if [[ $(uname) == "Darwin" ]]; then
-    # This function is defined as part of the system-wide bash config on OS X
-    if [[ "$TERM_PROGRAM" == "Apple_Terminal" ]] && [[ -z "$INSIDE_EMACS" ]]; then
-	update_terminal_cwd() {
-	    # Identify the directory using a "file:" scheme URL,
-	    # including the host name to disambiguate local vs.
-	    # remote connections. Percent-escape spaces.
-	    local SEARCH=' '
-	    local REPLACE='%20'
-	    local PWD_URL="file://$HOSTNAME${PWD//$SEARCH/$REPLACE}"
-	    printf '\e]7;%s\a' "$PWD_URL"
-	}
-    fi
-
-    # path_helper is an OS X tool to configure system-wide search path
-    if [[ -x /usr/libexec/path_helper ]]; then
-	    eval `/usr/libexec/path_helper -s`
-    fi
-
-    # Homebrew
-    export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
-    export HOMEBREW_EDITOR=/usr/local/bin/mvim
-
-    export CLICOLOR=1
-
-    export K2PDFOPT='-ui- -x'
-fi
-
 unset GNOME_KEYRING_CONTROL
 
 source ~/.fresh/build/shell.sh
