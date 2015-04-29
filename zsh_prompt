@@ -50,17 +50,16 @@ function ei_python {
 	if which pyenv &>/dev/null; then
 		local pyver="$(pyenv version-name)"
 		if [ $pyver != "system" ]; then
-			PROMPT_ENV_INFO+="🐍 ${pyver} "
+			PROMPT_ENV_INFO+="Py${pyver} "
 		fi
 	fi
 }
-
 
 function ei_ruby {
 	if which rbenv &>/dev/null; then
 		local pyver="$(rbenv version-name)"
 		if [ $pyver != "system" ]; then
-			PROMPT_ENV_INFO+="💎 ${pyver} "
+			PROMPT_ENV_INFO+="Rb${pyver} "
 		fi
 	fi
 }
