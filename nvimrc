@@ -9,8 +9,12 @@ call plug#begin()
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 
+" Python
+Plug 'hynek/vim-python-pep8-indent'
+
 " Generic
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'benekastah/neomake'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-sensible'
@@ -48,3 +52,6 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 " Split line at cursor
 imap <C-c> <CR><Esc>O
 
+" Python
+autocmd FileType python setlocal tw=79 ts=8 sts=4 sw=4 et
+autocmd BufWritePost *.py Neomake

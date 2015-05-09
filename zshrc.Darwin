@@ -11,15 +11,6 @@ update_terminal_cwd() {
 }
 fi
 
-# path_helper is an OS X tool to configure system-wide search path
-if [[ -x /usr/libexec/path_helper ]]; then
-    eval `/usr/libexec/path_helper -s`
-fi
-
-# Homebrew
-export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
-export HOMEBREW_EDITOR=/usr/local/bin/mvim
-
 export CLICOLOR=1
 
 export K2PDFOPT='-ui- -x'
