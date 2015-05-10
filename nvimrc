@@ -4,6 +4,13 @@ if empty(glob('~/.nvim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall
 endif
 
+" Python interpreter setup
+" These dunder strings will be replaced by fresh with the
+" paths to the active interpreters when fresh is run.  This
+" makes it work even when different pyenvs are set up.
+let g:python_host_prog = '__PYTHON2__'
+let g:python3_host_prog = '__PYTHON3__'
+
 call plug#begin()
 " Lightweight Markup Languages
 Plug 'vim-pandoc/vim-pandoc'

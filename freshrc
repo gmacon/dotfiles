@@ -49,6 +49,7 @@ fi
 
 # Editor Configuration #####################################
 fresh vimrc --file
+fresh nvimrc --file --filter="perl -pe 's[__PYTHON2__][$(pyenv which python2 || which python2 || which python)]; s[__PYTHON3__][$(pyenv which python3 || which python3)]'"
 
 # Terminal Configuration ###################################
 fresh tmux.conf --file
