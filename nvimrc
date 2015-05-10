@@ -1,15 +1,15 @@
-" Plugins
-if empty(glob('~/.nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall
-endif
-
 " Python interpreter setup
 " These dunder strings will be replaced by fresh with the
 " paths to the active interpreters when fresh is run.  This
 " makes it work even when different pyenvs are set up.
 let g:python_host_prog = '__PYTHON2__'
 let g:python3_host_prog = '__PYTHON3__'
+
+" Plugins
+if empty(glob('~/.nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall
+endif
 
 call plug#begin()
 " Lightweight Markup Languages
@@ -18,9 +18,11 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 
 " Python
 Plug 'hynek/vim-python-pep8-indent'
+Plug 'davidhalter/jedi-vim'
 
 " Generic
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'ervandew/supertab'
 Plug 'benekastah/neomake'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sleuth'
@@ -41,7 +43,15 @@ set mouse=a
 set number
 set scrolloff=5
 
-set list listchars=tab:»-,trail:·,extends:>,precedes:<,nbsp:+
+set backspace=indent,eol,start
+
+set fillchars=vert:│
+set list listchars=tab:→\ ,trail:·,precedes:«,extends:»
+
+set wildmenu wildmode=longest:full,full
+set completeopt=menuone,longest
+
+let mapleader = "\<Space>"
 
 " Toggle paste mode
 map <unique> <silent> <F2> :set paste!<CR>
