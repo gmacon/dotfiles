@@ -69,5 +69,6 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 imap <C-c> <CR><Esc>O
 
 " Python
-autocmd FileType python setlocal tw=79 ts=8 sts=4 sw=4 et
+autocmd FileType python setlocal tw=79 ts=8 sts=4 sw=4 et foldmethod=indent
 autocmd BufWritePost *.py Neomake
+let g:jedi#show_call_signatures = 2
