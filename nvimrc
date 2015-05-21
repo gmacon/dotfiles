@@ -35,6 +35,7 @@ call plug#end()
 set hlsearch
 
 set hidden
+set nowrap
 
 set colorcolumn=+1
 
