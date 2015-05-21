@@ -32,7 +32,7 @@ if [[ -x /usr/bin/dircolors ]]; then
     alias egrep='egrep --color=auto'
 fi
 
-export EDITOR=$(which vim)
+export EDITOR=$(which nvim || which vim)
 
 alias ssh='TERM=xterm-256color ssh'
 alias vssh='TERM=xterm-256color vagrant ssh'
