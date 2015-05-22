@@ -53,8 +53,6 @@ set list listchars=tab:→\ ,trail:·,precedes:«,extends:»
 set wildmenu wildmode=longest:full,full
 set completeopt=menuone,longest
 
-let mapleader = "\<Space>"
-
 " Toggle paste mode
 map <unique> <silent> <F2> :set paste!<CR>
 
