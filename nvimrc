@@ -19,6 +19,7 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 " Python
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'davidhalter/jedi-vim'
+Plug 'tmhedberg/SimpylFold'
 
 " Generic
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
@@ -70,6 +71,6 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 imap <C-c> <CR><Esc>O
 
 " Python
-autocmd FileType python setlocal tw=79 ts=8 sts=4 sw=4 et foldmethod=indent
+autocmd FileType python setlocal tw=79 ts=8 sts=4 sw=4 et
 autocmd BufWritePost *.py Neomake
 let g:jedi#show_call_signatures = 2
