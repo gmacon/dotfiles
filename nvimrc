@@ -58,6 +58,9 @@ let mapleader = "\<Space>"
 " Toggle paste mode
 map <unique> <silent> <F2> :set paste!<CR>
 
+" Fold & unfold
+nnoremap <space> za
+
 " Strip trailing whitespace (and save cursor position) when saving files
 fun! <SID>StripTrailingWhitespaces()
     let l = line(".")
