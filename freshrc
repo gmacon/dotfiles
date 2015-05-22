@@ -39,13 +39,14 @@ else
   fresh xinitrc --file
 
   # DWM utilities ##########################################
-  fresh timecard --bin
   fresh dmenu_time --bin
   fresh lock.sh --bin
 
   # urxvt extras
   fresh majutsushi/urxvt-font-size font-size --file=~/.urxvt/ext/font-size
 fi
+
+fresh timecard --bin
 
 # Editor Configuration #####################################
 fresh vimrc --file
