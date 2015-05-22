@@ -22,7 +22,7 @@ Plug 'davidhalter/jedi-vim'
 Plug 'tmhedberg/SimpylFold'
 
 " Generic
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'airblade/vim-rooter'
 Plug 'ervandew/supertab'
 Plug 'benekastah/neomake'
 Plug 'tpope/vim-fugitive'
