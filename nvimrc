@@ -22,6 +22,7 @@ Plug 'davidhalter/jedi-vim'
 Plug 'tmhedberg/SimpylFold'
 
 " Generic
+Plug 'Shougo/unite.vim'
 Plug 'airblade/vim-rooter'
 Plug 'ervandew/supertab'
 Plug 'benekastah/neomake'
@@ -58,6 +59,14 @@ map <unique> <silent> <F2> :set paste!<CR>
 
 " Fold & unfold
 nnoremap <space> za
+
+" Switching and editing
+nnoremap <leader>w :Unite -start-insert buffer<cr>
+nnoremap <leader>e :Unite -start-insert file_rec/neovim<cr>
+function! s:UniteSettings()
+  imap <buffer> <Esc> <Plug>(unite_exit)
+endfunction
+autocmd FileType unite :call s:UniteSettings()
 
 " Strip trailing whitespace (and save cursor position) when saving files
 fun! <SID>StripTrailingWhitespaces()
