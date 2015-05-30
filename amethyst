@@ -17,12 +17,10 @@
 
     "mod1": [
         "option",
-        "shift"
     ],
     "mod2": [
         "option",
         "shift",
-        "control"
     ],
 
     "COMMANDS": "----------------------",
@@ -78,7 +76,7 @@
     },
     "select-fullscreen-layout": {
         "mod": "mod1",
-        "key": "d"
+        "key": "m"
     },
     "select-column-layout": {
         "mod": "mod1",
@@ -126,11 +124,11 @@
     },
     "increase-main": {
         "mod": "mod1",
-        "key": ","
+        "key": "i"
     },
     "decrease-main": {
         "mod": "mod1",
-        "key": "."
+        "key": "d"
     },
     "focus-ccw": {
         "mod": "mod1",
@@ -142,11 +140,11 @@
     },
     "swap-screen-ccw": {
         "mod": "mod2",
-        "key": "h"
+        "key": ","
     },
     "swap-screen-cw": {
         "mod": "mod2",
-        "key": "l"
+        "key": "."
     },
     "swap-ccw": {
         "mod": "mod2",
@@ -213,7 +211,7 @@
     "floating": [],
     "float-small-windows": true,
     "mouse-follows-focus": false,
-    "focus-follows-mouse": false,
+    "focus-follows-mouse": true,
     "enables-layout-hud": true,
     "enables-layout-hud-on-space-change": true
 }

@@ -32,6 +32,9 @@ fresh zsh-users/zsh-syntax-highlighting highlighters --file=vendor/highlighters/
 if [[ $(uname) == "Darwin" ]]; then
   # Homebrew ###############################################
   fresh robbyrussell/oh-my-zsh plugins/brew/_brew --file=completion/_brew
+
+  # Amethyst ###############################################
+  fresh amethyst --file
 else
   # X Configuration ########################################
   fresh xmodmap --file
