@@ -16,6 +16,9 @@ call plug#begin()
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 
+" Jinja2 Templates
+Plug 'mitsuhiko/vim-jinja'
+
 " Python
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'davidhalter/jedi-vim'
