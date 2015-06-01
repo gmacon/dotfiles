@@ -24,6 +24,10 @@ Plug 'hynek/vim-python-pep8-indent'
 Plug 'davidhalter/jedi-vim'
 Plug 'tmhedberg/SimpylFold'
 
+" Puppet
+Plug 'rodjek/vim-puppet'
+Plug 'godlygeek/tabular'
+
 " Generic
 Plug 'Shougo/unite.vim'
 Plug 'airblade/vim-rooter'
@@ -87,3 +91,11 @@ imap <C-c> <CR><Esc>O
 autocmd FileType python setlocal tw=79 ts=8 sts=4 sw=4 et
 autocmd BufWritePost *.py Neomake
 let g:jedi#show_call_signatures = 2
+
+" Puppet
+let g:neomake_puppet_puppetlint_maker = {
+      \ 'exe': 'puppet-lint',
+      \ 'args': ['--log-format', '"%{path}:%{line}:%{column}:%{kind}:[%{check}] %{message}"'],
+      \ 'errorformat': '"%f:%l:%c:%t%*[a-zA-Z]:%m"',
+      \ }
+let g:neomake_puppet_enabled_makers = ['puppetlint']
