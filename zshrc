@@ -34,9 +34,6 @@ fi
 
 export EDITOR=$(which nvim || which vim)
 
-alias ssh='TERM=xterm-256color ssh'
-alias vssh='TERM=xterm-256color vagrant ssh'
-
 upto() { while [ $(basename $(pwd)) != $1 ]; do cd ..; done }
 
 unset GNOME_KEYRING_CONTROL
