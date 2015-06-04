@@ -28,6 +28,9 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'rodjek/vim-puppet'
 Plug 'godlygeek/tabular'
 
+" LaTeX
+Plug 'LaTeX-Box-Team/LaTeX-Box'
+
 " Generic
 Plug 'Shougo/unite.vim'
 Plug 'airblade/vim-rooter'
