@@ -31,6 +31,9 @@ Plug 'godlygeek/tabular'
 " LaTeX
 Plug 'LaTeX-Box-Team/LaTeX-Box'
 
+" Go
+Plug 'fatih/vim-go'
+
 " Generic
 Plug 'Shougo/unite.vim'
 Plug 'airblade/vim-rooter'
@@ -107,3 +110,6 @@ let g:neomake_puppet_puppet_maker = {
       \ }
 let g:neomake_puppet_enabled_makers = ['puppetlint', 'puppet']
 autocmd BufWritePost *.pp Neomake
+
+" Go
+let g:go_bin_path = expand("~/.gotools")
