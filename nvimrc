@@ -102,3 +102,4 @@ let g:neomake_puppet_puppet_maker = {
       \ 'errorformat': '%t%*[a-zA-Z]: %m at %f:%l',
       \ }
 let g:neomake_puppet_enabled_makers = ['puppetlint', 'puppet']
+autocmd BufWritePost *.pp Neomake
