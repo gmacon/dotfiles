@@ -35,7 +35,7 @@ Plug 'LaTeX-Box-Team/LaTeX-Box'
 Plug 'fatih/vim-go'
 
 " Generic
-Plug 'Shougo/unite.vim'
+Plug 'kien/ctrlp.vim'
 Plug 'airblade/vim-rooter'
 Plug 'ervandew/supertab'
 Plug 'benekastah/neomake'
@@ -67,19 +67,15 @@ set list listchars=tab:→\ ,trail:·,precedes:«,extends:»
 set wildmenu wildmode=longest:full,full
 set completeopt=menuone,longest
 
+" Ctrl-P
+let g:ctrlp_user_command = 'ag --files-with-matches --nocolor --follow -g "" %s'
+nmap <unique> <silent> <leader>w :CtrlPBuffer<CR>
+
 " Toggle paste mode
-map <unique> <silent> <F2> :set paste!<CR>
+nmap <unique> <silent> <leader>p :set paste!<CR>
 
 " Fold & unfold
 nnoremap <space> za
-
-" Switching and editing
-nnoremap <leader>w :Unite -start-insert buffer<cr>
-nnoremap <leader>e :Unite -start-insert file_rec/neovim<cr>
-function! s:UniteSettings()
-  imap <buffer> <Esc> <Plug>(unite_exit)
-endfunction
-autocmd FileType unite :call s:UniteSettings()
 
 " Strip trailing whitespace (and save cursor position) when saving files
 fun! <SID>StripTrailingWhitespaces()
