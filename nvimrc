@@ -66,10 +66,10 @@ set completeopt=menuone,longest
 
 " Ctrl-P
 let g:ctrlp_user_command = 'ag --files-with-matches --nocolor --follow -g "" %s'
-nnoremap <leader>w :CtrlPBuffer
+nmap <unique> <silent> <leader>w :CtrlPBuffer<CR>
 
 " Toggle paste mode
-map <unique> <silent> <F2> :set paste!<CR>
+nmap <unique> <silent> <leader>p :set paste!<CR>
 
 " Fold & unfold
 nnoremap <space> za
