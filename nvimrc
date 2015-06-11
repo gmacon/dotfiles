@@ -89,23 +89,5 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 " Split line at cursor
 imap <C-c> <CR><Esc>O
 
-" Python
-autocmd FileType python setlocal tw=79 ts=8 sts=4 sw=4 et
-autocmd BufWritePost *.py Neomake
-let g:jedi#show_call_signatures = 2
-
-" Puppet
-let g:neomake_puppet_puppetlint_maker = {
-      \ 'exe': 'puppet-lint',
-      \ 'args': ['--log-format', '"%{path}:%{line}:%{column}:%{kind}:[%{check}] %{message}"'],
-      \ 'errorformat': '"%f:%l:%c:%t%*[a-zA-Z]:%m"',
-      \ }
-let g:neomake_puppet_puppet_maker = {
-      \ 'args': ['parser', 'validate'],
-      \ 'errorformat': '%t%*[a-zA-Z]: %m at %f:%l',
-      \ }
-let g:neomake_puppet_enabled_makers = ['puppetlint', 'puppet']
-autocmd BufWritePost *.pp Neomake
-
 " Go
 let g:go_bin_path = expand("~/.gotools")
