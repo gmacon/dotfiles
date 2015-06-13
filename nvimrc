@@ -94,6 +94,3 @@ nmap <unique> <silent> <leader>lo :lopen<CR>
 nmap <unique> <silent> <leader>lc :lclose<CR>
 nmap <unique> <silent> <leader>ln :lnext<CR>
 nmap <unique> <silent> <leader>lp :lprev<CR>
-
-" Go
-let g:go_bin_path = expand("~/.gotools")
