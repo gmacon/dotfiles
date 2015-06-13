@@ -15,7 +15,7 @@ fresh freshshell/fresh bin/fresh --bin
 fresh-options --file=~/.zshrc
   fresh zshrc
   fresh zshrc.$(uname) --ignore-missing
-  fresh zshrc.$(hostname) --ignore-missing
+  fresh zshrc.$(hostname -s) --ignore-missing
   fresh zshrc.local --ignore-missing
 fresh-options
 
@@ -61,7 +61,7 @@ fresh tmux.conf --file
 # Git Configuration ########################################
 fresh-options --file=~/.gitconfig
   fresh gitconfig
-  fresh gitconfig.$(hostname) --ignore-missing
+  fresh gitconfig.$(hostname -s) --ignore-missing
 fresh-options
 
 fresh-options --file=~/.gitignore --marker='#'
@@ -76,7 +76,7 @@ fresh-options
 # SSH Configuration
 # Since SSH takes the first answer, more specific things need to go to the top
 fresh-options --file=~/.ssh/config --marker='#'
-  fresh ssh_config.$(hostname) --ignore-missing
+  fresh ssh_config.$(hostname -s) --ignore-missing
   fresh ssh_config.local --ignore-missing
   fresh ssh_config
 fresh-options
