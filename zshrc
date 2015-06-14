@@ -32,7 +32,7 @@ if [[ -x /usr/bin/dircolors ]]; then
     alias egrep='egrep --color=auto'
 fi
 
-export EDITOR=$(which nvim || which vim)
+export EDITOR="$(which nvim 2>/dev/null || which vim 2>/dev/null)"
 
 upto() { while [ $(basename $(pwd)) != $1 ]; do cd ..; done }
 
