@@ -64,18 +64,11 @@ function ei_ruby {
 	fi
 }
 
-function ei_golang {
-	if [ -n "$GOPATH" ]; then
-		PROMPT_ENV_INFO+="⇧$(basename ${GOPATH}) "
-	fi
-}
-
 typeset -g PROMPT_ENV_INFO
 function env_info {
 	PROMPT_ENV_INFO=""
 	ei_python
 	ei_ruby
-	ei_golang
 }
 
 precmd() {

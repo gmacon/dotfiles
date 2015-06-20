@@ -57,6 +57,12 @@ if [[ -d /usr/local/go ]]; then
     export PATH="$PATH:/usr/local/go/bin"
 fi
 
+# Go path
+if [[ -d "${HOME}/go" ]]; then
+    export GOPATH="${HOME}/go"
+    export PATH="${PATH}:${GOPATH}/bin"
+fi
+
 # Local python install
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 if [[ -d ${HOME}/.pyenv ]]; then
