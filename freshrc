@@ -49,6 +49,7 @@ else
   fresh majutsushi/urxvt-font-size font-size --file=~/.urxvt/ext/font-size
 fi
 
+fresh dvtm --bin
 fresh timecard --bin
 
 # Editor Configuration #####################################
