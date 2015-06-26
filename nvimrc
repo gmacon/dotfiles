@@ -44,10 +44,14 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
 " General Configuration
 set hlsearch
+
+set background=dark
+colorscheme solarized
 
 set hidden
 set nowrap
