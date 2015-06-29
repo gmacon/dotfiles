@@ -1,5 +1,19 @@
 #!/bin/sh
 
+FIFO="/tmp/dvtm-status.$$"
+
+[ -p "$FIFO" ] || mkfifo -m 600 "$FIFO" || exit 1
+
+while true; do
+	(timecard --current; date +%H:%M) | xargs
+	sleep 5
+done > "$FIFO" &
+
+STATUS_PID=$!
+
 export SHELL=$(which zsh)
 export TERMINFO_DIRS=/usr/share/terminfo:/usr/local/share/terminfo
-exec /usr/local/bin/dvtm "$@"
+/usr/local/bin/dvtm -s "$FIFO" "$@" 2> /dev/null
+kill $STATUS_PID
+wait $STATUS_PID 2> /dev/null
+rm -f "$FIFO"
