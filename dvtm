@@ -5,7 +5,7 @@ FIFO="/tmp/dvtm-status.$$"
 [ -p "$FIFO" ] || mkfifo -m 600 "$FIFO" || exit 1
 
 while true; do
-	(timecard --current; date +%H:%M) | xargs
+	(python ${HOME}/bin/timecard --current; date +%H:%M) | xargs
 	sleep 5
 done > "$FIFO" &
 
