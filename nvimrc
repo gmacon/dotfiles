@@ -71,15 +71,14 @@ set list listchars=tab:→\ ,trail:·,precedes:«,extends:»
 set wildmenu wildmode=longest:full,full
 set completeopt=menuone,longest
 
+let mapleader = "\<Space>"
+
 " Ctrl-P
 let g:ctrlp_user_command = 'ag --files-with-matches --nocolor --follow -g "" %s'
 nmap <unique> <silent> <leader>w :CtrlPBuffer<CR>
 
 " Toggle paste mode
 nmap <unique> <silent> <leader>p :set paste!<CR>
-
-" Fold & unfold
-nnoremap <space> za
 
 " Strip trailing whitespace (and save cursor position) when saving files
 fun! <SID>StripTrailingWhitespaces()
@@ -96,5 +95,6 @@ imap <C-c> <CR><Esc>O
 " Location list
 nmap <unique> <silent> <leader>lo :lopen<CR>
 nmap <unique> <silent> <leader>lc :lclose<CR>
+nmap <unique> <silent> <leader>ll :ll<CR>
 nmap <unique> <silent> <leader>ln :lnext<CR>
 nmap <unique> <silent> <leader>lp :lprev<CR>
