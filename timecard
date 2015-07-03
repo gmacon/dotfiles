@@ -130,11 +130,11 @@ def display_times(times, spec):
         print '{0}:'.format(day)
         total = 0.0
         for proj in summary[day]:
-            total += summary[day][proj]
-            print '    {0}: {1:.1f}'.format(proj,
-                                            summary[day][proj] / 3600)
+            proj_amt = round(summary[day][proj] / 3600, 1)
+            total += proj_amt
+            print '    {0}: {1}'.format(proj, proj_amt)
         print '---------------------------'
-        print '    Total: {0:.1f}'.format(total / 3600)
+        print '    Total: {0}'.format(total)
 
 
 def list_projects(times, spec):
