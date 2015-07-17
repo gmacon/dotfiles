@@ -127,7 +127,9 @@ def display_times(times, spec):
         prev = entry
 
     grand_total = 0.0
+    grand_target = 0.0
     for day in sorted(summary):
+        grand_target += 8.0
         print '{0}:'.format(day)
         total = 0.0
         for proj in summary[day]:
@@ -138,7 +140,8 @@ def display_times(times, spec):
         print '---------------------------'
         print '    Total: {0}'.format(total)
     print '==========================='
-    print '    Grand Total: {}'.format(grand_total)
+    print '    Grand Total: {}/{} ({})'.format(grand_total, grand_target,
+                                               grand_total - grand_target)
 
 
 def list_projects(times, spec):
