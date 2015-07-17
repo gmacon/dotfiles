@@ -126,15 +126,19 @@ def display_times(times, spec):
             summary[day][proj] += (t - prev[1]).total_seconds()
         prev = entry
 
+    grand_total = 0.0
     for day in sorted(summary):
         print '{0}:'.format(day)
         total = 0.0
         for proj in summary[day]:
             proj_amt = round(summary[day][proj] / 3600, 1)
             total += proj_amt
+            grand_total += proj_amt
             print '    {0}: {1}'.format(proj, proj_amt)
         print '---------------------------'
         print '    Total: {0}'.format(total)
+    print '==========================='
+    print '    Grand Total: {}'.format(grand_total)
 
 
 def list_projects(times, spec):
@@ -151,7 +155,13 @@ def current_project(times, spec):
 
 def edit(times, spec):
     import code
-    code.interact(local={'times': times})
+    import pprint
+    code.interact(local={
+        'times': times,
+        'datetime': datetime.datetime,
+        'pprint': pprint.pprint,
+    })
+    times.sort(key=operator.itemgetter(1))
 
 
 if __name__ == '__main__':
