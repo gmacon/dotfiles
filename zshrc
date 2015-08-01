@@ -12,9 +12,10 @@ compinit
 HISTFILE=~/.histfile
 HISTSIZE=1000000
 SAVEHIST=1000000
-set -o HIST_IGNORE_DUPS
-set -o HIST_IGNORE_SPACE
-setopt appendhistory
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt append_history
+setopt share_history
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
