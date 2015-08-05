@@ -77,3 +77,5 @@ if [[ -d ${HOME}/.pyenv ]]; then
         eval "$(pyenv virtualenv-init -)"
     fi
 fi
+
+sprunge () { cat "$@" | curl -F 'sprunge=<-' http://sprunge.us }
