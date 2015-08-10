@@ -7,5 +7,5 @@ export DVTM_STATUS_FIFO="/tmp/dvtm-status.$$"
 export SHELL=/usr/local/bin/zsh
 export TERMINFO_DIRS=/usr/share/terminfo:/usr/local/share/terminfo
 export DVTM_EDITOR=/usr/bin/less
-/usr/local/bin/dvtm -s "$DVTM_STATUS_FIFO" "$@" 2> /dev/null
+/usr/local/bin/dvtm -s "$DVTM_STATUS_FIFO" "$@" 2>> "$HOME/dvtm.log"
 rm -f "$DVTM_STATUS_FIFO"
