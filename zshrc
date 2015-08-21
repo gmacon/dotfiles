@@ -79,3 +79,10 @@ if [[ -d ${HOME}/.pyenv ]]; then
 fi
 
 sprunge () { cat "$@" | curl -F 'sprunge=<-' http://sprunge.us }
+
+tc () {
+    timecard --enter "$@"
+    if [ -n "$DVTM_STATUS_FIFO" ]; then
+        timecard --current >$DVTM_STATUS_FIFO
+    fi
+}
