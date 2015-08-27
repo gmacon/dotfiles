@@ -38,7 +38,7 @@ if command -v nvim >/dev/null; then
     alias vim='nvim'
 fi
 
-upto() { while [ $(basename $(pwd)) != $1 ]; do cd ..; done }
+alias bd='. bd -si'
 
 unset GNOME_KEYRING_CONTROL
 

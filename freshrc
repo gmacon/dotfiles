@@ -29,6 +29,8 @@ fresh zsh-users/zsh-completions src --file=completion/
 fresh zsh-users/zsh-syntax-highlighting zsh-syntax-highlighting.zsh --file=vendor/zsh-syntax-highlighting.zsh
 fresh zsh-users/zsh-syntax-highlighting highlighters --file=vendor/highlighters/
 
+fresh vigneshwaranr/bd bd --bin
+
 if [[ $(uname) == "Darwin" ]]; then
   # Homebrew ###############################################
   fresh robbyrussell/oh-my-zsh plugins/brew/_brew --file=completion/_brew
