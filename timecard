@@ -121,7 +121,7 @@ def display_times(times, spec):
     for entry in times:
         t = entry[1]
         proj = prev[0]
-        day = t.strftime('%Y-%m-%d')
+        day = t.date()
         if proj != 'out':
             summary[day][proj] += (t - prev[1]).total_seconds()
         prev = entry
@@ -129,8 +129,9 @@ def display_times(times, spec):
     grand_total = 0.0
     grand_target = 0.0
     for day in sorted(summary):
-        grand_target += 8.0
-        print '{0}:'.format(day)
+        if day.weekday() < 5:
+            grand_target += 8.0
+        print '{0:%Y-%m-%d}:'.format(day)
         total = 0.0
         for proj in summary[day]:
             proj_amt = round(summary[day][proj] / 3600, 1)
