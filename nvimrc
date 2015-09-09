@@ -98,3 +98,5 @@ nmap <unique> <silent> <leader>lc :lclose<CR>
 nmap <unique> <silent> <leader>ll :ll<CR>
 nmap <unique> <silent> <leader>ln :lnext<CR>
 nmap <unique> <silent> <leader>lp :lprev<CR>
+
+nmap <unique> <silent> <leader>hl :syntax sync fromstart<CR>
