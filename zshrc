@@ -38,7 +38,7 @@ if command -v nvim >/dev/null; then
     alias vim='nvim'
 fi
 
-alias bd='. bd -si'
+alias bd='. bd -s'
 
 unset GNOME_KEYRING_CONTROL
 
