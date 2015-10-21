@@ -69,7 +69,7 @@ set fillchars=vert:│
 set list listchars=tab:→\ ,trail:·,precedes:«,extends:»
 
 set wildmenu wildmode=longest:full,full
-set completeopt=menuone,longest
+set completeopt=menuone,longest,noinsert
 
 let mapleader = "\<Space>"
 
