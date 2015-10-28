@@ -55,8 +55,8 @@ fresh dvtm --bin
 fresh timecard --bin
 
 # Editor Configuration #####################################
-fresh nvimrc --file --filter="perl -pe 's[__PYTHON2__][$(pyenv which python2 || which python2 || which python)]; s[__PYTHON3__][$(pyenv which python3 || which python3)]'"
-fresh ftplugin --file=~/.nvim/ftplugin/
+fresh nvimrc --file=${XDG_CONFIG_HOME:-${HOME}/.config}/nvim/init.vim --filter="perl -pe 's[__PYTHON2__][$(pyenv which python2 || which python2 || which python)]; s[__PYTHON3__][$(pyenv which python3 || which python3)]'"
+fresh ftplugin --file=${XDG_CONFIG_HOME:-${HOME}/.config}/nvim/ftplugin/
 
 # Terminal Configuration ###################################
 fresh tmux.conf --file

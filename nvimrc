@@ -6,8 +6,8 @@ let g:python_host_prog = '__PYTHON2__'
 let g:python3_host_prog = '__PYTHON3__'
 
 " Plugins
-if empty(glob('~/.nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+if empty(globpath(&rtp, 'autoload/plug.vim'))
+  silent !curl -fLo ${XDG_CONFIG_HOME:-${HOME}/.config}/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall
 endif
 
@@ -100,3 +100,6 @@ nmap <unique> <silent> <leader>ln :lnext<CR>
 nmap <unique> <silent> <leader>lp :lprev<CR>
 
 nmap <unique> <silent> <leader>hl :syntax sync fromstart<CR>
+
+" Make sure backupdir exists
+:call mkdir(&backupdir, "p", 0700)
