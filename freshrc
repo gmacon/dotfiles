@@ -26,8 +26,7 @@ fresh zsh_prompt
 fresh zsh-users/zsh-completions src --file=completion/
 
 # ZSH Syntax Highlighting
-fresh zsh-users/zsh-syntax-highlighting zsh-syntax-highlighting.zsh --file=vendor/zsh-syntax-highlighting.zsh
-fresh zsh-users/zsh-syntax-highlighting highlighters --file=vendor/highlighters/
+fresh zsh-users/zsh-syntax-highlighting . --file=vendor/zsh-syntax-highlighting/
 
 fresh vigneshwaranr/bd bd --bin
 

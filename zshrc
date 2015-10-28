@@ -43,7 +43,7 @@ alias bd='. bd -s'
 unset GNOME_KEYRING_CONTROL
 
 source ~/.fresh/build/shell.sh
-source ~/.fresh/build/vendor/zsh-syntax-highlighting.zsh
+source ~/.fresh/build/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Local ruby install
 if [[ -d $HOME/.rbenv ]]; then
