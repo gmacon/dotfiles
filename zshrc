@@ -45,44 +45,4 @@ unset GNOME_KEYRING_CONTROL
 source ~/.fresh/build/shell.sh
 source ~/.fresh/build/vendor/zsh-syntax-highlighting.zsh
 
-# Local ruby install
-if [[ -d $HOME/.rbenv ]]; then
-    export PATH="$HOME/.rbenv/bin:$PATH"
-    eval "$(rbenv init -)"
-fi
-
-# Local perl install
-if [[ -d $HOME/perl5 ]]; then
-    eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
-fi
-
-# Local go install
-if [[ -d /usr/local/go ]]; then
-    export PATH="$PATH:/usr/local/go/bin"
-fi
-
-# Go path
-if [[ -d "${HOME}/go" ]]; then
-    export GOPATH="${HOME}/go"
-    export PATH="${PATH}:${GOPATH}/bin"
-fi
-
-# Local python install
-export VIRTUAL_ENV_DISABLE_PROMPT=1
-if [[ -d ${HOME}/.pyenv ]]; then
-    export PYENV_ROOT="${HOME}/.pyenv"
-    export PATH="${PYENV_ROOT}/bin:${PATH}"
-    eval "$(pyenv init -)";
-    if [[ -d ${PYENV_ROOT}/plugins/pyenv-virtualenv ]]; then
-        eval "$(pyenv virtualenv-init -)"
-    fi
-fi
-
 sprunge () { cat "$@" | curl -F 'sprunge=<-' http://sprunge.us }
-
-tc () {
-    timecard --enter "$@"
-    if [ -n "$DVTM_STATUS_FIFO" ]; then
-        timecard --current >$DVTM_STATUS_FIFO
-    fi
-}
