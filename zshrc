@@ -43,6 +43,6 @@ alias bd='. bd -s'
 unset GNOME_KEYRING_CONTROL
 
 source ~/.fresh/build/shell.sh
-source ~/.fresh/build/vendor/zsh-syntax-highlighting.zsh
+source ~/.fresh/build/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 sprunge () { cat "$@" | curl -F 'sprunge=<-' http://sprunge.us }
