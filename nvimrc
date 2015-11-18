@@ -73,6 +73,10 @@ set completeopt=menuone,longest,noinsert
 
 let mapleader = "\<Space>"
 
+" Jedi
+let g:jedi#show_call_signatures=2
+set noshowmode
+
 " Ctrl-P
 let g:ctrlp_user_command = 'ag --files-with-matches --nocolor --follow -g "" %s'
 nmap <unique> <silent> <leader>w :CtrlPBuffer<CR>
