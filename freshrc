@@ -29,7 +29,11 @@ fresh zsh-users/zsh-completions src --file=completion/
 # ZSH Syntax Highlighting
 fresh zsh-users/zsh-syntax-highlighting . --file=vendor/zsh-syntax-highlighting/
 
+# Better cd
 fresh vigneshwaranr/bd bd --bin
+
+# zsh-autoenv
+fresh Tarrasch/zsh-autoenv . --file=vendor/zsh-autoenv/
 
 if [[ $(uname) == "Darwin" ]]; then
   # Homebrew ###############################################
