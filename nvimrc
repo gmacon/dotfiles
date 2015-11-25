@@ -34,6 +34,9 @@ Plug 'LaTeX-Box-Team/LaTeX-Box'
 " Go
 Plug 'fatih/vim-go'
 
+" Javascript
+Plug 'pangloss/vim-javascript'
+
 " Generic
 Plug 'kien/ctrlp.vim'
 Plug 'airblade/vim-rooter'
