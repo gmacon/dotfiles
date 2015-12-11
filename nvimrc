@@ -87,6 +87,15 @@ nmap <unique> <silent> <leader>w :CtrlPBuffer<CR>
 " Toggle paste mode
 nmap <unique> <silent> <leader>p :set paste!<CR>
 
+" Toggle background
+function! TogBG()
+  let &background = ( &background == "dark"? "light" : "dark" )
+  if exists("g:colors_name")
+    exe "colorscheme " . g:colors_name
+  endif
+endfunction
+nmap <unique> <silent> <leader>bg :call TogBG()<CR>
+
 " Strip trailing whitespace (and save cursor position) when saving files
 fun! <SID>StripTrailingWhitespaces()
     let l = line(".")
