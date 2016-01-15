@@ -33,11 +33,13 @@ Plug 'LaTeX-Box-Team/LaTeX-Box'
 
 " Go
 Plug 'fatih/vim-go'
+Plug 'zchee/deoplete-go'
 
 " Javascript
 Plug 'pangloss/vim-javascript'
 
 " Generic
+Plug 'Shougo/deoplete.nvim'
 Plug 'kien/ctrlp.vim'
 Plug 'airblade/vim-rooter'
 Plug 'ervandew/supertab'
@@ -77,8 +79,14 @@ set completeopt=menuone,longest,noinsert
 let mapleader = "\<Space>"
 
 " Jedi
-let g:jedi#show_call_signatures=2
-set noshowmode
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#smart_auto_mappings = 0
+let g:jedi#show_call_signatures = 0
+
+" deoplete
+let g:deoplete#sources#go = 'vim-go'
+let g:deoplete#enable_at_startup = 1
 
 " Ctrl-P
 let g:ctrlp_user_command = 'ag --files-with-matches --nocolor --follow -g "" %s'
