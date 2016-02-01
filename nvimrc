@@ -75,6 +75,7 @@ set list listchars=tab:→\ ,trail:·,precedes:«,extends:»
 
 set wildmenu wildmode=longest:full,full
 set completeopt=menuone,longest,noinsert
+let g:SuperTabLongestHighlight = 1
 
 let mapleader = "\<Space>"
 
