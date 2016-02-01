@@ -23,3 +23,9 @@
 	co = checkout
 	ci = commit
 	topush = log @{u}..
+[fetch]
+	fsckObjects = true
+[receive]
+	fsckObjects = true
+[transfer]
+	fsckObjects = true
