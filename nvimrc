@@ -120,9 +120,9 @@ imap <C-c> <CR><Esc>O
 " Location list
 nmap <unique> <silent> <leader>lo :lopen<CR>
 nmap <unique> <silent> <leader>lc :lclose<CR>
-nmap <unique> <silent> <leader>ll :ll<CR>
-nmap <unique> <silent> <leader>ln :lnext<CR>
-nmap <unique> <silent> <leader>lp :lprev<CR>
+nmap <unique> <silent> <leader>ll :ll<CR>zv
+nmap <unique> <silent> <leader>ln :lnext<CR>zv
+nmap <unique> <silent> <leader>lp :lprev<CR>zv
 
 nmap <unique> <silent> <leader>hl :syntax sync fromstart<CR>
 
