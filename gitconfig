@@ -29,3 +29,7 @@
 	fsckObjects = true
 [transfer]
 	fsckObjects = true
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
