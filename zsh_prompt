@@ -3,20 +3,20 @@ autoload -Uz vcs_info
 +vi-git-extra-info() {
 	local PROMPT_VCS_EXTRA=''
 
-	if [ -n "$(command git status --porcelain --ignore-submodules -uno)" ]; then
+	if [ -n "$(command git status --porcelain --ignore-submodules -uno 2>/dev/null)" ]; then
 		# workdir is dirty
 		hook_com[branch]="%F{red}${hook_com[branch]}%f"
 	else
 		hook_com[branch]="%F{green}${hook_com[branch]}%f"
 	fi
 
-	if command git status --porcelain --ignore-submodules | grep '^??' &>/dev/null; then
+	if command git status --porcelain --ignore-submodules 2>/dev/null | grep '^??' &>/dev/null; then
 		# untracked files exist
 		PROMPT_VCS_EXTRA+='%F{red}*%f'
 	fi
 
 	PROMPT_VCS_EXTRA+='%F{yellow}'
-	if command git submodule | grep -v '^ ' &>/dev/null; then
+	if command git submodule 2>/dev/null | grep -v '^ ' &>/dev/null; then
 		PROMPT_VCS_EXTRA+='$'
 	fi
 	if command git rev-parse --abbrev-ref 'stash@{0}' &>/dev/null; then
