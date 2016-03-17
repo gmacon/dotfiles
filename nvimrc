@@ -17,7 +17,7 @@ Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 
 " Jinja2 Templates
-Plug 'mitsuhiko/vim-jinja'
+Plug 'alanhamlett/vim-jinja', {'commit': 'cb0ad0c43f4e753d44d0a8599f2be65dd1f24f04'}
 
 " Python
 Plug 'hynek/vim-python-pep8-indent'
