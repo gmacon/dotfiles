@@ -40,6 +40,7 @@ Plug 'pangloss/vim-javascript'
 
 " Generic
 Plug 'Shougo/deoplete.nvim'
+Plug 'Konfekt/FastFold'
 Plug 'kien/ctrlp.vim'
 Plug 'airblade/vim-rooter'
 Plug 'ervandew/supertab'
