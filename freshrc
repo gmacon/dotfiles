@@ -68,6 +68,7 @@ fresh tmux.conf --file
 # Git Configuration ########################################
 fresh-options --file=~/.gitconfig
   fresh gitconfig
+  fresh gitconfig.$(uname) --ignore-missing
   fresh gitconfig.$(hostname -s) --ignore-missing
 fresh-options
 
