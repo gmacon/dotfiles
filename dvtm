@@ -4,4 +4,5 @@ export SHELL=/usr/local/bin/zsh
 export TERMINFO_DIRS=/usr/share/terminfo:/usr/local/share/terminfo
 export DVTM_EDITOR=/usr/bin/less
 ulimit -c unlimited
+echo Starting dvtm at $(date) >> "$HOME/dvtm.log"
 exec $HOME/smug/dvtm/dvtm "$@" 2>> "$HOME/dvtm.log"
