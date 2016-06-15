@@ -6,6 +6,8 @@
 	excludesfile = ~/.gitignore
 [color]
 	ui = auto
+[diff]
+	compactionHeuristic = true
 [push]
 	default = current
 [merge]
