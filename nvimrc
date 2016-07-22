@@ -28,6 +28,9 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'rodjek/vim-puppet'
 Plug 'godlygeek/tabular'
 
+" SaltStack
+Plug 'saltstack/salt-vim'
+
 " LaTeX
 Plug 'LaTeX-Box-Team/LaTeX-Box'
 
