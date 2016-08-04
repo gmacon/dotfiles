@@ -107,7 +107,7 @@ nmap <unique> <silent> <leader>p :set paste!<CR>
 
 " Toggle background
 function! TogBG()
-  let &background = ( &background == "dark"? "light" : "dark" )
+  let &background = ( &background == "dark" ? "light" : "dark" )
   if exists("g:colors_name")
     exe "colorscheme " . g:colors_name
   endif
