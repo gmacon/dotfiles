@@ -41,10 +41,14 @@ Plug 'zchee/deoplete-go'
 " Javascript
 Plug 'pangloss/vim-javascript'
 
+" Fzf
+let g:fzf_command_prefix = 'Fzf'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
+
 " Generic
 Plug 'Shougo/deoplete.nvim'
 Plug 'Konfekt/FastFold'
-Plug 'kien/ctrlp.vim'
 Plug 'airblade/vim-rooter'
 Plug 'ervandew/supertab'
 Plug 'benekastah/neomake'
@@ -93,9 +97,10 @@ let g:jedi#show_call_signatures = 0
 let g:deoplete#sources#go = 'vim-go'
 let g:deoplete#enable_at_startup = 1
 
-" Ctrl-P
-let g:ctrlp_user_command = 'ag --files-with-matches --nocolor --follow -g "" %s'
-nmap <unique> <silent> <leader>w :CtrlPBuffer<CR>
+" Fzf
+nmap <unique> <silent> <leader>e :FzfGFiles<CR>
+nmap <unique> <silent> <leader>E :FzfFiles<CR>
+nmap <unique> <silent> <leader>w :FzfBuffers<CR>
 
 " Toggle paste mode
 nmap <unique> <silent> <leader>p :set paste!<CR>
