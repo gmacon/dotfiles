@@ -46,6 +46,9 @@ let g:fzf_command_prefix = 'Fzf'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 
+" Grako
+Plug 'apalala/grako', { 'rtp': 'etc/vim' }
+
 " Generic
 Plug 'Shougo/deoplete.nvim'
 Plug 'Konfekt/FastFold'
