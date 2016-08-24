@@ -2,3 +2,4 @@
 .noseids
 .python-version
 htmlcov
+.cache
