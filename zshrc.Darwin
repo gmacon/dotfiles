@@ -17,3 +17,5 @@ export K2PDFOPT='-ui- -x'
 
 export RBENV_ROOT=/usr/local/var/rbenv
 export PYENV_ROOT=/usr/local/var/pyenv
+
+alias lldb PYTHONPATH=/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python lldb
