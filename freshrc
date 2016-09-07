@@ -74,7 +74,7 @@ fresh-options
 
 fresh-options --file=~/.gitignore --marker='#'
   case $(uname) in
-    Darwin) fresh github/gitignore Global/OSX.gitignore;;
+    Darwin) fresh github/gitignore Global/macOS.gitignore;;
     *) fresh github/gitignore Global/$(uname).gitignore;;
   esac
   fresh github/gitignore Global/Vim.gitignore
