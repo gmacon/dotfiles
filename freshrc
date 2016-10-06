@@ -36,9 +36,6 @@ fresh vigneshwaranr/bd bd --bin
 fresh Tarrasch/zsh-autoenv . --file=vendor/zsh-autoenv/
 
 if [[ $(uname) == "Darwin" ]]; then
-  # Homebrew ###############################################
-  fresh robbyrussell/oh-my-zsh plugins/brew/_brew --file=completion/_brew
-
   # Key Remapping (https://github.com/tekezo/Karabiner-Elements)
   fresh karabiner.json --file=~/.karabiner.d/configuration/karabiner.json
 else
