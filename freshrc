@@ -38,9 +38,6 @@ fresh Tarrasch/zsh-autoenv . --file=vendor/zsh-autoenv/
 if [[ $(uname) == "Darwin" ]]; then
   # Homebrew ###############################################
   fresh robbyrussell/oh-my-zsh plugins/brew/_brew --file=completion/_brew
-
-  # Amethyst ###############################################
-  fresh amethyst --file
 else
   # X Configuration ########################################
   fresh xmodmap --file
@@ -56,7 +53,6 @@ else
 fi
 
 fresh dvtm --bin
-fresh timecard --bin
 
 # Editor Configuration #####################################
 fresh nvimrc --file=${XDG_CONFIG_HOME:-${HOME}/.config}/nvim/init.vim --filter="perl -pe 's[__PYTHON2__][$(pyenv which python2 || which python2 || which python)]; s[__PYTHON3__][$(pyenv which python3 || which python3)]'"
