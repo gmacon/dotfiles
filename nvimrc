@@ -57,7 +57,9 @@ Plug 'ervandew/supertab'
 Plug 'benekastah/neomake'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sleuth'
-Plug 'tpope/vim-sensible'
+if !has('nvim')
+  Plug 'tpope/vim-sensible'
+endif
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'altercation/vim-colors-solarized'
