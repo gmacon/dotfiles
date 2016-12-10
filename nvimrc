@@ -139,6 +139,9 @@ nmap <unique> <silent> <leader>lp :lprev<CR>zv
 
 nmap <unique> <silent> <leader>hl :syntax sync fromstart<CR>
 
+" End search highlight
+nmap <unique> <silent> <leader>l :nohlsearch<CR>
+
 " Make sure backupdir exists
 set backupdir=$HOME/.local/share/nvim/backup
 :call mkdir(&backupdir, "p", 0700)
