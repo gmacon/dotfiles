@@ -53,6 +53,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'apalala/grako', { 'rtp': 'etc/vim' }
 
 " Generic
+Plug 'editorconfig/editorconfig-vim'
 Plug 'Shougo/deoplete.nvim'
 Plug 'Konfekt/FastFold'
 Plug 'airblade/vim-rooter'
