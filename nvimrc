@@ -41,6 +41,9 @@ Plug 'zchee/deoplete-go'
 " Javascript
 Plug 'pangloss/vim-javascript'
 
+" Java
+Plug 'artur-shaik/vim-javacomplete2'
+
 " Fzf
 let g:fzf_command_prefix = 'Fzf'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
