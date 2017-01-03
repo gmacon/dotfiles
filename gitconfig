@@ -7,7 +7,7 @@
 [color]
 	ui = auto
 [diff]
-	algorithm=histogram
+	algorithm = histogram
 	compactionHeuristic = true
 [push]
 	default = current
