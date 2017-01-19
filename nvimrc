@@ -28,6 +28,9 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'rodjek/vim-puppet'
 Plug 'godlygeek/tabular'
 
+" Rust
+Plug 'rust-lang/rust.vim'
+
 " SaltStack
 Plug 'saltstack/salt-vim'
 
