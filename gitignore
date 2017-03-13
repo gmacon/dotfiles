@@ -4,3 +4,7 @@
 htmlcov
 .cache
 .autoenv.zsh
+
+# JetBrains
+.idea
+*.iml
