@@ -74,7 +74,7 @@ function env_info {
 precmd() {
 	PROMPT_CHAR='%%'
 	vcs_info
-	env_info
+	#env_info
 }
 
 if [[ "$SSH_CONNECTION" != "" ]]; then
