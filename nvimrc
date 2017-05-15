@@ -58,7 +58,7 @@ Plug 'apalala/grako', { 'rtp': 'etc/vim' }
 
 " Generic
 Plug 'editorconfig/editorconfig-vim'
-Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Konfekt/FastFold'
 Plug 'airblade/vim-rooter'
 Plug 'ervandew/supertab'
