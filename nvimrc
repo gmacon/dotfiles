@@ -47,7 +47,8 @@ Plug 'zchee/deoplete-go'
 Plug 'pangloss/vim-javascript'
 
 " Java
-Plug 'artur-shaik/vim-javacomplete2'
+Plug 'ensime/ensime-vim', { 'do': ':UpdateRemotePlugins' }
+Plug 'derekwyatt/vim-scala'
 
 " Fzf
 let g:fzf_command_prefix = 'Fzf'
