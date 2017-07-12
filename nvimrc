@@ -77,6 +77,7 @@ call plug#end()
 
 " General Configuration
 set hlsearch
+set ignorecase smartcase
 
 set background=dark
 colorscheme solarized
