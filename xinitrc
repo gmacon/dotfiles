@@ -1,5 +1,4 @@
 #!/bin/sh
-[ -f ~/.xmodmap ] && xmodmap ~/.xmodmap
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
 [ -f ~/.fehbg ] && sh ~/.fehbg
 xinput set-prop "DLL075B:01 06CB:76AF Touchpad" "libinput Tapping Enabled" 1
