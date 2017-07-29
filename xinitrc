@@ -7,4 +7,7 @@ eval $(ssh-agent)
 export _JAVA_AWT_WM_NONREPARENTING=1
 #urxvtd -q -f -o
 xscreensaver &
+firefox &
+thunderbird &
+hexchat &
 exec dwm
