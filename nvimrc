@@ -58,6 +58,9 @@ Plug 'junegunn/fzf.vim'
 " Grako
 Plug 'apalala/grako', { 'rtp': 'etc/vim' }
 
+" Bro
+Plug 'mephux/bro.vim'
+
 " Generic
 Plug 'editorconfig/editorconfig-vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
