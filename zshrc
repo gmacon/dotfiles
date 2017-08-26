@@ -48,3 +48,5 @@ source ~/.fresh/build/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 sprunge () { cat "$@" | curl -F 'sprunge=<-' http://sprunge.us }
 
 pyless () { pygmentize -O style=solarizeddark,bg=dark "$@" | less -R }
+
+hless () { http --pretty=all --print=hb "$@" | less -R }
