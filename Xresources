@@ -73,7 +73,9 @@ URxvt*color15:                 S_base3
 URxvt.perl-ext-common: default,matcher,font-size
 
 ! urxvt font
-URxvt.font: xft:Source Code Pro:pixelsize=14:antialias=true,xft:DejaVu Sans Mono:pixelsize=14:antialias=true
+URxvt.font:	xft:Source Code Pro:pixelsize=14:antialias=true, \
+		xft:DejaVu Sans Mono:pixelsize=14:antialias=true, \
+		xft:Symbola:pixelsize=14
 URxvt.letterSpace: -1
 
 URxvt.iso14755: False
