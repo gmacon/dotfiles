@@ -1,6 +1,6 @@
 #!/bin/sh
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
-[ -f ~/.fehbg ] && sh ~/.fehbg
+[ -f ~/.xrandr ] && ~/.xrandr
 xinput set-prop "DLL075B:01 06CB:76AF Touchpad" "libinput Tapping Enabled" 1
 eval $(ssh-agent)
 $HOME/src/rust-dwm-status/target/release/rust-dwm-status &
