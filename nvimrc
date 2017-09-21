@@ -120,6 +120,25 @@ nmap <unique> <silent> <leader>e :FzfGFiles<CR>
 nmap <unique> <silent> <leader>E :FzfFiles<CR>
 nmap <unique> <silent> <leader>w :FzfBuffers<CR>
 
+" Neomake
+function! s:CheckCommand(cmd)
+    :call system([a:cmd, "--version"])
+    return !v:shell_error
+endfunction
+
+let g:neomake_python_enabled_makers = ['python', 'flake8', 'pylama', 'pylint']
+:call filter(g:neomake_python_enabled_makers, 's:CheckCommand(v:val)')
+
+let g:neomake_css_csslint_maker = {
+    \ 'args': ['--quiet', '--format=compact'],
+    \ 'errorformat': '%f: line %l\, col %c\, %t%*[a-zA-Z] - %m',
+    \ }
+let g:neomake_css_enabled_makers = ['csslint']
+:call filter(g:neomake_css_enabled_makers, 'executable(v:val)')
+
+let g:neomake_javascript_enabled_makers = ['standard', 'jshint', 'eslint', 'jscs', 'flow']
+:call filter(g:neomake_javascript_enabled_makers, 'executable(v:val)')
+
 " Toggle paste mode
 nmap <unique> <silent> <leader>p :set paste!<CR>
 
