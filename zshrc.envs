@@ -34,5 +34,3 @@ fi
 if [ -f $HOME/.cargo/env ]; then
     source $HOME/.cargo/env
 fi
-
-source ~/.fresh/build/vendor/zsh-autoenv/autoenv.zsh
