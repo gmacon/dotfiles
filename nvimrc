@@ -181,3 +181,9 @@ nmap <unique> <silent> <leader>fl :let @+=expand("%").":".line(".")<CR>
 " Make sure backupdir exists
 set backupdir=$HOME/.local/share/nvim/backup
 :call mkdir(&backupdir, "p", 0700)
+
+" Insert pdb trace
+function InsertPdbTracePoint()
+  :call append(line('.', 'import pdb; pdb.set_trace()  # TODO: Remove this'))
+endfunction
+nmap <unique> <slient> <leader>b :call InsertPdbTracePoint<CR>
