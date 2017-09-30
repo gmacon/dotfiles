@@ -1,2 +1,0 @@
-#!/bin/sh
-cat ~/charge_numbers.txt | cut -d: -f1 | dmenu "$@" | timecard --enter

@@ -44,13 +44,6 @@ else
   fresh xmodmap --file
   fresh Xresources --file
   fresh xinitrc --file
-
-  # DWM utilities ##########################################
-  fresh dmenu_time --bin
-  fresh lock.sh --bin
-
-  # urxvt extras
-  fresh majutsushi/urxvt-font-size font-size --file=~/.urxvt/ext/font-size
 fi
 
 fresh dvtm --bin
