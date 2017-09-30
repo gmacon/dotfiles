@@ -21,11 +21,11 @@ if [[ -d "${HOME}/go" ]]; then
 fi
 
 # Local python install
-export VIRTUAL_ENV_DISABLE_PROMPT=1
 if [[ -d ${PYENV_ROOT:=${HOME}/.pyenv} ]]; then
     export PATH="${PYENV_ROOT}/bin:${PATH}"
     eval "$(pyenv init -)";
     if [[ -d ${PYENV_ROOT}/plugins/pyenv-virtualenv ]]; then
+        export VIRTUAL_ENV_DISABLE_PROMPT=1
         eval "$(pyenv virtualenv-init -)"
     fi
 fi
