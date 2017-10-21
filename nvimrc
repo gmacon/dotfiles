@@ -61,6 +61,9 @@ Plug 'apalala/grako', { 'rtp': 'etc/vim' }
 " Bro
 Plug 'mephux/bro.vim'
 
+" Binary
+Plug 'fidian/hexmode'
+
 " Generic
 Plug 'editorconfig/editorconfig-vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -110,6 +113,9 @@ let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#smart_auto_mappings = 0
 let g:jedi#show_call_signatures = 0
+
+" Binary
+nmap <unique> <silent> <leader>hx :Hexmode<CR>
 
 " deoplete
 let g:deoplete#sources#go = 'vim-go'
