@@ -51,4 +51,11 @@ pyless () { pygmentize -O style=solarizeddark,bg=dark "$@" | less -R }
 
 hless () { http --pretty=all --print=hb "$@" | less -R }
 
+gitignore-std () {
+    echo '#' $1 >>.gitignore
+    cat ~/.fresh/source/github/gitignore/$1 >>.gitignore
+    git add .gitignore
+    git commit -m "Add standard ignore $1"
+}
+
 source ~/.fresh/build/vendor/zsh-autoenv/autoenv.zsh
