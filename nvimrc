@@ -127,13 +127,7 @@ nmap <unique> <silent> <leader>E :FzfFiles<CR>
 nmap <unique> <silent> <leader>w :FzfBuffers<CR>
 
 " Neomake
-function! s:CheckCommand(cmd)
-    :call system([a:cmd, "--version"])
-    return !v:shell_error
-endfunction
-
-let g:neomake_python_enabled_makers = ['python', 'flake8', 'pylama', 'pylint']
-:call filter(g:neomake_python_enabled_makers, 's:CheckCommand(v:val)')
+let g:neomake_python_enabled_makers = ['python', 'flake8']
 
 let g:neomake_css_csslint_maker = {
     \ 'args': ['--quiet', '--format=compact'],
