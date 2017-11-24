@@ -170,6 +170,13 @@ nmap <unique> <silent> <leader>ll :ll<CR>zv
 nmap <unique> <silent> <leader>ln :lnext<CR>zv
 nmap <unique> <silent> <leader>lp :lprev<CR>zv
 
+" Quickfix list
+nmap <unique> <silent> <leader>co :copen<CR>
+nmap <unique> <silent> <leader>cc :cclose<CR>
+nmap <unique> <silent> <leader>cl :cc<CR>zv
+nmap <unique> <silent> <leader>cn :cnext<CR>zv
+nmap <unique> <silent> <leader>cp :cprev<CR>zv
+
 nmap <unique> <silent> <leader>hl :syntax sync fromstart<CR>
 
 " End search highlight
