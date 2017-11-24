@@ -45,7 +45,6 @@ else
   fresh Xresources --file
   fresh xinitrc --file
   fresh auto-startx.sh --file=~/.zlogin
-  fresh kodx/lightsOn lightsOn.sh --bin
 fi
 
 fresh dvtm --bin
