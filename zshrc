@@ -1,3 +1,5 @@
+zmodload zsh/zprof
+
 fpath=(~/.fresh/build/completion $fpath)
 # The following lines were added by compinstall
 
