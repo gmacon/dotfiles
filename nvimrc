@@ -52,7 +52,7 @@ Plug 'derekwyatt/vim-scala'
 
 " Fzf
 let g:fzf_command_prefix = 'Fzf'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
 " Grako
