@@ -24,6 +24,7 @@ fresh zshrc.envs --file=~/.zlogin
 # Shell Prompt #############################################
 fresh zsh_prompt
 
+# Shell extras #############################################
 # Extra completion
 fresh zsh-users/zsh-completions src --file=completion/
 
@@ -36,11 +37,12 @@ fresh vigneshwaranr/bd bd --bin
 # zsh-autoenv
 fresh Tarrasch/zsh-autoenv . --file=vendor/zsh-autoenv/
 
+# Graphics! ################################################
 if [[ $(uname) == "Darwin" ]]; then
   # Key Remapping (https://github.com/tekezo/Karabiner-Elements)
   fresh karabiner.json --file=~/.karabiner.d/configuration/karabiner.json
 else
-  # X Configuration ########################################
+  # X Configuration
   fresh xmodmap --file
   fresh Xresources --file
   fresh xinitrc --file
@@ -74,7 +76,7 @@ fresh-options --file=~/.gitignore --marker='#'
   fresh gitignore
 fresh-options
 
-# SSH Configuration
+# SSH Configuration ########################################
 # Since SSH takes the first answer, more specific things need to go to the top
 fresh-options --file=~/.ssh/config --marker='#'
   fresh ssh_config.$(hostname -s) --ignore-missing
@@ -82,9 +84,9 @@ fresh-options --file=~/.ssh/config --marker='#'
   fresh ssh_config
 fresh-options
 
-# todo.txt
+# todo.txt #################################################
 fresh ginatrapani/todo.txt-cli todo.sh --bin=~/bin/todo
 fresh todo-config --file=~/.todo/config
 
-# Vagrant default configuration
+# Vagrant default configuration ############################
 fresh Vagrantfile --file=~/.vagrant.d/Vagrantfile
