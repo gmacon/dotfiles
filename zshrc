@@ -60,4 +60,6 @@ gitignore-std () {
     git commit -m "Add standard ignore $1"
 }
 
+export BOOKMARKS_FILE=${XDG_CONFIG_HOME:-${HOME}/.config}/fzf-marks/bookmarks
+
 source ~/.fresh/build/vendor/zsh-autoenv/autoenv.zsh

@@ -37,6 +37,9 @@ fresh vigneshwaranr/bd bd --bin
 # zsh-autoenv
 fresh Tarrasch/zsh-autoenv . --file=vendor/zsh-autoenv/
 
+# fzf-marks
+fresh urbainvaes/fzf-marks fzf-marks.plugin.zsh
+
 # Graphics! ################################################
 if [[ $(uname) == "Darwin" ]]; then
   # Key Remapping (https://github.com/tekezo/Karabiner-Elements)
