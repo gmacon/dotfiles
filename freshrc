@@ -76,6 +76,7 @@ fresh-options --file=~/.gitignore --marker='#'
   esac
   fresh github/gitignore Global/Vim.gitignore
   fresh github/gitignore Global/JetBrains.gitignore
+  fresh github/gitignore Global/Ensime.gitignore
   fresh gitignore
 fresh-options
 
