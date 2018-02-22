@@ -10,7 +10,7 @@
 	algorithm = histogram
 	compactionHeuristic = true
 [push]
-	default = current
+	default = simple
 [merge]
 	conflictstyle = diff3
 	tool = vimdiff
