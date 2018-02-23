@@ -120,6 +120,8 @@ nmap <unique> <silent> <leader>hx :Hexmode<CR>
 " deoplete
 let g:deoplete#sources#go = 'vim-go'
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#omni_patterns = {}
+let g:deoplete#omni_patterns.scala = '[^. *\t]\.\w*'
 
 " Fzf
 nmap <unique> <silent> <leader>e :FzfGFiles<CR>
