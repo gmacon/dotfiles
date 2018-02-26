@@ -1,3 +1,4 @@
+setlocal foldmethod=syntax
 if !exists('b:loaded_gmacon_scala')
     let b:loaded_gmacon_scala = 1
     autocmd BufWritePost <buffer> silent :EnTypeCheck
