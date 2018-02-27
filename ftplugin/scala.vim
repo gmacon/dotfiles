@@ -8,4 +8,5 @@ if !exists('b:loaded_gmacon_scala')
     nnoremap <unique> <buffer> <leader>I :EnOrganizeImports<CR>
     nnoremap <unique> <buffer> <leader>t :EnType<CR>
     xnoremap <unique> <buffer> <leader>t :EnType selection<CR>
+    nnoremap <unique> <buffer> <leader>r :EnRename<CR>
 endif
