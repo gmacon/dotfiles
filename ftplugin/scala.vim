@@ -1,7 +1,6 @@
 setlocal foldmethod=syntax
 if !exists('b:loaded_gmacon_scala')
     let b:loaded_gmacon_scala = 1
-    autocmd BufWritePost <buffer> silent :EnTypeCheck
     nnoremap <unique> <buffer> <leader>d :EnDeclaration<CR>
     nnoremap <unique> <buffer> <leader>h :EnDocBrowse<CR>
     nnoremap <unique> <buffer> <leader>i :EnSuggestImport<CR>
