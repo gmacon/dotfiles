@@ -69,6 +69,8 @@ fresh-options --file=~/.gitconfig
   fresh gitconfig.$(hostname -s) --ignore-missing
 fresh-options
 
+fresh skipList --file=~/.config/git/skipList --filter='cut -f1 | sort'
+
 fresh-options --file=~/.gitignore --marker='#'
   case $(uname) in
     Darwin) fresh github/gitignore Global/macOS.gitignore;;

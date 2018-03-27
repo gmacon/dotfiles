@@ -36,6 +36,8 @@
 	fsckObjects = true
 [transfer]
 	fsckObjects = true
+[fsck]
+	skipList = ~/.config/git/skipList
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean %f
