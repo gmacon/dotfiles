@@ -13,4 +13,6 @@ c.url.start_pages = ['about:blank']
 
 c.tabs.background = True
 
-config.bind(',f', 'spawn --userscript /usr/share/qutebrowser/userscripts/password_fill')
+config.bind(
+    ',f',
+    'spawn --userscript /usr/share/qutebrowser/userscripts/password_fill')
