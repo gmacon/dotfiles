@@ -38,6 +38,7 @@ fresh vigneshwaranr/bd bd --bin
 fresh Tarrasch/zsh-autoenv . --file=vendor/zsh-autoenv/
 
 # fzf-marks
+mkdir -p ~/.config/fzf-marks
 fresh urbainvaes/fzf-marks fzf-marks.plugin.zsh
 
 # Graphics! ################################################
