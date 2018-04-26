@@ -67,6 +67,8 @@ Plug 's3rvac/vim-syntax-yara'
 " Binary
 Plug 'fidian/hexmode'
 
+Plug 'gu-fan/riv.vim'
+
 " Generic
 Plug 'editorconfig/editorconfig-vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
