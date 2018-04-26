@@ -23,7 +23,7 @@ Plug 'alanhamlett/vim-jinja', {'commit': 'cb0ad0c43f4e753d44d0a8599f2be65dd1f24f
 " Python
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'tmhedberg/SimpylFold'
-Plug 'zchee/deoplete-jedi'
+Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
 Plug 'davidhalter/jedi-vim'
 
 " Puppet
