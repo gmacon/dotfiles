@@ -113,6 +113,9 @@ set completeopt=menuone,noinsert
 
 let mapleader = "\<Space>"
 
+" Rust
+let g:rust_fold = 2
+
 " Jedi
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
