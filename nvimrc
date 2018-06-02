@@ -32,6 +32,7 @@ Plug 'godlygeek/tabular'
 
 " Rust
 Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer', { 'do': ':UpdateRemotePlugins' }
 
 " SaltStack
 Plug 'saltstack/salt-vim'
@@ -115,6 +116,7 @@ let mapleader = "\<Space>"
 
 " Rust
 let g:rust_fold = 2
+let g:racer_cmd = "racer"
 
 " Jedi
 let g:jedi#completions_enabled = 0
