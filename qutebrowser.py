@@ -6,6 +6,7 @@ c.url.searchengines = {
     'aw': 'https://wiki.archlinux.org/index.php?search={}',
     'aur': 'https://aur.archlinux.org/packages/?O=0&K={}',
     'pypi': 'https://pypi.org/search/?q={}',
+    'crate': 'https://crates.io/search?q={}',
 }
 
 c.url.default_page = 'about:blank'
