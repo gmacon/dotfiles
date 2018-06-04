@@ -118,6 +118,7 @@ let mapleader = "\<Space>"
 " Rust
 let g:rust_fold = 2
 let g:racer_cmd = "racer"
+let g:rustfmt_autosave = 1
 
 " Jedi
 let g:jedi#completions_enabled = 0
