@@ -31,10 +31,6 @@ Plug 'ambv/black'
 Plug 'rodjek/vim-puppet'
 Plug 'godlygeek/tabular'
 
-" Rust
-Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer', { 'do': ':UpdateRemotePlugins' }
-
 " SaltStack
 Plug 'saltstack/salt-vim'
 
@@ -70,6 +66,12 @@ Plug 's3rvac/vim-syntax-yara'
 Plug 'fidian/hexmode'
 
 Plug 'gu-fan/riv.vim'
+
+" Language Server Protocol
+Plug 'autozimu/LanguageClient-neovim', {
+      \ 'branch': 'next',
+      \ 'do': 'make release',
+      \ }
 
 " Generic
 Plug 'editorconfig/editorconfig-vim'
@@ -117,10 +119,13 @@ set tabstop=8 softtabstop=4 shiftwidth=4 expandtab
 
 let mapleader = "\<Space>"
 
-" Rust
-let g:rust_fold = 2
-let g:racer_cmd = "racer"
-let g:rustfmt_autosave = 1
+" Language Client
+let g:LanguageClient_serverCommands = {
+      \ 'rust': ['rustup', 'run', 'stable', 'rls'],
+      \ }
+nmap <unique> <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nmap <unique> <silent> <leader>r :call LanguageClient_textDocument_rename()<CR>
+nmap <unique> <silent> gu :call LanguageClient_textDocument_references()<CR>
 
 " Jedi
 let g:jedi#completions_enabled = 0
