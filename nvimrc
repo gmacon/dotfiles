@@ -92,7 +92,7 @@ call plug#end()
 set hlsearch
 set ignorecase smartcase
 
-set background=dark
+set background=light
 colorscheme solarized
 
 set hidden
