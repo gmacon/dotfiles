@@ -25,7 +25,7 @@ Plug 'hynek/vim-python-pep8-indent'
 Plug 'tmhedberg/SimpylFold'
 Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
 Plug 'davidhalter/jedi-vim'
-Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
+Plug 'ambv/black'
 
 " Puppet
 Plug 'rodjek/vim-puppet'
