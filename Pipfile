@@ -9,6 +9,8 @@ python-language-server = "*"
 "flake8" = "*"
 pyls-black = "*"
 black = "*"
+sexpdata = "*"
+websocket-client = "*"
 
 [dev-packages]
 
