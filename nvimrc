@@ -123,6 +123,12 @@ nmap <unique> <silent> <leader>r :call LanguageClient_textDocument_rename()<CR>
 nmap <unique> <silent> gu :call LanguageClient_textDocument_references()<CR>
 nmap <unique> <silent> <leader>h :call LanguageClient_textDocument_hover()<CR>
 
+augroup LanguageClient_config
+  autocmd!
+  autocmd User LanguageClientStarted setlocal signcolumn=yes
+  autocmd User LanguageClientStopped setlocal signcolumn=auto
+augroup END
+
 " Yara
 autocmd BufNewFile,BufRead *.yar,*.yara setfiletype yara
 
