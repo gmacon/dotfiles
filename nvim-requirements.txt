@@ -3,5 +3,5 @@ sexpdata
 websocket-client
 flake8
 flake8-import-order
-yapf
 mypy; python_version >= "3.4"
+black; python_version >= "3.6"
