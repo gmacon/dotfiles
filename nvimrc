@@ -19,13 +19,6 @@ let g:pandoc#formatting#equalprg = ""
 " Jinja2 Templates
 Plug 'alanhamlett/vim-jinja', {'commit': 'cb0ad0c43f4e753d44d0a8599f2be65dd1f24f04'}
 
-" Python
-Plug 'hynek/vim-python-pep8-indent'
-Plug 'tmhedberg/SimpylFold'
-Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
-Plug 'davidhalter/jedi-vim'
-Plug 'ambv/black'
-
 " Puppet
 Plug 'rodjek/vim-puppet'
 Plug 'godlygeek/tabular'
@@ -119,19 +112,16 @@ set tabstop=8 softtabstop=4 shiftwidth=4 expandtab
 let mapleader = "\<Space>"
 
 " Language Client
+let g:LanguageClient_settingsPath = globpath(&rtp, "lssettings.json")
+let g:LanguageClient_loadSettings = 1
 let g:LanguageClient_serverCommands = {
       \ 'rust': ['rustup', 'run', 'stable', 'rls'],
+      \ 'python': [g:python3_host_prog, '-m', 'pyls'],
       \ }
 nmap <unique> <silent> gd :call LanguageClient_textDocument_definition()<CR>
 nmap <unique> <silent> <leader>r :call LanguageClient_textDocument_rename()<CR>
 nmap <unique> <silent> gu :call LanguageClient_textDocument_references()<CR>
 nmap <unique> <silent> <leader>h :call LanguageClient_textDocument_hover()<CR>
-
-" Jedi
-let g:jedi#completions_enabled = 0
-let g:jedi#auto_vim_configuration = 0
-let g:jedi#smart_auto_mappings = 0
-let g:jedi#show_call_signatures = 0
 
 " Yara
 autocmd BufNewFile,BufRead *.yar,*.yara setfiletype yara
@@ -151,8 +141,6 @@ nmap <unique> <silent> <leader>E :FzfFiles<CR>
 nmap <unique> <silent> <leader>w :FzfBuffers<CR>
 
 " Neomake
-let g:neomake_python_enabled_makers = ['python', 'flake8']
-
 let g:neomake_css_csslint_maker = {
     \ 'args': ['--quiet', '--format=compact'],
     \ 'errorformat': '%f: line %l\, col %c\, %t%*[a-zA-Z] - %m',
