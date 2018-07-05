@@ -126,6 +126,7 @@ let g:LanguageClient_serverCommands = {
 nmap <unique> <silent> gd :call LanguageClient_textDocument_definition()<CR>
 nmap <unique> <silent> <leader>r :call LanguageClient_textDocument_rename()<CR>
 nmap <unique> <silent> gu :call LanguageClient_textDocument_references()<CR>
+nmap <unique> <silent> <leader>h :call LanguageClient_textDocument_hover()<CR>
 
 " Jedi
 let g:jedi#completions_enabled = 0
