@@ -1,7 +1,0 @@
-neovim
-sexpdata
-websocket-client
-flake8
-flake8-import-order
-mypy; python_version >= "3.4"
-black; python_version >= "3.6"

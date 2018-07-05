@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+neovim = "*"
+python-language-server = "*"
+"flake8" = "*"
+pyls-black = "*"
+black = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true
