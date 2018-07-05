@@ -1,1 +1,1 @@
-autocmd BufWritePre <buffer> call LanguageClient_textDocument_formatting()
+autocmd BufWritePre <buffer> normal mp | %!rustup run stable rustfmt | normal `p
