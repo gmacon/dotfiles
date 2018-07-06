@@ -64,6 +64,7 @@ Plug 'autozimu/LanguageClient-neovim', {
       \ 'branch': 'next',
       \ 'do': 'make release',
       \ }
+Plug 'ambv/black'
 
 " Generic
 Plug 'editorconfig/editorconfig-vim'
