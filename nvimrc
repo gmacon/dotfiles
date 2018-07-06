@@ -112,7 +112,7 @@ set tabstop=8 softtabstop=4 shiftwidth=4 expandtab
 let mapleader = "\<Space>"
 
 " Language Client
-let g:LanguageClient_settingsPath = globpath(&rtp, "lssettings.json")
+let g:LanguageClient_settingsPath = 'language_settings.json'
 let g:LanguageClient_loadSettings = 1
 let g:LanguageClient_serverCommands = {
       \ 'rust': ['rustup', 'run', 'stable', 'rls'],

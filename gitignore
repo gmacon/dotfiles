@@ -4,3 +4,4 @@
 htmlcov
 .cache
 .autoenv.zsh
+language_settings.json
