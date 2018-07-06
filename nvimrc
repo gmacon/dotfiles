@@ -80,6 +80,9 @@ endif
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'altercation/vim-colors-solarized'
+Plug 'LucHermitte/lh-vim-lib'
+Plug 'LucHermitte/local_vimrc'
+
 call plug#end()
 
 " General Configuration

@@ -5,3 +5,4 @@ htmlcov
 .cache
 .autoenv.zsh
 language_settings.json
+_vimrc_local.vim
