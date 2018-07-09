@@ -113,6 +113,8 @@ set completeopt=menuone,noinsert
 
 set tabstop=8 softtabstop=4 shiftwidth=4 expandtab
 
+set foldmethod=indent
+
 let mapleader = "\<Space>"
 
 " Language Client
