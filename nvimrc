@@ -68,6 +68,8 @@ Plug 'ambv/black'
 " Generic
 Plug 'editorconfig/editorconfig-vim'
 Plug 'Konfekt/FastFold'
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2'
 Plug 'airblade/vim-rooter'
 Plug 'ervandew/supertab'
 Plug 'benekastah/neomake'
@@ -130,6 +132,7 @@ nmap <unique> <silent> <leader>h :call LanguageClient_textDocument_hover()<CR>
 augroup LanguageClient_config
   autocmd!
   autocmd User LanguageClientStarted setlocal signcolumn=yes
+  autocmd User LanguageClientStarted call ncm2#enable_for_buffer()
   autocmd User LanguageClientStopped setlocal signcolumn=auto
 augroup END
 
