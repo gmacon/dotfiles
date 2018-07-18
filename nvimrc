@@ -31,7 +31,6 @@ Plug 'LaTeX-Box-Team/LaTeX-Box'
 
 " Go
 Plug 'fatih/vim-go'
-Plug 'zchee/deoplete-go'
 
 " Javascript
 Plug 'pangloss/vim-javascript'
@@ -68,7 +67,6 @@ Plug 'ambv/black'
 
 " Generic
 Plug 'editorconfig/editorconfig-vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Konfekt/FastFold'
 Plug 'airblade/vim-rooter'
 Plug 'ervandew/supertab'
@@ -140,12 +138,6 @@ autocmd BufNewFile,BufRead *.yar,*.yara setfiletype yara
 
 " Binary
 nmap <unique> <silent> <leader>hx :Hexmode<CR>
-
-" deoplete
-let g:deoplete#sources#go = 'vim-go'
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#omni_patterns = {}
-let g:deoplete#omni_patterns.scala = '[^. *\t]\.\w*'
 
 " Fzf
 nmap <unique> <silent> <leader>e :FzfGFiles<CR>
