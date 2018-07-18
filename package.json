@@ -1,0 +1,12 @@
+{
+  "name": "dotfiles",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/gmacon/dotfiles.git",
+  "author": "George Macon <george.macon@gmail.com>",
+  "license": "",
+  "private": true,
+  "dependencies": {
+    "javascript-typescript-langserver": "^2.10.0"
+  }
+}

@@ -3,6 +3,7 @@
 " paths to the active interpreters when fresh is run.  This
 " makes it work even when different pyenvs are set up.
 let g:python3_host_prog = '__PYTHON3__'
+let g:javascript_bin_dir = '__JS_BIN__'
 
 " Plugins
 if empty(globpath(&rtp, 'autoload/plug.vim'))
@@ -123,6 +124,7 @@ let g:LanguageClient_loadSettings = 1
 let g:LanguageClient_serverCommands = {
       \ 'rust': ['rustup', 'run', 'stable', 'rls'],
       \ 'python': [g:python3_host_prog, '-m', 'pyls'],
+      \ 'javascript': [g:javascript_bin_dir . 'javascript-typescript-stdio'],
       \ }
 nmap <unique> <silent> gd :call LanguageClient_textDocument_definition()<CR>
 nmap <unique> <silent> <leader>r :call LanguageClient_textDocument_rename()<CR>

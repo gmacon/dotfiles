@@ -56,10 +56,11 @@ fi
 fresh dvtm --bin
 
 # Editor Configuration #####################################
-fresh nvimrc --file=${XDG_CONFIG_HOME:-${HOME}/.config}/nvim/init.vim --filter="perl -pe 's[__PYTHON3__][$(cd $HOME/.dotfiles; pipenv --py)]'"
+fresh nvimrc --file=${XDG_CONFIG_HOME:-${HOME}/.config}/nvim/init.vim --filter="perl -pe 's[__PYTHON3__][$(cd $HOME/.dotfiles; pipenv --py)]; s[__JS_BIN__][$(echo $HOME/.dotfiles/node_modules/.bin)]'"
 fresh ftplugin --file=${XDG_CONFIG_HOME:-${HOME}/.config}/nvim/ftplugin/
 fresh ideavimrc --file
 ( cd $HOME/.dotfiles && pipenv install )
+( cd $HOME/.dotfiles && yarn )
 
 # Terminal Configuration ###################################
 fresh tmux.conf --file

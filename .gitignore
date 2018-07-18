@@ -1,2 +1,2 @@
-ssh_config.local
-zshrc.local
+*.local
+node_modules
