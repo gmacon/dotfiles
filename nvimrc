@@ -35,6 +35,7 @@ Plug 'fatih/vim-go'
 
 " Javascript
 Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 
 " Java
 Plug 'ensime/ensime-vim', { 'do': ':UpdateRemotePlugins' }
@@ -124,7 +125,8 @@ let g:LanguageClient_loadSettings = 1
 let g:LanguageClient_serverCommands = {
       \ 'rust': ['rustup', 'run', 'stable', 'rls'],
       \ 'python': [g:python3_host_prog, '-m', 'pyls'],
-      \ 'javascript': [g:javascript_bin_dir . 'javascript-typescript-stdio'],
+      \ 'javascript': [g:javascript_bin_dir . '/javascript-typescript-stdio'],
+      \ 'javascript.jsx': [g:javascript_bin_dir . '/javascript-typescript-stdio'],
       \ }
 nmap <unique> <silent> gd :call LanguageClient_textDocument_definition()<CR>
 nmap <unique> <silent> <leader>r :call LanguageClient_textDocument_rename()<CR>
