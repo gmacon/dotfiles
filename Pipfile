@@ -11,6 +11,7 @@ pyls-black = "*"
 black = "*"
 sexpdata = "*"
 websocket-client = "*"
+isort = "*"
 
 [dev-packages]
 
