@@ -75,6 +75,7 @@ Plug 'ncm2/ncm2'
 Plug 'airblade/vim-rooter'
 Plug 'ervandew/supertab'
 Plug 'benekastah/neomake'
+Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sleuth'
 if !has('nvim')
