@@ -7,6 +7,7 @@
   "license": "",
   "private": true,
   "dependencies": {
-    "javascript-typescript-langserver": "^2.10.0"
+    "javascript-typescript-langserver": "^2.10.0",
+    "standard": "^11.0.1"
   }
 }
