@@ -17,7 +17,7 @@ $HOME/src/rust-dwm-status/target/release/rust-dwm-status &
 
 xscreensaver &
 
-qutebrowser &
+firefox &
 thunderbird &
 hexchat &
 
