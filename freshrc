@@ -34,9 +34,6 @@ fresh zsh-users/zsh-syntax-highlighting . --file=vendor/zsh-syntax-highlighting/
 # Better cd
 fresh vigneshwaranr/bd bd --bin
 
-# zsh-autoenv
-fresh Tarrasch/zsh-autoenv . --file=vendor/zsh-autoenv/
-
 # fzf-marks
 mkdir -p ~/.config/fzf-marks
 fresh urbainvaes/fzf-marks fzf-marks.plugin.zsh

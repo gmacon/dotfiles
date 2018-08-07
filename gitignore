@@ -3,6 +3,6 @@
 .python-version
 htmlcov
 .cache
-.autoenv.zsh
+.envrc
 language_settings.json
 _vimrc_local.vim

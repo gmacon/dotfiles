@@ -62,4 +62,4 @@ gitignore-std () {
 
 export FZF_MARKS_FILE=${XDG_CONFIG_HOME:-${HOME}/.config}/fzf-marks/bookmarks
 
-source ~/.fresh/build/vendor/zsh-autoenv/autoenv.zsh
+eval "$(direnv hook zsh)"
