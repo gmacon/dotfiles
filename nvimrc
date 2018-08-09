@@ -93,6 +93,7 @@ call plug#end()
 set hlsearch
 set ignorecase smartcase
 
+set termguicolors
 set background=light
 colorscheme solarized
 
