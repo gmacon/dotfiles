@@ -74,7 +74,6 @@ Plug 'roxma/nvim-yarp'
 Plug 'ncm2/ncm2'
 Plug 'airblade/vim-rooter'
 Plug 'ervandew/supertab'
-Plug 'benekastah/neomake'
 Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sleuth'
@@ -152,17 +151,6 @@ nmap <unique> <silent> <leader>hx :Hexmode<CR>
 nmap <unique> <silent> <leader>e :FzfGFiles<CR>
 nmap <unique> <silent> <leader>E :FzfFiles<CR>
 nmap <unique> <silent> <leader>w :FzfBuffers<CR>
-
-" Neomake
-let g:neomake_css_csslint_maker = {
-    \ 'args': ['--quiet', '--format=compact'],
-    \ 'errorformat': '%f: line %l\, col %c\, %t%*[a-zA-Z] - %m',
-    \ }
-let g:neomake_css_enabled_makers = ['csslint']
-:call filter(g:neomake_css_enabled_makers, 'executable(v:val)')
-
-let g:neomake_javascript_enabled_makers = ['standard', 'jshint', 'eslint', 'jscs', 'flow']
-:call filter(g:neomake_javascript_enabled_makers, 'executable(v:val)')
 
 " Toggle paste mode
 nmap <unique> <silent> <leader>p :set paste!<CR>
