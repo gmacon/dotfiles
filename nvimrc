@@ -2,7 +2,7 @@
 " These dunder strings will be replaced by fresh with the
 " paths to the active interpreters when fresh is run.  This
 " makes it work even when different pyenvs are set up.
-let g:python3_host_prog = '__PYTHON3__'
+let g:python3_host_prog = '__PY_BIN__/python3'
 let g:javascript_bin_dir = '__JS_BIN__'
 
 " Plugins
@@ -151,6 +151,22 @@ nmap <unique> <silent> <leader>hx :Hexmode<CR>
 nmap <unique> <silent> <leader>e :FzfGFiles<CR>
 nmap <unique> <silent> <leader>E :FzfFiles<CR>
 nmap <unique> <silent> <leader>w :FzfBuffers<CR>
+
+" Neoformat
+let g:neoformat_run_all_formatters = 1
+
+let g:neoformat_python_isort = {
+      \ 'exe': '__PY_BIN__/isort',
+      \ 'args': ['-', '--quiet', '--use-parentheses', '--trailing-comma',],
+      \ 'stdin': 1,
+      \ }
+let g:neoformat_python_black = {
+      \ 'exe': '__PY_BIN__/black',
+      \ 'stdin': 1,
+      \ 'args': ['-', '2>/dev/null'],
+      \ }
+
+let g:neoformat_enabled_python = ['isort', 'black']
 
 " Toggle paste mode
 nmap <unique> <silent> <leader>p :set paste!<CR>

@@ -53,7 +53,7 @@ fi
 fresh dvtm --bin
 
 # Editor Configuration #####################################
-fresh nvimrc --file=${XDG_CONFIG_HOME:-${HOME}/.config}/nvim/init.vim --filter="perl -pe 's[__PYTHON3__][$(cd $HOME/.dotfiles; pipenv --py)]; s[__JS_BIN__][$(echo $HOME/.dotfiles/node_modules/.bin)]'"
+fresh nvimrc --file=${XDG_CONFIG_HOME:-${HOME}/.config}/nvim/init.vim --filter="perl -pe 's[__PY_BIN__][$(cd $HOME/.dotfiles; dirname $(pipenv --py))]; s[__JS_BIN__][$(echo $HOME/.dotfiles/node_modules/.bin)]'"
 fresh ftplugin --file=${XDG_CONFIG_HOME:-${HOME}/.config}/nvim/ftplugin/
 fresh ideavimrc --file
 ( cd $HOME/.dotfiles && pipenv install )
