@@ -166,7 +166,7 @@ let g:neoformat_python_black = {
       \ 'args': ['-', '2>/dev/null'],
       \ }
 
-let g:neoformat_enabled_python = ['isort', 'black']
+let g:neoformat_enabled_python = ['black']
 
 " Toggle paste mode
 nmap <unique> <silent> <leader>p :set paste!<CR>
