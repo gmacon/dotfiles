@@ -170,7 +170,7 @@ let g:neoformat_enabled_python = ['black']
 
 augroup autoneoformat
     autocmd!
-    autocmd BufWritePre *.py Neoformat
+    autocmd BufWritePre *.py,*.rs Neoformat
 augroup END
 
 " Toggle paste mode
