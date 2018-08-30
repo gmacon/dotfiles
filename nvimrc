@@ -165,12 +165,18 @@ let g:neoformat_python_black = {
       \ 'stdin': 1,
       \ 'args': ['-', '2>/dev/null'],
       \ }
-
 let g:neoformat_enabled_python = ['black']
+
+let g:neoformat_javascript_prettier_standard = {
+      \ 'exe': '__JS_BIN__/prettier-standard',
+      \ 'args': ['--stdin-filepath', '%:p'],
+      \ 'stdin': 1,
+      \ }
+let g:neoformat_enabled_javascript = ['prettier_standard']
 
 augroup autoneoformat
     autocmd!
-    autocmd BufWritePre *.py,*.rs Neoformat
+    autocmd BufWritePre *.py,*.rs,*.js,*.jsx Neoformat
 augroup END
 
 " Toggle paste mode
