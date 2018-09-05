@@ -15,7 +15,9 @@ eval $(ssh-agent)
 $HOME/src/rust-dwm-status/target/release/rust-dwm-status &
 #urxvtd -q -f -o
 
-xscreensaver &
+xset s 300
+xset dpms 300
+xss-lock -- sxlock -f '-*-dejavu sans-*-*-*-*-*-*-*-*-*-*-*-*' &
 
 firefox &
 thunderbird &
