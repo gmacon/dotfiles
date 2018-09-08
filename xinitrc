@@ -12,7 +12,7 @@ fi
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 eval $(ssh-agent)
-$HOME/src/rust-dwm-status/target/release/rust-dwm-status &
+($HOME/src/dwmstatus/target/release/dwmstatus; xsetroot -name "dwmstatus crashed") &
 #urxvtd -q -f -o
 
 xset s 300
