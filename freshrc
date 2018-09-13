@@ -48,6 +48,7 @@ else
   fresh Xresources --file
   fresh xinitrc --file
   fresh auto-startx.sh --file=~/.zlogin
+  fresh git://git.zx2c4.com/password-store contrib/dmenu/passmenu --bin
 fi
 
 # Editor Configuration #####################################
