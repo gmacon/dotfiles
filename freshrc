@@ -48,9 +48,8 @@ else
   fresh Xresources --file
   fresh xinitrc --file
   fresh auto-startx.sh --file=~/.zlogin
+  fresh git://git.zx2c4.com/password-store contrib/dmenu/passmenu --bin
 fi
-
-fresh dvtm --bin
 
 # Editor Configuration #####################################
 fresh nvimrc --file=${XDG_CONFIG_HOME:-${HOME}/.config}/nvim/init.vim --filter="perl -pe 's[__PY_BIN__][$(cd $HOME/.dotfiles; dirname $(pipenv --py))]; s[__JS_BIN__][$(echo $HOME/.dotfiles/node_modules/.bin)]'"
