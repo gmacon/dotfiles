@@ -16,7 +16,6 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 eval $(ssh-agent)
 ($HOME/src/dwmstatus/target/release/dwmstatus; xsetroot -name "dwmstatus crashed") &
-#urxvtd -q -f -o
 
 xset s 300
 xset dpms 300
