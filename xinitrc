@@ -1,6 +1,9 @@
 #!/bin/sh
 
 xinput set-prop "DLL075B:01 06CB:76AF Touchpad" "libinput Tapping Enabled" 1
+
+setxkbmap -option "caps:swapescape"
+
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
 if [ -f ~/.xrandr ]; then
 	~/.xrandr
