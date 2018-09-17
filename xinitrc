@@ -24,5 +24,6 @@ xss-lock -- sxlock -f '-*-dejavu sans-*-*-*-*-*-*-*-*-*-*-*-*' &
 firefox &
 thunderbird &
 hexchat &
+which hipchat4 >/dev/null 2>&1 && hipchat4 &
 
 exec dwm
