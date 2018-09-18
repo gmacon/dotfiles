@@ -44,7 +44,6 @@ if [[ $(uname) == "Darwin" ]]; then
   fresh karabiner.json --file=~/.karabiner.d/configuration/karabiner.json
 else
   # X Configuration
-  fresh xmodmap --file
   fresh Xresources --file
   fresh xinitrc --file
   fresh auto-startx.sh --file=~/.zlogin

@@ -1,6 +1,9 @@
 #!/bin/sh
 
 xinput set-prop "DLL075B:01 06CB:76AF Touchpad" "libinput Tapping Enabled" 1
+
+setxkbmap -option "caps:swapescape"
+
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
 if [ -f ~/.xrandr ]; then
 	~/.xrandr
@@ -13,7 +16,6 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 eval $(ssh-agent)
 ($HOME/src/dwmstatus/target/release/dwmstatus; xsetroot -name "dwmstatus crashed") &
-#urxvtd -q -f -o
 
 xset s 300
 xset dpms 300
@@ -22,5 +24,6 @@ xss-lock -- sxlock -f '-*-dejavu sans-*-*-*-*-*-*-*-*-*-*-*-*' &
 firefox &
 thunderbird &
 hexchat &
+which hipchat4 >/dev/null 2>&1 && hipchat4 &
 
 exec dwm
