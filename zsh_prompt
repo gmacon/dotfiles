@@ -48,7 +48,9 @@ setopt prompt_subst
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 function ei_python {
-	if [ -n "$VIRTUAL_ENV" ]; then
+	if [ -n "$VIRTUAL_ENV_NAME" ]; then
+		PROMPT_ENV_INFO+="Py($VIRTUAL_ENV_NAME) "
+	elif [ -n "$VIRTUAL_ENV" ]; then
 		PROMPT_ENV_INFO+="Py($(basename $VIRTUAL_ENV)) "
 	fi
 }
