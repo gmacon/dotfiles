@@ -46,21 +46,10 @@ zstyle ':vcs_info:*+pre-get-data:*' hooks prompt-char
 
 setopt prompt_subst
 
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 function ei_python {
-	if which pyenv &>/dev/null; then
-		local pyver="$(pyenv version-name)"
-		if [ $pyver != "system" ]; then
-			PROMPT_ENV_INFO+="Py${pyver} "
-		fi
-	fi
-}
-
-function ei_ruby {
-	if which rbenv &>/dev/null; then
-		local pyver="$(rbenv version-name)"
-		if [ $pyver != "system" ]; then
-			PROMPT_ENV_INFO+="Rb${pyver} "
-		fi
+	if [ -n "$VIRTUAL_ENV" ]; then
+		PROMPT_ENV_INFO+="Py($(basename $VIRTUAL_ENV)) "
 	fi
 }
 
@@ -68,13 +57,12 @@ typeset -g PROMPT_ENV_INFO
 function env_info {
 	PROMPT_ENV_INFO=""
 	ei_python
-	ei_ruby
 }
 
 precmd() {
 	PROMPT_CHAR='%%'
 	vcs_info
-	#env_info
+	env_info
 }
 
 if [[ "$SSH_CONNECTION" != "" ]]; then
