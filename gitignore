@@ -4,5 +4,6 @@
 htmlcov
 .cache
 .envrc
+.direnv
 language_settings.json
 _vimrc_local.vim
