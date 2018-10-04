@@ -83,6 +83,8 @@ fresh-options --file=~/.gitignore --marker='#'
   fresh gitignore
 fresh-options
 
+fresh git-prune-branches --bin
+
 # SSH Configuration ########################################
 # Since SSH takes the first answer, more specific things need to go to the top
 fresh-options --file=~/.ssh/config --marker='#'
