@@ -118,6 +118,9 @@ set tabstop=8 softtabstop=4 shiftwidth=4 expandtab
 
 set foldmethod=indent
 
+" For live-edit detection to work properly:
+set backupcopy=yes
+
 let mapleader = "\<Space>"
 
 " Language Client
@@ -224,10 +227,6 @@ nmap <unique> <silent> <leader>l :nohlsearch<CR>
 
 " Copy current file and line
 nmap <unique> <silent> <leader>fl :let @+=expand("%").":".line(".")<CR>
-
-" Make sure backupdir exists
-set backupdir=$HOME/.local/share/nvim/backup
-:call mkdir(&backupdir, "p", 0700)
 
 " Insert pdb trace
 function InsertPdbTracePoint()
