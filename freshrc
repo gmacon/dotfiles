@@ -58,7 +58,7 @@ fresh nvimrc --file=${XDG_CONFIG_HOME:-${HOME}/.config}/nvim/init.vim --filter="
 fresh ftplugin --file=${XDG_CONFIG_HOME:-${HOME}/.config}/nvim/ftplugin/
 fresh ideavimrc --file
 ( cd $HOME/.dotfiles && pipenv install )
-( cd $HOME/.dotfiles && yarn )
+( cd $HOME/.dotfiles && yarn install --frozen-lockfile )
 
 # Terminal Configuration ###################################
 fresh tmux.conf --file
