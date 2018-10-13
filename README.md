@@ -31,6 +31,7 @@ Dependencies and source for Arch, Debian
 - pamixer: pacman, git
 - sxlock: aur sxlock-git, git
 - xss-lock: pacman, apt
+- dunst: pacman, apt
 
 # Build from my repos (only on Linux)
 
