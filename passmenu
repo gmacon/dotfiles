@@ -17,6 +17,9 @@ password=$(printf '%s\n' "${password_files[@]}" | dmenu "$@")
 
 [[ -n $password ]] || exit
 
+username=$(pass show "$password" | tail -n +2 | yq -r .username)
+notify-send "passmenu" "Username is ${username}."
+
 if [[ $typeit -eq 0 ]]; then
 	pass show -c "$password" 2>/dev/null
 else
