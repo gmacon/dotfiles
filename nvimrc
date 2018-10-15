@@ -233,3 +233,7 @@ function InsertPdbTracePoint()
   :call append(line('.', 'import pdb; pdb.set_trace()  # TODO: Remove this'))
 endfunction
 nmap <unique> <slient> <leader>b :call InsertPdbTracePoint<CR>
+
+" Write out literally
+command Wl noautocmd w
+command Wql noautocmd wq
