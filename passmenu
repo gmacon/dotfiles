@@ -17,8 +17,7 @@ password=$(printf '%s\n' "${password_files[@]}" | dmenu "$@")
 
 [[ -n $password ]] || exit
 
-username=$(pass show "$password" | tail -n +2 | yq -r .username)
-notify-send "passmenu" "Username is ${username}."
+pass show "$password" | tail -n +2 | grep '^username:' | cut -d' ' -f2- | tr -d '\n' | xclip -i -selection primary
 
 if [[ $typeit -eq 0 ]]; then
 	pass show -c "$password" 2>/dev/null
