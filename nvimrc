@@ -30,9 +30,6 @@ Plug 'saltstack/salt-vim'
 " LaTeX
 Plug 'LaTeX-Box-Team/LaTeX-Box'
 
-" Go
-Plug 'fatih/vim-go'
-
 " Javascript
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
