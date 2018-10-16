@@ -82,7 +82,7 @@ if !has('nvim')
 endif
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'altercation/vim-colors-solarized'
+Plug 'arcticicestudio/nord-vim'
 Plug 'LucHermitte/lh-vim-lib'
 Plug 'LucHermitte/local_vimrc'
 
@@ -92,9 +92,7 @@ call plug#end()
 set hlsearch
 set ignorecase smartcase
 
-set termguicolors
-set background=light
-colorscheme solarized
+colorscheme nord
 
 set hidden
 set nowrap
