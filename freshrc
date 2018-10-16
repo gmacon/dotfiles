@@ -41,6 +41,9 @@ fresh urbainvaes/fzf-marks fzf-marks.plugin.zsh
 # direnv
 fresh direnvrc --file=~/.config/direnv/direnvrc
 
+# Terminal #################################################
+fresh alacritty.yml --file=~/.config/alacritty/alacritty.yml
+
 # Graphics! ################################################
 if [[ $(uname) == "Darwin" ]]; then
   # Key Remapping (https://github.com/tekezo/Karabiner-Elements)
