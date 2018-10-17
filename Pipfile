@@ -5,9 +5,8 @@ name = "pypi"
 
 [packages]
 neovim = "*"
-python-language-server = {version = "*", extras = ["all"]}
+python-language-server = "*"
 "flake8" = "*"
-pyls-black = "*"
 black = "*"
 sexpdata = "*"
 websocket-client = "*"
