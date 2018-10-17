@@ -1,0 +1,7 @@
+if which seturgent >/dev/null 2>&1; then
+    function _seturgent_hook() {
+        seturgent
+    }
+
+    precmd_functions+=(_seturgent_hook)
+fi
