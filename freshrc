@@ -41,8 +41,13 @@ fresh urbainvaes/fzf-marks fzf-marks.plugin.zsh
 # direnv
 fresh direnvrc --file=~/.config/direnv/direnvrc
 
-# Terminal #################################################
-fresh alacritty.yml --file=~/.config/alacritty/alacritty.yml
+# Colors ###################################################
+COLORSCHEME=base16-default-light
+fresh chriskempson/base16-shell scripts/${COLORSCHEME}.sh
+fresh-options --file=~/.config/alacritty/alacritty.yml
+  fresh alacritty.yml
+  fresh aaron-williamson/base16-alacritty "colors/${COLORSCHEME}-256.yml"
+fresh-options
 
 # Graphics! ################################################
 if [[ $(uname) == "Darwin" ]]; then
@@ -57,7 +62,7 @@ else
 fi
 
 # Editor Configuration #####################################
-fresh nvimrc --file=${XDG_CONFIG_HOME:-${HOME}/.config}/nvim/init.vim --filter="perl -pe 's[__PY_BIN__][$(cd $HOME/.dotfiles; dirname $(pipenv --py))]; s[__JS_BIN__][$(echo $HOME/.dotfiles/node_modules/.bin)]'"
+fresh nvimrc --file=${XDG_CONFIG_HOME:-${HOME}/.config}/nvim/init.vim --filter="perl -pe 's[__PY_BIN__][$(cd $HOME/.dotfiles; dirname $(pipenv --py))]; s[__JS_BIN__][$(echo $HOME/.dotfiles/node_modules/.bin)]; s[__COLORSCHEME__][${COLORSCHEME}]'"
 fresh ftplugin --file=${XDG_CONFIG_HOME:-${HOME}/.config}/nvim/ftplugin/
 fresh ideavimrc --file
 ( cd $HOME/.dotfiles && pipenv install )

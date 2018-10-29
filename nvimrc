@@ -79,7 +79,7 @@ if !has('nvim')
 endif
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'arcticicestudio/nord-vim'
+Plug 'chriskempson/base16-vim'
 Plug 'LucHermitte/lh-vim-lib'
 Plug 'LucHermitte/local_vimrc'
 
@@ -89,7 +89,8 @@ call plug#end()
 set hlsearch
 set ignorecase smartcase
 
-colorscheme nord
+let base16colorspace=256
+colorscheme __COLORSCHEME__
 
 set hidden
 set nowrap
