@@ -59,6 +59,7 @@ else
   fresh xinitrc --file
   fresh auto-startx.sh --file=~/.zlogin
   fresh passmenu --bin
+  fresh dunstrc --file=~/.config/dunst/dunstrc
 fi
 
 # Editor Configuration #####################################
