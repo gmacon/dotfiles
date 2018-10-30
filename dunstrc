@@ -285,10 +285,6 @@
 # NOTE: It might be helpful to run dunst -print in a terminal in order
 # to find fitting options for rules.
 
-[mattermost]
-    appname = "Electron"
-    script = "xdotool search --class Mattermost set_window --urgency 1"
-
 #[espeak]
 #    summary = "*"
 #    script = dunst_espeak.sh
