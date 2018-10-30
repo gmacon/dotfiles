@@ -42,7 +42,7 @@ fresh urbainvaes/fzf-marks fzf-marks.plugin.zsh
 fresh direnvrc --file=~/.config/direnv/direnvrc
 
 # Colors ###################################################
-COLORSCHEME=base16-default-light
+COLORSCHEME=base16-tomorrow-night
 fresh chriskempson/base16-shell scripts/${COLORSCHEME}.sh
 fresh-options --file=~/.config/alacritty/alacritty.yml
   fresh alacritty.yml
