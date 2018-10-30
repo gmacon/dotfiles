@@ -1,6 +1,6 @@
-if which seturgent >/dev/null 2>&1; then
+if which xdotool >/dev/null 2>&1; then
     function _seturgent_hook() {
-        seturgent
+        xdotool set_window --urgency 1 ${WINDOWID}
     }
 
     precmd_functions+=(_seturgent_hook)
