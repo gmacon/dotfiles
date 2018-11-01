@@ -27,9 +27,6 @@ Plug 'godlygeek/tabular'
 " SaltStack
 Plug 'saltstack/salt-vim'
 
-" LaTeX
-Plug 'LaTeX-Box-Team/LaTeX-Box'
-
 " Javascript
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
