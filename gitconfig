@@ -27,8 +27,8 @@
 	ci = commit
 	topush = log @{u}..
 	pushnew = push -u origin HEAD
-	wip = commit -am wip
-	unwip = "!git log --oneline -1 | grep -q wip && git reset HEAD~"
+	wip = commit -anm WIP
+	unwip = "!test \"$(git log --pretty=%s -1)\" = WIP && git reset HEAD~"
 [fetch]
 	fsckObjects = true
 [receive]

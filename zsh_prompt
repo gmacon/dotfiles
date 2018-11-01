@@ -7,6 +7,9 @@ autoload -Uz vcs_info
 		# workdir is dirty
 		hook_com[branch]="%F{red}${hook_com[branch]}%f"
 	else
+		if [ "$(command git log -1 --pretty=%s)" = "WIP" ]; then
+			PROMPT_VCS_EXTRA+='-%F{yellow}WIP%f'
+		fi
 		hook_com[branch]="%F{green}${hook_com[branch]}%f"
 	fi
 
