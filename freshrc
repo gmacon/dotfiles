@@ -63,8 +63,9 @@ else
 fi
 
 # Editor Configuration #####################################
-fresh nvimrc --file=${XDG_CONFIG_HOME:-${HOME}/.config}/nvim/init.vim --filter="perl -pe 's[__PY_BIN__][$(cd $HOME/.dotfiles; dirname $(pipenv --py))]; s[__JS_BIN__][$(echo $HOME/.dotfiles/node_modules/.bin)]; s[__COLORSCHEME__][${COLORSCHEME}]'"
-fresh ftplugin --file=${XDG_CONFIG_HOME:-${HOME}/.config}/nvim/ftplugin/
+fresh init.vim --file=${HOME}/.config/nvim/init.vim --filter="perl -pe 's[__PY_BIN__][$(cd $HOME/.dotfiles; dirname $(pipenv --py))]; s[__JS_BIN__][$(echo $HOME/.dotfiles/node_modules/.bin)]; s[__COLORSCHEME__][${COLORSCHEME}]'"
+fresh ginit.vim --file=${HOME}/.config/nvim/ginit.vim
+fresh ftplugin --file=${HOME}/.config/nvim/ftplugin/
 fresh ideavimrc --file
 ( which pipenv >/dev/null 2>&1 && cd $HOME/.dotfiles && pipenv install )
 ( which npm >/dev/null 2>&1 && cd $HOME/.dotfiles && npm install )

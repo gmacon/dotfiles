@@ -39,6 +39,10 @@ export EDITOR="$(command -v nvim || command -v vim)"
 if command -v nvim >/dev/null; then
     alias vim='nvim'
 fi
+if command -v nvim-gtk >/dev/null; then
+    export NVIM_GTK_NO_WINDOW_DECORATION=1
+    alias gvim='nvim-gtk'
+fi
 
 alias bd='. bd -s'
 
