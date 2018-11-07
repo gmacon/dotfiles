@@ -53,11 +53,11 @@ fresh-options
 case $(uname) in
   Linux)
     # X Configuration
-    fresh Xresources --file
-    fresh xinitrc --file
-    fresh auto-startx.sh --file=~/.zlogin
-    fresh passmenu --bin
-    fresh dunstrc --file=~/.config/dunst/dunstrc
+    fresh X11/Xresources --file
+    fresh X11/xinitrc --file
+    fresh X11/auto-startx.sh --file=~/.zlogin
+    fresh X11/passmenu --bin
+    fresh X11/dunstrc --file=~/.config/dunst/dunstrc
     ;;
 esac
 
