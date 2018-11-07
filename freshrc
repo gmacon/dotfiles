@@ -67,8 +67,8 @@ fresh init.vim --file=${HOME}/.config/nvim/init.vim --filter="perl -pe 's[__PY_B
 fresh ginit.vim --file=${HOME}/.config/nvim/ginit.vim
 fresh ftplugin --file=${HOME}/.config/nvim/ftplugin/
 fresh ideavimrc --file
-( which pipenv >/dev/null 2>&1 && cd $HOME/.dotfiles && pipenv install )
-( which npm >/dev/null 2>&1 && cd $HOME/.dotfiles && npm install )
+( which pipenv >/dev/null 2>&1 && cd $HOME/.dotfiles && pipenv sync )
+( which npm >/dev/null 2>&1 && cd $HOME/.dotfiles && npm ci )
 
 # Terminal Configuration ###################################
 fresh tmux.conf --file
