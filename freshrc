@@ -82,12 +82,12 @@ fresh tmux.conf --file
 
 # Git Configuration ########################################
 fresh-options --file=~/.gitconfig
-  fresh gitconfig
-  fresh gitconfig.$(uname) --ignore-missing
-  fresh gitconfig.$(hostname -s) --ignore-missing
+  fresh git/gitconfig
+  fresh git/gitconfig.$(uname) --ignore-missing
+  fresh git/gitconfig.$(hostname -s) --ignore-missing
 fresh-options
 
-fresh skipList --file=~/.config/git/skipList --filter='cut -f1 | sort'
+fresh git/skipList --file=~/.config/git/skipList --filter='cut -f1 | sort'
 
 fresh-options --file=~/.gitignore --marker='#'
   case $(uname) in
@@ -97,10 +97,10 @@ fresh-options --file=~/.gitignore --marker='#'
   fresh github/gitignore Global/Vim.gitignore
   fresh github/gitignore Global/JetBrains.gitignore
   fresh github/gitignore Global/Ensime.gitignore
-  fresh gitignore
+  fresh git/gitignore
 fresh-options
 
-fresh git-prune-branches --bin
+fresh git/git-prune-branches --bin
 
 # SSH Configuration ########################################
 # Since SSH takes the first answer, more specific things need to go to the top
