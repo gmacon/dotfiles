@@ -70,11 +70,11 @@ else
   PY_BIN=$(dirname $(which python3))
 fi
 JS_BIN="$HOME/.dotfiles/node_modules/.bin"
-fresh init.vim \
+fresh nvim/init.vim \
   --file=${HOME}/.config/nvim/init.vim \
   --filter="perl -pe 's[__PY_BIN__][${PY_BIN}]; s[__JS_BIN__][${JS_BIN}]; s[__COLORSCHEME__][${COLORSCHEME}]'"
-fresh ginit.vim --file=${HOME}/.config/nvim/ginit.vim
-fresh ftplugin --file=${HOME}/.config/nvim/ftplugin/
+fresh nvim/ginit.vim --file=${HOME}/.config/nvim/ginit.vim
+fresh nvim/ftplugin --file=${HOME}/.config/nvim/ftplugin/
 fresh ideavimrc --file
 ( which pipenv >/dev/null 2>&1 && cd $HOME/.dotfiles && pipenv sync )
 ( which npm >/dev/null 2>&1 && cd $HOME/.dotfiles && npm ci )
