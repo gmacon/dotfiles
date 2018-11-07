@@ -166,7 +166,7 @@ let g:neoformat_enabled_python = ['isort', 'black']
 
 augroup autoneoformat
     autocmd!
-    autocmd BufWritePre *.py,*.rs,*.js,*.jsx Neoformat
+    autocmd BufWritePre *.py,*.rs Neoformat
 augroup END
 
 " Neomake
