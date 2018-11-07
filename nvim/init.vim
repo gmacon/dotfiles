@@ -67,7 +67,7 @@ Plug 'Konfekt/FastFold'
 Plug 'roxma/nvim-yarp'
 Plug 'ncm2/ncm2'
 Plug 'airblade/vim-rooter'
-Plug 'benekastah/neomake'
+Plug 'neomake/neomake'
 Plug 'ervandew/supertab'
 Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-fugitive'
@@ -163,20 +163,24 @@ let g:neoformat_python_black = {
       \ 'args': ['-', '2>/dev/null'],
       \ }
 let g:neoformat_enabled_python = ['isort', 'black']
+let g:neoformat_javascript_eslint_d = {
+      \ 'exe': '__JS_BIN__/../../nvim/eslint_d_format_wrapper',
+      \ 'args': ['"%:p"'],
+      \ 'stdin': 1,
+      \ }
+let g:neoformat_enabled_javascript = ['eslint_d']
 
 augroup autoneoformat
     autocmd!
-    autocmd BufWritePre *.py,*.rs Neoformat
+    autocmd BufWritePre *.py,*.rs,*.js,*.jsx Neoformat
 augroup END
 
 " Neomake
-let g:neomake_javascript_enabled_makers = ['eslint']
-:call filter(g:neomake_javascript_enabled_makers, 'executable(v:val)')
-
-augroup autoneomake
-    autocmd!
-    autocmd BufWritePost *.js,*.jsx Neomake
-augroup END
+let g:neomake_javascript_eslint_d_exe = '__JS_BIN__/eslint_d'
+let g:neomake_javascript_enabled_makers = ['eslint_d']
+let g:neomake_jsx_eslint_d_exe = '__JS_BIN__/eslint_d'
+let g:neomake_jsx_enabled_makers = ['eslint_d']
+:call neomake#configure#automake('rnw', 1000)
 
 " Toggle paste mode
 nmap <unique> <silent> <leader>p :set paste!<CR>
