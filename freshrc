@@ -13,16 +13,16 @@ fresh freshshell/fresh bin/fresh --bin
 
 # Shell Configuration ######################################
 fresh-options --file=~/.zshrc
-  fresh zshrc
-  fresh zshrc.$(uname) --ignore-missing
-  fresh zshrc.$(hostname -s) --ignore-missing
-  fresh zshrc.local --ignore-missing
+  fresh zsh/zshrc
+  fresh zsh/zshrc.$(uname) --ignore-missing
+  fresh zsh/zshrc.$(hostname -s) --ignore-missing
+  fresh zsh/zshrc.local --ignore-missing
 fresh-options
 
-fresh zshrc.envs --file=~/.zlogin
+fresh zsh/zshrc.envs --file=~/.zlogin
 
 # Shell Prompt #############################################
-fresh zsh_prompt
+fresh zsh/zsh_prompt
 
 # Shell extras #############################################
 # Extra completion
