@@ -116,6 +116,3 @@ fresh todo-config --file=~/.todo/config
 
 # Vagrant default configuration ############################
 fresh Vagrantfile --file=~/.vagrant.d/Vagrantfile
-
-# Qutebrowser ##############################################
-fresh qutebrowser.py --file=~/.config/qutebrowser/config.py
