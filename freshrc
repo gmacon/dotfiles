@@ -50,17 +50,16 @@ fresh-options --file=~/.config/alacritty/alacritty.yml
 fresh-options
 
 # Graphics! ################################################
-if [[ $(uname) == "Darwin" ]]; then
-  # Key Remapping (https://github.com/tekezo/Karabiner-Elements)
-  fresh karabiner.json --file=~/.karabiner.d/configuration/karabiner.json
-else
-  # X Configuration
-  fresh Xresources --file
-  fresh xinitrc --file
-  fresh auto-startx.sh --file=~/.zlogin
-  fresh passmenu --bin
-  fresh dunstrc --file=~/.config/dunst/dunstrc
-fi
+case $(uname) in
+  Linux)
+    # X Configuration
+    fresh Xresources --file
+    fresh xinitrc --file
+    fresh auto-startx.sh --file=~/.zlogin
+    fresh passmenu --bin
+    fresh dunstrc --file=~/.config/dunst/dunstrc
+    ;;
+esac
 
 # Editor Configuration #####################################
 PY_ENV=$(cd $HOME/.dotfiles; pipenv --py 2>/dev/null)
