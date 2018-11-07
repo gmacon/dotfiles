@@ -67,6 +67,7 @@ Plug 'Konfekt/FastFold'
 Plug 'roxma/nvim-yarp'
 Plug 'ncm2/ncm2'
 Plug 'airblade/vim-rooter'
+Plug 'benekastah/neomake'
 Plug 'ervandew/supertab'
 Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-fugitive'
@@ -166,6 +167,15 @@ let g:neoformat_enabled_python = ['isort', 'black']
 augroup autoneoformat
     autocmd!
     autocmd BufWritePre *.py,*.rs,*.js,*.jsx Neoformat
+augroup END
+
+" Neomake
+let g:neomake_javascript_enabled_makers = ['eslint']
+:call filter(g:neomake_javascript_enabled_makers, 'executable(v:val)')
+
+augroup autoneomake
+    autocmd!
+    autocmd BufWritePost *.js,*.jsx Neomake
 augroup END
 
 " Toggle paste mode
