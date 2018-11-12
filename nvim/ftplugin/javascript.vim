@@ -1,1 +1,1 @@
-set foldmethod=syntax
+setlocal foldmethod=syntax textwidth=90
