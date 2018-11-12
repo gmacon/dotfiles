@@ -78,6 +78,7 @@ endif
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'chriskempson/base16-vim'
+Plug 'SirVer/ultisnips'
 
 call plug#end()
 
@@ -135,6 +136,9 @@ augroup LanguageClient_config
   autocmd User LanguageClientStarted call ncm2#enable_for_buffer()
   autocmd User LanguageClientStopped setlocal signcolumn=auto
 augroup END
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger = '<c-j>'
 
 " Yara
 autocmd BufNewFile,BufRead *.yar,*.yara setfiletype yara
