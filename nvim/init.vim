@@ -78,8 +78,6 @@ endif
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'chriskempson/base16-vim'
-Plug 'LucHermitte/lh-vim-lib'
-Plug 'LucHermitte/local_vimrc'
 
 call plug#end()
 
