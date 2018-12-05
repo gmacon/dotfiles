@@ -117,3 +117,11 @@ fresh todo-config --file=~/.todo/config
 
 # Vagrant default configuration ############################
 fresh Vagrantfile --file=~/.vagrant.d/Vagrantfile
+
+# NPM Configuration ########################################
+fresh-options --file=~/.npmrc
+  fresh npm/npmrc
+  fresh npm/npmrc.$(uname) --ignore-missing
+  fresh npm/npmrc.$(hostname -s) --ignore-missing
+  fresh npm/npmrc.local --ignore-missing
+fresh-options
