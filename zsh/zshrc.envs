@@ -38,3 +38,8 @@ fi
 if [ -f $HOME/.cargo/env ]; then
     source $HOME/.cargo/env
 fi
+
+# Local node modules
+if [ -d $HOME/.local/share/node_modules ]; then
+    export PATH="${PATH}:${HOME}/.local/share/node_modules/bin"
+fi
