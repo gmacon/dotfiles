@@ -13,6 +13,7 @@ if [ -f ~/.xrandr ]; then
 fi
 
 export _JAVA_AWT_WM_NONREPARENTING=1
+export WINIT_HIDPI_FACTOR=1.0
 
 eval $(ssh-agent)
 ($HOME/src/dwmstatus/target/release/dwmstatus; xsetroot -name "dwmstatus crashed") &
