@@ -8,6 +8,7 @@
   "private": true,
   "dependencies": {
     "eslint_d": "^7.2.0",
-    "javascript-typescript-langserver": "^2.10.0"
+    "flow-bin": "^0.89.0",
+    "flow-language-server": "^0.6.0"
   }
 }

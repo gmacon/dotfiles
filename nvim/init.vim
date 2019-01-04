@@ -122,8 +122,8 @@ let g:LanguageClient_loadSettings = 1
 let g:LanguageClient_serverCommands = {
       \ 'rust': ['rustup', 'run', 'stable', 'rls'],
       \ 'python': [g:python3_host_prog, '-m', 'pyls'],
-      \ 'javascript': [g:javascript_bin_dir . '/javascript-typescript-stdio'],
-      \ 'javascript.jsx': [g:javascript_bin_dir . '/javascript-typescript-stdio'],
+      \ 'javascript': [g:javascript_bin_dir . '/flow-language-server', '--stdio'],
+      \ 'javascript.jsx': [g:javascript_bin_dir . '/flow-language-server', '--stdio'],
       \ }
 nmap <unique> <silent> gd :call LanguageClient_textDocument_definition()<CR>
 nmap <unique> <silent> <leader>r :call LanguageClient_textDocument_rename()<CR>
@@ -179,9 +179,11 @@ augroup END
 
 " Neomake
 let g:neomake_javascript_eslint_d_exe = '__JS_BIN__/eslint_d'
-let g:neomake_javascript_enabled_makers = ['eslint_d']
+let g:neomake_javascript_flow_exe = '__JS_BIN__/flow'
+let g:neomake_javascript_enabled_makers = ['eslint_d', 'flow']
 let g:neomake_jsx_eslint_d_exe = '__JS_BIN__/eslint_d'
-let g:neomake_jsx_enabled_makers = ['eslint_d']
+let g:neomake_jsx_flow_exe = '__JS_BIN__/flow'
+let g:neomake_jsx_enabled_makers = ['eslint_d', 'flow']
 :call neomake#configure#automake('rnw', 1000)
 
 " Toggle paste mode
