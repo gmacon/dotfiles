@@ -1,0 +1,5 @@
+#!/bin/sh
+
+hipchat_status.py away
+sxlock -f '-*-bitstream charter-*-r-*-*-*-*-*-*-*-*-*-*'
+hipchat_status.py chat

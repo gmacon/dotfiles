@@ -1,0 +1,3 @@
+#!/bin/sh
+
+sxlock -f '-*-dejavu sans-*-r-*-*-*-*-*-*-*-*-*-*'

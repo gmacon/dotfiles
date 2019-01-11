@@ -21,7 +21,7 @@ dunst &
 
 xset s 300
 xset dpms 300
-xss-lock -- sxlock -f '-*-dejavu sans-*-*-*-*-*-*-*-*-*-*-*-*' &
+xss-lock -- ${HOME}/.screenlock &
 
 firefox &
 thunderbird &
