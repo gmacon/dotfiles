@@ -146,6 +146,9 @@ autocmd BufNewFile,BufRead *.yar,*.yara setfiletype yara
 " Binary
 nmap <unique> <silent> <leader>hx :Hexmode<CR>
 
+" JavaScript
+let g:javascript_plugin_flow = 1
+
 " Fzf
 nmap <unique> <silent> <leader>e :FzfGFiles<CR>
 nmap <unique> <silent> <leader>E :FzfFiles<CR>
