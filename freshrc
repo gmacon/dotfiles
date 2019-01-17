@@ -80,8 +80,7 @@ fresh nvim/init.vim \
 fresh nvim/ginit.vim --file=${HOME}/.config/nvim/ginit.vim
 fresh nvim/ftplugin --file=${HOME}/.config/nvim/ftplugin/
 fresh nvim/UltiSnips --file=${HOME}/.config/nvim/UltiSnips/
-( which pipenv >/dev/null 2>&1 && cd $HOME/.dotfiles && pipenv sync )
-( which npm >/dev/null 2>&1 && cd $HOME/.dotfiles && npm ci )
+( cd $HOME/.dotfiles && make )
 
 # Terminal Configuration ###################################
 fresh tmux.conf --file
