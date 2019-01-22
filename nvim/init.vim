@@ -125,6 +125,12 @@ let g:LanguageClient_serverCommands = {
       \ 'javascript': [g:javascript_bin_dir . '/flow-language-server', '--stdio'],
       \ 'javascript.jsx': [g:javascript_bin_dir . '/flow-language-server', '--stdio'],
       \ }
+let g:LanguageClient_rootMarkers = {
+      \ 'rust': ['Cargo.toml'],
+      \ 'python': ['pyproject.toml', 'setup.py'],
+      \ 'javascript': ['package.json'],
+      \ 'javascript.jsx': ['package.json'],
+      \ }
 nmap <unique> <silent> gd :call LanguageClient_textDocument_definition()<CR>
 nmap <unique> <silent> <leader>r :call LanguageClient_textDocument_rename()<CR>
 nmap <unique> <silent> gu :call LanguageClient_textDocument_references()<CR>
