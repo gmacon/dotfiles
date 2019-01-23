@@ -20,56 +20,36 @@ let g:pandoc#formatting#equalprg = ""
 " Jinja2 Templates
 Plug 'alanhamlett/vim-jinja', {'commit': 'cb0ad0c43f4e753d44d0a8599f2be65dd1f24f04'}
 
-" Puppet
-Plug 'rodjek/vim-puppet'
-Plug 'godlygeek/tabular'
-
-" SaltStack
-Plug 'saltstack/salt-vim'
-
 " Javascript
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-
-" Java
-Plug 'ensime/ensime-vim', { 'do': ':UpdateRemotePlugins' }
-Plug 'derekwyatt/vim-scala'
 
 " Fzf
 let g:fzf_command_prefix = 'Fzf'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
-" Grako
-Plug 'apalala/grako', { 'rtp': 'etc/vim' }
-
-" Bro
-Plug 'mephux/bro.vim'
-
-" Yara
-Plug 's3rvac/vim-syntax-yara'
-
 " Binary
 Plug 'fidian/hexmode'
 
-Plug 'gu-fan/riv.vim'
-
-" Language Server Protocol
-Plug 'autozimu/LanguageClient-neovim', {
-      \ 'branch': 'next',
-      \ 'do': 'make release',
+" ALE
+let g:ale_fix_on_save = 1
+let g:ale_completion_enabled = 1
+let g:ale_sign_column_always = 1
+let g:ale_fixers = {
+      \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+      \ 'javascript': ['eslint'],
+      \ 'python': ['isort', 'black'],
+      \ 'rust': ['rustfmt'],
       \ }
-Plug 'ambv/black'
+Plug 'w0rp/ale'
 
 " Generic
 Plug 'editorconfig/editorconfig-vim'
 Plug 'Konfekt/FastFold'
 Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2'
 Plug 'airblade/vim-rooter'
-Plug 'neomake/neomake'
 Plug 'ervandew/supertab'
-Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sleuth'
 if !has('nvim')
@@ -116,41 +96,15 @@ set backupcopy=yes
 
 let mapleader = "\<Space>"
 
-" Language Client
-let g:LanguageClient_settingsPath = 'language_settings.json'
-let g:LanguageClient_loadSettings = 1
-let g:LanguageClient_serverCommands = {
-      \ 'rust': ['rustup', 'run', 'stable', 'rls'],
-      \ 'python': [g:python3_host_prog, '-m', 'pyls'],
-      \ 'javascript': [g:javascript_bin_dir . '/flow-language-server', '--stdio'],
-      \ 'javascript.jsx': [g:javascript_bin_dir . '/flow-language-server', '--stdio'],
-      \ }
-let g:LanguageClient_rootMarkers = {
-      \ 'rust': ['Cargo.toml'],
-      \ 'python': ['pyproject.toml', 'setup.py'],
-      \ 'javascript': ['package.json'],
-      \ 'javascript.jsx': ['package.json'],
-      \ }
-nmap <unique> <silent> gd :call LanguageClient_textDocument_definition()<CR>
-nmap <unique> <silent> <leader>r :call LanguageClient_textDocument_rename()<CR>
-nmap <unique> <silent> gu :call LanguageClient_textDocument_references()<CR>
-nmap <unique> <silent> <leader>h :call LanguageClient_textDocument_hover()<CR>
+let g:rooter_patterns = ['.git', '.git/', 'pyproject.toml', 'package.json', 'Cargo.toml']
 
-augroup LanguageClient_config
-  autocmd!
-  autocmd User LanguageClientStarted setlocal signcolumn=yes
-  autocmd User LanguageClientStarted call ncm2#enable_for_buffer()
-  autocmd User LanguageClientStopped setlocal signcolumn=auto
-augroup END
+" Language Client
+nmap <unique> <silent> gd :ALEGoToDefinition<CR>
+nmap <unique> <silent> gu :ALEFindReferences<CR>
+nmap <unique> <silent> <leader>h :ALEHover<CR>
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger = '<c-j>'
-
-" Yara
-autocmd BufNewFile,BufRead *.yar,*.yara setfiletype yara
-
-" Binary
-nmap <unique> <silent> <leader>hx :Hexmode<CR>
 
 " JavaScript
 let g:javascript_plugin_flow = 1
@@ -159,39 +113,6 @@ let g:javascript_plugin_flow = 1
 nmap <unique> <silent> <leader>e :FzfGFiles<CR>
 nmap <unique> <silent> <leader>E :FzfFiles<CR>
 nmap <unique> <silent> <leader>w :FzfBuffers<CR>
-
-" Neoformat
-let g:neoformat_run_all_formatters = 1
-
-let g:neoformat_python_isort = {
-      \ 'exe': '__PY_BIN__/isort',
-      \ 'args': ['-', '--quiet', '--use-parentheses', '--trailing-comma',],
-      \ 'stdin': 1,
-      \ }
-let g:neoformat_python_black = {
-      \ 'exe': '__PY_BIN__/black',
-      \ 'stdin': 1,
-      \ 'args': ['-', '2>/dev/null'],
-      \ }
-let g:neoformat_enabled_python = ['isort', 'black']
-let g:neoformat_javascript_eslint_d = {
-      \ 'exe': '__JS_BIN__/../../nvim/eslint_d_format_wrapper',
-      \ 'args': ['"%:p"'],
-      \ 'stdin': 1,
-      \ }
-let g:neoformat_enabled_javascript = ['eslint_d']
-
-augroup autoneoformat
-    autocmd!
-    autocmd BufWritePre *.py,*.rs,*.js,*.jsx Neoformat
-augroup END
-
-" Neomake
-let g:neomake_javascript_eslint_d_exe = '__JS_BIN__/eslint_d'
-let g:neomake_javascript_enabled_makers = ['eslint_d']
-let g:neomake_jsx_eslint_d_exe = '__JS_BIN__/eslint_d'
-let g:neomake_jsx_enabled_makers = ['eslint_d']
-:call neomake#configure#automake('rnw', 1000)
 
 " Toggle paste mode
 nmap <unique> <silent> <leader>p :set paste!<CR>
@@ -204,15 +125,6 @@ function! TogBG()
   endif
 endfunction
 nmap <unique> <silent> <leader>bg :call TogBG()<CR>
-
-" Strip trailing whitespace (and save cursor position) when saving files
-fun! <SID>StripTrailingWhitespaces()
-    let l = line(".")
-    let c = col(".")
-    %s/\s\+$//e
-    call cursor(l, c)
-endfun
-autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " Split line at cursor
 imap <C-c> <CR><Esc>O
@@ -238,12 +150,6 @@ nmap <unique> <silent> <leader>l :nohlsearch<CR>
 
 " Copy current file and line
 nmap <unique> <silent> <leader>fl :let @+=expand("%").":".line(".")<CR>
-
-" Insert pdb trace
-function InsertPdbTracePoint()
-  :call append(line('.', 'import pdb; pdb.set_trace()  # TODO: Remove this'))
-endfunction
-nmap <unique> <slient> <leader>b :call InsertPdbTracePoint<CR>
 
 " Write out literally
 command Wl noautocmd w
