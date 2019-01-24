@@ -3,7 +3,6 @@
 " paths to the active interpreters when fresh is run.  This
 " makes it work even when different pyenvs are set up.
 let g:python3_host_prog = '__PY_BIN__/python3'
-let g:javascript_bin_dir = '__JS_BIN__'
 
 " Plugins
 if empty(globpath(&rtp, 'autoload/plug.vim'))

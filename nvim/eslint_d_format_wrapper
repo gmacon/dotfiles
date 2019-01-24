@@ -1,4 +1,0 @@
-#!/bin/sh -e
-
-cd $(dirname "$1")
-${HOME}/.dotfiles/node_modules/.bin/eslint_d --stdin --stdin-filename "$1" --fix-to-stdout
