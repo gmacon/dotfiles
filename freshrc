@@ -67,19 +67,12 @@ case $(uname) in
 esac
 
 # Editor Configuration #####################################
-PY_ENV=$(cd $HOME/.dotfiles; pipenv --py 2>/dev/null)
-if [ -n "$PY_ENV" ]; then
-  PY_BIN=$(dirname "$PY_ENV")
-else
-  PY_BIN=$(dirname $(which python3))
-fi
 fresh nvim/init.vim \
   --file=${HOME}/.config/nvim/init.vim \
-  --filter="perl -pe 's[__PY_BIN__][${PY_BIN}]; s[__COLORSCHEME__][${COLORSCHEME}]'"
+  --filter="perl -pe 's[__COLORSCHEME__][${COLORSCHEME}]'"
 fresh nvim/ginit.vim --file=${HOME}/.config/nvim/ginit.vim
 fresh nvim/ftplugin --file=${HOME}/.config/nvim/ftplugin/
 fresh nvim/UltiSnips --file=${HOME}/.config/nvim/UltiSnips/
-( cd $HOME/.dotfiles && make )
 
 # Terminal Configuration ###################################
 fresh tmux.conf --file

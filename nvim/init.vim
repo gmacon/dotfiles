@@ -1,9 +1,3 @@
-" Python interpreter setup
-" These dunder strings will be replaced by fresh with the
-" paths to the active interpreters when fresh is run.  This
-" makes it work even when different pyenvs are set up.
-let g:python3_host_prog = '__PY_BIN__/python3'
-
 " Plugins
 if empty(globpath(&rtp, 'autoload/plug.vim'))
   silent !curl -fLo ${XDG_CONFIG_HOME:-${HOME}/.config}/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -35,8 +29,6 @@ Plug 'fidian/hexmode'
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 let g:ale_sign_column_always = 1
-let g:ale_python_pyls_executable = '__PY_BIN__/pyls'
-let g:ale_python_pyls_use_global = 1
 let g:ale_fixers = {
       \ '*': ['remove_trailing_lines', 'trim_whitespace'],
       \ 'javascript': ['eslint'],
