@@ -32,6 +32,7 @@ Dependencies and source for Arch, Debian
 - sxlock: aur sxlock-git, git
 - xss-lock: pacman, apt
 - dunst: pacman, apt
+- xcape: pacman, apt
 
 # Build from my repos (only on Linux)
 

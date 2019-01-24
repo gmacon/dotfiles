@@ -2,7 +2,8 @@
 
 xinput set-prop "DLL075B:01 06CB:76AF Touchpad" "libinput Tapping Enabled" 1
 
-setxkbmap -layout us -variant mac -option "caps:swapescape"
+setxkbmap -layout us -variant mac -option "ctrl:nocaps"
+xcape -e 'Control_L=Escape'
 
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
 if [ -f ~/.xrandr ]; then
