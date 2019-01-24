@@ -127,9 +127,6 @@ function! TogBG()
 endfunction
 nmap <unique> <silent> <leader>bg :call TogBG()<CR>
 
-" Split line at cursor
-imap <C-c> <CR><Esc>O
-
 " Location list
 nmap <unique> <silent> <leader>lo :lopen<CR>
 nmap <unique> <silent> <leader>lc :lclose<CR>
