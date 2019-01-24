@@ -6,16 +6,8 @@ name = "pypi"
 [packages]
 neovim = "*"
 python-language-server = "*"
-"flake8" = "*"
-black = "*"
-sexpdata = "*"
-websocket-client = "*"
-isort = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3"
-
-[pipenv]
-allow_prereleases = true
+python_version = "3.7"
