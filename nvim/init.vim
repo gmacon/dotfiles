@@ -1,3 +1,6 @@
+let g:python_host_prog = '__PYTHON2__'
+let g:python3_host_prog = '__PYTHON3__'
+
 " Plugins
 if empty(globpath(&rtp, 'autoload/plug.vim'))
   silent !curl -fLo ${XDG_CONFIG_HOME:-${HOME}/.config}/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
