@@ -13,6 +13,9 @@ Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 let g:pandoc#formatting#equalprg = ""
 
+" TOML
+Plug 'cespare/vim-toml'
+
 " Jinja2 Templates
 Plug 'alanhamlett/vim-jinja', {'commit': 'cb0ad0c43f4e753d44d0a8599f2be65dd1f24f04'}
 
