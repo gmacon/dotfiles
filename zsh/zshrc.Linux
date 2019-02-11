@@ -1,4 +1,4 @@
-if [ -n "$DISPLAY" ] && which xdotool >/dev/null 2>&1; then
+if [ -n "$DISPLAY" ] && [ -n "$WINDOWID" ] && which xdotool >/dev/null 2>&1; then
     function _seturgent_hook() {
         xdotool set_window --urgency 1 ${WINDOWID}
     }
