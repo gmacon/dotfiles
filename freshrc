@@ -58,6 +58,7 @@ case $(uname) in
     fresh X11/auto-startx.sh --file=~/.zlogin
     fresh X11/passmenu --bin
     fresh X11/dunstrc --file=~/.config/dunst/dunstrc
+    fresh X11/xkbmap --bin=~/.xkbmap
     if [ -f $HOME/.dotfiles/X11/lock.$(hostname -s) ]; then
       fresh X11/lock.$(hostname -s) --bin=~/.screenlock
     else

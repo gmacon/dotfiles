@@ -1,0 +1,6 @@
+#!/bin/sh -e
+
+setxkbmap -option
+setxkbmap -layout us -variant mac -option "ctrl:nocaps"
+pgrep xcape >/dev/null 2>&1 && pkill xcape
+xcape -e 'Control_L=Escape'
