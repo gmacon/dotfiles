@@ -96,6 +96,7 @@ set backupcopy=yes
 
 let mapleader = "\<Space>"
 
+let g:rooter_silent_chdir = 1
 let g:rooter_patterns = ['.git', '.git/', 'pyproject.toml', 'package.json', 'Cargo.toml']
 
 " Language Client
