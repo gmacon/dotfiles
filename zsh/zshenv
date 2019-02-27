@@ -1,6 +1,8 @@
+typeset -U path PATH
+
 # Local ruby install
 if [[ -d ${RBENV_ROOT:=$HOME/.rbenv} ]]; then
-    export PATH="${RBENV_ROOT}/bin:$PATH"
+    path=("${RBENV_ROOT}/bin" $path)
     eval "$(rbenv init -)"
 fi
 
@@ -11,18 +13,18 @@ fi
 
 # Local go install
 if [[ -d /usr/local/go ]]; then
-    export PATH="$PATH:/usr/local/go/bin"
+    path+="/usr/local/go/bin"
 fi
 
 # Go path
 if [[ -d "${HOME}/go" ]]; then
     export GOPATH="${HOME}/go"
-    export PATH="${PATH}:${GOPATH}/bin"
+    path+="${GOPATH}/bin"
 fi
 
 # Local pyenv install
 if [[ -d ${PYENV_ROOT:=${HOME}/.pyenv} ]]; then
-    export PATH="${PYENV_ROOT}/bin:${PATH}"
+    path=("${PYENV_ROOT}/bin" $path)
     eval "$(pyenv init -)";
     if [[ -d ${PYENV_ROOT}/plugins/pyenv-virtualenv ]]; then
         eval "$(pyenv virtualenv-init -)"
@@ -31,7 +33,7 @@ fi
 
 # Local poetry install
 if [[ -d ${HOME}/.poetry/bin ]]; then
-    export PATH="${PATH}:${HOME}/.poetry/bin"
+    path+="${HOME}/.poetry/bin"
 fi
 
 # Rust install
@@ -41,5 +43,5 @@ fi
 
 # Local node modules
 if [ -d $HOME/.local/share/node_modules ]; then
-    export PATH="${PATH}:${HOME}/.local/share/node_modules/bin"
+    path+="${HOME}/.local/share/node_modules/bin"
 fi
