@@ -19,7 +19,7 @@ fresh-options --file=~/.zshrc
   fresh zsh/zshrc.local --ignore-missing
 fresh-options
 
-fresh zsh/zshrc.envs --file=~/.zlogin
+fresh zsh/zshenv --file
 
 # Shell Prompt #############################################
 fresh zsh/zsh_prompt
