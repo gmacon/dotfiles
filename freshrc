@@ -19,7 +19,12 @@ fresh-options --file=~/.zshrc
   fresh zsh/zshrc.local --ignore-missing
 fresh-options
 
-fresh zsh/zshenv --file
+fresh-options --file=~/.zshenv
+  fresh zsh/zshenv
+  fresh zsh/zshenv.$(uname) --ignore-missing
+  fresh zsh/zshenv.$(hostname -s) --ignore-missing
+  fresh zsh/zshenv.local --ignore-missing
+fresh-options
 
 # Shell Prompt #############################################
 fresh zsh/zsh_prompt
