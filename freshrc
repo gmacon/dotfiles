@@ -9,6 +9,8 @@
 #
 # See http://freshshell.com/readme for documentation.
 
+FRESH_BIN_PATH=${HOME}/.local/bin
+
 fresh freshshell/fresh bin/fresh --bin
 
 # Shell Configuration ######################################
