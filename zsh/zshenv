@@ -45,3 +45,6 @@ fi
 if [ -d $HOME/.local/share/node_modules ]; then
     path+="${HOME}/.local/share/node_modules/bin"
 fi
+
+# Local executables
+path=("$HOME/.local/bin" $path)
