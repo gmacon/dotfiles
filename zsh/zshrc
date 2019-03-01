@@ -26,6 +26,8 @@ bindkey -e
 
 setopt correct
 
+export FZF_MARKS_FILE=${XDG_CONFIG_HOME:-${HOME}/.config}/fzf-marks/bookmarks
+
 if command -v exa >/dev/null; then
     alias ls=exa
 fi
@@ -53,7 +55,5 @@ gitignore-std () {
     git add .gitignore
     git commit -m "Add standard ignore $1"
 }
-
-export FZF_MARKS_FILE=${XDG_CONFIG_HOME:-${HOME}/.config}/fzf-marks/bookmarks
 
 eval "$(direnv hook zsh)"
