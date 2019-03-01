@@ -47,8 +47,6 @@ fi
 
 alias bd='. bd -s'
 
-unset GNOME_KEYRING_CONTROL
-
 gitignore-std () {
     echo '#' $1 >>.gitignore
     cat ~/.fresh/source/github/gitignore/$1 >>.gitignore
