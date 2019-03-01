@@ -76,5 +76,5 @@ else
 	PROMPT_USER="%n"
 fi
 
-PROMPT="${PROMPT_USER}:%(5~!%-1~/.../%2~!%~)%(?.. %F{magenta}%?%f) %(!.#.\${PROMPT_CHAR}) "
+PROMPT="${PROMPT_USER}:%16<..<%~%<<%(?.. %F{magenta}%?%f) %(!.#.\${PROMPT_CHAR}) "
 RPROMPT='${PROMPT_ENV_INFO}${vcs_info_msg_0_}'
