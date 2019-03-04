@@ -1,8 +1,6 @@
 source ~/.fresh/build/shell.sh
 source ~/.fresh/build/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-zmodload zsh/zprof
-
 fpath=(~/.fresh/build/completion $fpath)
 # The following lines were added by compinstall
 
