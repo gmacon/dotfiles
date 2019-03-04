@@ -34,6 +34,7 @@ fresh zsh/zsh_prompt
 # Shell extras #############################################
 # Extra completion
 fresh zsh-users/zsh-completions src --file=completion/
+fresh zsh/completion --file=completion/
 
 # ZSH Syntax Highlighting
 fresh zsh-users/zsh-syntax-highlighting . --file=vendor/zsh-syntax-highlighting/
