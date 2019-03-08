@@ -77,11 +77,11 @@ esac
 
 # Editor Configuration #####################################
 fresh nvim/init.vim \
-  --file=${HOME}/.config/nvim/init.vim \
+  --file=~/.config/nvim/init.vim \
   --filter="perl -pe 's[__COLORSCHEME__][${COLORSCHEME}]; s[__PYTHON2__][$(which python2)]; s[__PYTHON3__][$(which python3)]'"
-fresh nvim/ginit.vim --file=${HOME}/.config/nvim/ginit.vim
-fresh nvim/ftplugin --file=${HOME}/.config/nvim/ftplugin/
-fresh nvim/UltiSnips --file=${HOME}/.config/nvim/UltiSnips/
+fresh nvim/ginit.vim --file=~/.config/nvim/ginit.vim
+fresh nvim/ftplugin --file=~/.config/nvim/ftplugin/
+fresh nvim/UltiSnips --file=~/.config/nvim/UltiSnips/
 
 # Terminal Configuration ###################################
 fresh tmux.conf --file
