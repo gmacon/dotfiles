@@ -21,3 +21,6 @@ Host *
 
 	# Unhashed known_hosts for tab completion
 	HashKnownHosts no
+
+	# Forward current colorscheme
+	SendEnv LC_COLORSCHEME

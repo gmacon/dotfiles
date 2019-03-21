@@ -10,6 +10,7 @@
 # See http://freshshell.com/readme for documentation.
 
 FRESH_BIN_PATH=${HOME}/.local/bin
+COLORSCHEME=base16-tomorrow-night
 
 fresh freshshell/fresh bin/fresh --bin
 
@@ -22,7 +23,7 @@ fresh-options --file=~/.zshrc
 fresh-options
 
 fresh-options --file=~/.zshenv
-  fresh zsh/zshenv
+  fresh zsh/zshenv --filter="perl -pe 's[__COLORSCHEME__][${COLORSCHEME}]'"
   fresh zsh/zshenv.$(uname) --ignore-missing
   fresh zsh/zshenv.$(hostname -s) --ignore-missing
   fresh zsh/zshenv.local --ignore-missing
@@ -50,8 +51,7 @@ fresh urbainvaes/fzf-marks fzf-marks.plugin.zsh
 fresh direnvrc --file=~/.config/direnv/direnvrc
 
 # Colors ###################################################
-COLORSCHEME=base16-tomorrow-night
-fresh chriskempson/base16-shell scripts/${COLORSCHEME}.sh
+fresh chriskempson/base16-shell scripts --file=colors/
 fresh-options --file=~/.config/alacritty/alacritty.yml
   fresh alacritty.yml
   fresh aaron-williamson/base16-alacritty "colors/${COLORSCHEME}-256.yml"
@@ -78,7 +78,7 @@ esac
 # Editor Configuration #####################################
 fresh nvim/init.vim \
   --file=~/.config/nvim/init.vim \
-  --filter="perl -pe 's[__COLORSCHEME__][${COLORSCHEME}]; s[__PYTHON2__][$(which python2)]; s[__PYTHON3__][$(which python3)]'"
+  --filter="perl -pe 's[__PYTHON2__][$(which python2)]; s[__PYTHON3__][$(which python3)]'"
 fresh nvim/ginit.vim --file=~/.config/nvim/ginit.vim
 fresh nvim/ftplugin --file=~/.config/nvim/ftplugin/
 fresh nvim/UltiSnips --file=~/.config/nvim/UltiSnips/

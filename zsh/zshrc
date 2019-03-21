@@ -2,6 +2,9 @@ source ~/.fresh/build/shell.sh
 source ~/.fresh/build/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 fpath=(~/.fresh/build/completion $fpath)
+
+source ~/.fresh/build/colors/${LC_COLORSCHEME}.sh
+
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _complete _ignored _correct _approximate

@@ -67,7 +67,7 @@ set hlsearch
 set ignorecase smartcase
 
 let base16colorspace=256
-colorscheme __COLORSCHEME__
+colorscheme $LC_COLORSCHEME
 
 set hidden
 set nowrap
