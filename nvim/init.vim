@@ -118,15 +118,6 @@ nmap <unique> <silent> <leader>w :FzfBuffers<CR>
 " Toggle paste mode
 nmap <unique> <silent> <leader>p :set paste!<CR>
 
-" Toggle background
-function! TogBG()
-  let &background = ( &background == "dark" ? "light" : "dark" )
-  if exists("g:colors_name")
-    exe "colorscheme " . g:colors_name
-  endif
-endfunction
-nmap <unique> <silent> <leader>bg :call TogBG()<CR>
-
 " Location list
 nmap <unique> <silent> <leader>lo :lopen<CR>
 nmap <unique> <silent> <leader>lc :lclose<CR>
