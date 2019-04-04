@@ -54,5 +54,3 @@ gitignore-std () {
     git add .gitignore
     git commit -m "Add standard ignore $1"
 }
-
-eval "$(direnv hook zsh)"
