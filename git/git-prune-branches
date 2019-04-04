@@ -1,6 +1,6 @@
 #!/usr/bin/env python3.7
 
-from subprocess import run
+from subprocess import run, DEVNULL
 
 
 def get_local_by_upstream():
@@ -12,31 +12,39 @@ def get_local_by_upstream():
             "%(upstream:short)\t%(refname:short)",
             "refs/heads",
         ],
+        stdin=DEVNULL,
         capture_output=True,
         check=True,
         encoding="utf-8",
     )
     ret = {}
     for l in info.stdout.splitlines():
-        parts = l.strip().split('\t')
+        parts = l.strip().split("\t")
         if len(parts) == 2:
             ret[parts[0]] = parts[1]
     return ret
 
 
 def get_remotes():
-    info = run(["git", "remote"], capture_output=True, check=True, encoding="utf-8")
+    info = run(
+        ["git", "remote"],
+        stdin=DEVNULL,
+        capture_output=True,
+        check=True,
+        encoding="utf-8",
+    )
     return set(l.strip() for l in info.stdout.splitlines())
 
 
 def fetch_remote(remote):
-    run(["git", "fetch", remote], check=True, capture_output=True)
+    run(["git", "fetch", remote], check=True, stdin=DEVNULL, capture_output=True)
 
 
 def prune_remote(remote):
     info = run(
         ["git", "remote", "prune", remote],
         check=True,
+        stdin=DEVNULL,
         capture_output=True,
         encoding="utf-8",
     )
@@ -44,7 +52,7 @@ def prune_remote(remote):
 
 
 def delete_branch(branch):
-    run(["git", "branch", "-d", branch])
+    run(["git", "branch", "-d", branch], stdin=DEVNULL)
 
 
 def main():
