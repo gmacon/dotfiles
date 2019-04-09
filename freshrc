@@ -23,10 +23,10 @@ fresh-options --file=~/.zshrc
 fresh-options
 
 fresh-options --file=~/.zshenv
-  fresh zsh/zshenv --filter="perl -pe 's[__COLORSCHEME__][${COLORSCHEME}]'"
-  fresh zsh/zshenv.$(uname) --ignore-missing
-  fresh zsh/zshenv.$(hostname -s) --ignore-missing
   fresh zsh/zshenv.local --ignore-missing
+  fresh zsh/zshenv.$(hostname -s) --ignore-missing
+  fresh zsh/zshenv.$(uname) --ignore-missing
+  fresh zsh/zshenv --filter="perl -pe 's[__COLORSCHEME__][${COLORSCHEME}]'"
 fresh-options
 
 # Shell Prompt #############################################
