@@ -41,6 +41,12 @@ let g:ale_fixers = {
       \ 'python': ['isort', 'black'],
       \ 'rust': ['rustfmt'],
       \ }
+let g:ale_linters = {
+      \ 'javascript': ['eslint', 'flow_ls'],
+      \ 'python': ['flake8', 'mypy', 'pylint', 'pyls'],
+      \ 'rust': ['rls'],
+      \ }
+let g:ale_rust_rls_toolchain = 'stable'
 Plug 'w0rp/ale'
 
 " Generic
