@@ -76,6 +76,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'chriskempson/base16-vim'
 Plug 'SirVer/ultisnips'
+Plug 'andrewstuart/vim-kubernetes'
 
 call plug#end()
 
