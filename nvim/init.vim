@@ -47,6 +47,17 @@ let g:ale_linters = {
       \ 'rust': ['rls'],
       \ }
 let g:ale_rust_rls_toolchain = 'stable'
+let g:ale_python_pyls_config =
+      \ {
+      \   'pyls': {
+      \     'plugins': {
+      \       'mccabe': {'enabled': v:false},
+      \       'pycodestyle': {'enabled': v:false},
+      \       'pydocstyle': {'enabled': v:false},
+      \       'pyflakes': {'enabled': v:false},
+      \     }
+      \   }
+      \ }
 Plug 'w0rp/ale'
 
 " Generic
