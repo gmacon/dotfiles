@@ -55,6 +55,7 @@ let g:ale_python_pyls_config =
       \       'pycodestyle': {'enabled': v:false},
       \       'pydocstyle': {'enabled': v:false},
       \       'pyflakes': {'enabled': v:false},
+      \       'mypy': {'enabled': v:false},
       \     }
       \   }
       \ }
