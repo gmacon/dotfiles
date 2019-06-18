@@ -91,6 +91,7 @@ fresh-options --file=~/.gitconfig
   fresh git/gitconfig
   fresh git/gitconfig.$(uname) --ignore-missing
   fresh git/gitconfig.$(hostname -s) --ignore-missing
+  fresh git/gitconfig.local
 fresh-options
 
 fresh git/skipList --file=~/.config/git/skipList --filter='cut -f1 | sort'
