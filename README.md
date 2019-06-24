@@ -24,6 +24,7 @@ Dependencies and source for Arch, Debian, macOS
 
 Dependencies and source for Arch, Debian
 
+- alacritty: pacman, git via cargo-deb
 - brightnessctl: aur, don't know \[1\]
 - hexchat: pacman, apt
 - pamixer: pacman, git
@@ -37,7 +38,6 @@ Dependencies and source for Arch, Debian
 - dmenu
 - dwm
 - dwmstatus
-- st
 
 Build deps (Debian):
 
