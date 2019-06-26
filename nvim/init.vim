@@ -40,6 +40,7 @@ let g:ale_fixers = {
       \ 'javascript': ['eslint'],
       \ 'python': ['isort', 'black'],
       \ 'rust': ['rustfmt'],
+      \ 'c': ['clang-format'],
       \ }
 let g:ale_linters = {
       \ 'javascript': ['eslint', 'flow_ls'],
