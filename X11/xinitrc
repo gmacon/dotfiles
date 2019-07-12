@@ -33,5 +33,6 @@ firefox &
 thunderbird &
 hexchat &
 which hipchat4 >/dev/null 2>&1 && hipchat4 &
+which slack >/dev/null 2>&1 && slack &
 
 exec dwm
