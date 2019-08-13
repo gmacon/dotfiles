@@ -25,6 +25,9 @@ setopt share_history
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
+bindkey ';5D' backward-word
+bindkey ';5C' forward-word
+
 setopt correct
 
 export FZF_MARKS_FILE=${XDG_CONFIG_HOME:-${HOME}/.config}/fzf-marks/bookmarks
