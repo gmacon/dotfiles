@@ -1,5 +1,10 @@
 #!/bin/sh
 
+export _JAVA_AWT_WM_NONREPARENTING=1
+export WINIT_HIDPI_FACTOR=1.0
+
+eval "$(dbus-launch --exit-with-x11 --sh-syntax)"
+
 xinput set-prop "DLL075B:01 06CB:76AF Touchpad" "libinput Tapping Enabled" 1
 
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
@@ -17,9 +22,6 @@ if [ -x ~/.xkbmap ]; then
 		xinputd $HOME/.xkbmap
 	fi
 fi
-
-export _JAVA_AWT_WM_NONREPARENTING=1
-export WINIT_HIDPI_FACTOR=1.0
 
 eval $(ssh-agent)
 ($HOME/src/dwmstatus/target/release/dwmstatus; xsetroot -name "dwmstatus crashed") &
