@@ -32,6 +32,7 @@ Dependencies and source for Arch, Debian
 - xss-lock: pacman, apt
 - dunst: pacman, apt
 - xcape: pacman, apt
+- gnome-keyring: pacman, apt
 
 # Build from my repos (only on Linux)
 

@@ -23,6 +23,7 @@ if [ -x ~/.xkbmap ]; then
 	fi
 fi
 
+eval $(gnome-keyring-daemon --components=secrets --start)
 eval $(ssh-agent)
 ($HOME/src/dwmstatus/target/release/dwmstatus; xsetroot -name "dwmstatus crashed") &
 dunst &
