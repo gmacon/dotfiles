@@ -38,6 +38,7 @@ let g:ale_fixers = {
       \ 'python': ['isort', 'black'],
       \ 'rust': ['rustfmt'],
       \ 'c': ['clang-format'],
+      \ 'go': ['gofmt'],
       \ }
 let g:ale_linters = {
       \ 'javascript': ['eslint', 'flow_ls'],
