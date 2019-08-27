@@ -7,7 +7,7 @@ Dependencies and source for Arch, Debian, macOS
 - firefox: pacman, apt, <https://www.firefox.com>
 - fzf: pacman, [GitHub releases](https://github.com/junegunn/fzf-bin/releases), brew
 - git-lfs, aur, apt, brew
-- git: pacman, apt, brew
+- git: pacman, ppa:git-core/ppa, brew  (Note: need Git >= 2.20)
 - httpie: pacman, apt, brew
 - mosh: pacman, apt, brew
 - neovim: pacman, apt, brew

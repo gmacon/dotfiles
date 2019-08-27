@@ -37,6 +37,10 @@
 	fsckObjects = true
 [fsck]
 	skipList = ~/.config/git/skipList
+[fetch.fsck]
+	skipList = ~/.config/git/skipList
+[receive.fsck]
+	skipList = ~/.config/git/skipList
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean %f

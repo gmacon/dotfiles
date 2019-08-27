@@ -40,6 +40,10 @@ fresh zsh/completion --file=completion/
 # ZSH Syntax Highlighting
 fresh zsh-users/zsh-syntax-highlighting . --file=vendor/zsh-syntax-highlighting/
 
+# Docker Compose aliases and completion
+fresh robbyrussell/oh-my-zsh plugins/docker-compose/_docker-compose --file=completion/_docker-compose
+fresh robbyrussell/oh-my-zsh plugins/docker-compose/docker-compose.plugin.zsh
+
 # Better cd
 fresh vigneshwaranr/bd bd --bin
 
