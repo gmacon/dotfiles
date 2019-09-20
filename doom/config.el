@@ -4,3 +4,4 @@
 
 (setq doom-font (font-spec :family "DejaVu Sans Mono" :size 12))
 (after! smartparens (smartparens-global-mode -1))
+(add-hook! 'before-save-hook 'doom/delete-trailing-newlines 'delete-trailing-whitespace)
