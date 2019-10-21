@@ -106,6 +106,7 @@ fresh-options --file=~/.gitignore --marker='#'
     *) fresh github/gitignore Global/$(uname).gitignore;;
   esac
   fresh github/gitignore Global/Vim.gitignore
+  fresh github/gitignore Global/Emacs.gitignore
   fresh git/gitignore
 fresh-options
 
