@@ -17,6 +17,11 @@ layout_python-venv() {
     if [[ ! -d $VIRTUAL_ENV ]]; then
         log_status "no venv found; creating $VIRTUAL_ENV"
         "$python" -m venv "$VIRTUAL_ENV"
+        "$VIRTUAL_ENV/bin/pip" install --upgrade pip
+        "$VIRTUAL_ENV/bin/pip" install wheel
+        if [[ $# -gt 0 ]]; then
+            "$VIRTUAL_ENV/bin/pip" install "$@"
+        fi
     fi
     PATH_add "$VIRTUAL_ENV/bin"
 }
