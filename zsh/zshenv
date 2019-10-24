@@ -1,3 +1,5 @@
+# -*- mode: sh -*-
+
 typeset -U path PATH
 
 # Local ruby install
