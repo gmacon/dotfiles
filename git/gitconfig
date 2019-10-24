@@ -2,7 +2,6 @@
 	email = george.macon@gmail.com
 	name = George Macon
 [core]
-	editor = nvim
 	excludesfile = ~/.gitignore
 [color]
 	ui = auto

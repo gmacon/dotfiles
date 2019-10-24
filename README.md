@@ -4,13 +4,13 @@ Dependencies and source for Arch, Debian, macOS
 
 - atool: pacman, apt, brew
 - direnv: aur, apt, brew
+- emacs: pacman, source, Emacs.app
 - firefox: pacman, apt, <https://www.firefox.com>
 - fzf: pacman, [GitHub releases](https://github.com/junegunn/fzf-bin/releases), brew
 - git-lfs, aur, apt, brew
 - git: pacman, ppa:git-core/ppa, brew  (Note: need Git >= 2.20)
 - httpie: pacman, apt, brew
 - mosh: pacman, apt, brew
-- neovim: pacman, apt, brew
 - openssh: pacman, apt, brew
 - pass: pacman, apt, brew
 - pinentry: pacman, apt pinentry-qt, brew pinentry-mac

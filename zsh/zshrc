@@ -40,14 +40,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-export EDITOR="$(command -v nvim || command -v vim)"
-if command -v nvim >/dev/null; then
-    alias vim='nvim'
-fi
-if command -v nvim-gtk >/dev/null; then
-    export NVIM_GTK_NO_WINDOW_DECORATION=1
-    alias gvim='nvim-gtk'
-fi
+export EDITOR="$(command -v vim)"
 
 alias bd='. bd -s'
 
