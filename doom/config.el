@@ -9,6 +9,6 @@
 (map! :leader
       (:prefix-map ("l" . "jump")
         :desc "Next error" "n" #'flycheck-next-error
-        :desc "Prev error" "p" #'flycheck-previous-error
-        )
-      )
+        :desc "Prev error" "p" #'flycheck-previous-error)
+      (:prefix-map ("p" . "project")
+        :desc "ripgrep" "g" #'+ivy/project-search))
