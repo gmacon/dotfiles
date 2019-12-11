@@ -5,6 +5,7 @@ Dependencies and source for Arch, Debian, macOS
 - atool: pacman, apt, brew
 - direnv: aur, apt, brew
 - emacs: pacman, source, Emacs.app
+- Fira Code: otf-fira-code, apt fonts-firacode, https://github.com/tonsky/FiraCode
 - firefox: pacman, apt, <https://www.firefox.com>
 - fzf: pacman, [GitHub releases](https://github.com/junegunn/fzf-bin/releases), brew
 - git-lfs, aur, apt, brew
