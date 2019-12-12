@@ -48,6 +48,11 @@ if [ -d $HOME/.local/share/node_modules ]; then
     path+="${HOME}/.local/share/node_modules/bin"
 fi
 
+# Doom Emacs
+if [ -d "$HOME/.emacs.d/bin" ]; then
+    path+="$HOME/.emacs.d/bin"
+fi
+
 # Local executables
 path=("$HOME/.local/bin" $path)
 
