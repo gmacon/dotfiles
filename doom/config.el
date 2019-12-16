@@ -6,6 +6,8 @@
 
 (after! smartparens (smartparens-global-mode -1))
 
+(setq-hook! python-mode fill-column 72)
+
 (map! :leader
       (:prefix-map ("l" . "jump")
         :desc "Next error" "n" #'flycheck-next-error
