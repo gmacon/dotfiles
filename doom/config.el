@@ -7,6 +7,7 @@
 (after! smartparens (smartparens-global-mode -1))
 
 (setq-hook! python-mode fill-column 72)
+(setq-hook! js2-mode js2-basic-offset 2)
 
 (map! :leader
       (:prefix-map ("l" . "jump")
