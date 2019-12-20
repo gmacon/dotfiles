@@ -3,6 +3,7 @@
 ;; Place your private configuration here
 
 (setq doom-font (font-spec :family "Fira Code" :size 13))
+(setq tramp-terminal-type "tramp")
 
 (after! smartparens (smartparens-global-mode -1))
 

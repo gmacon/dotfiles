@@ -1,5 +1,11 @@
 # -*- mode: sh -*-
 
+if [ "$TERM" = "tramp" ]; then
+    unsetopt zle
+    PS1='$ '
+    return
+fi
+
 source ~/.fresh/build/shell.sh
 source ~/.fresh/build/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
