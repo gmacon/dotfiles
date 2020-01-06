@@ -5,6 +5,8 @@
 (setq doom-font (font-spec :family "Fira Code" :size 13))
 (setq tramp-terminal-type "tramp")
 
+(use-package! salt-mode)
+
 (after! smartparens (smartparens-global-mode -1))
 
 (setq-hook! python-mode fill-column 72)
