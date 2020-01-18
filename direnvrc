@@ -35,7 +35,6 @@ layout_python() {
           return 1
           ;;
       esac
-      "$python" -m venv "$VIRTUAL_ENV"
       "$VIRTUAL_ENV/bin/pip" install --upgrade pip
       "$VIRTUAL_ENV/bin/pip" install wheel
       if [[ $# -gt 0 ]]; then
