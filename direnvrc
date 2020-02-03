@@ -25,10 +25,10 @@ layout_python() {
     if [[ ! -d $VIRTUAL_ENV ]]; then
       case $ve in
         "venv")
-          $python -m venv "$@" "$VIRTUAL_ENV"
+          $python -m venv "$VIRTUAL_ENV"
           ;;
         "virtualenv")
-          $python -m virtualenv "$@" "$VIRTUAL_ENV"
+          $python -m virtualenv "$VIRTUAL_ENV"
           ;;
         *)
           log_error "Error: neither venv nor virtualenv are available."
