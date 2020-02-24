@@ -52,3 +52,25 @@ layout_python-venv() {
     [[ $# -gt 0 ]] && shift
     layout_python "$python" "$@"
 }
+
+layout_anaconda() {
+  local env_name
+  local create_args
+  if [ -n "$1" ]; then
+    # Explicit environment name from layout command.
+    env_name="$1"
+    create_args="--name=$1"
+  elif (grep -q name: environment.yml); then
+    # Detect environment name from `environment.yml` file in `.envrc` directory
+    env_name="$(grep name: environment.yml | sed -e 's/name: //' | cut -d "'" -f 2 | cut -d '"' -f 2)"
+    create_args="--file=environment.yml"
+  else
+    (>&2 echo No environment specified);
+    exit 1;
+  fi;
+  source "$HOME/miniconda3/etc/profile.d/conda.sh"
+  if !(conda env list | grep -q "^$env_name\s"); then
+    conda create --yes "$create_args"
+  fi
+  conda activate "$env_name"
+}
