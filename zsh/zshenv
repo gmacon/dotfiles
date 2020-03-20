@@ -3,38 +3,38 @@
 typeset -U path PATH
 
 # Local ruby install
-if [[ -d ${RBENV_ROOT:=$HOME/.rbenv} ]]; then
+if [ -d "${RBENV_ROOT:=$HOME/.rbenv}" ]; then
     path=("${RBENV_ROOT}/bin" $path)
     eval "$(rbenv init -)"
 fi
 
 # Local perl install
-if [[ -d $HOME/perl5 ]]; then
+if [ -d "$HOME/perl5" ]; then
     eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
 fi
 
 # Local go install
-if [[ -d /usr/local/go ]]; then
+if [ -d /usr/local/go ]; then
     path+="/usr/local/go/bin"
 fi
 
 # Go path
-if [[ -d "${HOME}/go" ]]; then
+if [ -d "${HOME}/go" ]; then
     export GOPATH="${HOME}/go"
     path+="${GOPATH}/bin"
 fi
 
 # Local pyenv install
-if [[ -d ${PYENV_ROOT:=${HOME}/.pyenv} ]]; then
+if [ -d "${PYENV_ROOT:=${HOME}/.pyenv}" ]; then
     path=("${PYENV_ROOT}/bin" $path)
     eval "$(pyenv init -)";
-    if [[ -d ${PYENV_ROOT}/plugins/pyenv-virtualenv ]]; then
+    if [ -d "${PYENV_ROOT}/plugins/pyenv-virtualenv" ]; then
         eval "$(pyenv virtualenv-init -)"
     fi
 fi
 
 # Local poetry install
-if [[ -d ${HOME}/.poetry/bin ]]; then
+if [ -d "${HOME}/.poetry/bin" ]; then
     path+="${HOME}/.poetry/bin"
 fi
 
