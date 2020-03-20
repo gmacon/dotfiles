@@ -38,6 +38,11 @@ if [ -d "${HOME}/.poetry/bin" ]; then
     path+="${HOME}/.poetry/bin"
 fi
 
+# Miniconda
+if [ -d "$HOME/miniconda3/bin" ]; then
+    source "$HOME/miniconda3/etc/profile.d/conda.sh"
+fi
+
 # Rust install
 if [ -f $HOME/.cargo/env ]; then
     source $HOME/.cargo/env
