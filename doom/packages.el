@@ -7,4 +7,3 @@
 ;; (package! builtin-package :disable t)
 
 (package! salt-mode)
-(package! base16-theme)

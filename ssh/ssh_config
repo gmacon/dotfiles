@@ -22,4 +22,4 @@ Host *
 	HashKnownHosts no
 
 	# Forward current colorscheme
-	SendEnv LC_COLORSCHEME
+	SendEnv LC_COLORSCHEME_VARIANT

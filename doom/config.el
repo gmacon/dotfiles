@@ -3,9 +3,8 @@
 ;; Place your private configuration here
 
 (use-package! salt-mode)
-(use-package! base16-theme)
 
-(setq doom-theme (getenv "LC_COLORSCHEME"))
+(setq doom-theme (concat "doom-solarized-" (getenv "LC_COLORSCHEME_VARIANT")))
 (setq doom-font (font-spec :family "Fira Code" :size 13))
 (setq tramp-terminal-type "tramp")
 

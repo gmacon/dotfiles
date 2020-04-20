@@ -61,6 +61,6 @@ fi
 # Local executables
 path=("$HOME/.local/bin" $path)
 
-if [ -z "$LC_COLORSCHEME" ]; then
-    export LC_COLORSCHEME=__COLORSCHEME__
+if [ -z "$LC_COLORSCHEME_VARIANT" ]; then
+    export LC_COLORSCHEME_VARIANT=__COLORSCHEME_VARIANT__
 fi

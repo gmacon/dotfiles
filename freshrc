@@ -11,7 +11,7 @@
 # See http://freshshell.com/readme for documentation.
 
 FRESH_BIN_PATH=${HOME}/.local/bin
-COLORSCHEME=base16-tomorrow-night
+COLORSCHEME_VARIANT=dark
 
 fresh freshshell/fresh bin/fresh --bin
 
@@ -27,7 +27,7 @@ fresh-options --file=~/.zshenv
   fresh zsh/zshenv.local --ignore-missing
   fresh zsh/zshenv.$(hostname -s) --ignore-missing
   fresh zsh/zshenv.$(uname) --ignore-missing
-  fresh zsh/zshenv --filter="perl -pe 's[__COLORSCHEME__][${COLORSCHEME}]'"
+  fresh zsh/zshenv --filter="perl -pe 's[__COLORSCHEME_VARIANT__][${COLORSCHEME_VARIANT}]'"
 fresh-options
 
 # Shell Prompt #############################################
@@ -59,7 +59,7 @@ fresh direnvrc --file=~/.config/direnv/direnvrc
 fresh chriskempson/base16-shell scripts --file=colors/
 fresh-options --file=~/.config/alacritty/alacritty.yml
   fresh alacritty.yml
-  fresh aaron-williamson/base16-alacritty "colors/${COLORSCHEME}-256.yml"
+  fresh aaron-williamson/base16-alacritty "colors/base16-solarized-${COLORSCHEME_VARIANT}-256.yml"
 fresh-options
 
 # Graphics! ################################################
