@@ -4,7 +4,7 @@
 
 (use-package! salt-mode)
 
-(setq doom-theme (concat "doom-solarized-" (getenv "LC_COLORSCHEME_VARIANT")))
+(setq doom-theme (intern (concat "doom-solarized-" (getenv "LC_COLORSCHEME_VARIANT"))))
 (setq doom-font (font-spec :family "Fira Code" :size 13))
 (setq tramp-terminal-type "tramp")
 
