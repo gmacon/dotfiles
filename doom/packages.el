@@ -7,3 +7,4 @@
 ;; (package! builtin-package :disable t)
 
 (package! salt-mode)
+(package! pipenv :disable t)
