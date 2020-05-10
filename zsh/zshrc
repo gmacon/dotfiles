@@ -11,7 +11,7 @@ source ~/.fresh/build/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 fpath=(~/.fresh/build/completion $fpath)
 
-source ~/.fresh/build/colors/${LC_COLORSCHEME}.sh
+source ~/.fresh/build/colors/base16-solarized-${LC_COLORSCHEME_VARIANT}.sh
 
 # The following lines were added by compinstall
 
