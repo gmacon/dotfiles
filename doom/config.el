@@ -3,6 +3,7 @@
 ;; Place your private configuration here
 
 (use-package! salt-mode)
+(use-package! protobuf-mode)
 
 (setq doom-theme (intern (concat "doom-solarized-" (getenv "LC_COLORSCHEME_VARIANT"))))
 (setq doom-font (font-spec :family "Fira Code" :size 13))
