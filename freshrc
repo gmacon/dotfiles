@@ -128,3 +128,6 @@ fresh-options --file=~/.npmrc
   fresh npm/npmrc.$(hostname -s) --ignore-missing
   fresh npm/npmrc.local --ignore-missing
 fresh-options
+
+# ptpython configuration ###################################
+fresh ptpython.py --file=~/.config/ptpython/config.py
