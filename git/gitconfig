@@ -45,4 +45,4 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 [init]
-	templateDir = ~/.config/git/template/
+	defaultBranch = main

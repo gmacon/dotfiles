@@ -92,7 +92,6 @@ fresh-options --file=~/.gitconfig
 fresh-options
 
 fresh git/skipList --file=~/.config/git/skipList --filter='cut -f1 | sort'
-mkdir -p ~/.config/git/template && echo 'ref: refs/heads/main' >~/.config/git/template/HEAD
 
 fresh-options --file=~/.gitignore --marker='#'
   case $(uname) in
