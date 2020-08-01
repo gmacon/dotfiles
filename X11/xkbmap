@@ -2,7 +2,4 @@
 
 setxkbmap -option
 setxkbmap -layout us -variant mac -option "ctrl:nocaps"
-if pgrep xcape >/dev/null 2>&1; then
-  pkill xcape
-fi
-xcape -e 'Control_L=Escape'
+systemctl --user restart xcape
