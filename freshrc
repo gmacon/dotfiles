@@ -84,6 +84,9 @@ esac
 # Terminal Configuration ###################################
 fresh tmux.conf --file
 
+# Emacs ####################################################
+fresh emacs/init.el ~/.config/emacs/init.el
+
 # Git Configuration ########################################
 fresh-options --file=~/.gitconfig
   fresh git/gitconfig
