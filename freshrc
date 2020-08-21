@@ -112,8 +112,8 @@ fresh git/git-prune-branches --bin
 # SSH Configuration ########################################
 # Since SSH takes the first answer, more specific things need to go to the top
 fresh-options --file=~/.ssh/config --marker='#'
-  fresh ssh/ssh_config.$(hostname -s) --ignore-missing
   fresh ssh/ssh_config.local --ignore-missing
+  fresh ssh/ssh_config.$(hostname -s) --ignore-missing
   fresh ssh/ssh_config
 fresh-options
 
