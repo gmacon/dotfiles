@@ -11,7 +11,7 @@
 
                                         ; Fonts
 (defvar gam-font-family "Fira Code")
-(defvar gam-font-size 100)
+(defvar gam-font-size 120)
 (set-face-attribute 'default nil
   :family gam-font-family
   :height gam-font-size
@@ -50,8 +50,10 @@
 (use-package exec-path-from-shell
   :if (memq window-system '(mac ns))
   :init (setq exec-path-from-shell-check-startup-files nil
-              exec-path-from-shell-shell-name "/opt/local/bin/zsh")
-  :config (exec-path-from-shell-initialize))
+              exec-path-from-shell-shell-name "/usr/local/bin/zsh")
+  :config
+  (add-to-list 'exec-path-from-shell-variables "LC_COLORSCHEME_VARIANT")
+  (exec-path-from-shell-initialize))
 
                                         ; Evil mode
 (use-package evil-leader
@@ -60,11 +62,14 @@
     (global-evil-leader-mode)
     (evil-leader/set-key
       "." 'find-file
-      "b" `switch-to-buffer))
+      "," 'switch-to-buffer))
 (use-package evil
     :demand t
     :after evil-leader
     :defer 0.1
+    :init
+    (setq evil-search-module 'evil-search
+          evil-ex-substitute-global t)
     :config
     (evil-mode 1))
 
@@ -179,6 +184,17 @@
           lsp-ui-sideline-show-diagnostics t)
   :commands lsp-ui-mode
   )
+
+                                        ; Autoformatter
+(use-package apheleia
+  :straight (apheleia
+             :host github
+             :repo "raxod502/apheleia")
+  :config (apheleia-global-mode 1))
+
+                                        ; YAML
+(use-package yaml-mode
+  :mode ("\\.yaml'" "\\.yml'"))
 
                                         ; Org Mode
 (setq org-agenda-files '("~/org/"))
