@@ -105,6 +105,10 @@
 (use-package origami
   :hook (prog-mode . origami-mode))
 
+                                        ; Display available binds
+(use-package which-key
+  :init (which-key-mode))
+
                                         ; Projectile
 (use-package projectile
   :delight projectile-mode
