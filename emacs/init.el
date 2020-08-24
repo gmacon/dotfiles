@@ -182,6 +182,8 @@
                                         ; Language Servers
 (use-package lsp-mode
   :hook ((python-mode . lsp))
+  :config (setq lsp-pyls-configuration-sources ["flake8"]
+                lsp-enable-snippet nil)
   :commands lsp
 )
 (use-package lsp-ui
