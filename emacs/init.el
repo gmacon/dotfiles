@@ -175,6 +175,10 @@
 (use-package editorconfig
   :config (editorconfig-mode 1))
 
+                                        ; Flycheck
+(use-package flycheck
+  :init (global-flycheck-mode))
+
                                         ; Language Servers
 (use-package lsp-mode
   :hook ((python-mode . lsp))
