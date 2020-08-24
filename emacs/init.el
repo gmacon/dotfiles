@@ -71,7 +71,8 @@
     (setq evil-search-module 'evil-search
           evil-ex-substitute-global t)
     :config
-    (evil-mode 1))
+    (evil-mode 1)
+    (add-to-list 'evil-buffer-regexps '("^COMMIT_EDITMSG" . 'insert)))
 
 (use-package evil-surround
     :after evil
