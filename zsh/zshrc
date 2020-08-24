@@ -6,6 +6,13 @@ if [ "$TERM" = "tramp" ]; then
     return
 fi
 
+zstyle ':completion:*' completer _complete _ignored _correct _approximate
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}'
+zstyle :compinstall filename '/home/gmacon/.zshrc'
+
+autoload -Uz compinit
+compinit
+
 source ~/.fresh/build/shell.sh
 source ~/.fresh/build/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -13,16 +20,6 @@ fpath=(~/.fresh/build/completion $fpath)
 
 source ~/.fresh/build/colors/base16-solarized-${LC_COLORSCHEME_VARIANT}.sh
 
-# The following lines were added by compinstall
-
-zstyle ':completion:*' completer _complete _ignored _correct _approximate
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}'
-zstyle :compinstall filename '/home/gmacon/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-# Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000000
 SAVEHIST=1000000
@@ -31,7 +28,6 @@ setopt HIST_IGNORE_SPACE
 setopt append_history
 setopt share_history
 bindkey -e
-# End of lines configured by zsh-newuser-install
 
 bindkey ';5D' backward-word
 bindkey ';5C' forward-word
