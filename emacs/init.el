@@ -95,11 +95,14 @@
           company-tooltip-align-annotations t)
     )
 
-                                        ; Colors
-(use-package base16-theme
-  :ensure t
+                                        ; Theme
+(use-package doom-themes
   :config
-  (load-theme (intern (concat "base16-solarized-" (getenv "LC_COLORSCHEME_VARIANT")))))
+    (load-theme (intern (concat "doom-solarized-" (getenv "LC_COLORSCHEME_VARIANT"))))
+    (doom-themes-visual-bell-config)
+    (doom-themes-org-config))
+(use-package doom-modeline
+  :config (doom-modeline-mode))
 
                                         ; Folding
 (use-package origami
@@ -131,6 +134,7 @@
   (show-paren-mode 1)
   (global-hl-line-mode 1)
   (display-line-numbers-mode)
+  (column-number-mode)
   (company-mode)
   (add-hook 'before-save-hook 'delete-trailing-whitespace nil t)))
 )
