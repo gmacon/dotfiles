@@ -177,7 +177,12 @@
 
                                         ; Flycheck
 (use-package flycheck
-  :init (global-flycheck-mode))
+  :init
+  (global-flycheck-mode)
+  (evil-leader/set-key
+    "l l" 'flycheck-list-errors
+    "l n" 'flycheck-next-error
+    "l p" 'flycheck-previous-error))
 
                                         ; Language Servers
 (use-package lsp-mode
