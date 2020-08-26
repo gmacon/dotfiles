@@ -207,7 +207,7 @@
   :config (apheleia-global-mode 1))
 
                                         ; Python
-(add-hook 'python-mode-hook '(setq flycheck-disabled-checkers '(lsp)))
+(add-hook 'python-mode-hook (lambda () (setq flycheck-disabled-checkers '(lsp))))
 
                                         ; YAML
 (use-package yaml-mode
