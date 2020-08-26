@@ -187,8 +187,7 @@
                                         ; Language Servers
 (use-package lsp-mode
   :hook ((python-mode . lsp))
-  :config (setq lsp-pyls-configuration-sources ["flake8"]
-                lsp-enable-snippet nil)
+  :config (setq lsp-enable-snippet nil)
   :commands lsp
 )
 (use-package lsp-ui
@@ -206,6 +205,9 @@
              :host github
              :repo "raxod502/apheleia")
   :config (apheleia-global-mode 1))
+
+                                        ; Python
+(add-hook 'python-mode-hook '(setq flycheck-disabled-checkers '(lsp)))
 
                                         ; YAML
 (use-package yaml-mode
