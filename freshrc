@@ -130,3 +130,6 @@ fresh-options
 
 # ptpython configuration ###################################
 fresh ptpython.py --file=~/.config/ptpython/config.py
+
+# pushover script ##########################################
+fresh pushover --bin
