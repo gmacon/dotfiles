@@ -61,8 +61,7 @@
     (evil-leader/set-leader "<SPC>")
     (global-evil-leader-mode)
     (evil-leader/set-key
-      "." 'find-file
-      "," 'switch-to-buffer))
+      "." 'find-file))
 (use-package evil
     :demand t
     :after evil-leader
@@ -112,7 +111,19 @@
 (use-package which-key
   :init (which-key-mode))
 
-                                        ; Projectile
+                                        ; Projects
+(use-package perspective
+  :config
+    (evil-leader/set-key "B" 'persp-switch-to-buffer)
+    (persp-mode))
+
+(use-package persp-projectile
+    :straight (persp-projectile
+               :host github
+               :repo "bbatsov/persp-projectile")
+    :commands (projectile-persp-switch-project)
+    :init (evil-leader/set-key "p" 'projectile-persp-switch-project))
+
 (use-package projectile
   :delight projectile-mode
   :commands (projectile-switch-project projectile-find-file projectile-mode)
@@ -124,8 +135,8 @@
           projectile-indexing-method 'alien
           projectile-project-search-path '("~/code"))
     (evil-leader/set-key
-      "p" `projectile-switch-project
-      evil-leader/leader 'projectile-find-file)
+      evil-leader/leader 'projectile-find-file
+      "," 'projectile-switch-to-buffer)
   :config
   (projectile-mode))
 
@@ -211,7 +222,10 @@
   :config (apheleia-global-mode 1))
 
                                         ; Python
-(add-hook 'python-mode-hook (lambda () (setq flycheck-disabled-checkers '(lsp))))
+(add-hook 'python-mode-hook
+          (lambda ()
+            (setq flycheck-disabled-checkers '(lsp)
+                  flycheck-checker nil)))
 
                                         ; YAML
 (use-package yaml-mode
