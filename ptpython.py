@@ -1,6 +1,6 @@
 import os
 
-__all__ == ("configure",)
+__all__ = ("configure",)
 
 
 def configure(repl):
