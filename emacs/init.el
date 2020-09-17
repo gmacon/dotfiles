@@ -224,8 +224,8 @@
                                         ; Python
 (add-hook 'python-mode-hook
           (lambda ()
-            (setq flycheck-disabled-checkers '(lsp)
-                  flycheck-checker nil)))
+            (setq lsp-diagnostics-provider :none
+                  flycheck-checker 'python-flake8)))
 
                                         ; YAML
 (use-package yaml-mode
