@@ -239,3 +239,7 @@
 
                                         ; Org Mode
 (setq org-agenda-files '("~/org/"))
+
+                                        ; Salt
+(use-package salt-mode
+  :mode ("\\.sls'"))
