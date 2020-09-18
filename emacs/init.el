@@ -205,6 +205,10 @@
   :init (setq fic-highlighted-words '("FIXME" "TODO" "BUG" "NOTE" "XXX"))
   :hook (prog-mode . fic-mode))
 
+                                        ; Whitespace cleanup
+(use-package ws-butler
+  :hook (prog-mode . ws-butler-mode))
+
                                         ; Language Servers
 (use-package lsp-mode
   :hook ((python-mode . lsp))
