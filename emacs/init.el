@@ -199,6 +199,12 @@
     "l n" 'flycheck-next-error
     "l p" 'flycheck-previous-error))
 
+                                        ; Highlight TODO notes
+(use-package fic-mode
+  :commands (fic-mode)
+  :init (setq fic-highlighted-words '("FIXME" "TODO" "BUG" "NOTE" "XXX"))
+  :hook (prog-mode . fic-mode))
+
                                         ; Language Servers
 (use-package lsp-mode
   :hook ((python-mode . lsp))
