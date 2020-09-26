@@ -248,3 +248,7 @@
                                         ; Salt
 (use-package salt-mode
   :mode ("\\.sls'"))
+
+                                        ; Caddyfile
+(use-package caddyfile-mode
+  :mode ("Caddyfile'"))
