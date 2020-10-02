@@ -261,3 +261,7 @@
           web-mode-enable-current-column-highlight t
           web-mode-enable-auto-quoting nil
     ))
+
+                                        ; Caddyfile
+(use-package caddyfile-mode
+  :mode ("Caddyfile'"))
