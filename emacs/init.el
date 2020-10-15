@@ -101,6 +101,7 @@
 
                                         ; Theme
 (use-package doom-themes
+  :init (setq doom-solarized-dark-brighter-comments t)
   :config
     (load-theme (intern (concat "doom-solarized-" (getenv "LC_COLORSCHEME_VARIANT"))))
     (doom-themes-visual-bell-config)
