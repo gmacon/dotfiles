@@ -47,6 +47,10 @@
 (straight-use-package 'use-package)
 (setq straight-use-package-by-default t)
 
+                                        ; Avoid bad tramp-zsh interaction
+                                        ; Note: this depends on the zsh/zshrc handling
+(setq tramp-terminal-type "tramp")
+
                                         ; Grab $PATH from shell configuration
 (use-package exec-path-from-shell
   :if (memq window-system '(mac ns))
