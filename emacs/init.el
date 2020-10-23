@@ -270,3 +270,7 @@
                                         ; Caddyfile
 (use-package caddyfile-mode
   :mode ("Caddyfile'"))
+
+                                        ; Dockerfile
+(use-package dockerfile-mode
+  :mode ("Dockerfile"))
