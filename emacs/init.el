@@ -66,7 +66,8 @@
     (evil-leader/set-leader "<SPC>")
     (global-evil-leader-mode)
     (evil-leader/set-key
-      "." 'find-file))
+      "." 'find-file
+      "b" 'switch-to-buffer))
 (use-package evil
     :demand t
     :after evil-leader
