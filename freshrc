@@ -11,7 +11,7 @@
 # See http://freshshell.com/readme for documentation.
 
 FRESH_BIN_PATH=${HOME}/.local/bin
-COLORSCHEME_VARIANT=dark
+COLORSCHEME_VARIANT=light
 
 fresh freshshell/fresh bin/fresh --bin
 
