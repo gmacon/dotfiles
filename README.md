@@ -5,21 +5,22 @@ Dependencies and source for Arch, Debian, macOS
 - atool: pacman, apt, brew
 - direnv: aur, apt, brew
 - emacs: pacman, source, Emacs.app
+- fd: pacman, ..., brew
 - Fira Code: otf-fira-code, apt fonts-firacode, https://github.com/tonsky/FiraCode
 - firefox: pacman, apt, <https://www.firefox.com>
 - fzf: pacman, [GitHub releases](https://github.com/junegunn/fzf-bin/releases), brew
 - git-lfs, aur, apt, brew
-- git: pacman, ppa:git-core/ppa, brew  (Note: need Git >= 2.20)
+- git: pacman, ppa:git-core/ppa, builtin  (Note: need Git >= 2.20)
 - httpie: pacman, apt, brew
 - mosh: pacman, apt, brew
-- openssh: pacman, apt, brew
+- openssh: pacman, apt, builtin
 - pass: pacman, apt, brew
 - pinentry: pacman, apt pinentry-qt, brew pinentry-mac
 - pyenv: git, (use deadsnakes instead), brew
 - ripgrep: pacman, [deb from GitHub](https://github.com/BurntSushi/ripgrep/releases), brew
 - rustup: <https://sh.rustup.rs>
 - thunderbird: pacman, apt, <https://www.thunderbird.net>
-- zsh: pacman, apt, brew
+- zsh: pacman, apt, builtin
 
 # Linux-only Dependencies
 
