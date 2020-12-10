@@ -57,7 +57,7 @@
 (use-package exec-path-from-shell
   :if (memq window-system '(mac ns))
   :init (setq exec-path-from-shell-check-startup-files nil
-              exec-path-from-shell-shell-name "/usr/local/bin/zsh")
+              exec-path-from-shell-shell-name "/bin/zsh")
   :config
   (add-to-list 'exec-path-from-shell-variables "LC_COLORSCHEME_VARIANT")
   (exec-path-from-shell-initialize))
