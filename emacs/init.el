@@ -76,7 +76,8 @@
     :defer 0.1
     :init
     (setq evil-search-module 'evil-search
-          evil-ex-substitute-global t)
+          evil-ex-substitute-global t
+          evil-undo-system 'undo-redo)
     :config
     (evil-mode 1))
 
