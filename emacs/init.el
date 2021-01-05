@@ -63,6 +63,8 @@
   (exec-path-from-shell-initialize))
 
                                         ; Evil mode
+(use-package undo-tree
+  :config (global-undo-tree-mode))
 (use-package evil-leader
     :config
     (evil-leader/set-leader "<SPC>")
@@ -77,7 +79,7 @@
     :init
     (setq evil-search-module 'evil-search
           evil-ex-substitute-global t
-          evil-undo-system 'undo-redo)
+          evil-undo-system 'undo-tree)
     :config
     (evil-mode 1))
 
