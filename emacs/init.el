@@ -223,8 +223,17 @@
 
                                         ; Language Servers
 (use-package lsp-mode
-  :hook ((python-mode . lsp))
-  :config (setq lsp-enable-snippet nil)
+  :hook (python-mode . lsp)
+  :config
+  (lsp-register-custom-settings
+   '(("pyls.plugins.pyls_black.enabled" t t)
+     ("pyls.plugins.pyls_isort.enabled" t t)))
+  (setq lsp-enable-snippet nil
+        lsp-pyls-plugins-flake8-enabled t
+        lsp-pyls-configuration-sources '("flake8")
+        lsp-pyls-plugins-pycodestyle-enabled nil
+        lsp-pyls-plugins-mccabe-enabled nil
+        lsp-pyls-plugins-pyflakes-enabled nil)
   :commands lsp
 )
 (use-package lsp-ui
@@ -236,18 +245,11 @@
   :commands lsp-ui-mode
   )
 
-                                        ; Autoformatter
-(use-package apheleia
-  :straight (apheleia
-             :host github
-             :repo "raxod502/apheleia")
-  :config (apheleia-global-mode 1))
-
                                         ; Python
-(add-hook 'python-mode-hook
-          (lambda ()
-            (setq lsp-diagnostics-provider :none
-                  flycheck-checker 'python-flake8)))
+(add-hook
+ 'python-mode-hook
+ (lambda ()
+   (add-hook 'before-save-hook 'lsp-format-buffer nil t)))
 
                                         ; YAML
 (use-package yaml-mode
