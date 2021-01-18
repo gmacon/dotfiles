@@ -29,9 +29,7 @@ eval $(ssh-agent)
 ($HOME/src/dwmstatus/target/release/dwmstatus; xsetroot -name "dwmstatus crashed") &
 dunst &
 
-xset s 300
-xset dpms 300
-xss-lock -- ${HOME}/.screenlock &
+xscreensaver &
 
 firefox &
 thunderbird &

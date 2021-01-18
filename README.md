@@ -30,8 +30,7 @@ Dependencies and source for Arch, Debian
 - brightnessctl: aur, don't know \[1\]
 - hexchat: pacman, apt
 - pamixer: pacman, git
-- sxlock: aur sxlock-git, git
-- xss-lock: pacman, apt
+- xscreensaver: pacman, apt
 - dunst: pacman, apt
 - xcape: pacman, apt
 - gnome-keyring: pacman, apt
