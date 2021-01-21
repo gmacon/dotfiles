@@ -223,26 +223,33 @@
 
                                         ; Language Servers
 (use-package lsp-mode
-  :hook (python-mode . lsp)
+  :hook
+  ((python-mode . lsp)
+   (lsp-before-initialize . gam/lsp-setup))
   :config
-  (lsp-register-custom-settings
-   '(("pyls.plugins.pyls_black.enabled" t t)
-     ("pyls.plugins.pyls_isort.enabled" t t)))
-  (setq lsp-enable-snippet nil
-        lsp-pyls-plugins-flake8-enabled t
-        lsp-pyls-configuration-sources '("flake8")
-        lsp-pyls-plugins-pycodestyle-enabled nil
-        lsp-pyls-plugins-mccabe-enabled nil
-        lsp-pyls-plugins-pyflakes-enabled nil)
+  (defun gam/lsp-setup()
+    (lsp-register-custom-settings
+     '(("pyls.plugins.pyls_black.enabled" t t)
+       ("pyls.plugins.pyls_isort.enabled" t t)))
+    (setq lsp-enable-snippet nil
+          lsp-pyls-plugins-flake8-enabled t
+          lsp-pyls-configuration-sources ["flake8"]
+          lsp-pyls-plugins-autopep8-enabled nil
+          lsp-pyls-plugins-pycodestyle-enabled nil
+          lsp-pyls-plugins-mccabe-enabled nil
+          lsp-pyls-plugins-pyflakes-enabled nil))
   :commands lsp
 )
 (use-package lsp-ui
-  :init
+  :config
+  (defun gam/lsp-ui-setup()
+    (lsp-headerline-breadcrumb-mode -1)
     (setq lsp-ui-doc-enable t
           lsp-ui-doc-position "top"
           lsp-ui-sideline-show-hover t
-          lsp-ui-sideline-show-diagnostics t)
+          lsp-ui-sideline-show-diagnostics t))
   :commands lsp-ui-mode
+  :hook (lsp-before-initialize . gam/lsp-ui-setup)
   )
 
                                         ; Python
