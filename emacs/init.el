@@ -13,17 +13,17 @@
 (load custom-file 'noerror)
 
                                         ; Fonts
-(defvar gam-font-family "Fira Code")
-(defvar gam-font-size 120)
+(defvar gam/font-family "Fira Code")
+(defvar gam/font-size 120)
 (set-face-attribute 'default nil
-  :family gam-font-family
-  :height gam-font-size
+  :family gam/font-family
+  :height gam/font-size
   :width 'normal
   :weight 'normal)
 
 (set-face-attribute 'line-number-current-line nil
-  :family gam-font-family
-  :height gam-font-size
+  :family gam/font-family
+  :height gam/font-size
   :width 'expanded
   :weight 'normal
   :inverse-video nil)
