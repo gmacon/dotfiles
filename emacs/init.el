@@ -106,12 +106,20 @@
     )
 
                                         ; Theme
+(defun gam/macos-responsive-theme (appearance)
+  "Change theme based on system APPEARANCE."
+  (mapc #'disable-theme custom-enabled-themes)
+  (pcase appearance
+    ('light (load-theme 'doom-solarized-light))
+    ('dark (load-theme 'doom-solarized-dark))))
 (use-package doom-themes
   :init (setq doom-solarized-dark-brighter-comments t)
   :config
-    (load-theme (intern (concat "doom-solarized-" (getenv "LC_COLORSCHEME_VARIANT"))))
-    (doom-themes-visual-bell-config)
-    (doom-themes-org-config))
+  (if (memq window-system '(mac ns))
+      (add-hook 'ns-system-appearance-change-functions #'gam/macos-responsive-theme)
+    (load-theme (intern (concat "doom-solarized-" (getenv "LC_COLORSCHEME_VARIANT")))))
+  (doom-themes-visual-bell-config)
+  (doom-themes-org-config))
 (use-package doom-modeline
   :config (doom-modeline-mode))
 
