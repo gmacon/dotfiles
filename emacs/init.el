@@ -78,9 +78,9 @@
     :defer 0.1
     :init
     (setq evil-search-module 'evil-search
-          evil-ex-substitute-global t
-          evil-undo-system 'undo-tree)
+          evil-ex-substitute-global t)
     :config
+    (evil-set-undo-system 'undo-tree)
     (evil-mode 1))
 
 (use-package evil-surround
