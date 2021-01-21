@@ -4,3 +4,9 @@ export PYENV_ROOT=/usr/local/var/pyenv
 if [ -x /usr/libexec/path_helper ]; then
 	eval `/usr/libexec/path_helper -s`
 fi
+
+if [ "$(osascript -e 'tell application "System Events" to tell appearance preferences to return dark mode')" = "true" ]; then
+    export LC_COLORSCHEME_VARIANT=dark
+else
+    export LC_COLORSCHEME_VARIANT=light
+fi
