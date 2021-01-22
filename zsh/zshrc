@@ -40,6 +40,10 @@ if command -v exa >/dev/null; then
     alias ls=exa
 fi
 
+if command -v rsync >/dev/null; then
+    alias scp=rsync
+fi
+
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
