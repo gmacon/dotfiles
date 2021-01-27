@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# Query or set dark mode.
+#
+# With an argument (dark or light), set the system appearance to that mode.
+# With no argument, print the current mode (dark or light).
+
+set -e
+
+osascript_stem='tell application "System Events" to tell appearance preferences to'
+usage="usage: $0\nusage: $0 [dark|light]"
+
+if [ $# == 0 ]; then
+    if [ "$(osascript -e "$osascript_stem return dark mode")" == "true" ]
+    then
+        echo dark
+    else
+        echo light
+    fi
+elif [ $# == 1 ]; then
+    case "$1" in
+        dark)
+            osascript -e "$osascript_stem set dark mode to true";;
+        light)
+            osascript -e "$osascript_stem set dark mode to false";;
+        *)
+            echo $usage 1>&2
+            exit 1
+    esac
+else
+    echo $usage 1>&2
+    exit 1
+fi

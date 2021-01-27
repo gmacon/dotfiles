@@ -133,3 +133,8 @@ fresh ptpython.py --file=~/.config/ptpython/config.py
 
 # pushover script ##########################################
 fresh pushover --bin
+
+# darkmode script ##########################################
+if [ $(uname) == "Darwin" ]; then
+    fresh darkmode --bin
+fi
