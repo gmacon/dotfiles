@@ -133,6 +133,7 @@
 
                                         ; Projects
 (use-package perspective
+  :init (setq persp-show-modestring nil)
   :config
     (evil-leader/set-key "B" 'persp-switch-to-buffer)
     (persp-mode))
