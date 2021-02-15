@@ -78,11 +78,6 @@ case $(uname) in
     fresh X11/dunstrc --file=~/.config/dunst/dunstrc
     fresh X11/xkbmap --bin=~/.xkbmap
     fresh X11/xcape.service --file=~/.config/systemd/user/xcape.service
-    if [ -f $HOME/.dotfiles/X11/lock.$(hostname -s) ]; then
-      fresh X11/lock.$(hostname -s) --bin=~/.screenlock
-    else
-      fresh X11/lock --bin=~/.screenlock
-    fi
     ;;
 esac
 
