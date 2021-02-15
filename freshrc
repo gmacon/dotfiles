@@ -139,4 +139,5 @@ fresh pushover --bin
 # darkmode script ##########################################
 if [ $(uname) == "Darwin" ]; then
     fresh darkmode --bin
+    fresh swcolor.sh
 fi
