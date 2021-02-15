@@ -262,6 +262,7 @@
   )
 
                                         ; Python
+(use-package cython-mode)
 (add-hook
  'python-mode-hook
  (lambda ()
