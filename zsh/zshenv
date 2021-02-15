@@ -61,6 +61,12 @@ fi
 # Local executables
 path=("$HOME/.local/bin" $path)
 
+# Default colorscheme
 if [ -z "$LC_COLORSCHEME_VARIANT" ]; then
     export LC_COLORSCHEME_VARIANT=__COLORSCHEME_VARIANT__
+fi
+
+# Cookiecutter config path
+if [ -f "$HOME/.config/cookiecutter/cookiecutter.yaml" ]; then
+    export COOKIECUTTER_CONFIG="$HOME/.config/cookiecutter/cookiecutter.yaml"
 fi

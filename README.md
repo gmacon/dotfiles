@@ -9,6 +9,7 @@ Dependencies and source for Arch, Debian, macOS
 - Fira Code: otf-fira-code, apt fonts-firacode, https://github.com/tonsky/FiraCode
 - firefox: pacman, apt, <https://www.firefox.com>
 - fzf: pacman, [GitHub releases](https://github.com/junegunn/fzf-bin/releases), brew
+- gettext (for the `envsubst` script): pacman, apt, brew
 - git-lfs, aur, apt, brew
 - git: pacman, ppa:git-core/ppa, builtin  (Note: need Git >= 2.20)
 - httpie: pacman, apt, brew
