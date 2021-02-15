@@ -11,6 +11,11 @@
 
 FRESH_BIN_PATH=${HOME}/.local/bin
 COLORSCHEME_VARIANT=light
+USER_EMAIL=george.macon@gmail.com
+
+if [ -f "$HOME/.dotfiles/freshrc.local" ]; then
+    . "$HOME/.dotfiles/freshrc.local"
+fi
 
 fresh freshshell/fresh bin/fresh --bin
 
@@ -18,13 +23,11 @@ fresh freshshell/fresh bin/fresh --bin
 fresh-options --file=~/.zshrc
   fresh zsh/zshrc
   fresh zsh/zshrc.$(uname) --ignore-missing
-  fresh zsh/zshrc.$(hostname -s) --ignore-missing
   fresh zsh/zshrc.local --ignore-missing
 fresh-options
 
 fresh-options --file=~/.zshenv
   fresh zsh/zshenv.local --ignore-missing
-  fresh zsh/zshenv.$(hostname -s) --ignore-missing
   fresh zsh/zshenv.$(uname) --ignore-missing
   fresh zsh/zshenv --filter="perl -pe 's[__COLORSCHEME_VARIANT__][${COLORSCHEME_VARIANT}]'"
 fresh-options
@@ -91,9 +94,8 @@ fresh emacs/init.el --file=~/.config/emacs/init.el
 
 # Git Configuration ########################################
 fresh-options --file=~/.gitconfig
-  fresh git/gitconfig
+  fresh git/gitconfig --filter=envsubst
   fresh git/gitconfig.$(uname) --ignore-missing
-  fresh git/gitconfig.$(hostname -s) --ignore-missing
   fresh git/gitconfig.local --ignore-missing
 fresh-options
 
@@ -115,7 +117,6 @@ fresh git/git-prune-branches --bin
 # Since SSH takes the first answer, more specific things need to go to the top
 fresh-options --file=~/.ssh/config --marker='#'
   fresh ssh/ssh_config.local --ignore-missing
-  fresh ssh/ssh_config.$(hostname -s) --ignore-missing
   fresh ssh/ssh_config
 fresh-options
 
@@ -126,7 +127,6 @@ fresh Vagrantfile --file=~/.vagrant.d/Vagrantfile
 fresh-options --file=~/.npmrc
   fresh npm/npmrc
   fresh npm/npmrc.$(uname) --ignore-missing
-  fresh npm/npmrc.$(hostname -s) --ignore-missing
   fresh npm/npmrc.local --ignore-missing
 fresh-options
 

@@ -1,5 +1,5 @@
 default_context:
   full_name: George Macon
-  email: George.Macon@gtri.gatech.edu
+  email: $USER_EMAIL
 cookiecutters_dir: $HOME/.cache/cookiecutter/cookiecutters
 replay_dir: $HOME/.cache/cookiecutter/replay

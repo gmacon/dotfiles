@@ -1,5 +1,5 @@
 [user]
-	email = george.macon@gmail.com
+	email = $USER_EMAIL
 	name = George Macon
 [core]
 	excludesfile = ~/.gitignore
