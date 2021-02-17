@@ -11,7 +11,7 @@
 
 FRESH_BIN_PATH=${HOME}/.local/bin
 COLORSCHEME_VARIANT=light
-USER_EMAIL=george.macon@gmail.com
+export USER_EMAIL=george.macon@gmail.com
 
 if [ -f "$HOME/.dotfiles/freshrc.local" ]; then
     . "$HOME/.dotfiles/freshrc.local"
