@@ -152,7 +152,7 @@
   :init
     (setq projectile-completion-system 'default
           projectile-require-project-root nil
-          projectile-git-command "fd . --print0 --color never"
+          projectile-git-command "fd . --hidden --print0 --color never"
           projectile-indexing-method 'alien
           projectile-project-search-path '("~/code"))
     (evil-leader/set-key
