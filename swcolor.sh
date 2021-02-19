@@ -1,7 +1,7 @@
 swcolor () {
     local new_scheme
     if [ -z "$1" ]; then
-        if [ "$LC_COLORSCHEME_INFO" = "light" ]; then
+        if [ "$LC_COLORSCHEME_VARIANT" = "light" ]; then
             new_scheme=dark;
         else
             new_scheme=light;
@@ -10,5 +10,5 @@ swcolor () {
         new_scheme="$1"
     fi
     . "$HOME/.fresh/build/colors/base16-solarized-$new_scheme.sh"
-    export LC_COLORSCHEME_INFO="$new_scheme"
+    export LC_COLORSCHEME_VARIANT="$new_scheme"
 }
