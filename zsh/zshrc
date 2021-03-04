@@ -40,8 +40,8 @@ if command -v exa >/dev/null; then
     alias ls=exa
 fi
 
-if command -v rsync >/dev/null; then
-    alias scp=rsync
+if command -v pscp >/dev/null; then
+    alias scp=pscp -sftp
 fi
 
 alias grep='grep --color=auto'

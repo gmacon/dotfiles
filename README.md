@@ -17,6 +17,7 @@ Dependencies and source for Arch, Debian, macOS
 - openssh: pacman, apt, builtin
 - pass: pacman, apt, brew
 - pinentry: pacman, apt pinentry-qt, brew pinentry-mac
+- putty (for `pscp`): pacman, apt putty-tools, brew
 - pyenv: git, (use deadsnakes instead), brew
 - ripgrep: pacman, [deb from GitHub](https://github.com/BurntSushi/ripgrep/releases), brew
 - rustup: <https://sh.rustup.rs>
