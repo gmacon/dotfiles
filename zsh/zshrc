@@ -41,7 +41,7 @@ if command -v exa >/dev/null; then
 fi
 
 if command -v pscp >/dev/null; then
-    alias scp=pscp -sftp
+    alias scp=pscp -sftp -P22
 fi
 
 alias grep='grep --color=auto'
