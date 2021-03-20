@@ -234,6 +234,7 @@
 (use-package lsp-mode
   :hook
   ((python-mode . lsp)
+   (rust-mode . lsp)
    (lsp-before-initialize . gam/lsp-setup))
   :config
   (defun gam/lsp-setup()
@@ -299,3 +300,7 @@
                                         ; Dockerfile
 (use-package dockerfile-mode
   :mode ("Dockerfile"))
+
+                                        ; Rust
+(use-package rust-mode
+  :mode ("\\.rs$"))
