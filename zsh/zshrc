@@ -51,6 +51,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 export EDITOR="$(command -v vim)"
+export PARALLEL_SHELL=/bin/sh
 
 alias bd='. bd -s'
 
