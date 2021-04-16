@@ -86,6 +86,8 @@ fresh tmux.conf --file
 
 # Emacs ####################################################
 fresh emacs/init.el --file=~/.config/emacs/init.el
+mkdir -p ~/.config/emacs/straight
+ln -snf ~/.dotfiles/emacs/straight-versions ~/.config/emacs/straight/versions
 
 # Git Configuration ########################################
 fresh-options --file=~/.gitconfig
