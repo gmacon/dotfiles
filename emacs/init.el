@@ -235,6 +235,7 @@
   :hook
   ((python-mode . lsp)
    (rust-mode . lsp)
+   (c++-mode . lsp)
    (lsp-before-initialize . gam/lsp-setup))
   :config
   (defun gam/lsp-setup()
