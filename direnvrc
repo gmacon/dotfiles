@@ -68,7 +68,7 @@ layout_anaconda() {
     exit 1;
   fi;
   source "$HOME/miniconda3/etc/profile.d/conda.sh"
-  if !(conda env list | grep -q "^$env_name\s"); then
+  if ! (conda env list | grep -q "^$env_name\s"); then
     conda create --yes "$create_args"
   fi
   conda activate "$env_name"
