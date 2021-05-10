@@ -51,7 +51,8 @@
 
                                         ; Avoid bad tramp-zsh interaction
                                         ; Note: this depends on the zsh/zshrc handling
-(setq tramp-terminal-type "tramp")
+(setq tramp-terminal-type "tramp"
+      tramp-default-method "ssh")
 
                                         ; Grab $PATH from shell configuration
 (use-package exec-path-from-shell
