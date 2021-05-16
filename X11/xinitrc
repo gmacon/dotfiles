@@ -33,7 +33,7 @@ xscreensaver &
 
 firefox &
 thunderbird &
-hexchat &
+which hexchat >/dev/null 2>&1 && hexchat &
 which slack >/dev/null 2>&1 && slack &
 which nextcloud >/dev/null 2>&1 && nextcloud --background &
 
