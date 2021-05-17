@@ -2,6 +2,29 @@
 
 typeset -U path PATH
 
+# Autopaths
+path_dirs=(
+    "/usr/local/go/bin"
+    "$HOME/.poetry/bin"
+    "$HOME/.local/share/node_modules/bin"
+)
+for path_dir in "$path_dirs[@]"; do
+    if [ -d "$path_dir" ]; then
+        path+="$path_dir"
+    fi
+done
+
+# Autosources
+source_scripts=(
+    "$HOME/miniconda3/etc/profile.d/conda.sh"
+    "$HOME/.cargo/env"
+)
+for source_script in "$source_scripts[@]"; do
+    if [ -f "$source_script" ]; then
+        . "$source_script"
+    fi
+done
+
 # Local ruby install
 if [ -d "${RBENV_ROOT:=$HOME/.rbenv}" ]; then
     path=("${RBENV_ROOT}/bin" $path)
@@ -11,11 +34,6 @@ fi
 # Local perl install
 if [ -d "$HOME/perl5" ]; then
     eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
-fi
-
-# Local go install
-if [ -d /usr/local/go ]; then
-    path+="/usr/local/go/bin"
 fi
 
 # Go path
@@ -31,31 +49,6 @@ if [ -d "${PYENV_ROOT:=${HOME}/.pyenv}" ]; then
     if [ -d "${PYENV_ROOT}/plugins/pyenv-virtualenv" ]; then
         eval "$(pyenv virtualenv-init -)"
     fi
-fi
-
-# Local poetry install
-if [ -d "${HOME}/.poetry/bin" ]; then
-    path+="${HOME}/.poetry/bin"
-fi
-
-# Miniconda
-if [ -d "$HOME/miniconda3/bin" ]; then
-    source "$HOME/miniconda3/etc/profile.d/conda.sh"
-fi
-
-# Rust install
-if [ -f $HOME/.cargo/env ]; then
-    source $HOME/.cargo/env
-fi
-
-# Local node modules
-if [ -d $HOME/.local/share/node_modules ]; then
-    path+="${HOME}/.local/share/node_modules/bin"
-fi
-
-# Doom Emacs
-if [ -d "$HOME/.emacs.d/bin" ]; then
-    path+="$HOME/.emacs.d/bin"
 fi
 
 # Local executables
