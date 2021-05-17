@@ -17,6 +17,7 @@ done
 # Autosources
 source_scripts=(
     "$HOME/miniconda3/etc/profile.d/conda.sh"
+    "$HOME/miniforge3/etc/profile.d/conda.sh"
     "$HOME/.cargo/env"
 )
 for source_script in "$source_scripts[@]"; do
