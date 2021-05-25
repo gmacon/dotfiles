@@ -244,6 +244,7 @@
           lsp-pylsp-configuration-sources ["flake8"]
           lsp-pylsp-plugins-autopep8-enabled nil
           lsp-pylsp-plugins-pycodestyle-enabled nil
+          lsp-pylsp-plugins-pydocstyle-enabled nil
           lsp-pylsp-plugins-mccabe-enabled nil
           lsp-pylsp-plugins-pyflakes-enabled nil))
   :commands lsp
