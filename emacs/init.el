@@ -199,10 +199,6 @@
     (evil-leader/set-key "g" 'magit)
     (setq magit-popup-show-common-commands nil
           magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1))
-(use-package evil-magit
-  :after magit
-  :init
-  (setq evil-magit-want-horizontal-movement nil))
 
                                         ; Direnv
 (use-package direnv
