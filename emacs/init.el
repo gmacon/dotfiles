@@ -237,15 +237,15 @@
   :config
   (defun gam/lsp-setup()
     (lsp-register-custom-settings
-     '(("pyls.plugins.pyls_black.enabled" t t)
-       ("pyls.plugins.pyls_isort.enabled" t t)))
+     '(("pylsp.plugins.python_lsp_black.enabled" t t)
+       ("pylsp.plugins.pyls_isort.enabled" t t)))
     (setq lsp-enable-snippet nil
-          lsp-pyls-plugins-flake8-enabled t
-          lsp-pyls-configuration-sources ["flake8"]
-          lsp-pyls-plugins-autopep8-enabled nil
-          lsp-pyls-plugins-pycodestyle-enabled nil
-          lsp-pyls-plugins-mccabe-enabled nil
-          lsp-pyls-plugins-pyflakes-enabled nil))
+          lsp-pylsp-plugins-flake8-enabled t
+          lsp-pylsp-configuration-sources ["flake8"]
+          lsp-pylsp-plugins-autopep8-enabled nil
+          lsp-pylsp-plugins-pycodestyle-enabled nil
+          lsp-pylsp-plugins-mccabe-enabled nil
+          lsp-pylsp-plugins-pyflakes-enabled nil))
   :commands lsp
 )
 (use-package lsp-ui
