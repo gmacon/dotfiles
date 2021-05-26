@@ -2,7 +2,9 @@
 (setq frame-inhibit-implied-resize t
       frame-resize-pixelwise t
                                         ; This is inferred as just "Macon", thanks, Microsoft
-      user-full-name "George Macon")
+      user-full-name "George Macon"
+      gc-cons-threshold (* 100 (* 1024 1024)) ; 100 MiB
+      read-process-output-max (* 1024 1024)) ; 1 MiB
                                         ; Hide unneeded UI elements
 (push '(menu-bar-lines . 0) default-frame-alist)
 (push '(tool-bar-lines . 0) default-frame-alist)
