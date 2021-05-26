@@ -67,6 +67,7 @@
 (use-package undo-tree
   :config (global-undo-tree-mode))
 (use-package evil-leader
+  :init (setq evil-want-keybinding nil)
     :config
     (evil-leader/set-leader "<SPC>")
     (global-evil-leader-mode)
@@ -87,6 +88,10 @@
 (use-package evil-surround
     :after evil
     :config (global-evil-surround-mode 1))
+
+(use-package evil-collection
+  :after evil
+  :config (evil-collection-init))
 
                                         ; Sorting and Filtering
 (use-package selectrum
