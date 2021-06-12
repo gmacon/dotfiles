@@ -62,6 +62,6 @@ gitignore-std () {
     git commit -m "Add standard ignore $1"
 }
 
-if [ -n "${PYENV_ROOT}" ]; then
+if [ -d "${PYENV_ROOT}" ]; then
     eval "$(pyenv init -)";
 fi
