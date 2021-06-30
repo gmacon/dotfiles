@@ -192,6 +192,7 @@
               indent-tabs-mode nil                   ; use spaces over tabs everywhere
               tab-width 4                            ; but when encountering a tab, how large is it?
               tab-stop-list (number-sequence 3 120 2); and what are the tabstop points when shifting?
+              require-final-newline t                ; the last line isn't complete without its end-of-line marker
 )
 
                                         ; Git
