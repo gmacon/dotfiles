@@ -201,7 +201,8 @@
   :init (setq git-gutter:update-interval 2))
 (use-package magit
   :commands (magit-status)
-  :hook (after-save . magit-after-save-refresh-status)
+  :hook ((after-save . magit-after-save-refresh-status)
+         (git-commit-setup . git-commit-turn-on-flyspell))
   :defer 5
   :init
     (evil-leader/set-key "g" 'magit)
