@@ -206,7 +206,9 @@
   :init
     (evil-leader/set-key "g" 'magit)
     (setq magit-popup-show-common-commands nil
-          magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1))
+          magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1
+          git-commit-fill-column 72
+          git-commit-summary-max-length 50))
 
                                         ; Direnv
 (use-package direnv
