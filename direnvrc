@@ -67,7 +67,7 @@ layout_anaconda() {
     (>&2 echo No environment specified);
     exit 1;
   fi;
-  source "$HOME/miniconda3/etc/profile.d/conda.sh"
+  source "$(dirname "$CONDA_EXE")/../etc/profile.d/conda.sh"
   if ! (conda env list | grep -q "^$env_name\s"); then
     conda create --yes "$create_args"
   fi
