@@ -169,6 +169,9 @@
   :config
   (projectile-mode))
 
+                                        ; Text Mode Basics
+(add-hook 'text-mode-hook 'flyspell-mode)
+
                                         ; Programming Mode Basics
 (add-hook 'prog-mode-hook (function(lambda ()
   (show-paren-mode 1)
