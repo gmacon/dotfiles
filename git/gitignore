@@ -1,9 +1,3 @@
-.ycm_extra_conf.py
-.noseids
 .python-version
-htmlcov
-.cache
 .envrc
 .direnv
-language_settings.json
-_vimrc_local.vim
