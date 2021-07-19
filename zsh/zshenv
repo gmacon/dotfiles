@@ -20,6 +20,7 @@ source_scripts=(
     "$HOME/miniforge3/etc/profile.d/conda.sh"
     "$HOME/mambaforge/etc/profile.d/conda.sh"
     "$HOME/.cargo/env"
+    "$HOME/.nix-profile/etc/profile.d/nix.sh"
 )
 for source_script in "$source_scripts[@]"; do
     if [ -f "$source_script" ]; then
