@@ -90,7 +90,7 @@ mkdir -p ~/.config/emacs/straight
 ln -snf ~/.dotfiles/emacs/straight-versions ~/.config/emacs/straight/versions
 
 # Git Configuration ########################################
-fresh-options --file=~/.gitconfig
+fresh-options --file=~/.config/git/config
   fresh git/gitconfig --filter=envsubst
   fresh git/gitconfig.$(uname) --ignore-missing
   fresh git/gitconfig.local --ignore-missing
@@ -98,7 +98,7 @@ fresh-options
 
 fresh git/skipList --file=~/.config/git/skipList --filter='cut -f1 | sort'
 
-fresh-options --file=~/.gitignore --marker='#'
+fresh-options --file=~/.config/git/ignore --marker='#'
   case $(uname) in
     Darwin) fresh github/gitignore Global/macOS.gitignore;;
     *) fresh github/gitignore Global/$(uname).gitignore;;

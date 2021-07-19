@@ -1,8 +1,6 @@
 [user]
 	email = $USER_EMAIL
 	name = George Macon
-[core]
-	excludesfile = ~/.gitignore
 [color]
 	ui = auto
 [diff]
