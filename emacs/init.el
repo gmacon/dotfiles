@@ -225,11 +225,7 @@
                                         ; Flycheck
 (use-package flycheck
   :init
-  (global-flycheck-mode)
-  (evil-leader/set-key
-    "l l" 'flycheck-list-errors
-    "l n" 'flycheck-next-error
-    "l p" 'flycheck-previous-error))
+  (global-flycheck-mode))
 
                                         ; Highlight TODO notes
 (use-package fic-mode
