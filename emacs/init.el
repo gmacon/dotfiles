@@ -75,7 +75,8 @@
     (global-evil-leader-mode)
     (evil-leader/set-key
       "." 'find-file
-      "b" 'switch-to-buffer))
+      "b" 'switch-to-buffer
+      "l" 'lsp))
 (use-package evil
     :demand t
     :after evil-leader
@@ -256,7 +257,8 @@
           lsp-pylsp-plugins-pycodestyle-enabled nil
           lsp-pylsp-plugins-pydocstyle-enabled nil
           lsp-pylsp-plugins-mccabe-enabled nil
-          lsp-pylsp-plugins-pyflakes-enabled nil))
+          lsp-pylsp-plugins-pyflakes-enabled nil)
+    (evil-leader/set-key "l" lsp-command-map))
   :commands lsp
 )
 (use-package lsp-ui
