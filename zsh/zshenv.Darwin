@@ -1,5 +1,8 @@
 # -*- mode: sh -*-
 
+# Grab extra pythons installed with Homebrew at low priority
+path+=(/usr/local/opt/python@*/bin)
+
 export PYENV_ROOT=/usr/local/var/pyenv
 if [ -x /usr/libexec/path_helper ]; then
 	eval `/usr/libexec/path_helper -s`
