@@ -8,6 +8,25 @@ layout_python() {
   local old_env
   local python=${1:-python}
   [[ $# -gt 0 ]] && shift
+
+  local opt
+  local tag=""
+  while getopts ':t:' opt; do
+      case $opt in
+          t)
+              tag="-$OPTARG"
+              ;;
+          \?)
+              echo "Invalid option: -$OPTARG" >&2
+              return 1
+              ;;
+          :)
+              echo "Option -$OPTARG requires an argument" >&2
+              return 1
+              ;;
+      esac
+  done
+
   old_env=$(direnv_layout_dir)/virtualenv
   unset PYTHONHOME
   if [[ -d $old_env && $python == python ]]; then
@@ -16,12 +35,12 @@ layout_python() {
     local python_version ve
     # shellcheck disable=SC2046
     read -r python_version ve <<<$($python -c "import pkgutil as u, platform as p;ve='venv' if u.find_loader('venv') else ('virtualenv' if u.find_loader('virtualenv') else '');print(p.python_version()+' '+ve)")
-    if [[ -z $python_version ]]; then
+    if [[ -z "$python"_version ]]; then
       log_error "Could not find python's version"
       return 1
     fi
 
-    VIRTUAL_ENV=$(direnv_layout_dir)/python-$python_version
+    VIRTUAL_ENV="$(direnv_layout_dir)/python$tag-$python_version"
     if [[ ! -d $VIRTUAL_ENV ]]; then
       case $ve in
         "venv")
