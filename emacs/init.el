@@ -63,6 +63,7 @@
               exec-path-from-shell-shell-name "/bin/zsh")
   :config
   (add-to-list 'exec-path-from-shell-variables "LC_COLORSCHEME_VARIANT")
+  (add-to-list 'exec-path-from-shell-variables "CONDA_EXE")
   (exec-path-from-shell-initialize))
 
                                         ; Evil mode
