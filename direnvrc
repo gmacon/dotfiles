@@ -26,6 +26,7 @@ layout_python() {
               ;;
       esac
   done
+  shift $OPTIND
 
   old_env=$(direnv_layout_dir)/virtualenv
   unset PYTHONHOME
