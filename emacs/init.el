@@ -319,3 +319,7 @@
 
 (use-package julia-mode
   :mode ("\\.jl$"))
+
+                                        ; Nix
+(use-package nix-mode
+  :mode ("\\.nix$"))
