@@ -317,6 +317,7 @@
 (use-package rust-mode
   :mode ("\\.rs$"))
 
+                                        ; Julia
 (use-package julia-mode
   :mode ("\\.jl$"))
 
