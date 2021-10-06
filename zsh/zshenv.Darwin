@@ -1,4 +1,4 @@
-# -*- mode: sh -*-
+# -*- mode: sh; sh-shell: zsh -*-
 
 # Grab extra pythons installed with Homebrew at low priority
 path+=(/usr/local/opt/python@*/bin)

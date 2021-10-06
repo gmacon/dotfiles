@@ -1,4 +1,4 @@
-# -*- mode: sh -*-
+# -*- mode: sh; sh-shell: bash -*-
 
 direnv_layout_dir() {
     echo "$HOME/.cache/direnv/$(echo $PWD | shasum | cut -d' ' -f1)"

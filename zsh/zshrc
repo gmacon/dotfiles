@@ -1,4 +1,4 @@
-# -*- mode: sh -*-
+# -*- mode: sh; sh-shell: zsh -*-
 
 if [ "$TERM" = "tramp" ]; then
     unsetopt zle

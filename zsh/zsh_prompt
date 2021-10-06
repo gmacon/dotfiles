@@ -1,4 +1,4 @@
-# -*- mode: sh -*-
+# -*- mode: sh; sh-shell: zsh -*-
 
 autoload -Uz vcs_info
 
