@@ -320,6 +320,10 @@
 (use-package julia-mode
   :mode ("\\.jl$"))
 
+                                        ; DOT graph language
+(use-package graphviz-dot-mode
+  :mode ("\\.dot$"))
+
                                         ; Nix
 (use-package nix-mode
   :mode ("\\.nix$"))
