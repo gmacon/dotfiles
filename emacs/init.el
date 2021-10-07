@@ -328,3 +328,7 @@
                                         ; Nix
 (use-package nix-mode
   :mode ("\\.nix$"))
+
+                                        ; Packer (HCL)
+(use-package hcl-mode
+  :mode ("\\.hcl$"))
