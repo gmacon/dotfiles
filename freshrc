@@ -55,7 +55,10 @@ mkdir -p ~/.config/fzf-marks
 fresh urbainvaes/fzf-marks fzf-marks.plugin.zsh
 
 # direnv
-fresh direnvrc --file=~/.config/direnv/direnvrc
+fresh-options --file=~/.config/direnv/direnvrc
+    fresh nix-community/nix-direnv direnvrc
+    fresh direnvrc
+fresh-options
 
 # cookiecutter
 fresh cookiecutter.yaml --file=~/.config/cookiecutter/cookiecutter.yaml --filter=envsubst
