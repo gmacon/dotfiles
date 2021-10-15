@@ -1,7 +1,9 @@
 # -*- mode: sh; sh-shell: bash -*-
 
+# From https://github.com/nix-community/nix-direnv#storing-direnv-outside-the-project-directory
 direnv_layout_dir() {
-    echo "$HOME/.cache/direnv/$(echo $PWD | shasum | cut -d' ' -f1)"
+    echo -n "${XDG_CACHE_HOME:-$HOME/.cache}"/direnv/layouts/
+    echo -n "$PWD" | shasum | cut -d ' ' -f 1
 }
 
 layout_python() {
