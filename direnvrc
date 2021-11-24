@@ -95,3 +95,11 @@ layout_anaconda() {
   fi
   conda activate "$env_name"
 }
+
+layout_poetry() {
+    poetry install --remove-untracked "$@"
+    watch_file pyproject.toml poetry.lock
+    VIRTUAL_ENV="$(poetry env info --path)"
+    export VIRTUAL_ENV
+    PATH_add "$VIRTUAL_ENV/bin"
+}
