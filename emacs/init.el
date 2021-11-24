@@ -181,8 +181,7 @@
   (global-hl-line-mode 1)
   (display-line-numbers-mode)
   (column-number-mode)
-  (company-mode)
-  (add-hook 'before-save-hook 'delete-trailing-whitespace nil t)))
+  (company-mode)))
 )
 (setq initial-scratch-message ""                     ; disable the scratch message
       inhibit-startup-message t                      ; disable the startup screen
