@@ -202,7 +202,9 @@
 
                                         ; Git
 (use-package git-gutter
-  :hook (prog-mode . git-gutter-mode)
+  :hook
+  (prog-mode . git-gutter-mode)
+  (text-mode . git-gutter-mode)
   :init (setq git-gutter:update-interval 2))
 (use-package magit
   :commands (magit-status)
