@@ -173,6 +173,7 @@
 
                                         ; Text Mode Basics
 (add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'text-mode-hook 'display-line-numbers-mode)
 
                                         ; Programming Mode Basics
 (add-hook 'prog-mode-hook (function(lambda ()
