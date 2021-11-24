@@ -334,3 +334,7 @@
                                         ; Packer (HCL)
 (use-package hcl-mode
   :mode ("\\.hcl$"))
+
+                                        ; Go
+(use-package go-mode
+  :mode ("\\.go$"))
