@@ -99,7 +99,7 @@ layout_anaconda() {
 layout_poetry() {
     VIRTUAL_ENV="$(poetry env info --path)"
     if [[
-           ! -e "$VIRTUAL_ENV"
+           -z "$VIRTUAL_ENV"
         || "$VIRTUAL_ENV/.direnv-poetry-stamp" -ot pyproject.toml
         || "$VIRTUAL_ENV/.direnv-poetry-stamp" -ot poetry.lock
     ]]; then
