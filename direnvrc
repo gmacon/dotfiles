@@ -97,9 +97,17 @@ layout_anaconda() {
 }
 
 layout_poetry() {
-    poetry install --remove-untracked "$@"
-    watch_file pyproject.toml poetry.lock
     VIRTUAL_ENV="$(poetry env info --path)"
+    if [[
+           ! -e "$VIRTUAL_ENV"
+        || "$VIRTUAL_ENV/.direnv-poetry-stamp" -ot pyproject.toml
+        || "$VIRTUAL_ENV/.direnv-poetry-stamp" -ot poetry.lock
+    ]]; then
+        poetry install --remove-untracked "$@"
+        VIRTUAL_ENV="$(poetry env info --path)"
+        touch "$VIRTUAL_ENV/.direnv-poetry-stamp"
+    fi
+    watch_file pyproject.toml poetry.lock
     export VIRTUAL_ENV
     PATH_add "$VIRTUAL_ENV/bin"
 }
