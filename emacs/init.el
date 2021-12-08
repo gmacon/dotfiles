@@ -58,9 +58,8 @@
 
                                         ; Grab $PATH from shell configuration
 (use-package exec-path-from-shell
-  :if (memq window-system '(mac ns))
   :init (setq exec-path-from-shell-check-startup-files nil
-              exec-path-from-shell-shell-name "/bin/zsh")
+              exec-path-from-shell-shell-name "zsh")
   :config
   (add-to-list 'exec-path-from-shell-variables "LC_COLORSCHEME_VARIANT")
   (add-to-list 'exec-path-from-shell-variables "CONDA_EXE")
