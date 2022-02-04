@@ -253,6 +253,7 @@
      '(("pylsp.plugins.python_lsp_black.enabled" t t)
        ("pylsp.plugins.pyls_isort.enabled" t t)))
     (setq lsp-enable-snippet nil
+          lsp-rust-server 'rust-analyzer
           lsp-pylsp-plugins-flake8-enabled t
           lsp-pylsp-configuration-sources ["flake8"]
           lsp-pylsp-plugins-autopep8-enabled nil
@@ -316,7 +317,9 @@
 
                                         ; Rust
 (use-package rust-mode
-  :mode ("\\.rs$"))
+  :mode ("\\.rs$")
+  :hook (rust-mode-hook . (lambda ()
+                              (add-hook 'before-save-hook 'lsp-format-buffer nil t))))
 
                                         ; Julia
 (use-package julia-mode
