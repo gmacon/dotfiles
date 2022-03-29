@@ -75,8 +75,7 @@
     (global-evil-leader-mode)
     (evil-leader/set-key
       "." 'find-file
-      "b" 'switch-to-buffer
-      "l" 'lsp))
+      "b" 'switch-to-buffer))
 (use-package evil
     :demand t
     :after evil-leader
@@ -85,6 +84,7 @@
     (setq evil-search-module 'evil-search
           evil-ex-substitute-global t)
     :config
+    (evil-global-set-key 'normal (kbd "g r") 'xref-find-references)
     (evil-set-undo-system 'undo-tree)
     (evil-mode 1))
 
@@ -241,47 +241,28 @@
   :hook (prog-mode . ws-butler-mode))
 
                                         ; Language Servers
-(use-package lsp-mode
+(use-package yasnippet)
+(use-package markdown-mode)
+(use-package eglot
   :hook
-  ((python-mode . lsp)
-   (rust-mode . lsp)
-   (c++-mode . lsp)
-   (lsp-before-initialize . gam/lsp-setup))
+  ((python-mode . eglot-ensure)
+   (rust-mode . eglot-ensure))
+  :init
+  (setq eglot-extend-to-xref t)
   :config
-  (defun gam/lsp-setup()
-    (lsp-register-custom-settings
-     '(("pylsp.plugins.python_lsp_black.enabled" t t)
-       ("pylsp.plugins.pyls_isort.enabled" t t)))
-    (setq lsp-enable-snippet nil
-          lsp-rust-server 'rust-analyzer
-          lsp-pylsp-plugins-flake8-enabled t
-          lsp-pylsp-configuration-sources ["flake8"]
-          lsp-pylsp-plugins-autopep8-enabled nil
-          lsp-pylsp-plugins-pycodestyle-enabled nil
-          lsp-pylsp-plugins-pydocstyle-enabled nil
-          lsp-pylsp-plugins-mccabe-enabled nil
-          lsp-pylsp-plugins-pyflakes-enabled nil)
-    (evil-leader/set-key "l" lsp-command-map))
-  :commands lsp
-)
-(use-package lsp-ui
-  :config
-  (defun gam/lsp-ui-setup()
-    (lsp-headerline-breadcrumb-mode -1)
-    (setq lsp-ui-doc-enable t
-          lsp-ui-doc-position "top"
-          lsp-ui-sideline-show-hover t
-          lsp-ui-sideline-show-diagnostics t))
-  :commands lsp-ui-mode
-  :hook (lsp-before-initialize . gam/lsp-ui-setup)
-  )
+  (evil-leader/set-key
+    "l h" 'eldoc
+    "l l" 'eglot
+    "l q" 'eglot-shutdown
+    "l r" 'eglot-rename
+    "l =" 'eglot-format))
 
                                         ; Python
 (use-package cython-mode)
 (add-hook
  'python-mode-hook
  (lambda ()
-   (add-hook 'before-save-hook 'lsp-format-buffer nil t)))
+   (add-hook 'before-save-hook 'eglot-format-buffer nil t)))
 
                                         ; YAML
 (use-package yaml-mode
@@ -319,7 +300,7 @@
 (use-package rust-mode
   :mode ("\\.rs$")
   :hook (rust-mode-hook . (lambda ()
-                              (add-hook 'before-save-hook 'lsp-format-buffer nil t))))
+                            (add-hook 'before-save-hook 'eglot-format-buffer nil t))))
 
                                         ; Julia
 (use-package julia-mode
