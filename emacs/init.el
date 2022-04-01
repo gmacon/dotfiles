@@ -225,11 +225,6 @@
 (use-package editorconfig
   :config (editorconfig-mode 1))
 
-                                        ; Flycheck
-(use-package flycheck
-  :init
-  (global-flycheck-mode))
-
                                         ; Highlight TODO notes
 (use-package fic-mode
   :commands (fic-mode)
