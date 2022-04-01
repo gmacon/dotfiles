@@ -254,6 +254,7 @@
     "l h" 'eldoc
     "l l" 'eglot
     "l q" 'eglot-shutdown
+    "l Q" 'eglot-reconnect
     "l r" 'eglot-rename
     "l =" 'eglot-format))
 
