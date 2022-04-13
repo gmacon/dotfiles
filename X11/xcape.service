@@ -1,7 +1,0 @@
-[Unit]
-Description=Map Caps Lock to Ctrl and Escape
-
-[Service]
-Environment=DISPLAY=:0 XAUTHORITY=%h/.Xauthority
-ExecStart=/usr/bin/xcape -d -e 'Control_L=Escape'
-Restart=always

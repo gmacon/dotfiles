@@ -70,20 +70,6 @@ fresh-options --file=~/.config/alacritty/alacritty.yml
   fresh aaron-williamson/base16-alacritty "colors/base16-solarized-${COLORSCHEME_VARIANT}-256.yml"
 fresh-options
 
-# Graphics! ################################################
-case $(uname) in
-  Linux)
-    # X Configuration
-    fresh X11/Xresources --file
-    fresh X11/xinitrc --file
-    fresh X11/auto-startx.sh --file=~/.zprofile
-    fresh X11/passmenu --bin
-    fresh X11/dunstrc --file=~/.config/dunst/dunstrc
-    fresh X11/xkbmap --bin=~/.xkbmap
-    fresh X11/xcape.service --file=~/.config/systemd/user/xcape.service
-    ;;
-esac
-
 # Terminal Configuration ###################################
 fresh tmux.conf --file
 
