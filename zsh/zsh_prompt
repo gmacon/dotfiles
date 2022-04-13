@@ -43,7 +43,14 @@ autoload -Uz vcs_info
 	esac
 }
 
++vi-my-directories() {
+    if ! [ -O "$PWD" ]; then
+        ret=2
+    fi
+}
+
 zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*+start-up:*' hooks my-directories
 zstyle ':vcs_info:git*' formats ' %b%m'
 zstyle ':vcs_info:git*' actionformats ' %a %b%m'
 zstyle ':vcs_info:git*+post-backend:*' hooks git-extra-info
