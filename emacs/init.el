@@ -76,7 +76,8 @@
     (global-evil-leader-mode)
     (evil-leader/set-key
       "." 'find-file
-      "b" 'switch-to-buffer))
+      "b" 'switch-to-buffer
+      "w" 'toggle-truncate-lines))
 (use-package evil
     :demand t
     :after evil-leader
