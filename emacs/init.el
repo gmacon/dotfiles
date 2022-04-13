@@ -67,6 +67,7 @@
 
                                         ; Evil mode
 (use-package undo-tree
+  :init (setq undo-tree-history-directory-alist '(("." . "~/.cache/emacs/undo-tree")))
   :config (global-undo-tree-mode))
 (use-package evil-leader
   :init (setq evil-want-keybinding nil)
