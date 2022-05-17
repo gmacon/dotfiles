@@ -297,7 +297,7 @@
                                         ; Rust
 (use-package rust-mode
   :mode ("\\.rs$")
-  :hook (rust-mode-hook . (lambda ()
+  :hook (rust-mode . (lambda ()
                             (add-hook 'before-save-hook 'eglot-format-buffer nil t))))
 
                                         ; Julia
