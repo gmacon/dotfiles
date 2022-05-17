@@ -248,6 +248,7 @@
   (setq eglot-extend-to-xref t)
   :config
   (evil-leader/set-key
+    "l a" 'eglot-code-actions
     "l h" 'eldoc
     "l l" 'eglot
     "l q" 'eglot-shutdown
