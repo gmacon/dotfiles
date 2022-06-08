@@ -1,0 +1,36 @@
+#!/usr/bin/env python3
+
+import pathlib
+import re
+import subprocess
+import sys
+import urllib.parse
+
+SCP_FORM = re.compile(r"^[^/]*:")
+
+
+def parse_git_url(url: str) -> urllib.parse.ParseResult:
+    if "//" not in url and SCP_FORM.match(url):
+        host, _, path = url.partition(":")
+        url = f"ssh://{host}/{path}"
+    return urllib.parse.urlparse(url)
+
+
+def main(url: str, *extra: str) -> int:
+    """Clone a repository into the ~/code tree."""
+    parts = parse_git_url(url)
+    if parts.scheme not in ("ssh", "https", "git"):
+        sys.exit(
+            "This script only supports cloning over the network.\n"
+            "Try\n"
+            f"    git clone {url}\n"
+            "instead."
+        )
+    target_dir = (
+        pathlib.Path.home() / "code" / parts.hostname / parts.path.lstrip("/")
+    ).with_suffix("")
+    return subprocess.run(["git", "clone", *extra, url, str(target_dir)]).returncode
+
+
+if __name__ == "__main__":
+    sys.exit(main(*sys.argv[1:]))

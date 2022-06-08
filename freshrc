@@ -99,6 +99,7 @@ fresh-options --file=~/.config/git/ignore --marker='#'
 fresh-options
 
 fresh git/git-prune-branches --bin
+fresh git/clone --bin
 
 # SSH Configuration ########################################
 # Since SSH takes the first answer, more specific things need to go to the top
