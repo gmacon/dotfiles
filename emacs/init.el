@@ -237,6 +237,14 @@
 (use-package ws-butler
   :hook (prog-mode . ws-butler-mode))
 
+                                        ; Separedit
+(use-package separedit
+  :config (setq separedit-default-mode 'markdown-mode
+                separedit-preserve-string-indentation t
+                separedit-continue-fill-column t
+                separedit-remove-trailing-spaces-in-comment t)
+  :init (evil-leader/set-key "e" 'separedit))
+
                                         ; Language Servers
 (use-package yasnippet)
 (use-package markdown-mode)
