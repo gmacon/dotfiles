@@ -251,7 +251,8 @@
 (use-package eglot
   :hook
   ((python-mode . eglot-ensure)
-   (rust-mode . eglot-ensure))
+   (rust-mode . eglot-ensure)
+   (nix-mode . eglot-ensure))
   :init
   (setq eglot-extend-to-xref t)
   :config
