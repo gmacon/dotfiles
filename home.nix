@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, username, homeDirectory, ... }:
 let
   clone = pkgs.concatTextFile {
     name = "clone";
@@ -15,8 +15,8 @@ let
 in {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "gmacon3";
-  home.homeDirectory = "/Users/gmacon3";
+  home.username = username;
+  home.homeDirectory = homeDirectory;
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs;
@@ -32,11 +32,6 @@ in {
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.stateVersion = "22.11";
-
-  home.file = {
-    "Library/Application Support/iTerm2/Scripts/autotheme.py".source =
-      ./iterm2/autotheme.py;
-  };
 
   home.sessionPath = [ "${config.home.profileDirectory}/bin" ];
   home.sessionVariables = {

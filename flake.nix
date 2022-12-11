@@ -10,19 +10,31 @@
   };
 
   outputs = { self, nixpkgs, home-manager }:
-    let
-      system = "x86_64-darwin";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in {
-      homeConfigurations.gmacon = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+    {
+      homeConfigurations.work-laptop = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages."x86_64-darwin";
 
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
-        modules = [ ./home.nix ];
+        modules = [
+          ./home.nix
+          ./darwin.nix
+        ];
 
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
+        extraSpecialArgs = {
+          username = "gmacon3";
+          homeDirectory = "/Users/gmacon3";
+        };
+      };
+      homeConfigurations.home-laptop = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages."x86_64-linux";
+
+        modules = [
+          ./home.nix
+        ];
+
+        extraSpecialArgs = {
+          username = "gmacon";
+          homeDirectory = "/home/gmacon";
+        };
       };
     };
 }
