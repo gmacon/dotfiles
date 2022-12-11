@@ -21,6 +21,7 @@
 
         extraSpecialArgs = {
           username = "gmacon3";
+          userEmail = "george.macon@gtri.gatech.edu";
           homeDirectory = "/Users/gmacon3";
         };
       };
@@ -33,6 +34,7 @@
 
         extraSpecialArgs = {
           username = "gmacon";
+          userEmail = "george.macon@gmail.com";
           homeDirectory = "/home/gmacon";
         };
       };

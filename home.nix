@@ -1,4 +1,4 @@
-{ config, pkgs, username, homeDirectory, ... }:
+{ config, pkgs, username, userEmail, homeDirectory, ... }:
 let
   clone = pkgs.concatTextFile {
     name = "clone";
@@ -38,6 +38,16 @@ in {
     EDITOR = "vim";
     RIPGREP_CONFIG_PATH = ./ripgrep.rc;
     FZF_MARKS_FILE = "${config.xdg.configHome}/fzf-marks/bookmarks";
+  };
+
+  home.file = {
+    "${config.xdg.configHome}/cookiecutter/cookiecutter.yaml".text = ''
+      default_context:
+        full_name: George Macon
+        email: ${userEmail}
+      cookiecutters_dir: ${config.xdg.cacheHome}/cookiecutter/cookiecutters
+      replay_dir: ${config.xdg.cacheHome}/cookiecutter/replay
+    '';
   };
 
   home.shellAliases = { ls = "exa"; };
