@@ -53,6 +53,10 @@ in {
     enableSyntaxHighlighting = true;
     history.path = "${config.xdg.dataHome}/zsh/zsh_history";
     initExtra = "source ${./zsh/zsh_prompt}";
+    initExtraBeforeCompInit = ''
+      zstyle ':completion:*' completer _complete _ignored _correct _approximate
+      zstyle ':completion:*' matcher-list "" 'm:{[:lower:]}={[:upper:]}'
+    '';
     initExtraFirst = ''
       if [ "$TERM" = "tramp" ]; then
           unsetopt zle
