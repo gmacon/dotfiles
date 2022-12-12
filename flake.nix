@@ -9,34 +9,28 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager }:
-    {
-      homeConfigurations.work-laptop = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages."x86_64-darwin";
+  outputs = { self, nixpkgs, home-manager }: {
+    homeConfigurations.work-laptop = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages."x86_64-darwin";
 
-        modules = [
-          ./home.nix
-          ./darwin.nix
-        ];
+      modules = [ ./home.nix ./darwin.nix ];
 
-        extraSpecialArgs = {
-          username = "gmacon3";
-          userEmail = "george.macon@gtri.gatech.edu";
-          homeDirectory = "/Users/gmacon3";
-        };
-      };
-      homeConfigurations.home-laptop = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages."x86_64-linux";
-
-        modules = [
-          ./home.nix
-        ];
-
-        extraSpecialArgs = {
-          username = "gmacon";
-          userEmail = "george.macon@gmail.com";
-          homeDirectory = "/home/gmacon";
-        };
+      extraSpecialArgs = {
+        username = "gmacon3";
+        userEmail = "george.macon@gtri.gatech.edu";
+        homeDirectory = "/Users/gmacon3";
       };
     };
+    homeConfigurations.home-laptop = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages."x86_64-linux";
+
+      modules = [ ./home.nix ];
+
+      extraSpecialArgs = {
+        username = "gmacon";
+        userEmail = "george.macon@gmail.com";
+        homeDirectory = "/home/gmacon";
+      };
+    };
+  };
 }
