@@ -20,7 +20,7 @@ in {
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs;
-    [ exa fd fzf httpie mosh nixfmt ripgrep rnix-lsp vim ]
+    [ cookiecutter exa fd fzf httpie mosh nixfmt ripgrep rnix-lsp vim ]
     ++ [ clone darkmode ];
 
   # This value determines the Home Manager release that your
