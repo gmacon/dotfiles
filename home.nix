@@ -77,17 +77,15 @@ in {
           return
       fi
     '';
-    plugins = [
-      {
-        name = "fzf-marks";
-        src = pkgs.fetchFromGitHub {
-          owner = "urbainvaes";
-          repo = "fzf-marks";
-          rev = "ff3307287bba5a41bf077ac94ce636a34ed56d32";
-          hash = "sha256-e6z0ePN0SrMQw/jqTJHPfFSwcLJpd2ZA6kTaj++wdIk=";
-        };
-      }
-    ];
+    plugins = [{
+      name = "fzf-marks";
+      src = pkgs.fetchFromGitHub {
+        owner = "urbainvaes";
+        repo = "fzf-marks";
+        rev = "ff3307287bba5a41bf077ac94ce636a34ed56d32";
+        hash = "sha256-e6z0ePN0SrMQw/jqTJHPfFSwcLJpd2ZA6kTaj++wdIk=";
+      };
+    }];
   };
 
   programs.direnv.enable = true;
