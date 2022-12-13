@@ -20,7 +20,7 @@ in {
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs;
-    [ cookiecutter exa fd fzf httpie mosh nixfmt ripgrep rnix-lsp vim ]
+    [ bat cookiecutter exa fd fzf httpie mosh nixfmt ripgrep rnix-lsp vim ]
     ++ [ clone darkmode ];
 
   # This value determines the Home Manager release that your
@@ -50,7 +50,10 @@ in {
     '';
   };
 
-  home.shellAliases = { ls = "${pkgs.exa}/bin/exa"; };
+  home.shellAliases = {
+    cat = "${pkgs.bat}/bin/bat";
+    ls = "${pkgs.exa}/bin/exa";
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
