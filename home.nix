@@ -35,7 +35,7 @@ in {
 
   home.sessionPath = [ "${config.home.profileDirectory}/bin" ];
   home.sessionVariables = {
-    EDITOR = "vim";
+    EDITOR = "${pkgs.vim}/bin/vim";
     RIPGREP_CONFIG_PATH = ./ripgrep.rc;
     FZF_MARKS_FILE = "${config.xdg.configHome}/fzf-marks/bookmarks";
   };
@@ -50,7 +50,7 @@ in {
     '';
   };
 
-  home.shellAliases = { ls = "exa"; };
+  home.shellAliases = { ls = "${pkgs.exa}/bin/exa"; };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
