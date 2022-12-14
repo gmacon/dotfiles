@@ -45,7 +45,6 @@ in {
   # changes in each release.
   home.stateVersion = "22.11";
 
-  home.sessionPath = [ "${config.home.profileDirectory}/bin" ];
   home.sessionVariables = {
     EDITOR = "${pkgs.vim}/bin/vim";
     RIPGREP_CONFIG_PATH = ./ripgrep.rc;
@@ -76,6 +75,9 @@ in {
     autocd = true;
     defaultKeymap = "emacs";
     enableSyntaxHighlighting = true;
+    envExtra = ''
+      export PATH="${config.home.profileDirectory}/bin:$PATH"
+    '';
     history.path = "${config.xdg.dataHome}/zsh/zsh_history";
     initExtra = "source ${./zsh/zsh_prompt}";
     initExtraBeforeCompInit = ''
