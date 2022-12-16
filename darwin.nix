@@ -3,4 +3,5 @@
     "Library/Application Support/iTerm2/Scripts/autotheme.py".source =
       ./iterm2/autotheme.py;
   };
+  programs.git.extraConfig.credential.helper = "osxkeychain";
 }

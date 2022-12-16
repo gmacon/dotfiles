@@ -21,21 +21,22 @@
         homeDirectory = "/Users/gmacon3";
       };
     };
-    homeConfigurations.work-desktop = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages."x86_64-linux";
+    homeConfigurations.work-desktop =
+      home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages."x86_64-linux";
 
-      modules = [ ./home.nix ];
+        modules = [ ./home.nix ./linux.nix ];
 
-      extraSpecialArgs = {
-        username = "gmacon3";
-        userEmail = "george.macon@gtri.gatech.edu";
-        homeDirectory = "/home/gmacon3";
+        extraSpecialArgs = {
+          username = "gmacon3";
+          userEmail = "george.macon@gtri.gatech.edu";
+          homeDirectory = "/home/gmacon3";
+        };
       };
-    };
     homeConfigurations.home-laptop = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages."x86_64-linux";
 
-      modules = [ ./home.nix ];
+      modules = [ ./home.nix ./linux.nix ];
 
       extraSpecialArgs = {
         username = "gmacon";

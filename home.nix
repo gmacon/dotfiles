@@ -12,6 +12,9 @@ let
     executable = true;
     destination = "/bin/darkmode";
   };
+  skiplist = pkgs.runCommand "skiplist" { } ''
+    cut -f1 ${./git/skipList} | sort > $out
+  '';
 in {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -122,5 +125,47 @@ in {
         "chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr";
     };
     includes = [ "host_*.config" ];
+  };
+
+  # Git
+  programs.git = {
+    enable = true;
+    aliases = {
+      graph = "log --graph --oneline --decorate";
+      assume = "update-index --assume-unchanged";
+      unassume = "update-index --no-assume-unchanged";
+      assumed = "!git ls-files -v | grep ^h | cut -c 3-";
+      unassumeall =
+        "!git assumed | xargs git update-index --no-assume-unchanged";
+      topush = "log @{u}..";
+      pushnew = "push -u origin HEAD";
+      wip = "commit -anm WIP";
+      unwip = ''!test "$(git log --pretty=%s -1)" = WIP && git reset HEAD~'';
+    };
+    extraConfig = {
+      color.ui = "auto";
+      diff = {
+        algorithm = "histogram";
+        compactionHeuristic = true;
+      };
+      push.default = "simple";
+      pull.ff = "only";
+      merge = {
+        conflictstyle = "diff3";
+        tool = "${pkgs.vim}/bin/vimdiff";
+      };
+      mergetool.prompt = false;
+      fetch.fsckObjects = true;
+      receive.fsckObjects = true;
+      transfer.fsckObjects = true;
+      fsck.skipList = "${skiplist}";
+      fetch.fsck.skipList = "${skiplist}";
+      receive.fsck.skipList = "${skiplist}";
+      init.defaultBranch = "main";
+    };
+    ignores = [ ".direnv/" "*~" "\\#*\\#" ".\\#*" ".dir-locals.el" ];
+    lfs.enable = true;
+    userEmail = userEmail;
+    userName = "George Macon";
   };
 }
