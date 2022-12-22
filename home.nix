@@ -62,6 +62,9 @@ in {
       cookiecutters_dir: ${config.xdg.cacheHome}/cookiecutter/cookiecutters
       replay_dir: ${config.xdg.cacheHome}/cookiecutter/replay
     '';
+    "${config.xdg.configHome}/bat/config".text = ''
+      --theme=base16
+    '';
   };
 
   home.shellAliases = {
