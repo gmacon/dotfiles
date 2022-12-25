@@ -25,6 +25,7 @@ in {
   home.packages = with pkgs;
     [
       bat
+      cachix
       cookiecutter
       exa
       fd
