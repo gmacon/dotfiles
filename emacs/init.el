@@ -34,23 +34,6 @@
 (setq backup-directory-alist `((".*" . ,temporary-file-directory))
       auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 
-                                        ; Bootstrap straight.el
-(defvar bootstrap-version)
-(let ((bootstrap-file
-       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
-      (bootstrap-version 5))
-  (unless (file-exists-p bootstrap-file)
-    (with-current-buffer
-        (url-retrieve-synchronously
-         "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
-         'silent 'inhibit-cookies)
-      (goto-char (point-max))
-      (eval-print-last-sexp)))
-  (load bootstrap-file nil 'nomessage))
-
-(straight-use-package 'use-package)
-(setq straight-use-package-by-default t)
-
                                         ; Avoid bad tramp-zsh interaction
                                         ; Note: this depends on the zsh/zshrc handling
 (setq tramp-terminal-type "tramp"
@@ -128,7 +111,7 @@
   :config
   (if (memq window-system '(mac ns))
       (add-hook 'ns-system-appearance-change-functions #'gam/macos-responsive-theme)
-    (load-theme (intern (concat "doom-solarized-" (getenv "LC_COLORSCHEME_VARIANT")))))
+    (load-theme 'doom-solarized-light))
   (doom-themes-visual-bell-config)
   (doom-themes-org-config))
 (use-package doom-modeline
@@ -136,7 +119,7 @@
 
                                         ; Folding
 (use-package origami
-  :hook (prog-mode . origami-mode))
+  :hook ((prog-mode . 'origami-mode)))
 
                                         ; Display available binds
 (use-package which-key
@@ -144,15 +127,13 @@
 
                                         ; Projects
 (use-package perspective
-  :init (setq persp-show-modestring nil)
+  :init (setq persp-show-modestring nil
+              persp-suppress-no-prefix-key-warning t)
   :config
     (evil-leader/set-key "B" 'persp-switch-to-buffer)
     (persp-mode))
 
 (use-package persp-projectile
-    :straight (persp-projectile
-               :host github
-               :repo "bbatsov/persp-projectile")
     :commands (projectile-persp-switch-project)
     :init (evil-leader/set-key "p" 'projectile-persp-switch-project))
 
@@ -204,13 +185,13 @@
                                         ; Git
 (use-package git-gutter
   :hook
-  (prog-mode . git-gutter-mode)
-  (text-mode . git-gutter-mode)
+  ((prog-mode . 'git-gutter-mode)
+   (text-mode . 'git-gutter-mode))
   :init (setq git-gutter:update-interval 2))
 (use-package magit
   :commands (magit-status)
-  :hook ((after-save . magit-after-save-refresh-status)
-         (git-commit-setup . git-commit-turn-on-flyspell))
+  :hook ((after-save . 'magit-after-save-refresh-status)
+         (git-commit-setup . 'git-commit-turn-on-flyspell))
   :defer 5
   :init
     (evil-leader/set-key "g" 'magit)
@@ -231,11 +212,11 @@
 (use-package fic-mode
   :commands (fic-mode)
   :init (setq fic-highlighted-words '("FIXME" "TODO" "BUG" "NOTE" "XXX"))
-  :hook (prog-mode . fic-mode))
+  :hook ((prog-mode . 'fic-mode)))
 
                                         ; Whitespace cleanup
 (use-package ws-butler
-  :hook (prog-mode . ws-butler-mode))
+  :hook ((prog-mode . 'ws-butler-mode)))
 
                                         ; Separedit
 (use-package separedit
@@ -250,9 +231,9 @@
 (use-package markdown-mode)
 (use-package eglot
   :hook
-  ((python-mode . eglot-ensure)
-   (rust-mode . eglot-ensure)
-   (nix-mode . eglot-ensure))
+  ((python-mode . 'eglot-ensure)
+   (rust-mode . 'eglot-ensure)
+   (nix-mode . 'eglot-ensure))
   :init
   (setq eglot-extend-to-xref t)
   :config
@@ -307,8 +288,8 @@
                                         ; Rust
 (use-package rust-mode
   :mode ("\\.rs$")
-  :hook (rust-mode . (lambda ()
-                            (add-hook 'before-save-hook 'eglot-format-buffer nil t))))
+  :hook ((rust-mode . (lambda ()
+                            (add-hook 'before-save-hook 'eglot-format-buffer nil t)))))
 
                                         ; Julia
 (use-package julia-mode

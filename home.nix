@@ -57,6 +57,9 @@ in {
   };
 
   home.file = {
+    "${config.xdg.configHome}/bat/config".text = ''
+      --theme=base16
+    '';
     "${config.xdg.configHome}/cookiecutter/cookiecutter.yaml".text = ''
       default_context:
         full_name: George Macon
@@ -64,9 +67,7 @@ in {
       cookiecutters_dir: ${config.xdg.cacheHome}/cookiecutter/cookiecutters
       replay_dir: ${config.xdg.cacheHome}/cookiecutter/replay
     '';
-    "${config.xdg.configHome}/bat/config".text = ''
-      --theme=base16
-    '';
+    "${config.xdg.configHome}/emacs/init.el".source = ./emacs/init.el;
   };
 
   home.shellAliases = {
@@ -172,5 +173,14 @@ in {
     lfs.enable = true;
     userEmail = userEmail;
     userName = "George Macon";
+  };
+
+  # Emacs
+  programs.emacs = {
+    enable = true;
+    package = pkgs.emacsWithPackagesFromUsePackage {
+      config = ./emacs/init.el;
+      alwaysEnsure = true;
+    };
   };
 }

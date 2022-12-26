@@ -7,42 +7,54 @@
       url = "github:nix-community/home-manager/release-22.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    emacs = {
+      url = "github:nix-community/emacs-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager }: {
-    homeConfigurations.work-laptop = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages."x86_64-darwin";
+  outputs = { self, nixpkgs, home-manager, emacs }:
+    let
+      nixpkgsArgs = { overlays = [ emacs.overlays.default ]; };
+      linuxPkgs = import nixpkgs (nixpkgsArgs // { system = "x86_64-linux"; });
+      darwinPkgs =
+        import nixpkgs (nixpkgsArgs // { system = "x86_64-darwin"; });
+    in {
+      homeConfigurations.work-laptop =
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = darwinPkgs;
 
-      modules = [ ./home.nix ./darwin.nix ];
+          modules = [ ./home.nix ./darwin.nix ];
 
-      extraSpecialArgs = {
-        username = "gmacon3";
-        userEmail = "george.macon@gtri.gatech.edu";
-        homeDirectory = "/Users/gmacon3";
-      };
-    };
-    homeConfigurations.work-desktop =
-      home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages."x86_64-linux";
-
-        modules = [ ./home.nix ./linux.nix ];
-
-        extraSpecialArgs = {
-          username = "gmacon3";
-          userEmail = "george.macon@gtri.gatech.edu";
-          homeDirectory = "/home/gmacon3";
+          extraSpecialArgs = {
+            username = "gmacon3";
+            userEmail = "george.macon@gtri.gatech.edu";
+            homeDirectory = "/Users/gmacon3";
+          };
         };
-      };
-    homeConfigurations.home-laptop = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages."x86_64-linux";
+      homeConfigurations.work-desktop =
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = linuxPkgs;
 
-      modules = [ ./home.nix ./linux.nix ];
+          modules = [ ./home.nix ./linux.nix ];
 
-      extraSpecialArgs = {
-        username = "gmacon";
-        userEmail = "george.macon@gmail.com";
-        homeDirectory = "/home/gmacon";
-      };
+          extraSpecialArgs = {
+            username = "gmacon3";
+            userEmail = "george.macon@gtri.gatech.edu";
+            homeDirectory = "/home/gmacon3";
+          };
+        };
+      homeConfigurations.home-laptop =
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = linuxPkgs;
+
+          modules = [ ./home.nix ./linux.nix ];
+
+          extraSpecialArgs = {
+            username = "gmacon";
+            userEmail = "george.macon@gmail.com";
+            homeDirectory = "/home/gmacon";
+          };
+        };
     };
-  };
 }
