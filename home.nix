@@ -32,7 +32,6 @@ in {
       fzf
       httpie
       mosh
-      ncdu
       nixfmt
       openssh
       ripgrep
