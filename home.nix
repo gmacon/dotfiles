@@ -15,7 +15,8 @@ let
   skiplist = pkgs.runCommand "skiplist" { } ''
     cut -f1 ${./git/skipList} | sort > $out
   '';
-in {
+in
+{
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = username;
@@ -24,6 +25,7 @@ in {
   # Packages that should be installed to the user profile.
   home.packages = with pkgs;
     [
+      agedu
       bat
       cachix
       cookiecutter
