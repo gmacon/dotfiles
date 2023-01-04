@@ -122,7 +122,7 @@ in
     controlPersist = "5m";
     extraOptionOverrides = {
       # Mozilla Cryptography Recommendations
-      HostKeyAlgorithms = concatStringsSep "," [
+      HostKeyAlgorithms = builtins.concatStringsSep "," [
         "ssh-ed25519-cert-v01@openssh.com"
         "ssh-ed25519"
         "ecdsa-sha2-nistp521-cert-v01@openssh.com"
@@ -134,14 +134,14 @@ in
         "ssh-rsa-cert-v01@openssh.com"
         "ssh-rsa"
       ];
-      KexAlgorithms = concatStringsSep "," [
+      KexAlgorithms = builtins.concatStringsSep "," [
         "curve25519-sha256@libssh.org"
         "ecdh-sha2-nistp521"
         "ecdh-sha2-nistp384"
         "ecdh-sha2-nistp256"
         "diffie-hellman-group-exchange-sha256"
       ];
-      MACs = concatStringsSep "," [
+      MACs = builtins.concatStringsSep "," [
         "hmac-sha2-512-etm@openssh.com"
         "hmac-sha2-256-etm@openssh.com"
         "umac-128-etm@openssh.com"
@@ -149,7 +149,7 @@ in
         "hmac-sha2-256"
         "umac-128@openssh.com"
       ];
-      Ciphers = concatStringsSep "," [
+      Ciphers = builtins.concatStringsSep "," [
         "chacha20-poly1305@openssh.com"
         "aes256-gcm@openssh.com"
         "aes128-gcm@openssh.com"
