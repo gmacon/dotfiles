@@ -177,6 +177,7 @@ in
       unwip = ''!test "$(git log --pretty=%s -1)" = WIP && git reset HEAD~'';
     };
     extraConfig = {
+      core.fsmonitor = true;
       color.ui = "auto";
       diff = {
         algorithm = "histogram";
