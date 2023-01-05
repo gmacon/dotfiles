@@ -35,10 +35,11 @@
   (frame-resize-pixelwise t)
 
   :init
+  (global-hl-line-mode 1)
+  (global-display-line-numbers-mode 1)
+
   (defun gam-prog-mode-setup ()
     (show-paren-mode 1)            ; highlight matching brackets
-    (global-hl-line-mode 1)        ; highlight the active line
-    (display-line-numbers-mode)    ; Show line numbers
     (hs-minor-mode))               ; Add hide-show
 
   (defun gam-after-init-hook ()
