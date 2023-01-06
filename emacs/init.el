@@ -83,7 +83,8 @@
   (evil-want-keybinding nil)
   (evil-echo-state nil)
   (evil-want-integration t)
-  :config (evil-mode 1))
+  :config (evil-mode 1)
+  :general (:states 'normal "g r" 'xref-find-references))
 
 (use-package evil-collection
   :after evil
