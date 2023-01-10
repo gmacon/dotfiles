@@ -76,6 +76,13 @@
   (doom-themes-visual-bell-config)
   (doom-themes-org-config))
 
+(use-package auto-dark
+  :after doom-themes
+  :custom
+  (auto-dark-dark-theme 'doom-solarized-dark)
+  (auto-dark-light-theme 'doom-solarized-light)
+  :init (auto-dark-mode))
+
 (use-package doom-modeline
   :after evil
   :config (doom-modeline-mode))
