@@ -77,6 +77,7 @@
   (doom-themes-org-config))
 
 (use-package doom-modeline
+  :after evil
   :config (doom-modeline-mode))
 
 (use-package evil
