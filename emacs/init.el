@@ -137,7 +137,6 @@
   :hook (prog-mode . yas-minor-mode))
 
 (use-package eglot
-  :after transient
   :custom (eglot-extend-to-xref t)
   :general
   (:states 'normal
