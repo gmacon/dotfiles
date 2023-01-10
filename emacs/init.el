@@ -80,6 +80,7 @@
   :config (doom-modeline-mode))
 
 (use-package evil
+  :defer nil
   :custom
   (evil-undo-system 'undo-redo)
   (evil-want-keybinding nil)
