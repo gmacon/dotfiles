@@ -57,6 +57,8 @@
   (:states 'normal
            :prefix gam-default-leader-key
            "." #'find-file
+           "p" #'project-switch-project
+           "b" #'project-switch-to-buffer
            gam-default-leader-key #'project-find-file)
 
   :hook
@@ -184,19 +186,19 @@
 
 (use-package consult-project-extra)
 
-(use-package tabspaces
-  :hook (after-init . tabspaces-mode)
-  :custom
-  (tabspaces-use-filtered-buffers-as-default t)
-  (tab-bar-show nil)
-  :commands (tabspaces-create-workspace
-             tabspaces-create-new-project-and-workspace
-             tabspaces-open-existing-project-and-workspace
-             tabspaces-switch-workspace)
-  :general
-  (:states 'normal
-           :prefix gam-default-leader-key
-           "p" #'tabspaces-open-or-create-project-and-workspace))
+(use-package project
+  :defer nil
+  :custom (project-switch-commands 'project-find-file)
+  :config
+    (cl-defmethod project-root ((project (head local))) (cdr project))
+    (defun gam-project-find (dir)
+    ;; https://michael.stapelberg.ch/posts/2021-04-02-emacs-project-override/
+      (let ((local (locate-dominating-file dir ".project-root")))
+        (if local
+            (cons 'local local)
+          nil)))
+    ;; Can't use :hook as 'project-find-functions doesn't end in "-hook"
+    (add-hook 'project-find-functions #'gam-project-find -90))
 
 (use-package vertico
   :init (vertico-mode))
