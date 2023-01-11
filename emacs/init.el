@@ -155,6 +155,15 @@
 (use-package yasnippet
   :hook (prog-mode . yas-minor-mode))
 
+(use-package separedit
+  :custom
+  (separedit-default-mode 'markdown-mode)
+  (separedit-preserve-string-indentation t)
+  (separedit-continue-fill-column t)
+  (separedit-remove-trailing-spaces-in-comment t)
+  :general
+  (:states 'normal :prefix gam-default-leader-key "e" 'separedit))
+
 (use-package eglot
   :defer nil
   :custom (eglot-extend-to-xref t)
