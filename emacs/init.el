@@ -67,7 +67,14 @@
   (before-save . 'whitespace-cleanup))
 
 (use-package textsize
-  :config (textsize-mode))
+  :defer nil
+  :config (textsize-mode)
+  :general
+  ("s-=" 'textsize-increment)
+  ("s-+" 'textsize-increment)
+  ("s--" 'textsize-decrement)
+  ("s-0" 'textsize-reset)
+  )
 
 (use-package doom-themes
   :defer nil
