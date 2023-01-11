@@ -120,6 +120,7 @@
   :init (global-corfu-mode))
 
 (use-package magit
+  :defer nil
   :hook (after-save . magit-after-save-refresh-status)
   :general
   (:states 'normal
@@ -155,6 +156,7 @@
   :hook (prog-mode . yas-minor-mode))
 
 (use-package eglot
+  :defer nil
   :custom (eglot-extend-to-xref t)
   :general
   (:states 'normal
@@ -226,6 +228,7 @@
   (completion-category-overrides '((file (styles partial-completion)))))
 
 (use-package marginalia
+  :defer nil
   :general (:map minibuffer-local-map "M-A" 'marginalia-cycle)
   :init (marginalia-mode))
 
