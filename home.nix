@@ -68,7 +68,6 @@ in
       cookiecutters_dir: ${config.xdg.cacheHome}/cookiecutter/cookiecutters
       replay_dir: ${config.xdg.cacheHome}/cookiecutter/replay
     '';
-    "${config.xdg.configHome}/emacs/init.el".source = ./emacs/init.el;
   };
 
   home.shellAliases = {
@@ -213,4 +212,5 @@ in
       alwaysEnsure = true;
     };
   };
+  home.file."${config.xdg.configHome}/emacs/init.el".source = ./emacs/init.el;
 }
