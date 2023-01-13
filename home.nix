@@ -111,8 +111,17 @@ in
     }];
   };
 
-  programs.direnv.enable = true;
-  programs.direnv.nix-direnv.enable = true;
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+    # From https://github.com/nix-community/nix-direnv#storing-direnv-outside-the-project-directory
+    stdlib = ''
+      direnv_layout_dir() {
+        echo -n "${config.xdg.cacheHome}/direnv/layouts/"
+        echo -n "$PWD" | ${pkgs.b2sum}/bin/b2sum -l160 | cut -d ' ' -f 1
+      }
+    '';
+  };
 
   # SSH
   programs.ssh = {
