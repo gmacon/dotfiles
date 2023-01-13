@@ -37,6 +37,7 @@
   :init
   (global-hl-line-mode 1)
   (global-display-line-numbers-mode 1)
+  (savehist-mode 1)
 
   (defun gam-prog-mode-setup ()
     (column-number-mode 1)
