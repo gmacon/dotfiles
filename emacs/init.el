@@ -39,6 +39,7 @@
   (global-display-line-numbers-mode 1)
 
   (defun gam-prog-mode-setup ()
+    (column-number-mode 1)
     (show-paren-mode 1)            ; highlight matching brackets
     (hs-minor-mode))               ; Add hide-show
 
