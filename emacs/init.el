@@ -33,6 +33,7 @@
   (gc-cons-threshold 100000000 "Increase garbage collection-threshold")
   (frame-inhibit-implied-resize t)
   (frame-resize-pixelwise t)
+  (project-vc-extra-root-markers '(".project-root"))
 
   :init
   (global-hl-line-mode 1)
@@ -217,17 +218,7 @@
 
 (use-package project
   :defer nil
-  :custom (project-switch-commands 'project-find-file)
-  :config
-    (cl-defmethod project-root ((project (head local))) (cdr project))
-    (defun gam-project-find (dir)
-    ;; https://michael.stapelberg.ch/posts/2021-04-02-emacs-project-override/
-      (let ((local (locate-dominating-file dir ".project-root")))
-        (if local
-            (cons 'local local)
-          nil)))
-    ;; Can't use :hook as 'project-find-functions doesn't end in "-hook"
-    (add-hook 'project-find-functions #'gam-project-find -90))
+  :custom (project-switch-commands 'project-find-file))
 
 (use-package vertico
   :init (vertico-mode))
