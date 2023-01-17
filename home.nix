@@ -12,6 +12,18 @@ let
     executable = true;
     destination = "/bin/darkmode";
   };
+  gitPruneBranches = pkgs.stdenv.mkDerivation {
+    pname = "git-prune-branches";
+    version = "1.0.0";
+    src = ./git;
+    buildInputs = [ pkgs.python3 ];
+    installPhase = ''
+      $preInstall
+      mkdir -p $out/bin
+      cp ./git-prune-branches $out/bin/git-prune-branches
+      $postInstall
+    '';
+  };
   skiplist = pkgs.runCommand "skiplist" { } ''
     cut -f1 ${./git/skipList} | sort > $out
   '';
@@ -39,7 +51,7 @@ in
       ripgrep
       rnix-lsp
       vim
-    ] ++ [ clone darkmode ];
+    ] ++ [ clone darkmode gitPruneBranches ];
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
