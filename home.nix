@@ -98,7 +98,8 @@ in
     defaultKeymap = "emacs";
     enableSyntaxHighlighting = true;
     envExtra = ''
-      export PATH="${config.home.profileDirectory}/bin:$PATH"
+      typeset -U path
+      path[1,0]=("${config.home.profileDirectory}/bin")
     '';
     history.path = "${config.xdg.dataHome}/zsh/zsh_history";
     initExtra = "source ${./zsh/zsh_prompt}";
