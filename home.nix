@@ -50,6 +50,7 @@ in
       openssh
       ripgrep
       rnix-lsp
+      shellcheck
       vim
     ] ++ [ clone darkmode gitPruneBranches ];
 
