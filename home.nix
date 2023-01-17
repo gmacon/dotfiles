@@ -43,6 +43,7 @@ in
       cookiecutter
       exa
       fd
+      fira-code
       fzf
       httpie
       mosh
