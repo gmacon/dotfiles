@@ -46,6 +46,7 @@ in
       fira-code
       fzf
       httpie
+      jq
       mosh
       nixfmt
       openssh
