@@ -1,4 +1,4 @@
-{ config, pkgs, username, userEmail, homeDirectory, ... }:
+{ config, pkgs, username, userEmail, homeDirectory, zsh-fzf-marks, ... }:
 let
   clone = pkgs.concatTextFile {
     name = "clone";
@@ -118,12 +118,7 @@ in
     '';
     plugins = [{
       name = "fzf-marks";
-      src = pkgs.fetchFromGitHub {
-        owner = "urbainvaes";
-        repo = "fzf-marks";
-        rev = "ff3307287bba5a41bf077ac94ce636a34ed56d32";
-        hash = "sha256-e6z0ePN0SrMQw/jqTJHPfFSwcLJpd2ZA6kTaj++wdIk=";
-      };
+      src = zsh-fzf-marks;
     }];
   };
 
