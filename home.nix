@@ -12,7 +12,7 @@ let
     executable = true;
     destination = "/bin/darkmode";
   };
-  gitPruneBranches = pkgs.stdenv.mkDerivation {
+  gitPruneBranches = pkgs.stdenvNoCC.mkDerivation {
     pname = "git-prune-branches";
     version = "1.0.0";
     src = ./git;
