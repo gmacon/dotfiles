@@ -223,7 +223,7 @@ in
       receive.fsck.skipList = "${skiplist}";
       init.defaultBranch = "main";
     };
-    ignores = [ ".direnv/" "*~" "\\#*\\#" ".\\#*" ".dir-locals.el" ];
+    ignores = [ ".direnv/" "*~" "\\#*\\#" ".\\#*" ".dir-locals.el" ".DS_Store" ];
     lfs.enable = true;
     userEmail = userEmail;
     userName = "George Macon";
