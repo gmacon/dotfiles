@@ -78,7 +78,8 @@
       "inputs": {
         "emacs": "emacs",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "zsh-fzf-marks": "zsh-fzf-marks"
       }
     },
     "utils": {
@@ -93,6 +94,22 @@
       "original": {
         "owner": "numtide",
         "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "zsh-fzf-marks": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1656660349,
+        "narHash": "sha256-e6z0ePN0SrMQw/jqTJHPfFSwcLJpd2ZA6kTaj++wdIk=",
+        "owner": "urbainvaes",
+        "repo": "fzf-marks",
+        "rev": "ff3307287bba5a41bf077ac94ce636a34ed56d32",
+        "type": "github"
+      },
+      "original": {
+        "owner": "urbainvaes",
+        "repo": "fzf-marks",
         "type": "github"
       }
     }
