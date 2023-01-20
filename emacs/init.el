@@ -79,19 +79,9 @@
   ("s-0" 'textsize-reset)
   )
 
-(use-package doom-themes
-  :defer nil
+(use-package penumbra-theme
   :config
-  (load-theme 'doom-solarized-light t)
-  (doom-themes-visual-bell-config)
-  (doom-themes-org-config))
-
-(use-package auto-dark
-  :after doom-themes
-  :custom
-  (auto-dark-dark-theme 'doom-solarized-dark)
-  (auto-dark-light-theme 'doom-solarized-light)
-  :init (auto-dark-mode))
+  (load-theme 'penumbra t))
 
 (use-package doom-modeline
   :after evil

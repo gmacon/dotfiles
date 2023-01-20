@@ -1,4 +1,4 @@
-{ config, pkgs, username, userEmail, homeDirectory, zsh-fzf-marks, ... }:
+{ config, pkgs, username, userEmail, homeDirectory, emacs-penumbra, zsh-fzf-marks, ... }:
 let
   clone = pkgs.concatTextFile {
     name = "clone";
@@ -230,6 +230,13 @@ in
       config = ./emacs/init.el;
       package = pkgs.emacsPgtk;
       alwaysEnsure = true;
+      override = epkgs: epkgs // {
+        penumbra-theme = epkgs.trivialBuild {
+          pname = "penumbra-theme";
+          version = emacs-penumbra.rev;
+          src = emacs-penumbra;
+        };
+      };
     };
   };
   home.file."${config.xdg.configHome}/emacs/init.el".source = ./emacs/init.el;
