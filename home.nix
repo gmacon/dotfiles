@@ -129,6 +129,12 @@ in
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
+    config = {
+      global = {
+        bash_path = "${pkgs.bash}/bin/bash";
+        strict_env = true;
+      };
+    };
     # From https://github.com/nix-community/nix-direnv#storing-direnv-outside-the-project-directory
     stdlib = ''
       direnv_layout_dir() {
