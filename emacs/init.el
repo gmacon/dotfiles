@@ -8,11 +8,6 @@
 (set-face-attribute 'default nil :family "Fira Code")
 (set-face-attribute 'line-number-current-line nil :family "Fira Code")
 
-(setq default-frame-alist
-      '((menu-bar-lines . 0)
-        (tool-bar-lines . 0) 
-        (vertical-scroll-bars . nil)))
-
 (use-package general)
 
 (use-package emacs
@@ -34,6 +29,9 @@
   (frame-inhibit-implied-resize t)
   (frame-resize-pixelwise t)
   (project-vc-extra-root-markers '(".project-root"))
+  (default-frame-alist '((menu-bar-lines . 0)
+                         (tool-bar-lines . 0)
+                         (vertical-scroll-bars . nil)))
 
   :init
   (global-hl-line-mode 1)
