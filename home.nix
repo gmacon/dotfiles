@@ -50,6 +50,7 @@ in
       mosh
       nixfmt
       openssh
+      pandoc
       ripgrep
       rnix-lsp
       shellcheck
