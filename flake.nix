@@ -30,7 +30,7 @@
         home-manager.lib.homeManagerConfiguration {
           pkgs = darwinPkgs;
 
-          modules = [ ./home.nix ./darwin.nix ];
+          modules = [ ./common.nix ./darwin.nix ];
 
           extraSpecialArgs = {
             username = "gmacon3";
@@ -42,7 +42,7 @@
         home-manager.lib.homeManagerConfiguration {
           pkgs = linuxPkgs;
 
-          modules = [ ./home.nix ./linux.nix ];
+          modules = [ ./common.nix ./linux.nix ];
 
           extraSpecialArgs = {
             username = "gmacon3";
@@ -54,7 +54,7 @@
         home-manager.lib.homeManagerConfiguration {
           pkgs = linuxPkgs;
 
-          modules = [ ./home.nix ./linux.nix ];
+          modules = [ ./common.nix ./linux.nix ];
 
           extraSpecialArgs = {
             username = "gmacon";
