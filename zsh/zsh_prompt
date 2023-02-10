@@ -86,5 +86,5 @@ else
 fi
 
 PROMPT="${PROMPT_USER}:%16<..<%~%<<%(?.. %F{magenta}%?%f) %(!.#.\${PROMPT_CHAR}) "
-RPROMPT='${PROMPT_ENV_INFO}${vcs_info_msg_0_}'
+RPROMPT='${PROMPT_ENV_INFO}${vcs_info_msg_0_}%(2L. (%L).)'
 REPORTTIME=10

@@ -1,59 +1,21 @@
-# Dependencies
+# Home Manager Configuration
 
-Dependencies and source for Arch, Debian, macOS
+Bootstrapping:
 
-- atool: pacman, apt, brew
-- direnv: aur, apt, brew
-- emacs: pacman, source, Emacs.app
-- fd: pacman, ..., brew
-- Fira Code: otf-fira-code, apt fonts-firacode, https://github.com/tonsky/FiraCode
-- firefox: pacman, apt, <https://www.firefox.com>
-- fzf: pacman, [GitHub releases](https://github.com/junegunn/fzf-bin/releases), brew
-- gettext (for the `envsubst` script): pacman, apt, brew
-- git-lfs, aur, apt, brew
-- git: pacman, ppa:git-core/ppa, builtin  (Note: need Git >= 2.20)
-- httpie: pacman, apt, brew
-- mosh: pacman, apt, brew
-- openssh: pacman, apt, builtin
-- pass: pacman, apt, brew
-- pinentry: pacman, apt pinentry-qt, brew pinentry-mac
-- putty (for `pscp`): pacman, apt putty-tools, brew
-- pyenv: git, (use deadsnakes instead), brew
-- ripgrep: pacman, [deb from GitHub](https://github.com/BurntSushi/ripgrep/releases), brew
-- rustup: <https://sh.rustup.rs>
-- thunderbird: pacman, apt, <https://www.thunderbird.net>
-- zsh: pacman, apt, builtin
+1.  [Install Nix](https://nixos.org/download.html)
+2.  Clone this repo somewhere handy.
+    (I use `~/.dotfiles` for historical reasons,
+    but it doesn't really matter where.)
+3.  Run:
 
-# Linux-only Dependencies
+    ```console
+    $ nix build ~/.dotfiles#homeConfigurations.home-laptop.activationPackage
+    $ ./result/activate
+    $ rm result
+    ```
+    
+Updates:
 
-Dependencies and source for Arch, Debian
-
-- alacritty: pacman, git via cargo-deb
-- brightnessctl: aur, don't know \[1\]
-- hexchat: pacman, apt
-- pamixer: pacman, git
-- xscreensaver: pacman, apt
-- dunst: pacman, apt
-- xcape: pacman, apt
-- gnome-keyring: pacman, apt
-
-# Build from my repos (only on Linux)
-
-- dmenu
-- dwm
-- dwmstatus
-
-Build deps (Debian):
-
-- libboost-program-options-dev
-- libpam0g-dev
-- libpulse-dev
-- libsensors4-dev
-- libx11-dev
-- libxext-dev
-- libxinerama-dev
-- libxrandr-dev
-
-# Notes
-
-\[1\]: my Debian machine doesn't have a variable-brightness screen
+```console
+$ home-manager switch --flake ~/.dotfiles#home-laptop
+```
