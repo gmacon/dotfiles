@@ -6,12 +6,6 @@ let
     executable = true;
     destination = "/bin/clone";
   };
-  darkmode = pkgs.concatTextFile {
-    name = "darkmode";
-    files = [ ./darkmode ];
-    executable = true;
-    destination = "/bin/darkmode";
-  };
   gitPruneBranches = pkgs.stdenvNoCC.mkDerivation {
     pname = "git-prune-branches";
     version = "1.0.0";
@@ -55,7 +49,7 @@ in
       rnix-lsp
       shellcheck
       vim
-    ] ++ [ clone darkmode gitPruneBranches ];
+    ] ++ [ clone gitPruneBranches ];
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
