@@ -240,4 +240,7 @@ in
     };
   };
   home.file."${config.xdg.configHome}/emacs/init.el".source = ./emacs/init.el;
+
+  # Vagrant
+  home.file."${config.home.homeDirectory}/.vagrant.d/Vagrantfile".source = ./Vagrantfile;
 }
