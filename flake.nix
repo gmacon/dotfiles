@@ -42,7 +42,7 @@
         home-manager.lib.homeManagerConfiguration {
           pkgs = linuxPkgs;
 
-          modules = [ ./common.nix ./linux.nix ];
+          modules = [ ./common.nix ./linux.nix ./sssd.nix ];
 
           extraSpecialArgs = {
             username = "gmacon3";
