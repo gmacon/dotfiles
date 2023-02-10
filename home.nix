@@ -18,6 +18,12 @@ let
       $postInstall
     '';
   };
+  pushover = pkgs.concatTextFile {
+    name = "pushover";
+    files = [ ./pushover ];
+    executable = true;
+    destination = "/bin/pushover";
+  };
   skiplist = pkgs.runCommand "skiplist" { } ''
     cut -f1 ${./git/skipList} | sort > $out
   '';
