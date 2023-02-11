@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, inputs, ... }: {
   home.packages = with pkgs; [ ncdu ];
   programs.alacritty = {
     enable = true;
@@ -8,6 +8,9 @@
       draw_bold_text_with_bright_colors = true;
       key_bindings = [
         { key = "N"; mods = "Shift|Control"; action = "SpawnNewInstance"; }
+      ];
+      "import" = [
+        "${inputs.alacritty-theme-penumbra}/penumbra-light.yml"
       ];
     };
   };

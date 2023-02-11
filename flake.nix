@@ -12,6 +12,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    alacritty-theme-penumbra = {
+      url = "github:pomarec/alacritty-theme-penumbra";
+      flake = false;
+    };
     penumbra = {
       url = "github:nealmckee/penumbra";
       flake = false;
@@ -22,7 +26,8 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, emacs, penumbra, zsh-fzf-marks } @ inputs:
+  outputs =
+    { nixpkgs, home-manager, emacs, ... } @ inputs:
     let
       extraSpecialArgs = { inherit inputs; };
       nixpkgsArgs = { overlays = [ emacs.overlays.default ]; };
