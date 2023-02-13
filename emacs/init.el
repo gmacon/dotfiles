@@ -182,7 +182,7 @@
   (with-eval-after-load 'eglot
     (add-to-list
      'eglot-server-programs
-     '(python-ts-mode
+     `(python-ts-mode
        . ,(eglot-alternatives
           '("pylsp" "pyls" ("pyright-langserver" "--stdio") "jedi-language-server")))))
   :hook
