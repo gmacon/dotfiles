@@ -74,11 +74,28 @@
         "type": "github"
       }
     },
+    "penumbra": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1659982686,
+        "narHash": "sha256-WpQdtlZqwR/BaKXinzxRO0Rw+Q2hgNGEP0tNZ6yZGxQ=",
+        "owner": "nealmckee",
+        "repo": "penumbra",
+        "rev": "b2a4b15c10b14fdd990d0bdc29e7b044afc718af",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nealmckee",
+        "repo": "penumbra",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "emacs": "emacs",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
+        "penumbra": "penumbra",
         "zsh-fzf-marks": "zsh-fzf-marks"
       }
     },

@@ -11,15 +11,20 @@
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    penumbra = {
+      url = "github:nealmckee/penumbra";
+      flake = false;
+    };
     zsh-fzf-marks = {
       url = "github:urbainvaes/fzf-marks";
       flake = false;
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, emacs, zsh-fzf-marks }:
+  outputs = { self, nixpkgs, home-manager, emacs, penumbra, zsh-fzf-marks }:
     let
-      extraSpecialArgs = { inherit zsh-fzf-marks; };
+      extraSpecialArgs = { inherit penumbra zsh-fzf-marks; };
       nixpkgsArgs = { overlays = [ emacs.overlays.default ]; };
       linuxPkgs = import nixpkgs (nixpkgsArgs // { system = "x86_64-linux"; });
       darwinPkgs =
