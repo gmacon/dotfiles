@@ -1,21 +1,14 @@
 { config, pkgs, username, userEmail, homeDirectory, zsh-fzf-marks, ... }:
 let
-  clone = pkgs.concatTextFile {
-    name = "clone";
-    files = [ ./git/clone ];
-    executable = true;
-    destination = "/bin/clone";
-  };
-  gitPruneBranches = pkgs.stdenvNoCC.mkDerivation {
-    pname = "git-prune-branches";
-    version = "1.0.0";
+  gitHelpers = pkgs.stdenvNoCC.mkDerivation {
+    name = "git-helpers";
     src = ./git;
     buildInputs = [ pkgs.python3 ];
     installPhase = ''
-      $preInstall
+      runHook preInstall
       mkdir -p $out/bin
-      cp ./git-prune-branches $out/bin/git-prune-branches
-      $postInstall
+      install -m 0755 git-prune-branches clone $out/bin
+      runHook postInstall
     '';
   };
   pushover = pkgs.concatTextFile {
@@ -55,7 +48,9 @@ in
       rnix-lsp
       shellcheck
       vim
-    ] ++ [ clone gitPruneBranches ];
+
+      gitHelpers
+    ];
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
