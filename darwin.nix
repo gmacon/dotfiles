@@ -22,7 +22,6 @@ in
 
   # Terminal Emulator
   targets.darwin.defaults."com.googlecode.iterm2" = {
-    "Command" = "${config.home.profileDirectory}/bin/zsh";
     "Custom Color Presets" = {
       "penumbra_light" = readPlist "${penumbra}/iTerm2/penumbra_light.itermcolors";
       "penumbra_dark" = readPlist "${penumbra}/iTerm2/penumbra_dark.itermcolors";
