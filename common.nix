@@ -17,6 +17,9 @@ let
     executable = true;
     destination = "/bin/pushover";
   };
+  ripgreprc = pkgs.writeText "ripgrep.rc" ''
+    --smart-case
+  '';
   skiplist = pkgs.runCommand "skiplist" { } ''
     cut -f1 ${./git/skipList} | sort > $out
   '';
@@ -64,7 +67,7 @@ in
 
   home.sessionVariables = {
     EDITOR = "${pkgs.vim}/bin/vim";
-    RIPGREP_CONFIG_PATH = ./ripgrep.rc;
+    RIPGREP_CONFIG_PATH = "${ripgreprc}";
     FZF_MARKS_FILE = "${config.xdg.configHome}/fzf-marks/bookmarks";
   };
 
