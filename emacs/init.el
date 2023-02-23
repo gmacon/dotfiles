@@ -265,7 +265,7 @@
   :hook (nix-mode . gam-before-save-format-buffer))
 
 (use-package python
-  ;; set ensure nil to use packaged version of python.el
+  ;; set ensure nil to use built-in version of python.el
   ;; rather than grabbing from elpa
   :ensure nil
   :mode ("\\.py\\'" . python-mode)
