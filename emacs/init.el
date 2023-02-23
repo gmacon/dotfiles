@@ -270,7 +270,10 @@
   :ensure nil
   :mode ("\\.py\\'" . python-mode)
   :interpreter ("python" . python-mode)
-  :hook (python-mode . gam-before-save-format-buffer))
+  :hook
+  (python-mode . gam-before-save-format-buffer)
+  (python-ts-mode . gam-before-save-format-buffer)
+  )
 
 (use-package rust-mode
   :mode ("\\.rs'")
