@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-22.11-darwin";
     home-manager = {
-      url = "github:nix-community/home-manager/release-22.11";
+      url = "github:gmacon/home-manager/3667-programs-ssh-package";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     emacs = {

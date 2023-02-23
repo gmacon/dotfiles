@@ -45,7 +45,6 @@ in
       jq
       mosh
       nixfmt
-      openssh
       pandoc
       ripgrep
       rnix-lsp

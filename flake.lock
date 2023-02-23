@@ -44,16 +44,16 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1674440933,
-        "narHash": "sha256-CASRcD/rK3fn5vUCti3jzry7zi0GsqRsBohNq9wPgLs=",
-        "owner": "nix-community",
+        "lastModified": 1676064378,
+        "narHash": "sha256-GLOsEyf5N8JCBCuWuC+38aX9jp7mZvsIBKePLZUO/yc=",
+        "owner": "gmacon",
         "repo": "home-manager",
-        "rev": "65c47ced082e3353113614f77b1bc18822dc731f",
+        "rev": "2412aca0d1884665141b47b0e3fa897798a84761",
         "type": "github"
       },
       "original": {
-        "owner": "nix-community",
-        "ref": "release-22.11",
+        "owner": "gmacon",
+        "ref": "3667-programs-ssh-package",
         "repo": "home-manager",
         "type": "github"
       }
