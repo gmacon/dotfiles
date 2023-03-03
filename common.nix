@@ -41,6 +41,7 @@ in
       fd
       fzf
       httpie
+      git-absorb
       jq
       mosh
       nixfmt
