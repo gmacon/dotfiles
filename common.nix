@@ -39,7 +39,6 @@ in
       cookiecutter
       exa
       fd
-      fira-code
       fzf
       httpie
       jq
@@ -50,6 +49,9 @@ in
       rnix-lsp
       shellcheck
       vim
+
+      (nerdfonts.override { fonts = [ "FiraCode" ]; })
+      noto-fonts
 
       gitHelpers
     ];
@@ -108,7 +110,6 @@ in
       path[1,0]=("${config.home.profileDirectory}/bin")
     '';
     history.path = "${config.xdg.dataHome}/zsh/zsh_history";
-    initExtra = "source ${./zsh/zsh_prompt}";
     initExtraBeforeCompInit = ''
       zstyle ':completion:*' completer _complete _ignored _correct _approximate
       zstyle ':completion:*' matcher-list "" 'm:{[:lower:]}={[:upper:]}'
@@ -124,6 +125,14 @@ in
       name = "fzf-marks";
       src = zsh-fzf-marks;
     }];
+  };
+
+  programs.starship = {
+    enable = true;
+    settings = {
+      shlvl.disabled = false;
+      status.disabled = false;
+    };
   };
 
   programs.direnv = {
