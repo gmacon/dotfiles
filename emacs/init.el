@@ -257,6 +257,8 @@
 (use-package hcl-mode
   :mode ("\\.hcl$"))
 
+(use-package jinja2-mode)
+
 (use-package markdown-mode
   :custom (markdown-command "pandoc")
   :mode (("\\.md'" . gfm-mode)))
