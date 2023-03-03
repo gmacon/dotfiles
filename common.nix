@@ -93,12 +93,6 @@ in
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  # Nix
-  nix = {
-    package = pkgs.nix;
-    settings.experimental-features = [ "nix-command" "flakes" ];
-  };
-
   # Shell
   programs.zsh = {
     enable = true;
