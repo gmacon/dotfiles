@@ -23,6 +23,12 @@ let
   skiplist = pkgs.runCommand "skiplist" { } ''
     cut -f1 ${./git/skipList} | sort > $out
   '';
+  direnvLayoutDirSrc = ''
+    direnv_layout_dir() {
+      echo -n "${config.xdg.cacheHome}/direnv/layouts/"
+      echo -n "$PWD" | ${pkgs.b2sum}/bin/b2sum -l160 | cut -d ' ' -f 1
+    }
+  '';
 in
 {
   # Home Manager needs a bit of information about you and the
@@ -105,6 +111,7 @@ in
       path[1,0]=("${config.home.profileDirectory}/bin")
     '';
     history.path = "${config.xdg.dataHome}/zsh/zsh_history";
+    initExtra = direnvLayoutDirSrc;
     initExtraBeforeCompInit = ''
       zstyle ':completion:*' completer _complete _ignored _correct _approximate
       zstyle ':completion:*' matcher-list "" 'm:{[:lower:]}={[:upper:]}'
@@ -140,12 +147,7 @@ in
       };
     };
     # From https://github.com/nix-community/nix-direnv#storing-direnv-outside-the-project-directory
-    stdlib = ''
-      direnv_layout_dir() {
-        echo -n "${config.xdg.cacheHome}/direnv/layouts/"
-        echo -n "$PWD" | ${pkgs.b2sum}/bin/b2sum -l160 | cut -d ' ' -f 1
-      }
-    '';
+    stdlib = direnvLayoutDirSrc;
   };
 
   # SSH
