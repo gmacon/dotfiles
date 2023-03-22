@@ -45,7 +45,6 @@ in
       cookiecutter
       exa
       fd
-      fzf
       httpie
       git-absorb
       jq
@@ -149,6 +148,8 @@ in
     # From https://github.com/nix-community/nix-direnv#storing-direnv-outside-the-project-directory
     stdlib = direnvLayoutDirSrc;
   };
+
+  programs.fzf.enable = true;
 
   # SSH
   programs.ssh = {
