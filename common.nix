@@ -98,12 +98,7 @@ in
 
   nix = {
     package = pkgs.nix;
-    registry.nixpkgs.to = {
-      type = "github";
-      owner = "NixOS";
-      repo = "nixpkgs";
-      rev = inputs.nixpkgs.rev;
-    };
+    registry.nixpkgs.flake = inputs.nixpkgs;
   };
 
   # Let Home Manager install and manage itself.
