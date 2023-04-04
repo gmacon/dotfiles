@@ -22,9 +22,9 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, emacs, penumbra, zsh-fzf-marks }:
+  outputs = { self, nixpkgs, home-manager, emacs, penumbra, zsh-fzf-marks } @ inputs:
     let
-      extraSpecialArgs = { inherit penumbra zsh-fzf-marks; };
+      extraSpecialArgs = { inherit inputs; };
       nixpkgsArgs = { overlays = [ emacs.overlays.default ]; };
       linuxPkgs = import nixpkgs (nixpkgsArgs // { system = "x86_64-linux"; });
       darwinPkgs =

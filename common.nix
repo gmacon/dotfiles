@@ -1,4 +1,4 @@
-{ config, pkgs, username, userEmail, homeDirectory, zsh-fzf-marks, ... }:
+{ config, pkgs, username, userEmail, homeDirectory, inputs, ... }:
 let
   gitHelpers = pkgs.stdenvNoCC.mkDerivation {
     name = "git-helpers";
@@ -96,6 +96,16 @@ in
     ls = "${pkgs.exa}/bin/exa";
   };
 
+  nix = {
+    package = pkgs.nix;
+    registry.nixpkgs.to = {
+      type = "github";
+      owner = "NixOS";
+      repo = "nixpkgs";
+      rev = inputs.nixpkgs.rev;
+    };
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -124,7 +134,7 @@ in
     '';
     plugins = [{
       name = "fzf-marks";
-      src = zsh-fzf-marks;
+      src = inputs.zsh-fzf-marks;
     }];
   };
 

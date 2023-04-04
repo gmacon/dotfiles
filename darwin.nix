@@ -1,5 +1,6 @@
-{ config, pkgs, penumbra, ... }:
+{ config, pkgs, inputs, ... }:
 let
+  penumbra = inputs.penumbra;
   plistToJson = source: pkgs.runCommand "output" { } ''
     ${pkgs.python3}/bin/python -c "import json, plistlib, sys; json.dump(plistlib.load(sys.stdin.buffer), sys.stdout)" <${source} >$out
   '';
