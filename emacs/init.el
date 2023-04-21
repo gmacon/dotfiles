@@ -113,9 +113,6 @@
   :after evil
   :config (global-evil-surround-mode 1))
 
-(use-package eldoc-box
-  :hook (prog-mode . eldoc-box-hover-mode))
-
 (use-package corfu
   :custom (corfu-auto t)
   :init (global-corfu-mode))
