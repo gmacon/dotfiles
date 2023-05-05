@@ -35,6 +35,24 @@ let
       grep -E '^[a-z]{5}$' ${pkgs.scowl}/share/dict/words.txt
     '';
   };
+  rsync-git = pkgs.writeShellApplication {
+    name = "rsync-git";
+    runtimeInputs = with pkgs; [ rsync git ];
+    text = ''
+      usage="usage: rsync-git SRC DST <options>"
+      src="''${1?$usage}"
+      shift
+      dst="''${1?$usage}"
+      shift
+      exec rsync \
+        --exclude .git \
+        --exclude-from <(
+          git -C "$src" ls-files --exclude-standard --others --ignored --directory
+        ) \
+        "$@" \
+        "$src" "$dst"
+    '';
+  };
 in
 {
   # Home Manager needs a bit of information about you and the
@@ -67,6 +85,7 @@ in
       noto-fonts
 
       gitHelpers
+      rsync-git
       wordle
     ];
 
