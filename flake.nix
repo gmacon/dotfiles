@@ -30,7 +30,12 @@
     { nixpkgs, home-manager, emacs, ... } @ inputs:
     let
       extraSpecialArgs = { inherit inputs; };
-      nixpkgsArgs = { overlays = [ emacs.overlays.default ]; };
+      nixpkgsArgs = {
+        overlays = [
+          emacs.overlays.default
+          (import ./nix/overlay.nix)
+        ];
+      };
       linuxPkgs = import nixpkgs (nixpkgsArgs // { system = "x86_64-linux"; });
       darwinPkgs =
         import nixpkgs (nixpkgsArgs // { system = "x86_64-darwin"; });

@@ -76,6 +76,7 @@ in
       nixfmt
       nix-tree
       pandoc
+      pinpal
       ripgrep
       rnix-lsp
       shellcheck
@@ -165,6 +166,10 @@ in
     settings = {
       shlvl.disabled = false;
       status.disabled = false;
+      custom.pinpal = {
+        command = "${pkgs.pinpal}/bin/pinpal check";
+        when = true;
+      };
     };
   };
 
