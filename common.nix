@@ -56,6 +56,7 @@ in
       jq
       mosh
       nixfmt
+      nix-tree
       pandoc
       ripgrep
       rnix-lsp
