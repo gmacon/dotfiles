@@ -119,7 +119,9 @@
 
 (use-package magit
   :defer nil
-  :hook (after-save . magit-after-save-refresh-status)
+  :hook
+  (after-save . magit-after-save-refresh-status)
+  (git-commit-setup . (lambda () (set-fill-column 72)))
   :general
   (:states 'normal
            :prefix gam-default-leader-key
@@ -127,7 +129,6 @@
   :custom
   (magit-popup-show-common-commands nil)
   (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1)
-  (git-commit-fill-column 72)
   (git-commit-summary-max-length 50))
 
 (use-package git-gutter
