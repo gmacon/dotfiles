@@ -74,6 +74,7 @@ in
       jq
       mosh
       nixfmt
+      nix-output-monitor
       nix-tree
       pandoc
       pinpal
