@@ -56,15 +56,14 @@
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
-        ],
-        "utils": "utils"
+        ]
       },
       "locked": {
-        "lastModified": 1676064378,
-        "narHash": "sha256-GLOsEyf5N8JCBCuWuC+38aX9jp7mZvsIBKePLZUO/yc=",
+        "lastModified": 1683898912,
+        "narHash": "sha256-ZAvgg1uzK/99Ch6rfgZve+bk+8PF1wbYJMeCIG9lT0Q=",
         "owner": "gmacon",
         "repo": "home-manager",
-        "rev": "2412aca0d1884665141b47b0e3fa897798a84761",
+        "rev": "b65cf8c8eed6209d9964fa89bcbb7ff1c6e89263",
         "type": "github"
       },
       "original": {
@@ -114,21 +113,6 @@
         "nixpkgs": "nixpkgs",
         "penumbra": "penumbra",
         "zsh-fzf-marks": "zsh-fzf-marks"
-      }
-    },
-    "utils": {
-      "locked": {
-        "lastModified": 1667395993,
-        "narHash": "sha256-nuEHfE/LcWyuSWnS8t12N1wc105Qtau+/OdUAjtQ0rA=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "5aed5285a952e0b949eb3ba02c12fa4fcfef535f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
       }
     },
     "zsh-fzf-marks": {
