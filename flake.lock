@@ -59,16 +59,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1683898912,
-        "narHash": "sha256-ZAvgg1uzK/99Ch6rfgZve+bk+8PF1wbYJMeCIG9lT0Q=",
-        "owner": "gmacon",
+        "lastModified": 1683989410,
+        "narHash": "sha256-puF/QsIkp4ch0sf6M5mNzbdZtYcq2MJHcKre9wJ3ZYo=",
+        "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "b65cf8c8eed6209d9964fa89bcbb7ff1c6e89263",
+        "rev": "6702b22b9805bc1879715d4111e3764cd4237aed",
         "type": "github"
       },
       "original": {
-        "owner": "gmacon",
-        "ref": "3667-programs-ssh-package",
+        "owner": "nix-community",
         "repo": "home-manager",
         "type": "github"
       }
