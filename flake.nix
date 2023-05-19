@@ -45,7 +45,7 @@
         home-manager.lib.homeManagerConfiguration {
           pkgs = darwinPkgs;
 
-          modules = [ ./common.nix ./darwin.nix ];
+          modules = [ ./common.nix ./graphical.nix ./darwin.nix ];
 
           extraSpecialArgs = {
             username = "gmacon3";
@@ -54,6 +54,18 @@
           } // extraSpecialArgs;
         };
       homeConfigurations.work-desktop =
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = linuxPkgs;
+
+          modules = [ ./common.nix ./graphical.nix ./linux.nix ./sssd.nix ];
+
+          extraSpecialArgs = {
+            username = "gmacon3";
+            userEmail = "george.macon@gtri.gatech.edu";
+            homeDirectory = "/home/gmacon3";
+          } // extraSpecialArgs;
+        };
+      homeConfigurations.work-server =
         home-manager.lib.homeManagerConfiguration {
           pkgs = linuxPkgs;
 
@@ -69,7 +81,7 @@
         home-manager.lib.homeManagerConfiguration {
           pkgs = linuxPkgs;
 
-          modules = [ ./common.nix ./linux.nix ];
+          modules = [ ./common.nix ./graphical.nix ./linux.nix ];
 
           extraSpecialArgs = {
             username = "gmacon";
