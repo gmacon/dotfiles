@@ -11,6 +11,10 @@
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-index-database = {
+      url = "github:Mic92/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     alacritty-theme-penumbra = {
       url = "github:pomarec/alacritty-theme-penumbra";
@@ -27,7 +31,7 @@
   };
 
   outputs =
-    { nixpkgs, home-manager, emacs, ... } @ inputs:
+    { nixpkgs, home-manager, emacs, nix-index-database, ... } @ inputs:
     let
       extraSpecialArgs = { inherit inputs; };
       nixpkgsArgs = {
@@ -45,7 +49,12 @@
         home-manager.lib.homeManagerConfiguration {
           pkgs = darwinPkgs;
 
-          modules = [ ./common.nix ./graphical.nix ./darwin.nix ];
+          modules = [
+            nix-index-database.hmModules.nix-index
+            ./common.nix
+            ./graphical.nix
+            ./darwin.nix
+          ];
 
           extraSpecialArgs = {
             username = "gmacon3";
@@ -57,7 +66,13 @@
         home-manager.lib.homeManagerConfiguration {
           pkgs = linuxPkgs;
 
-          modules = [ ./common.nix ./graphical.nix ./linux.nix ./sssd.nix ];
+          modules = [
+            nix-index-database.hmModules.nix-index
+            ./common.nix
+            ./graphical.nix
+            ./linux.nix
+            ./sssd.nix
+          ];
 
           extraSpecialArgs = {
             username = "gmacon3";
@@ -69,7 +84,12 @@
         home-manager.lib.homeManagerConfiguration {
           pkgs = linuxPkgs;
 
-          modules = [ ./common.nix ./linux.nix ./sssd.nix ];
+          modules = [
+            nix-index-database.hmModules.nix-index
+            ./common.nix
+            ./linux.nix
+            ./sssd.nix
+          ];
 
           extraSpecialArgs = {
             username = "gmacon3";
@@ -81,7 +101,12 @@
         home-manager.lib.homeManagerConfiguration {
           pkgs = linuxPkgs;
 
-          modules = [ ./common.nix ./graphical.nix ./linux.nix ];
+          modules = [
+            nix-index-database.hmModules.nix-index
+            ./common.nix
+            ./graphical.nix
+            ./linux.nix
+          ];
 
           extraSpecialArgs = {
             username = "gmacon";

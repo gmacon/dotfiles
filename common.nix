@@ -66,6 +66,7 @@ in
       agedu
       bat
       cachix
+      comma
       cookiecutter
       exa
       fd
@@ -189,6 +190,8 @@ in
   };
 
   programs.fzf.enable = true;
+
+  programs.nix-index.enable = true;
 
   # SSH
   programs.ssh = {
