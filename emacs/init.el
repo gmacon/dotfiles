@@ -32,6 +32,7 @@
   (default-frame-alist '((menu-bar-lines . 0)
                          (tool-bar-lines . 0)
                          (vertical-scroll-bars . nil)))
+  (ispell-program-name "hunspell")
 
   :init
   (global-hl-line-mode 1)
@@ -39,6 +40,7 @@
   (savehist-mode 1)
 
   (defun gam-prog-mode-setup ()
+    (flyspell-prog-mode)
     (column-number-mode 1)
     (show-paren-mode 1)            ; highlight matching brackets
     (hs-minor-mode))               ; Add hide-show
@@ -65,7 +67,8 @@
   :hook
   (prog-mode . gam-prog-mode-setup)
   (after-init . gam-after-init-hook)
-  (before-save . 'whitespace-cleanup))
+  (before-save . 'whitespace-cleanup)
+  (text-mode . flyspell-mode))
 
 (use-package textsize
   :defer nil
