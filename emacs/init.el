@@ -72,7 +72,8 @@
 
 (use-package textsize
   :defer nil
-  :config (textsize-mode)
+  :custom (textsize-default-points 12)
+  :config (textsize-fix-frame)
   :general
   ("s-=" 'textsize-increment)
   ("s-+" 'textsize-increment)
