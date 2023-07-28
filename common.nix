@@ -79,6 +79,7 @@ in
       nix-tree
       pandoc
       pinpal
+      pv
       ripgrep
       rnix-lsp
       shellcheck
