@@ -2,9 +2,15 @@
 {
   home.packages = with pkgs; [
     hunspell
+
+    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    noto-fonts
   ];
+
   home.sessionVariables.DICPATH = "${config.xdg.dataHome}/hunspell";
   home.file."${config.xdg.dataHome}/hunspell".source = "${pkgs.hunspellDicts.en_US}/share/hunspell";
+
+  fonts.fontconfig.enable = true;
 
   # Emacs
   programs.emacs = {

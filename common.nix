@@ -85,9 +85,6 @@ in
       shellcheck
       vim
 
-      (nerdfonts.override { fonts = [ "FiraCode" ]; })
-      noto-fonts
-
       gitHelpers
       rsync-git
       wordle
