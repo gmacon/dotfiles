@@ -71,7 +71,6 @@
             ./common.nix
             ./graphical.nix
             ./linux.nix
-            ./sssd.nix
           ];
 
           extraSpecialArgs = {
@@ -88,7 +87,6 @@
             nix-index-database.hmModules.nix-index
             ./common.nix
             ./linux.nix
-            ./sssd.nix
           ];
 
           extraSpecialArgs = {
