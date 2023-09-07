@@ -1,3 +1,6 @@
 { pkgs, ... }: {
-  home.packages = with pkgs; [ ncdu ];
+  home.packages = with pkgs; [
+    htop
+    ncdu
+  ];
 }
