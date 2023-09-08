@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     hunspell
+    zotero
 
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
     noto-fonts
