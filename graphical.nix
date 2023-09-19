@@ -1,11 +1,16 @@
 { config, pkgs, ... }:
+let
+  lib = pkgs.lib;
+  stdenv = pkgs.stdenv;
+in
 {
   home.packages = with pkgs; [
     hunspell
-    zotero
 
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
     noto-fonts
+  ] ++ lib.lists.optionals (stdenv.isLinux) [
+    zotero
   ];
 
   home.sessionVariables.DICPATH = "${config.xdg.dataHome}/hunspell";
