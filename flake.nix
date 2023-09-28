@@ -71,6 +71,7 @@
             ./common.nix
             ./graphical.nix
             ./linux.nix
+            ./rclone.nix
           ];
 
           extraSpecialArgs = {
