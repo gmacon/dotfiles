@@ -180,13 +180,6 @@
            "l Q" 'eglot-reconnect
            "l r" 'eglot-rename
            "l =" 'eglot-format)
-  :config
-  (with-eval-after-load 'eglot
-    (add-to-list
-     'eglot-server-programs
-     `(python-ts-mode
-       . ,(eglot-alternatives
-          '("pylsp" "pyls" ("pyright-langserver" "--stdio") "jedi-language-server")))))
   :hook
   (python-mode . eglot-ensure)
   (python-ts-mode . eglot-ensure)
