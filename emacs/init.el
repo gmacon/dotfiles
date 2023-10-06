@@ -118,7 +118,7 @@
   :config (global-evil-surround-mode 1))
 
 (use-package corfu
-  :custom (corfu-auto t)
+  :custom (tab-always-indent 'complete)
   :init (global-corfu-mode))
 
 (use-package magit
