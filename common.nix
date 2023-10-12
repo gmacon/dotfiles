@@ -139,6 +139,7 @@ in
     defaultKeymap = "emacs";
     enableSyntaxHighlighting = true;
     envExtra = ''
+      umask 022
       typeset -U path
       path[1,0]=("${config.home.profileDirectory}/bin")
     '';
