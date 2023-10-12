@@ -33,6 +33,8 @@
                          (tool-bar-lines . 0)
                          (vertical-scroll-bars . nil)))
   (ispell-program-name "hunspell")
+  (require-final-newline t)
+  (sentence-end-double-space nil)
 
   :init
   (global-hl-line-mode 1)
