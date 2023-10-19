@@ -39,6 +39,11 @@
           emacs.overlays.default
           (import ./nix/overlay.nix)
         ];
+        config.allowUnfreePredicate = pkg: builtins.elem (pkg.pname) [
+          "1password"
+          "1password-cli"
+          "slack"
+        ];
       };
       linuxPkgs = import nixpkgs (nixpkgsArgs // { system = "x86_64-linux"; });
       darwinPkgs =

@@ -5,7 +5,11 @@ let
 in
 {
   home.packages = with pkgs; [
+    _1password
+    _1password-gui
+    firefox
     hunspell
+    slack
 
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
     noto-fonts
