@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, lib, ... }: {
   home.packages = with pkgs; [ rclone ];
   systemd.user.services.rclone = {
     Unit = {
@@ -8,7 +8,15 @@
       WantedBy = [ "default.target" ];
     };
     Service = {
-      ExecStart = "${pkgs.rclone}/bin/rclone mount --vfs-cache-mode full box: ${config.home.homeDirectory}/Box";
+      Type = "notify";
+      ExecStart = lib.concatStringsSep " " [
+        "${pkgs.rclone}/bin/rclone"
+        "mount"
+        "--log-systemd"
+        "--vfs-cache-mode=writes"
+        "box:"
+        "${config.home.homeDirectory}/Box"
+      ];
     };
   };
 }
