@@ -17,7 +17,10 @@ in
     zotero
   ];
 
-  home.sessionVariables.DICPATH = "${config.xdg.dataHome}/hunspell";
+  home.sessionVariables = {
+    DICPATH = "${config.xdg.dataHome}/hunspell";
+    MOZ_ENABLE_WAYLAND = "1";
+  };
   home.file."${config.xdg.dataHome}/hunspell".source = "${pkgs.hunspellDicts.en_US}/share/hunspell";
 
   fonts.fontconfig.enable = true;
