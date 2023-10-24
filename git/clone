@@ -29,7 +29,9 @@ def main(url: str, *extra: str) -> int:
     target_dir = (
         pathlib.Path.home() / "code" / parts.hostname / parts.path.lstrip("/")
     ).with_suffix("")
-    return subprocess.run(["git", "clone", *extra, url, str(target_dir)]).returncode
+    subprocess.run(["git", "clone", *extra, url, str(target_dir)], check=True)
+    with open(pathlib.Path.home() / ".config" / "fzf-marks" / "bookmarks", "a") as f:
+        print(f"{target_dir.name} : {target_dir}", file=f)
 
 
 if __name__ == "__main__":
