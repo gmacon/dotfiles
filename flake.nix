@@ -2,7 +2,7 @@
   description = "Home Manager configuration of George Macon";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05-small";
     home-manager = {
       url = "github:nix-community/home-manager/release-23.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -35,11 +35,18 @@
           emacs.overlays.default
           (import ./nix/overlay.nix)
         ];
-        config.allowUnfreePredicate = pkg: builtins.elem (pkg.pname) [
-          "1password"
-          "1password-cli"
-          "slack"
-        ];
+        config = {
+          allowUnfreePredicate = pkg: builtins.elem (pkg.pname) [
+            "1password"
+            "1password-cli"
+            "slack"
+          ];
+          permittedInsecurePackages = [
+            # CVE-2023-5217
+            # This vuln only affects the VP8 *encoder*, so I'm not too worried.
+            "zotero-6.0.26"
+          ];
+        };
       };
       linuxPkgs = import nixpkgs (nixpkgsArgs // { system = "x86_64-linux"; });
       darwinPkgs =
