@@ -53,6 +53,15 @@ let
         "$src" "$dst"
     '';
   };
+  rebuild-fzf-mark = pkgs.writeShellApplication {
+    name = "rebuild-fzf-mark";
+    runtimeInputs = with pkgs; [ findutils gawk ];
+    text = ''
+      find "${config.home.homeDirectory}/code" -type d -name .git \
+        | awk 'BEGIN { FS="/"; OFS="/" } { NF=NF-1; print $NF " : " $0 }' \
+        > "${config.xdg.configHome}/fzf-marks/bookmarks"
+    '';
+  };
 in
 {
   # Home Manager needs a bit of information about you and the
@@ -86,6 +95,7 @@ in
       vim
 
       gitHelpers
+      rebuild-fzf-mark
       rsync-git
       wordle
     ];
