@@ -131,7 +131,8 @@
   :general
   (:states 'normal
            :prefix gam-default-leader-key
-           "g" 'magit)
+           "g g" 'magit
+           "g b" 'magit-blame)
   :custom
   (magit-popup-show-common-commands nil)
   (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1)
