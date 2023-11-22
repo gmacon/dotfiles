@@ -79,13 +79,13 @@ in
       cookiecutter
       exa
       fd
-      httpie
       git-absorb
+      httpie
       jq
       mosh
-      nixfmt
       nix-output-monitor
       nix-tree
+      nixfmt
       pandoc
       pinpal
       pv
