@@ -93,6 +93,7 @@ in
       rnix-lsp
       shellcheck
       vim
+      yt-dlp
 
       gitHelpers
       rebuild-fzf-mark
