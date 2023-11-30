@@ -84,6 +84,7 @@ in
       jq
       mosh
       nix-output-monitor
+      nix-prefetch-github
       nix-tree
       nixfmt
       pandoc
