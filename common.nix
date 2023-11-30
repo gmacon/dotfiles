@@ -77,7 +77,7 @@ in
       cachix
       comma
       cookiecutter
-      exa
+      eza
       fd
       git-absorb
       httpie
@@ -110,7 +110,7 @@ in
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "22.11";
+  home.stateVersion = "23.11";
 
   home.sessionVariables = {
     EDITOR = "${pkgs.vim}/bin/vim";
@@ -133,7 +133,7 @@ in
 
   home.shellAliases = {
     cat = "${pkgs.bat}/bin/bat";
-    ls = "${pkgs.exa}/bin/exa";
+    ls = "${pkgs.eza}/bin/eza";
   };
 
   nix = {
@@ -149,7 +149,7 @@ in
     enable = true;
     autocd = true;
     defaultKeymap = "emacs";
-    enableSyntaxHighlighting = true;
+    syntaxHighlighting.enable = true;
     envExtra = ''
       umask 022
       typeset -U path
