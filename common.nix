@@ -264,6 +264,7 @@ in
       pushnew = "push -u origin HEAD";
       wip = "commit -anm WIP";
       unwip = ''!test "$(git log --pretty=%s -1)" = WIP && git reset HEAD~'';
+      ab = ''!git absorb --base "$(git merge-base --fork-point origin/main HEAD)"'';
     };
     extraConfig = {
       core.fsmonitor = true;
