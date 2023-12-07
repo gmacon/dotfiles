@@ -29,10 +29,10 @@ in
   programs.emacs = {
     enable = true;
     package = pkgs.emacsWithPackagesFromUsePackage {
-      config = ./emacs/init.el;
+      config = ./config/emacs/init.el;
       package = pkgs.emacs29-pgtk;
       alwaysEnsure = true;
     };
   };
-  home.file."${config.xdg.configHome}/emacs/init.el".source = ./emacs/init.el;
+  home.file."${config.xdg.configHome}/emacs/init.el".source = ./config/emacs/init.el;
 }

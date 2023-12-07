@@ -7,7 +7,7 @@ let
   readPlist = source: builtins.fromJSON (builtins.readFile (plistToJson source));
   darkmode = pkgs.concatTextFile {
     name = "darkmode";
-    files = [ ./darkmode ];
+    files = [ ./config/darkmode ];
     executable = true;
     destination = "/bin/darkmode";
   };
@@ -31,5 +31,5 @@ in
     };
   };
   home.file."Library/Application Support/iTerm2/Scripts/autotheme.py".source =
-    ./iterm2/autotheme.py;
+    ./config/iterm2/autotheme.py;
 }

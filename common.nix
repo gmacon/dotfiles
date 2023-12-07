@@ -2,7 +2,7 @@
 let
   gitHelpers = pkgs.stdenvNoCC.mkDerivation {
     name = "git-helpers";
-    src = ./git;
+    src = ./config/git;
     buildInputs = [ pkgs.python3 ];
     installPhase = ''
       runHook preInstall
@@ -13,7 +13,7 @@ let
   };
   pushover = pkgs.concatTextFile {
     name = "pushover";
-    files = [ ./pushover ];
+    files = [ ./config/pushover ];
     executable = true;
     destination = "/bin/pushover";
   };
@@ -21,7 +21,7 @@ let
     --smart-case
   '';
   skiplist = pkgs.runCommand "skiplist" { } ''
-    cut -f1 ${./git/skipList} | sort > $out
+    cut -f1 ${./config/git/skipList} | sort > $out
   '';
   direnvLayoutDirSrc = ''
     direnv_layout_dir() {
@@ -295,5 +295,5 @@ in
   };
 
   # Vagrant
-  home.file."${config.home.homeDirectory}/.vagrant.d/Vagrantfile".source = ./Vagrantfile;
+  home.file."${config.home.homeDirectory}/.vagrant.d/Vagrantfile".source = ./config/Vagrantfile;
 }
