@@ -77,7 +77,6 @@ in
       cachix
       comma
       cookiecutter
-      eza
       fd
       git-absorb
       httpie
@@ -132,7 +131,6 @@ in
 
   home.shellAliases = {
     cat = "${pkgs.bat}/bin/bat";
-    ls = "${pkgs.eza}/bin/eza";
   };
 
   nix = {
@@ -202,6 +200,11 @@ in
   programs.fzf.enable = true;
 
   programs.nix-index.enable = true;
+
+  programs.eza = {
+    enable = true;
+    enableAliases = true;
+  };
 
   # SSH
   programs.ssh = {
