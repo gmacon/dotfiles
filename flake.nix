@@ -59,9 +59,9 @@
 
           modules = [
             nix-index-database.hmModules.nix-index
-            ./common.nix
-            ./graphical.nix
-            ./darwin.nix
+            ./common/common.nix
+            ./common/darwin.nix
+            ./graphical/common.nix
           ];
 
           extraSpecialArgs = {
@@ -76,10 +76,11 @@
 
           modules = [
             nix-index-database.hmModules.nix-index
-            ./common.nix
-            ./graphical.nix
-            ./linux.nix
-            ./rclone.nix
+            ./common/common.nix
+            ./common/linux.nix
+            ./graphical/common.nix
+            ./graphical/linux.nix
+            ./work-graphical/linux.nix
           ];
 
           extraSpecialArgs = {
@@ -94,8 +95,9 @@
 
           modules = [
             nix-index-database.hmModules.nix-index
-            ./common.nix
-            ./linux.nix
+            ./common/common.nix
+            ./common/linux.nix
+            ./work/common.nix
           ];
 
           extraSpecialArgs = {
@@ -110,9 +112,11 @@
 
           modules = [
             nix-index-database.hmModules.nix-index
-            ./common.nix
-            ./graphical.nix
-            ./linux.nix
+            ./common/common.nix
+            ./common/linux.nix
+            ./graphical/common.nix
+            ./graphical/linux.nix
+            ./home/common.nix
           ];
 
           extraSpecialArgs = {

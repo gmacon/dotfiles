@@ -2,7 +2,7 @@
 let
   gitHelpers = pkgs.stdenvNoCC.mkDerivation {
     name = "git-helpers";
-    src = ./config/git;
+    src = ../config/git;
     buildInputs = [ pkgs.python3 ];
     installPhase = ''
       runHook preInstall
@@ -13,7 +13,7 @@ let
   };
   pushover = pkgs.concatTextFile {
     name = "pushover";
-    files = [ ./config/pushover ];
+    files = [ ../config/pushover ];
     executable = true;
     destination = "/bin/pushover";
   };
@@ -21,7 +21,7 @@ let
     --smart-case
   '';
   skiplist = pkgs.runCommand "skiplist" { } ''
-    cut -f1 ${./config/git/skipList} | sort > $out
+    cut -f1 ${../config/git/skipList} | sort > $out
   '';
   direnvLayoutDirSrc = ''
     direnv_layout_dir() {
@@ -94,7 +94,6 @@ in
       rnix-lsp
       shellcheck
       vim
-      yt-dlp
 
       gitHelpers
       rebuild-fzf-mark
@@ -293,7 +292,4 @@ in
     userEmail = userEmail;
     userName = "George Macon";
   };
-
-  # Vagrant
-  home.file."${config.home.homeDirectory}/.vagrant.d/Vagrantfile".source = ./config/Vagrantfile;
 }

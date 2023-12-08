@@ -1,5 +1,9 @@
 { config, pkgs, lib, ... }: {
-  home.packages = with pkgs; [ rclone ];
+  home.packages = with pkgs; [
+    rclone
+    slack
+    zotero
+  ];
   systemd.user.services.rclone = {
     Unit = {
       Description = "Mount Box with rclone";
