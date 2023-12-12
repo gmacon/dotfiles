@@ -186,7 +186,6 @@ in
 
   programs.direnv = {
     enable = true;
-    nix-direnv.enable = true;
     config = {
       global = {
         bash_path = "${pkgs.bash}/bin/bash";
