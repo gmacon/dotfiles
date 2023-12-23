@@ -23,6 +23,7 @@ let
   skiplist = pkgs.runCommand "skiplist" { } ''
     cut -f1 ${../config/git/skipList} | sort > $out
   '';
+  # From https://github.com/nix-community/nix-direnv#storing-direnv-outside-the-project-directory
   direnvLayoutDirSrc = ''
     direnv_layout_dir() {
       echo -n "${config.xdg.cacheHome}/direnv/layouts/"
@@ -192,8 +193,10 @@ in
         strict_env = true;
       };
     };
-    # From https://github.com/nix-community/nix-direnv#storing-direnv-outside-the-project-directory
-    stdlib = direnvLayoutDirSrc;
+    stdlib = ''
+      ${direnvLayoutDirSrc}
+      . ${pkgs.flake_env}/share/flake_env/direnvrc
+    '';
   };
 
   programs.fzf.enable = true;
