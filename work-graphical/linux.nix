@@ -1,6 +1,5 @@
 { config, pkgs, lib, ... }: {
   home.packages = with pkgs; [
-    rclone
     slack
     zotero
   ];
