@@ -77,6 +77,7 @@
             ./common/common.nix
             ./common/darwin.nix
             ./graphical/common.nix
+            ./work/common.nix
           ];
 
           extraSpecialArgs = {
@@ -95,6 +96,7 @@
             ./common/linux.nix
             ./graphical/common.nix
             ./graphical/linux.nix
+            ./work/common.nix
             ./work-graphical/linux.nix
           ];
 
