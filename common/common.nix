@@ -119,7 +119,7 @@ in
 
   home.file = {
     "${config.xdg.configHome}/bat/config".text = ''
-      --theme=base16
+      --theme="Solarized (light)"
     '';
     "${config.xdg.configHome}/cookiecutter/cookiecutter.yaml".text = ''
       default_context:
