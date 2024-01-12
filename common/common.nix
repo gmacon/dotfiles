@@ -196,7 +196,6 @@ in
     nix-direnv.enable = true;
     stdlib = ''
       ${direnvLayoutDirSrc}
-      . ${pkgs.flake_env}/share/flake_env/direnvrc
     '';
   };
 
