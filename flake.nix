@@ -68,6 +68,13 @@
         import nixpkgs (nixpkgsArgs // { system = "x86_64-darwin"; });
     in
     {
+      nixosConfigurations.argon = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./argon/configuration.nix
+          ./argon/hardware-configuration.nix
+        ];
+      };
       homeConfigurations.work-laptop =
         home-manager.lib.homeManagerConfiguration {
           pkgs = darwinPkgs;
