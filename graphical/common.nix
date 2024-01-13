@@ -10,9 +10,6 @@ in
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
     noto-fonts
   ] ++ lib.lists.optionals (stdenv.isLinux) [
-    _1password
-    _1password-gui
-    firefox
     slack
     zotero
   ];

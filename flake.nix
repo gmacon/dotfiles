@@ -52,26 +52,25 @@
     , ...
     } @ inputs:
     let
+      nixpkgsModule = {
+        nixpkgs = {
+          overlays = [
+            emacs.overlays.default
+            flake_env.overlays.default
+            nix-direnv.overlays.default
+            (import ./nix/overlay.nix)
+          ];
+          config.allowUnfree = true;
+        };
+        nix.extraOptions = ''
+          experimental-features = nix-command flakes
+        '';
+        nix.registry.nixpkgs.flake = inputs.nixpkgs;
+        nix.settings.trusted-users = [ "root" "@wheel" ];
+      };
       extraSpecialArgs = { inherit inputs; };
       nixpkgsArgs = {
-        overlays = [
-          emacs.overlays.default
-          flake_env.overlays.default
-          nix-direnv.overlays.default
-          (import ./nix/overlay.nix)
-        ];
-        config = {
-          allowUnfreePredicate = pkg: builtins.elem (pkg.pname) [
-            "1password"
-            "1password-cli"
-            "slack"
-          ];
-          permittedInsecurePackages = [
-            # CVE-2023-5217
-            # This vuln only affects the VP8 *encoder*, so I'm not too worried.
-            "zotero-6.0.26"
-          ];
-        };
+        inherit (nixpkgsModule.nixpkgs) overlays config;
       };
       linuxPkgs = import nixpkgs (nixpkgsArgs // { system = "x86_64-linux"; });
       darwinPkgs =
@@ -81,6 +80,7 @@
       nixosConfigurations.argon = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          nixpkgsModule
           ./argon/configuration.nix
           nixos-hardware.nixosModules.framework-13th-gen-intel
           ./argon/hardware-configuration.nix
@@ -150,7 +150,6 @@
             ./common/common.nix
             ./common/linux.nix
             ./graphical/common.nix
-            ./graphical/linux.nix
             ./home/common.nix
           ];
 
