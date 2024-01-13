@@ -183,6 +183,21 @@
         "type": "github"
       }
     },
+    "nixos-hardware": {
+      "locked": {
+        "lastModified": 1704786394,
+        "narHash": "sha256-aJM0ln9fMGWw1+tjyl5JZWZ3ahxAA2gw2ZpZY/hkEMs=",
+        "owner": "NixOS",
+        "repo": "nixos-hardware",
+        "rev": "b34a6075e9e298c4124e35c3ccaf2210c1f3a43b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixos-hardware",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1705331948,
@@ -238,6 +253,7 @@
         "home-manager": "home-manager",
         "nix-direnv": "nix-direnv",
         "nix-index-database": "nix-index-database",
+        "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "penumbra": "penumbra",
         "zsh-fzf-marks": "zsh-fzf-marks"

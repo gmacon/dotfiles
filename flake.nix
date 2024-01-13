@@ -8,6 +8,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixos-hardware.url = "github:NixOS/nixos-hardware";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -40,7 +42,15 @@
   };
 
   outputs =
-    { nixpkgs, home-manager, emacs, flake_env, nix-direnv, nix-index-database, ... } @ inputs:
+    { emacs
+    , flake_env
+    , home-manager
+    , nix-direnv
+    , nix-index-database
+    , nixos-hardware
+    , nixpkgs
+    , ...
+    } @ inputs:
     let
       extraSpecialArgs = { inherit inputs; };
       nixpkgsArgs = {
@@ -72,6 +82,7 @@
         system = "x86_64-linux";
         modules = [
           ./argon/configuration.nix
+          nixos-hardware.nixosModules.framework-13th-gen-intel
           ./argon/hardware-configuration.nix
         ];
       };
