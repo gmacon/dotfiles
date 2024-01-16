@@ -16,6 +16,10 @@
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    flake_env = {
+      url = "sourcehut:~bryan_bennett/flake_env";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-direnv = {
       url = "github:nix-community/nix-direnv/3.0.3";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,12 +40,13 @@
   };
 
   outputs =
-    { nixpkgs, home-manager, emacs, nix-direnv, nix-index-database, ... } @ inputs:
+    { nixpkgs, home-manager, emacs, flake_env, nix-direnv, nix-index-database, ... } @ inputs:
     let
       extraSpecialArgs = { inherit inputs; };
       nixpkgsArgs = {
         overlays = [
           emacs.overlays.default
+          flake_env.overlays.default
           nix-direnv.overlays.default
           (import ./nix/overlay.nix)
         ];
