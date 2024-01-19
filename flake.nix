@@ -10,6 +10,12 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.darwin.follows = "";
+      inputs.home-manager.follows = "home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -42,7 +48,8 @@
   };
 
   outputs =
-    { emacs
+    { agenix
+    , emacs
     , flake_env
     , home-manager
     , nix-direnv
@@ -84,6 +91,7 @@
           ./argon/configuration.nix
           nixos-hardware.nixosModules.framework-13th-gen-intel
           ./argon/hardware-configuration.nix
+          agenix.nixosModules.default
         ];
       };
       homeConfigurations.work-laptop =

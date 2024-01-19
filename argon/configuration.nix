@@ -39,6 +39,9 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  # Secrets
+  age.secrets.tarsnapKey.file = ../secrets/tarsnap.key.age;
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -108,12 +111,57 @@
 
   # List services that you want to enable:
   services.fwupd.enable = true;
+  services.openssh = {
+    startWhenNeeded = true;
+    enable = true;
+    openFirewall = false; # Only connections over tailscale allowed.
+  };
   services.tailscale.enable = true;
 
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  # Backups
+  services.tarsnap = {
+    enable = true;
+    keyfile = config.age.secrets.tarsnapKey.path;
+    archives.argon-home = {
+      directories = [ "/home/gmacon" ];
+      checkpointBytes = "10G";
+      period = "hourly";
+      excludes = [
+        ".cache"
+      ];
+    };
+  };
+  systemd.timers.tarsnap-argon-home-cleanup = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnCalendar = "daily";
+      Persistent = "true";
+    };
+  };
+  systemd.services.tarsnap-argon-home-cleanup = {
+    preStart = ''
+      while ! ping -4 -q -c 1 v1-0-0-server.tarsnap.com &> /dev/null; do sleep 3; done
+    '';
+    script = ''
+      ${pkgs.tarsnapper}/bin/tarsnapper \
+        -o configfile /etc/tarsnap/argon-home.conf \
+        --target 'argon-home-$date' \
+        --dateformat '%Y%m%d%H%M%S' \
+        --deltas 1h 1d 7d 28d 364d - \
+        expire
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      IOSchedulingClass = "idle";
+      NoNewPrivileges = "true";
+    };
+    unitConfig = {
+      Requires = "network-online.target";
+    };
+  };
 
   # Open ports in the firewall.
+  networking.nftables.enable = true;
   networking.firewall.trustedInterfaces = [
     config.services.tailscale.interfaceName
   ];
