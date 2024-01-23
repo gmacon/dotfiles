@@ -140,7 +140,7 @@
   };
   systemd.services.tarsnap-argon-home-cleanup = {
     preStart = ''
-      while ! ping -4 -q -c 1 v1-0-0-server.tarsnap.com &> /dev/null; do sleep 3; done
+      while ! ${pkgs.iputils}/bin/ping -4 -q -c 1 v1-0-0-server.tarsnap.com &> /dev/null; do sleep 3; done
     '';
     script = ''
       ${pkgs.tarsnapper}/bin/tarsnapper \
