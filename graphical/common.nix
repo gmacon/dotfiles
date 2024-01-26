@@ -9,9 +9,6 @@ in
 
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
     noto-fonts
-  ] ++ lib.lists.optionals (stdenv.isLinux) [
-    slack
-    zotero
   ];
 
   home.sessionVariables = {
