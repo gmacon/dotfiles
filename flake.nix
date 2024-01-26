@@ -38,6 +38,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    alacritty-theme-penumbra = {
+      url = "github:pomarec/alacritty-theme-penumbra";
+      flake = false;
+    };
     penumbra = {
       url = "github:nealmckee/penumbra";
       flake = false;

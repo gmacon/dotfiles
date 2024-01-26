@@ -25,6 +25,22 @@
         "type": "github"
       }
     },
+    "alacritty-theme-penumbra": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1663051258,
+        "narHash": "sha256-jhS4rYiFgKDttrT6vbLfK1UdcnuatkMf8kQEjcUrQII=",
+        "owner": "pomarec",
+        "repo": "alacritty-theme-penumbra",
+        "rev": "1d341cb0b29bb126a3988d34ab0663f6c7e75586",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pomarec",
+        "repo": "alacritty-theme-penumbra",
+        "type": "github"
+      }
+    },
     "emacs": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -290,6 +306,7 @@
     "root": {
       "inputs": {
         "agenix": "agenix",
+        "alacritty-theme-penumbra": "alacritty-theme-penumbra",
         "emacs": "emacs",
         "flake_env": "flake_env",
         "home-manager": "home-manager",
