@@ -158,6 +158,7 @@
             ./common/common.nix
             ./common/linux.nix
             ./graphical/common.nix
+            ./graphical/linux.nix
             ./home/common.nix
           ];
 
