@@ -1,5 +1,6 @@
 { pkgs, inputs, ... }: {
   home.packages = with pkgs; [
+    libreoffice
     thunderbird
     yt-dlp
     zoom-us
