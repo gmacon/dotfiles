@@ -8,6 +8,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
     agenix = {
@@ -56,6 +57,7 @@
     , nix-index-database
     , nixos-hardware
     , nixpkgs
+    , nixpkgs-unstable
     , ...
     } @ inputs:
     let
@@ -75,13 +77,14 @@
         nix.registry.nixpkgs.flake = inputs.nixpkgs;
         nix.settings.trusted-users = [ "root" "@wheel" ];
       };
-      extraSpecialArgs = { inherit inputs; };
       nixpkgsArgs = {
         inherit (nixpkgsModule.nixpkgs) overlays config;
       };
       linuxPkgs = import nixpkgs (nixpkgsArgs // { system = "x86_64-linux"; });
       darwinPkgs =
         import nixpkgs (nixpkgsArgs // { system = "x86_64-darwin"; });
+      unstablePkgs = import nixpkgs-unstable (nixpkgsArgs // { system = "x86_64-linux"; });
+      extraSpecialArgs = { inherit inputs unstablePkgs; };
     in
     {
       nixosConfigurations.argon = nixpkgs.lib.nixosSystem {
@@ -121,7 +124,6 @@
             ./common/common.nix
             ./common/linux.nix
             ./graphical/common.nix
-            ./graphical/linux.nix
             ./work/common.nix
             ./work-graphical/linux.nix
           ];
@@ -158,7 +160,6 @@
             ./common/common.nix
             ./common/linux.nix
             ./graphical/common.nix
-            ./graphical/linux.nix
             ./home/common.nix
           ];
 

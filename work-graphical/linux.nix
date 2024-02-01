@@ -1,7 +1,7 @@
-{ config, pkgs, lib, ... }: {
-  home.packages = with pkgs; [
-    slack
-    zotero
+{ config, pkgs, unstablePkgs, lib, ... }: {
+  home.packages = [
+    pkgs.slack
+    unstablePkgs.zotero_7
   ];
   systemd.user.services.rclone = {
     Unit = {
