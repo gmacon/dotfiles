@@ -79,6 +79,7 @@ in
       comma
       cookiecutter
       fd
+      gh
       git-absorb
       httpie
       jq
