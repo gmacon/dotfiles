@@ -125,7 +125,7 @@
     archives.argon-home = {
       directories = [ "/home/gmacon" ];
       checkpointBytes = "10G";
-      period = "hourly";
+      period = "daily";
       excludes = [
         ".cache"
       ];
@@ -147,7 +147,7 @@
         -o configfile /etc/tarsnap/argon-home.conf \
         --target 'argon-home-$date' \
         --dateformat '%Y%m%d%H%M%S' \
-        --deltas 1h 1d 7d 28d 364d - \
+        --deltas 1d 7d 28d 364d - \
         expire
     '';
     serviceConfig = {
