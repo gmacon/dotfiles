@@ -29,4 +29,5 @@ in
     };
   };
   home.file."${config.xdg.configHome}/emacs/init.el".source = ../config/emacs/init.el;
+  home.file."${config.xdg.configHome}/emacs/meow-setup.el".source = ../config/emacs/meow-setup.el;
 }

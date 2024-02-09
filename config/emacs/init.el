@@ -97,27 +97,11 @@
   (auto-dark-light-theme 'doom-solarized-light)
   :init (auto-dark-mode))
 
-(use-package doom-modeline
-  :after evil
-  :config (doom-modeline-mode))
-
-(use-package evil
-  :defer nil
-  :custom
-  (evil-undo-system 'undo-redo)
-  (evil-want-keybinding nil)
-  (evil-echo-state nil)
-  (evil-want-integration t)
-  :config (evil-mode 1)
-  :general (:states 'normal "g r" 'xref-find-references))
-
-(use-package evil-collection
-  :after evil
-  :config (evil-collection-init '(magit magit-todos consult)))
-
-(use-package evil-surround
-  :after evil
-  :config (global-evil-surround-mode 1))
+(use-package meow
+  :init (load (expand-file-name "meow-setup" user-emacs-directory))
+  :config
+  (meow-setup)
+  (meow-global-mode 1))
 
 (use-package corfu
   :custom (tab-always-indent 'complete)
