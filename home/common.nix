@@ -1,5 +1,6 @@
 { pkgs, inputs, ... }: {
   home.packages = with pkgs; [
+    gnome.gnome-tweaks
     libreoffice
     thunderbird
     yt-dlp
