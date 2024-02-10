@@ -39,6 +39,9 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  # Automatic suspend/hibernate
+  powerManagement.enable = true;
+
   # Secrets
   age.secrets.tarsnapKey.file = ../secrets/tarsnap.key.age;
 
