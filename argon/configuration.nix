@@ -134,18 +134,8 @@
       ];
     };
   };
-  systemd.timers.tarsnap-argon-home-cleanup = {
-    wantedBy = [ "timers.target" ];
-    timerConfig = {
-      OnCalendar = "daily";
-      Persistent = "true";
-    };
-  };
-  systemd.services.tarsnap-argon-home-cleanup = {
-    preStart = ''
-      while ! ${pkgs.iputils}/bin/ping -4 -q -c 1 v1-0-0-server.tarsnap.com &> /dev/null; do sleep 3; done
-    '';
-    script = ''
+  systemd.services.tarsnap-argon-home.postStart =
+    ''
       ${pkgs.tarsnapper}/bin/tarsnapper \
         -o configfile /etc/tarsnap/argon-home.conf \
         --target 'argon-home-$date' \
@@ -153,15 +143,6 @@
         --deltas 1d 7d 28d 364d - \
         expire
     '';
-    serviceConfig = {
-      Type = "oneshot";
-      IOSchedulingClass = "idle";
-      NoNewPrivileges = "true";
-    };
-    unitConfig = {
-      Requires = "network-online.target";
-    };
-  };
 
   # Open ports in the firewall.
   networking.nftables.enable = true;
