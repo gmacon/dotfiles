@@ -15,10 +15,6 @@ in
 {
   home.packages = with pkgs; [ iterm2 darkmode ];
   home.sessionPath = [ "/usr/local/bin" ];
-  home.shellAliases = {
-    nix = "caffeinate nix";
-    home-manager = "caffeinate home-manager";
-  };
   programs.git.extraConfig.credential.helper = "osxkeychain";
 
   # Terminal Emulator
