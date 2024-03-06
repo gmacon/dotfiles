@@ -75,11 +75,13 @@
           ];
           config.allowUnfree = true;
         };
-        nix.extraOptions = ''
-          experimental-features = nix-command flakes
-        '';
         nix.registry.nixpkgs.flake = inputs.nixpkgs;
-        nix.settings.trusted-users = [ "root" "@wheel" ];
+        nix.settings = {
+          experimental-features = [ "nix-command" "flakes" ];
+          trusted-users = [ "root" "@wheel" ];
+          keep-outputs = true;
+          keep-derivations = true;
+        };
       };
       nixpkgsArgs = {
         inherit (nixpkgsModule.nixpkgs) overlays config;
