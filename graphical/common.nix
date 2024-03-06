@@ -6,6 +6,7 @@ in
 {
   home.packages = with pkgs; [
     hunspell
+    remmina
 
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
     noto-fonts
