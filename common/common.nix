@@ -11,12 +11,6 @@ let
       runHook postInstall
     '';
   };
-  pushover = pkgs.concatTextFile {
-    name = "pushover";
-    files = [ ../config/pushover ];
-    executable = true;
-    destination = "/bin/pushover";
-  };
   ripgreprc = pkgs.writeText "ripgrep.rc" ''
     --smart-case
   '';
@@ -90,6 +84,7 @@ in
       nixfmt
       pandoc
       pinpal
+      pushover
       pv
       ripgrep
       rnix-lsp

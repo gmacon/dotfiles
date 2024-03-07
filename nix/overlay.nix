@@ -7,4 +7,5 @@ self: super: {
     )
   ];
   pinpal = self.python3.pkgs.callPackage ./pinpal.nix { };
+  pushover = self.callPackage ./pushover.nix { };
 }
