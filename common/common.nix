@@ -24,12 +24,6 @@ let
       echo -n "$PWD" | ${pkgs.b2sum}/bin/b2sum -l160 | cut -d ' ' -f 1
     }
   '';
-  wordle = pkgs.writeShellApplication {
-    name = "wordle";
-    text = ''
-      grep -E '^[a-z]{5}$' ${pkgs.scowl}/share/dict/words.txt
-    '';
-  };
   rsync-git = pkgs.writeShellApplication {
     name = "rsync-git";
     runtimeInputs = with pkgs; [ rsync git ];
