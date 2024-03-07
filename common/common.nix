@@ -116,6 +116,7 @@ in
     EDITOR = "${pkgs.vim}/bin/vim";
     RIPGREP_CONFIG_PATH = "${ripgreprc}";
     FZF_MARKS_FILE = "${config.xdg.configHome}/fzf-marks/bookmarks";
+    SHELL = "${pkgs.zsh}/bin/zsh";
   };
 
   home.file = {
