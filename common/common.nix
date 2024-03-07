@@ -24,24 +24,6 @@ let
       echo -n "$PWD" | ${pkgs.b2sum}/bin/b2sum -l160 | cut -d ' ' -f 1
     }
   '';
-  rsync-git = pkgs.writeShellApplication {
-    name = "rsync-git";
-    runtimeInputs = with pkgs; [ rsync git ];
-    text = ''
-      usage="usage: rsync-git SRC DST <options>"
-      src="''${1?$usage}"
-      shift
-      dst="''${1?$usage}"
-      shift
-      exec rsync \
-        --exclude .git \
-        --exclude-from <(
-          git -C "$src" ls-files --exclude-standard --others --ignored --directory
-        ) \
-        "$@" \
-        "$src" "$dst"
-    '';
-  };
   rebuild-fzf-mark = pkgs.writeShellApplication {
     name = "rebuild-fzf-mark";
     runtimeInputs = with pkgs; [ findutils gawk ];
