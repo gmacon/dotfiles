@@ -103,6 +103,7 @@
           agenix.nixosModules.default
         ];
       };
+
       homeConfigurations.work-laptop =
         home-manager.lib.homeManagerConfiguration {
           pkgs = darwinPkgs;
@@ -121,6 +122,7 @@
             homeDirectory = "/Users/gmacon3";
           } // extraSpecialArgs;
         };
+
       homeConfigurations.work-desktop =
         home-manager.lib.homeManagerConfiguration {
           pkgs = linuxPkgs;
@@ -140,6 +142,7 @@
             homeDirectory = "/home/gmacon3";
           } // extraSpecialArgs;
         };
+
       homeConfigurations.work-server =
         home-manager.lib.homeManagerConfiguration {
           pkgs = linuxPkgs;
@@ -157,6 +160,7 @@
             homeDirectory = "/home/gmacon3";
           } // extraSpecialArgs;
         };
+
       homeConfigurations.home-laptop =
         home-manager.lib.homeManagerConfiguration {
           pkgs = linuxPkgs;
