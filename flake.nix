@@ -179,5 +179,17 @@
             homeDirectory = "/home/gmacon";
           } // extraSpecialArgs;
         };
+
+      devShells = builtins.mapAttrs
+        (system: pkgs:
+          {
+            default = pkgs.mkShell {
+              packages = [ agenix.packages.${system}.default ];
+            };
+          })
+        {
+          "x86_64-linux" = linuxPkgs;
+          "x86_64-darwin" = darwinPkgs;
+        };
     };
 }
