@@ -97,6 +97,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     firefox
+    networkmanager-openconnect
   ];
   programs.zsh.enable = true;
   programs._1password.enable = true;
