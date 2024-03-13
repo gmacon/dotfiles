@@ -191,5 +191,9 @@
           "x86_64-linux" = linuxPkgs;
           "x86_64-darwin" = darwinPkgs;
         };
+
+      packages.x86_64-linux = {
+        inherit (linuxPkgs) libcwtch;
+      };
     };
 }

@@ -7,6 +7,9 @@ self: super: {
     )
   ];
 
+  libcwtch = self.callPackage ./libcwtch.nix { };
+  cwtch-bin = self.callPackage ./cwtch-bin.nix { };
+
   gitHelpers = self.callPackage ./git-helpers.nix { };
   pinpal = self.python3.pkgs.callPackage ./pinpal.nix { };
   pushover = self.callPackage ./pushover.nix { };
