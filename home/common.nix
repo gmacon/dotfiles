@@ -9,6 +9,16 @@
 
   services.syncthing.enable = true;
 
+  programs.git = {
+    package = pkgs.gitFull;
+    extraConfig.sendemail = {
+      smtpserver = "smtp.fastmail.com";
+      smtpuser = "george@kj4jzy.org";
+      smtpencryption = "ssl";
+      smtpserverport = 465;
+    };
+  };
+
   programs.alacritty = {
     enable = true;
     settings = {

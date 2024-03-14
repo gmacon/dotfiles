@@ -175,7 +175,7 @@
 
           extraSpecialArgs = {
             username = "gmacon";
-            userEmail = "george.macon@gmail.com";
+            userEmail = "george@themacons.net";
             homeDirectory = "/home/gmacon";
           } // extraSpecialArgs;
         };
