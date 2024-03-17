@@ -52,7 +52,6 @@ in
       pushover
       pv
       ripgrep
-      rnix-lsp
       shellcheck
       vim
 
