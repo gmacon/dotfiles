@@ -1,5 +1,6 @@
 { pkgs, inputs, ... }: {
   home.packages = with pkgs; [
+    cwtch
     gnome.gnome-tweaks
     libreoffice
     thunderbird
