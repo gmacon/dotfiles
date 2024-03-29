@@ -43,10 +43,11 @@ in
       httpie
       jq
       mosh
+      nil
       nix-output-monitor
       nix-prefetch-github
       nix-tree
-      nixfmt
+      nixpkgs-fmt
       pandoc
       pinpal
       pushover

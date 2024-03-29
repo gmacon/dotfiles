@@ -183,6 +183,11 @@
            "l Q" 'eglot-reconnect
            "l r" 'eglot-rename
            "l =" 'eglot-format)
+  :config
+  (with-eval-after-load 'eglot
+    (add-to-list
+     'eglot-server-programs
+     '(nix-mode . ("nil" :initializationOptions (:formatting (:command ["nixpkgs-fmt"]))))))
   :hook
   (python-mode . eglot-ensure)
   (python-ts-mode . eglot-ensure)
