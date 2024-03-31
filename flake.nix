@@ -132,6 +132,7 @@
             ./common/common.nix
             ./common/linux.nix
             ./graphical/common.nix
+            ./graphical/linux.nix
             ./work/common.nix
             ./work-graphical/linux.nix
           ];
@@ -170,6 +171,7 @@
             ./common/common.nix
             ./common/linux.nix
             ./graphical/common.nix
+            ./graphical/linux.nix
             ./home/common.nix
           ];
 
