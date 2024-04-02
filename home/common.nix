@@ -1,7 +1,9 @@
 { pkgs, inputs, ... }: {
   home.packages = with pkgs; [
+    calibre
     cwtch
     gnome.gnome-tweaks
+    gnucash
     libreoffice
     thunderbird
     yt-dlp
