@@ -101,6 +101,26 @@
           nixos-hardware.nixosModules.framework-13th-gen-intel
           ./argon/hardware-configuration.nix
           agenix.nixosModules.default
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.gmacon = { ... }: {
+              imports = [
+                nix-index-database.hmModules.nix-index
+                ./common/common.nix
+                ./common/linux.nix
+                ./graphical/common.nix
+                ./graphical/linux.nix
+                ./home/common.nix
+              ];
+            };
+            home-manager.extraSpecialArgs = {
+              username = "gmacon";
+              userEmail = "george@themacons.net";
+              homeDirectory = "/home/gmacon";
+            } // extraSpecialArgs;
+          }
         ];
       };
 
@@ -131,6 +151,7 @@
             nix-index-database.hmModules.nix-index
             ./common/common.nix
             ./common/linux.nix
+            ./common/alien-linux.nix
             ./graphical/common.nix
             ./graphical/linux.nix
             ./work/common.nix
@@ -152,6 +173,7 @@
             nix-index-database.hmModules.nix-index
             ./common/common.nix
             ./common/linux.nix
+            ./common/alien-linux.nix
             ./work/common.nix
           ];
 
@@ -159,26 +181,6 @@
             username = "gmacon3";
             userEmail = "george.macon@gtri.gatech.edu";
             homeDirectory = "/home/gmacon3";
-          } // extraSpecialArgs;
-        };
-
-      homeConfigurations.home-laptop =
-        home-manager.lib.homeManagerConfiguration {
-          pkgs = linuxPkgs;
-
-          modules = [
-            nix-index-database.hmModules.nix-index
-            ./common/common.nix
-            ./common/linux.nix
-            ./graphical/common.nix
-            ./graphical/linux.nix
-            ./home/common.nix
-          ];
-
-          extraSpecialArgs = {
-            username = "gmacon";
-            userEmail = "george@themacons.net";
-            homeDirectory = "/home/gmacon";
           } // extraSpecialArgs;
         };
 

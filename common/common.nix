@@ -96,11 +96,6 @@ in
     cat = "${pkgs.bat}/bin/bat";
   };
 
-  nix = {
-    package = pkgs.nix;
-    registry.nixpkgs.flake = inputs.nixpkgs;
-  };
-
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
