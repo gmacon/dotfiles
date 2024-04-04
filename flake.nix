@@ -182,6 +182,8 @@
           } // extraSpecialArgs;
         };
 
+      packages.x86_64-linux = linuxPkgs;
+      packages.x86_64-darwin = linuxPkgs;
       devShells = builtins.mapAttrs
         (system: pkgs:
           {
