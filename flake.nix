@@ -105,16 +105,14 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.gmacon = { ... }: {
-              imports = [
-                nix-index-database.hmModules.nix-index
-                ./common/common.nix
-                ./common/linux.nix
-                ./graphical/common.nix
-                ./graphical/linux.nix
-                ./home/common.nix
-              ];
-            };
+            home-manager.users.gmacon.imports = [
+              nix-index-database.hmModules.nix-index
+              ./common/common.nix
+              ./common/linux.nix
+              ./graphical/common.nix
+              ./graphical/linux.nix
+              ./home/common.nix
+            ];
             home-manager.extraSpecialArgs = {
               username = "gmacon";
               userEmail = "george@themacons.net";
