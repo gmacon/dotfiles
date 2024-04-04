@@ -10,6 +10,8 @@ self: super: {
   libcwtch = self.callPackage ./libcwtch.nix { };
   cwtch = self.callPackage ./cwtch { };
 
+  display-switch = self.callPackage ./display-switch.nix { };
+
   gitHelpers = self.callPackage ./git-helpers.nix { };
   pinpal = self.python3.pkgs.callPackage ./pinpal.nix { };
   pushover = self.callPackage ./pushover.nix { };

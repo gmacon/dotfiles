@@ -98,6 +98,7 @@
         modules = [
           nixpkgsModule
           ./argon/configuration.nix
+          ./argon/display-switch.nix
           nixos-hardware.nixosModules.framework-13th-gen-intel
           ./argon/hardware-configuration.nix
           agenix.nixosModules.default
