@@ -12,7 +12,7 @@ self: super: {
 
   display-switch = self.callPackage ./display-switch.nix { };
 
-  gitHelpers = self.callPackage ./git-helpers.nix { };
+  gitHelpers = self.callPackage ./git-helpers { };
   pinpal = self.python3.pkgs.callPackage ./pinpal.nix { };
   pushover = self.callPackage ./pushover.nix { };
   rsync-git = self.callPackage ./rsync-git.nix { };

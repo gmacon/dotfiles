@@ -1,6 +1,6 @@
 { stdenv, python3 }: stdenv.mkDerivation {
   name = "git-helpers";
-  src = ../config/git;
+  src = ./.;
   buildInputs = [ python3 ];
   installPhase = ''
     runHook preInstall

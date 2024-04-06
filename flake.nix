@@ -53,7 +53,8 @@
   };
 
   outputs =
-    { agenix
+    { self
+    , agenix
     , emacs
     , flake_env
     , home-manager
@@ -108,11 +109,11 @@
             home-manager.useUserPackages = true;
             home-manager.users.gmacon.imports = [
               nix-index-database.hmModules.nix-index
-              ./common/common.nix
-              ./common/linux.nix
-              ./graphical/common.nix
-              ./graphical/linux.nix
-              ./home/common.nix
+              ./home-manager/common/common.nix
+              ./home-manager/common/linux.nix
+              ./home-manager/graphical/common.nix
+              ./home-manager/graphical/linux.nix
+              ./home-manager/home/common.nix
             ];
             home-manager.extraSpecialArgs = {
               username = "gmacon";
@@ -129,10 +130,10 @@
 
           modules = [
             nix-index-database.hmModules.nix-index
-            ./common/common.nix
-            ./common/darwin.nix
-            ./graphical/common.nix
-            ./work/common.nix
+            ./home-manager/common/common.nix
+            ./home-manager/common/darwin.nix
+            ./home-manager/graphical/common.nix
+            ./home-manager/work/common.nix
           ];
 
           extraSpecialArgs = {
@@ -148,13 +149,13 @@
 
           modules = [
             nix-index-database.hmModules.nix-index
-            ./common/common.nix
-            ./common/linux.nix
-            ./common/alien-linux.nix
-            ./graphical/common.nix
-            ./graphical/linux.nix
-            ./work/common.nix
-            ./work-graphical/linux.nix
+            ./home-manager/common/common.nix
+            ./home-manager/common/linux.nix
+            ./home-manager/common/alien-linux.nix
+            ./home-manager/graphical/common.nix
+            ./home-manager/graphical/linux.nix
+            ./home-manager/work/common.nix
+            ./home-manager/work-graphical/linux.nix
           ];
 
           extraSpecialArgs = {
@@ -170,10 +171,10 @@
 
           modules = [
             nix-index-database.hmModules.nix-index
-            ./common/common.nix
-            ./common/linux.nix
-            ./common/alien-linux.nix
-            ./work/common.nix
+            ./home-manager/common/common.nix
+            ./home-manager/common/linux.nix
+            ./home-manager/common/alien-linux.nix
+            ./home-manager/work/common.nix
           ];
 
           extraSpecialArgs = {
@@ -183,8 +184,10 @@
           } // extraSpecialArgs;
         };
 
-      packages.x86_64-linux = linuxPkgs;
-      packages.x86_64-darwin = linuxPkgs;
+      legacyPackages = {
+        x86_64-linux = linuxPkgs;
+        x86_64-darwin = darwinPkgs;
+      };
       devShells = builtins.mapAttrs
         (system: pkgs:
           {
@@ -192,9 +195,6 @@
               packages = [ agenix.packages.${system}.default ];
             };
           })
-        {
-          "x86_64-linux" = linuxPkgs;
-          "x86_64-darwin" = darwinPkgs;
-        };
+        self.legacyPackages;
     };
 }
