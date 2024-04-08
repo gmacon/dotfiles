@@ -5,6 +5,7 @@
     gnome.gnome-tweaks
     gnucash
     libreoffice
+    mpv
     thunderbird
     yt-dlp
     zoom-us
