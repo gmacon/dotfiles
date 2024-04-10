@@ -11,6 +11,9 @@
     zoom-us
   ];
 
+  programs.password-store.enable = true;
+  services.gpg-agent.enable = true;
+
   services.syncthing.enable = true;
 
   programs.git = {
