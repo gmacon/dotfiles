@@ -44,6 +44,7 @@ in
       jq
       mosh
       nil
+      nix-init
       nix-output-monitor
       nix-prefetch-github
       nix-tree
@@ -98,6 +99,12 @@ in
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # nix-init
+  xdg.configFile."nix-init/config.toml".text = ''
+    maintainers = ["gmacon"]
+    nixpkgs = "builtins.getFlake \"nixpkgs\""
+  '';
 
   # Shell
   programs.zsh = {
