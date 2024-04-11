@@ -1,15 +1,18 @@
-{ pkgs, inputs, ... }: {
-  home.packages = with pkgs; [
-    calibre
-    cwtch
-    gnome.gnome-tweaks
-    gnucash
-    libreoffice
-    mpv
-    thunderbird
-    yt-dlp
-    zoom-us
-  ];
+{ pkgs, unstablePkgs, inputs, ... }: {
+  home.packages = builtins.attrValues {
+    inherit (pkgs)
+      calibre
+      cwtch
+      gnucash
+      libreoffice
+      mpv
+      thunderbird
+      yt-dlp
+      zoom-us
+      ;
+    inherit (pkgs.gnome) gnome-tweaks;
+    inherit (unstablePkgs) beeper;
+  };
 
   programs.password-store.enable = true;
   services.gpg-agent.enable = true;
