@@ -1,5 +1,10 @@
 { config, pkgs, ... }: {
-  home.packages = [ pkgs.rclone ];
+  home.packages = builtins.attrValues {
+    inherit (pkgs)
+      rclone
+      acsaml
+      ;
+  };
 
   # Vagrant
   home.file."${config.home.homeDirectory}/.vagrant.d/Vagrantfile".source = ../config/Vagrantfile;

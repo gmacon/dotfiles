@@ -12,6 +12,7 @@ self: super: {
 
   display-switch = self.callPackage ./display-switch.nix { };
 
+  acsaml = self.callPackage ./acsaml.nix { };
   gitHelpers = self.callPackage ./git-helpers { };
   pinpal = self.python3.pkgs.callPackage ./pinpal.nix { };
   pushover = self.callPackage ./pushover.nix { };
