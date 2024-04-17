@@ -1,4 +1,8 @@
-{ config, ... }: {
+{ config, ... }:
+let
+  logFormat = "output stderr";
+in
+{
   services.caddy = {
     enable = true;
     email = "webmaster@kj4jzy.org";
@@ -10,6 +14,7 @@
     '';
     virtualHosts = {
       "kj4jzy.org" = {
+        inherit logFormat;
         serverAliases = [ "themacons.net" "whelchel.org" ];
         extraConfig = ''
           import standard_headers
@@ -17,6 +22,7 @@
         '';
       };
       "www.kj4jzy.org" = {
+        inherit logFormat;
         serverAliases = [ "www.themacons.net" ];
         extraConfig = ''
           import standard_headers
@@ -26,6 +32,7 @@
         '';
       };
       "www.whelchel.org" = {
+        inherit logFormat;
         extraConfig = ''
           import standard_headers
           root * /srv/{host}
@@ -56,9 +63,20 @@
       };
     };
   };
+
+  users.users.php = {
+    isSystemUser = true;
+    group = "php";
+  };
+  users.groups.php = { };
   services.phpfpm.pools.whelchel = {
     user = "php";
     group = "php";
+    settings = {
+      "pm" = "ondemand";
+      "pm.max_children" = 4;
+    };
   };
+
   networking.firewall.allowedTCPPorts = [ 80 443 ];
 }
