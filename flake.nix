@@ -133,6 +133,22 @@
         ];
       };
 
+      nixosConfigurations.potassium = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          {
+            system.stateVersion = "23.11";
+            fileSystems."/srv" = {
+              device = "/dev/disk/by-id/scsi-0DO_Volume_volume-nyc3-01";
+              options = [ "discard" "nofail" "noatime" ];
+            };
+          }
+          nixpkgsModule
+          "${nixpkgs}/nixos/modules/virtualisation/digital-ocean-config.nix"
+          ./potassium/web-server.nix
+        ];
+      };
+
       homeConfigurations.work-laptop =
         home-manager.lib.homeManagerConfiguration {
           pkgs = darwinPkgs;
