@@ -1,6 +1,7 @@
 { pkgs, unstablePkgs, inputs, ... }: {
   home.packages = builtins.attrValues {
     inherit (pkgs)
+      beeper
       calibre
       cwtch
       gnucash
@@ -11,8 +12,9 @@
       zoom-us
       ;
     inherit (pkgs.gnome) gnome-tweaks;
-    inherit (unstablePkgs) beeper;
   };
+
+  home.sessionVariables.NIXOS_OZONE_WL = "1";
 
   programs.password-store.enable = true;
   services.gpg-agent.enable = true;
