@@ -13,8 +13,9 @@
   };
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs-stable-small.url = "github:nixos/nixpkgs/nixos-23.11-small";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
     agenix = {
@@ -69,7 +70,8 @@
     , nix-index-database
     , nixos-hardware
     , nixpkgs
-    , nixpkgs-unstable
+    , nixpkgs-stable
+    , nixpkgs-stable-small
     , ...
     } @ inputs:
     let
@@ -83,7 +85,7 @@
           ];
           config.allowUnfree = true;
         };
-        nix.registry.nixpkgs.flake = inputs.nixpkgs;
+        nix.registry.nixpkgs.flake = inputs.nixpkgs-stable;
         nix.settings = {
           experimental-features = [ "nix-command" "flakes" ];
           trusted-users = [ "root" "@wheel" ];
@@ -94,14 +96,14 @@
       nixpkgsArgs = {
         inherit (nixpkgsModule.nixpkgs) overlays config;
       };
-      linuxPkgs = import nixpkgs (nixpkgsArgs // { system = "x86_64-linux"; });
+      linuxPkgs = import nixpkgs-stable (nixpkgsArgs // { system = "x86_64-linux"; });
       darwinPkgs =
-        import nixpkgs (nixpkgsArgs // { system = "x86_64-darwin"; });
-      unstablePkgs = import nixpkgs-unstable (nixpkgsArgs // { system = "x86_64-linux"; });
+        import nixpkgs-stable (nixpkgsArgs // { system = "x86_64-darwin"; });
+      unstablePkgs = import nixpkgs (nixpkgsArgs // { system = "x86_64-linux"; });
       extraSpecialArgs = { inherit inputs unstablePkgs; };
     in
     {
-      nixosConfigurations.argon = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.argon = nixpkgs-stable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           nixpkgsModule
@@ -131,7 +133,7 @@
         ];
       };
 
-      nixosConfigurations.potassium = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.potassium = nixpkgs-stable-small.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           {
@@ -143,7 +145,7 @@
             services.openssh.ports = [ 46409 ];
           }
           nixpkgsModule
-          "${nixpkgs}/nixos/modules/virtualisation/digital-ocean-config.nix"
+          "${nixpkgs-stable-small}/nixos/modules/virtualisation/digital-ocean-config.nix"
           ./potassium/web-server.nix
         ];
       };
