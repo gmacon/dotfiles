@@ -80,9 +80,6 @@
             flake_env.overlays.default
             nix-direnv.overlays.default
             (import ./nix/overlay.nix)
-            (self: super: {
-              beeper = self.callPackage "${nixpkgs-unstable}/pkgs/applications/networking/instant-messengers/beeper" { };
-            })
           ];
           config.allowUnfree = true;
         };
