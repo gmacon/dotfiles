@@ -38,7 +38,7 @@
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
     nix-direnv = {
-      url = "github:nix-community/nix-direnv/3.0.3";
+      url = "github:nix-community/nix-direnv/3.0.4";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
     nix-index-database = {
