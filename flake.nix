@@ -37,6 +37,10 @@
       url = "sourcehut:~bryan_bennett/flake_env";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.3.0";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
     nix-direnv = {
       url = "github:nix-community/nix-direnv/3.0.4";
       inputs.nixpkgs.follows = "nixpkgs-stable";
@@ -66,6 +70,7 @@
     , emacs
     , flake_env
     , home-manager
+    , lanzaboote
     , nix-direnv
     , nix-index-database
     , nixos-hardware
@@ -107,6 +112,8 @@
         system = "x86_64-linux";
         modules = [
           nixpkgsModule
+          lanzaboote.nixosModules.lanzaboote
+          ./nixos/secure-boot.nix
           ./argon/configuration.nix
           ./argon/display-switch.nix
           nixos-hardware.nixosModules.framework-13th-gen-intel
