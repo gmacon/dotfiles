@@ -88,7 +88,11 @@
             nix-direnv.overlays.default
             (import ./nix/overlay.nix)
             (self: super: {
-              beeper = self.callPackage "${nixpkgs-unstable}/pkgs/applications/networking/instant-messengers/beeper" { };
+              beeper = (
+                self.callPackage "${nixpkgs}/pkgs/applications/networking/instant-messengers/beeper" { }
+              ).overrideAttrs (old: {
+                preBuild = "mv bin/beeper-* bin/beeper";
+              });
             })
           ];
           config.allowUnfree = true;
