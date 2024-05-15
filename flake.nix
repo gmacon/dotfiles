@@ -151,16 +151,9 @@
       nixosConfigurations.potassium = nixpkgs-stable-small.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          {
-            system.stateVersion = "23.11";
-            fileSystems."/srv" = {
-              device = "/dev/disk/by-id/scsi-0DO_Volume_volume-nyc3-01";
-              options = [ "discard" "nofail" "noatime" ];
-            };
-            services.openssh.ports = [ 46409 ];
-          }
           nixpkgsModule
           "${nixpkgs-stable-small}/nixos/modules/virtualisation/digital-ocean-config.nix"
+          ./potassium/configuration.nix
           ./potassium/web-server.nix
         ];
       };
