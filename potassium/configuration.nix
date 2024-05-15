@@ -11,7 +11,7 @@
   services.tarsnap = {
     enable = true;
     keyfile = config.age.secrets.tarsnapKey.path;
-    archives.argon-home = {
+    archives.potassium-srv = {
       directories = [ "/srv" ];
       checkpointBytes = "10G";
       period = "daily";
