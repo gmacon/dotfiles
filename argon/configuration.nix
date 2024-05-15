@@ -45,7 +45,6 @@
   powerManagement.enable = true;
 
   # Secrets
-  age.secrets.tarsnapKey.file = ../secrets/tarsnap.key.age;
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -128,6 +127,7 @@
   services.tailscale.enable = true;
 
   # Backups
+  age.secrets.tarsnapKey.file = ../secrets/tarsnap-ar.key.age;
   services.tarsnap = {
     enable = true;
     keyfile = config.age.secrets.tarsnapKey.path;
