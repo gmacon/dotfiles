@@ -153,7 +153,9 @@
         modules = [
           nixpkgsModule
           "${nixpkgs-stable-small}/nixos/modules/virtualisation/digital-ocean-config.nix"
+          ./nixos/tarsnap.nix
           ./potassium/configuration.nix
+          agenix.nixosModules.default
           ./potassium/web-server.nix
         ];
       };
