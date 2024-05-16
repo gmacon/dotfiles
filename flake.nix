@@ -103,6 +103,7 @@
           trusted-users = [ "root" "@wheel" ];
           keep-outputs = true;
           keep-derivations = true;
+          auto-optimise-store = true;
         };
       };
       nixpkgsArgs = {
