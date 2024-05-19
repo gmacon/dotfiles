@@ -73,6 +73,7 @@ in
     user = "php";
     group = "php";
     settings = {
+      "listen.owner" = config.services.caddy.user;
       "pm" = "ondemand";
       "pm.max_children" = 4;
     };
