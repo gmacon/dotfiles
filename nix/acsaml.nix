@@ -1,13 +1,15 @@
-{ lib, writeShellApplication, openconnect }: writeShellApplication {
+{ writeShellApplication, openconnect }: writeShellApplication {
   name = "acsaml";
+  runtimeInputs = [ openconnect ];
   text = ''
+    openconnect="$(command -v openconnect)"
     browser="$(command -v xdg-open || command -v open)"
     COOKIE=
 
     sudo -v
 
     eval "$(
-        ${lib.getExe openconnect} \
+        "$openconnect" \
             "$@" \
             --authenticate \
             --external-browser "$browser" \
@@ -18,7 +20,7 @@
         exit 1
     fi
 
-    sudo ${lib.getExe openconnect} \
+    sudo "$openconnect" \
          --servercert "$FINGERPRINT" \
          "$CONNECT_URL" \
          --cookie-on-stdin \
