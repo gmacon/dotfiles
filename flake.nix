@@ -188,6 +188,15 @@
         ];
       };
 
+      nixosConfigurations.silicon = nixpkgs-stable-small.lib.nixosSystem {
+        system = "aarch64-linux";
+        modules = [
+          nixpkgsModule
+          nixos-hardware.nixosModules.raspberry-pi-4
+          ./silicon/configuration.nix
+        ];
+      };
+
       homeConfigurations.work-laptop =
         home-manager.lib.homeManagerConfiguration {
           pkgs = darwinPkgs;
