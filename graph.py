@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import itertools
 import json
 
 
@@ -21,7 +22,7 @@ def resolve_follows(nodes, path):
     try:
         return _resolve_follows(nodes, path)
     except Nothing:
-        return "(nothing)"
+        return None
 
 
 def main():
@@ -33,6 +34,8 @@ def main():
     to_process = [lock["root"]]
     seen = {lock["root"], "(nothing)"}
 
+    nothings = itertools.count()
+
     print("digraph G {")
     print('rankdir="LR";')
     while to_process:
@@ -41,10 +44,15 @@ def main():
         for name, subinput in node.get("inputs", {}).items():
             if isinstance(subinput, list):
                 subinput = resolve_follows(nodes, subinput)
-            print(f'"{this}" -> "{subinput}" [label="{name}"];')
-            if subinput not in seen:
-                to_process.append(subinput)
-                seen.add(subinput)
+            if subinput is not None:
+                print(f'"{this}" -> "{subinput}" [label="{name}"];')
+                if subinput not in seen:
+                    to_process.append(subinput)
+                    seen.add(subinput)
+            else:
+                nothing = f"nothing{next(nothings)}"
+                print(f'"{nothing}" [label="", shape=point];')
+                print(f'"{this}" -> "{nothing}" [label="{name}"];');
 
     print("}")
 
