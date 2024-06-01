@@ -90,14 +90,11 @@
             (self: super: {
               beeper = (
                 self.callPackage "${nixpkgs}/pkgs/applications/networking/instant-messengers/beeper" { }
-              ).overrideAttrs (old: {
-                preBuild = "mv bin/beeper-* bin/beeper";
-              });
+              );
             })
           ];
           config.allowUnfree = true;
         };
-        nix.registry.nixpkgs.flake = inputs.nixpkgs-stable;
         nix.settings = {
           experimental-features = [ "nix-command" "flakes" ];
           trusted-users = [ "root" "@wheel" ];

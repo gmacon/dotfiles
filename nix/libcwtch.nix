@@ -1,5 +1,5 @@
-{ stdenv, lib, buildGoModule, fetchgit }: buildGoModule rec {
-  pname = "cwtch";
+{ lib, buildGoModule, fetchgit }: buildGoModule rec {
+  pname = "libcwtch";
   version = "0.0.14";
   versionDate = "2024-02-27-02-07";
   src = fetchgit {

@@ -168,10 +168,7 @@ in
 
   programs.nix-index.enable = true;
 
-  programs.eza = {
-    enable = true;
-    enableAliases = true;
-  };
+  programs.eza.enable = true;
 
   # SSH
   programs.ssh = {

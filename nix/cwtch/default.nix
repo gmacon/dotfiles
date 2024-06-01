@@ -18,6 +18,10 @@ flutter.buildFlutterApplication rec {
   };
 
   depsListFile = ./deps.json;
+  pubspecLock = lib.importJSON ./pubspec.json;
+  gitHashes = {
+    flutter_gherkin = "sha256-NshzlM21x7jSFjP+M0N4S7aV3BcORkZPvzNDwJxuVSA=";
+  };
   vendorHash = "sha256-QRmhprObwn9jAbX+GQLDtHUPCQ6WX0AgTjFqTwCceTc=";
   flutterBuildFlags = [
     "--dart-define"
