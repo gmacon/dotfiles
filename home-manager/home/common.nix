@@ -3,7 +3,6 @@
     inherit (pkgs)
       beeper
       calibre
-      cwtch
       gnucash
       libreoffice
       mpv
