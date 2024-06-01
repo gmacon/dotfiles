@@ -12,6 +12,14 @@ self: super: {
 
   display-switch = self.callPackage ./display-switch.nix { };
 
+  tarsnapper = super.tarsnapper.overridePythonAttrs (old: {
+    checkPhase = ''
+      runHook preCheck
+      nosetests tests
+      runHook postCheck
+    '';
+  });
+
   acsaml = self.callPackage ./acsaml.nix { };
   gitHelpers = self.callPackage ./git-helpers { };
   pinpal = self.python3.pkgs.callPackage ./pinpal.nix { };
