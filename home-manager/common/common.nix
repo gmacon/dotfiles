@@ -57,6 +57,7 @@ in
       shellcheck
       vim
 
+      certreq
       gitHelpers
       rebuild-fzf-mark
       rsync-git

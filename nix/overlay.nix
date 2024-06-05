@@ -21,6 +21,7 @@ self: super: {
   });
 
   acsaml = self.callPackage ./acsaml.nix { };
+  certreq = self.callPackage ./certreq { };
   gitHelpers = self.callPackage ./git-helpers { };
   pinpal = self.python3.pkgs.callPackage ./pinpal.nix { };
   pushover = self.callPackage ./pushover.nix { };
