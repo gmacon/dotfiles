@@ -1,10 +1,6 @@
-{ config, pkgs, ... }:
-let
-  lib = pkgs.lib;
-  stdenv = pkgs.stdenv;
-in
-{
+{ config, pkgs, ... }: {
   home.packages = with pkgs; [
+    flake-graph
     hunspell
     remmina
 
