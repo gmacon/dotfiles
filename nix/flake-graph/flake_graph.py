@@ -42,6 +42,8 @@ def main():
         this = to_process.pop()
         node = nodes[this]
         for name, subinput in node.get("inputs", {}).items():
+            if name.endswith("_"):
+                continue
             if isinstance(subinput, list):
                 subinput = resolve_follows(nodes, subinput)
             if subinput is not None:
