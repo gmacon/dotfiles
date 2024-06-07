@@ -13,16 +13,18 @@
   };
 
   inputs = {
+    # Nixpkgs branches
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-stable-small.url = "github:nixos/nixpkgs/nixos-24.05-small";
-    nixos-hardware.url = "github:NixOS/nixos-hardware";
 
+    # Flakes used locally
     agenix = {
       url = "github:ryantm/agenix";
       inputs.darwin.follows = "";
       inputs.home-manager.follows = "home-manager";
       inputs.nixpkgs.follows = "nixpkgs-stable";
+      inputs.systems.follows = "systems_";
     };
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
@@ -32,24 +34,52 @@
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs-stable";
       inputs.nixpkgs-stable.follows = "nixpkgs-stable";
+      inputs.flake-utils.follows = "flake-utils_";
     };
     flake_env = {
       url = "sourcehut:~bryan_bennett/flake_env";
       inputs.nixpkgs.follows = "nixpkgs-stable";
+      inputs.pre-commit-hooks.follows = "git-hooks_";
+      inputs.flake-parts.follows = "flake-parts_";
     };
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.3.0";
       inputs.nixpkgs.follows = "nixpkgs-stable";
+      inputs.pre-commit-hooks-nix.follows = "";
+      inputs.flake-parts.follows = "flake-parts_";
+      inputs.flake-utils.follows = "flake-utils_";
+      inputs.flake-compat.follows = "flake-compat_";
     };
     nix-direnv = {
       url = "github:nix-community/nix-direnv/3.0.4";
       inputs.nixpkgs.follows = "nixpkgs-stable";
+      inputs.flake-parts.follows = "flake-parts_";
     };
     nix-index-database = {
       url = "github:Mic92/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
+    nixos-hardware.url = "github:NixOS/nixos-hardware";
 
+    # Flakes only needed to reduce duplication
+    flake-compat_.url = "github:edolstra/flake-compat";
+    flake-parts_ = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs-stable";
+    };
+    flake-utils_ = {
+      url = "github:numtide/flake-utils";
+      inputs.systems.follows = "systems_";
+    };
+    git-hooks_ = {
+      url = "github:cachix/git-hooks.nix";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+      inputs.nixpkgs-stable.follows = "";
+      inputs.flake-compat.follows = "flake-compat_";
+    };
+    systems_.url = "github:nix-systems/default";
+
+    # Non-flake inputs
     alacritty-theme-penumbra = {
       url = "github:pomarec/alacritty-theme-penumbra";
       flake = false;
