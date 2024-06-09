@@ -266,7 +266,9 @@
         "nixpkgs": [
           "nixpkgs-stable"
         ],
-        "pre-commit-hooks-nix": [],
+        "pre-commit-hooks-nix": [
+          "git-hooks_"
+        ],
         "rust-overlay": "rust-overlay"
       },
       "locked": {
