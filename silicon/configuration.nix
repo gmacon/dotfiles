@@ -1,4 +1,4 @@
-{
+{ pkgs, lib, ... }: {
   system.stateVersion = "23.11";
 
   fileSystems = {
@@ -21,5 +21,13 @@
     };
   };
 
+  environment.systemPackages = lib.attrValues {
+    inherit (pkgs)
+      git
+      vim
+      ;
+  };
+
   services.jellyfin.enable = true;
+  services.openssh.enable = true;
 }
