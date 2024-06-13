@@ -9,6 +9,11 @@
       fsType = "ext4";
       options = [ "noatime" ];
     };
+    "/media" = {
+      device = "/dev/sda1";
+      fsType = "ext4";
+      options = [ "defaults" "noatime" ];
+    };
   };
 
   users = {
@@ -30,6 +35,9 @@
       ;
   };
 
-  services.jellyfin.enable = true;
+  services.jellyfin = {
+    enable = true;
+    openFirewall = true;
+  };
   services.openssh.enable = true;
 }
