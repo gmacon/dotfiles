@@ -195,6 +195,7 @@
           nixpkgsModule
           nixos-hardware.nixosModules.raspberry-pi-4
           ./silicon/configuration.nix
+          ./nixos/tailscale.nix
         ];
       };
 
