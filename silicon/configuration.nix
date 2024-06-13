@@ -1,6 +1,8 @@
 { pkgs, lib, ... }: {
   system.stateVersion = "23.11";
 
+  networking.hostName = "silicon";
+
   fileSystems = {
     "/" = {
       device = "/dev/disk/by-label/NIXOS_SD";
