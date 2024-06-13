@@ -151,6 +151,7 @@
           ./nixos/secure-boot.nix
           ./nixos/tarsnap.nix
           ./argon/configuration.nix
+          ./nixos/tailscale.nix
           ./argon/display-switch.nix
           nixos-hardware.nixosModules.framework-13th-gen-intel
           ./argon/hardware-configuration.nix

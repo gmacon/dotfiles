@@ -140,7 +140,6 @@
     enable = true;
     openFirewall = false; # Only connections over tailscale allowed.
   };
-  services.tailscale.enable = true;
 
   # Backups
   age.secrets.tarsnapKey.file = ../secrets/tarsnap-ar.key.age;
@@ -163,9 +162,6 @@
 
   # Open ports in the firewall.
   networking.nftables.enable = true;
-  networking.firewall.trustedInterfaces = [
-    config.services.tailscale.interfaceName
-  ];
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
