@@ -39,5 +39,28 @@
     enable = true;
     openFirewall = true;
   };
+
   services.openssh.enable = true;
+
+  services.printing = {
+    enable = true;
+    defaultShared = true;
+    drivers = with pkgs; [ brlaser ];
+  };
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+  hardware.printers.ensurePrinters = [
+    {
+      name = "home";
+      deviceUri = "usb://Brother/HL-L2340D%20series?serial=U63879L5N360763";
+      model = "drv:///brlaser.drv/brl2340d.ppd";
+      ppdOptions = {
+        PageSize = "Letter";
+        Duplex = "DuplexNoTumble";
+      };
+    }
+  ];
 }

@@ -72,7 +72,7 @@
   hardware.printers.ensurePrinters = [
     {
       name = "home";
-      deviceUri = "usb://Brother/HL-L2340D%20series?serial=U63879L5N360763";
+      deviceUri = "ipp://silicon/printers/home";
       model = "drv:///brlaser.drv/brl2340d.ppd";
       ppdOptions = {
         PageSize = "Letter";
