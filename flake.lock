@@ -393,22 +393,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-stable-small": {
-      "locked": {
-        "lastModified": 1718379166,
-        "narHash": "sha256-B/Q/Pf4kD+yWk3fGh5H0fUpwxmLgEKt9KBon+bZ3d9U=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "93fbfcd45e966ea1cff043d48bd45d1285082770",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-24.05-small",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "penumbra": {
       "flake": false,
       "locked": {
@@ -442,7 +426,6 @@
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable",
-        "nixpkgs-stable-small": "nixpkgs-stable-small",
         "penumbra": "penumbra",
         "systems_": "systems_",
         "zsh-fzf-marks": "zsh-fzf-marks"

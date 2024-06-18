@@ -16,7 +16,6 @@
     # Nixpkgs branches
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
-    nixpkgs-stable-small.url = "github:nixos/nixpkgs/nixos-24.05-small";
 
     # Flakes used locally
     agenix = {
@@ -106,7 +105,6 @@
     , nixos-hardware
     , nixpkgs
     , nixpkgs-stable
-    , nixpkgs-stable-small
     , ...
     } @ inputs:
     let
@@ -177,11 +175,11 @@
         ];
       };
 
-      nixosConfigurations.potassium = nixpkgs-stable-small.lib.nixosSystem {
+      nixosConfigurations.potassium = nixpkgs-stable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           nixpkgsModule
-          "${nixpkgs-stable-small}/nixos/modules/virtualisation/digital-ocean-config.nix"
+          "${nixpkgs-stable}/nixos/modules/virtualisation/digital-ocean-config.nix"
           ./nixos/tarsnap.nix
           ./potassium/configuration.nix
           agenix.nixosModules.default
@@ -189,7 +187,7 @@
         ];
       };
 
-      nixosConfigurations.silicon = nixpkgs-stable-small.lib.nixosSystem {
+      nixosConfigurations.silicon = nixpkgs-stable.lib.nixosSystem {
         system = "aarch64-linux";
         modules = [
           nixpkgsModule
