@@ -32,6 +32,7 @@
     inherit (pkgs)
       git
       vim
+      wakeonlan
       ;
   };
 
