@@ -14,14 +14,6 @@ self: super: {
 
   display-switch = self.callPackage ./display-switch.nix { };
 
-  tarsnapper = super.tarsnapper.overridePythonAttrs (old: {
-    checkPhase = ''
-      runHook preCheck
-      nosetests tests
-      runHook postCheck
-    '';
-  });
-
   acsaml = self.callPackage ./acsaml.nix { };
   certreq = self.callPackage ./certreq { };
   flake-graph = self.callPackage ./flake-graph { };
