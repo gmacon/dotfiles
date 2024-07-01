@@ -42,7 +42,7 @@
       inputs.flake-parts.follows = "flake-parts_";
     };
     lanzaboote = {
-      url = "github:nix-community/lanzaboote/v0.3.0";
+      url = "github:nix-community/lanzaboote/v0.4.1";
       inputs.nixpkgs.follows = "nixpkgs-stable";
       inputs.pre-commit-hooks-nix.follows = "git-hooks_";
       inputs.flake-parts.follows = "flake-parts_";
@@ -55,7 +55,7 @@
       inputs.flake-utils.follows = "flake-utils_";
     };
     nix-direnv = {
-      url = "github:nix-community/nix-direnv/3.0.4";
+      url = "github:nix-community/nix-direnv/3.0.5";
       inputs.nixpkgs.follows = "nixpkgs-stable";
       inputs.flake-parts.follows = "flake-parts_";
     };
