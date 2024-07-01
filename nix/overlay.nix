@@ -7,8 +7,10 @@ self: super: {
     )
   ];
 
-  libcwtch = self.callPackage ./libcwtch.nix { };
-  cwtch = self.callPackage ./cwtch { };
+  cwtch = self.callPackage ./cwtch/package.nix { };
+  cwtch-ui = self.callPackage ./cwtch-ui/package.nix {
+    flutter = self.flutter313;
+  };
 
   display-switch = self.callPackage ./display-switch.nix { };
 

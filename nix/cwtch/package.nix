@@ -1,7 +1,9 @@
-{ lib, buildGoModule, fetchgit }: buildGoModule rec {
+{ buildGoModule
+, fetchgit
+, lib
+}: buildGoModule rec {
   pname = "libcwtch";
   version = "0.0.14";
-  versionDate = "2024-02-27-02-07";
   src = fetchgit {
     url = "https://git.openprivacy.ca/cwtch.im/autobindings.git";
     rev = "v${version}";
@@ -17,8 +19,8 @@
 
   postPatch = ''
     substituteInPlace Makefile \
-      --replace '$(shell git describe --tags)' v${version} \
-      --replace '$(shell git log -1 --format=%cd --date=format:%G-%m-%d-%H-%M)' ${versionDate}
+      --replace-fail '$(shell git describe --tags)' v${version} \
+      --replace-fail '$(shell git log -1 --format=%cd --date=format:%G-%m-%d-%H-%M)' 1980-01-01-00-00
   '';
 
   buildPhase = ''
@@ -37,11 +39,12 @@
     runHook postInstall
   '';
 
-  meta = with lib; {
+  meta = {
     description = "A decentralized, privacy-preserving, multi-party messaging protocol";
-    homePage = "https://cwtch.im/";
+    homepage = "https://cwtch.im/";
     changelog = "https://cwtch.im/changelog/";
-    license = licenses.mit;
-    platforms = platforms.linux;
+    license = lib.licenses.mit;
+    platforms = lib.platforms.linux;
+    maintainers = [ lib.maintainers.gmacon ];
   };
 }
