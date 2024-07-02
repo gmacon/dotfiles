@@ -64,4 +64,10 @@
       };
     }
   ];
+
+  # N.B. Tailscale is enabled by the tailscale module
+  services.tailscale = {
+    useRoutingFeatures = "server";
+    extraUpFlags = [ "--advertise-exit-node" ];
+  };
 }
