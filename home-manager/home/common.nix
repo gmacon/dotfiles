@@ -4,6 +4,7 @@
       beeper
       calibre
       cwtch-ui
+      genopro
       gnucash
       libreoffice
       mpv

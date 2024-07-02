@@ -22,4 +22,7 @@ self: super: {
   pushover = self.callPackage ./pushover.nix { };
   rsync-git = self.callPackage ./rsync-git.nix { };
   wordle = self.callPackage ./wordle.nix { };
+
+  wrapWine = import ./wrapWine.nix { pkgs = self; };
+  genopro = self.callPackage ./genopro.nix { };
 }
