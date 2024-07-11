@@ -55,6 +55,7 @@ in
       pv
       ripgrep
       shellcheck
+      unzip
       vim
 
       certreq
