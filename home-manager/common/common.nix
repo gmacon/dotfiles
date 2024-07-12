@@ -51,7 +51,6 @@ in
       nix-tree
       nixpkgs-fmt
       pandoc
-      pinpal
       pushover
       pv
       ripgrep
@@ -143,10 +142,6 @@ in
     settings = {
       shlvl.disabled = false;
       status.disabled = false;
-      custom.pinpal = {
-        command = "${pkgs.pinpal}/bin/pinpal check";
-        when = true;
-      };
     };
   };
   home.sessionVariables.STARSHIP_LOG = "error";
