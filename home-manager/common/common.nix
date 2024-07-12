@@ -235,7 +235,10 @@ in
     extraConfig = {
       core.fsmonitor = true;
       color.ui = "auto";
-      credential.helper = [ "cache" "oauth" ];
+      credential.helper = [
+        "cache --timeout 28800" # 8 hours
+        "oauth"
+      ];
       diff = {
         algorithm = "histogram";
         compactionHeuristic = true;
