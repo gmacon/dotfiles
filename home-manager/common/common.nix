@@ -40,6 +40,7 @@ in
       fd
       gh
       git-absorb
+      git-credential-oauth
       httpie
       jq
       mosh
@@ -239,6 +240,7 @@ in
     extraConfig = {
       core.fsmonitor = true;
       color.ui = "auto";
+      credential.helper = [ "cache" "oauth" ];
       diff = {
         algorithm = "histogram";
         compactionHeuristic = true;

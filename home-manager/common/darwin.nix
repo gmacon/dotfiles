@@ -15,7 +15,6 @@ in
 {
   home.packages = with pkgs; [ iterm2 darkmode ];
   home.sessionPath = [ "/usr/local/bin" ];
-  programs.git.extraConfig.credential.helper = "osxkeychain";
 
   # Terminal Emulator
   targets.darwin.defaults."com.googlecode.iterm2" = {
