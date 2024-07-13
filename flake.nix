@@ -192,6 +192,7 @@
           ./potassium/configuration.nix
           agenix.nixosModules.default
           ./potassium/web-server.nix
+          ./nixos/autoupgrade.nix
         ];
       };
 
@@ -203,6 +204,7 @@
           nixos-hardware.nixosModules.raspberry-pi-4
           ./silicon/configuration.nix
           ./nixos/tailscale.nix
+          ./nixos/autoupgrade.nix
         ];
       };
 
