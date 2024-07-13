@@ -25,4 +25,27 @@
       };
     };
   };
+
+  # Syncthing Server
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true;
+    settings = {
+      devices = {
+        argon.id = "ICCESTD-KVAK72C-5KNA662-A664RNG-7L24NWB-H3SQFTC-7TDIRLY-QHP7EQL";
+        phosphorous.id = "ATK67KF-7K5FEWT-TDCLGNK-5OA3WFP-ERNHUL3-KK3GB4A-ODD6BES-UDCIOA5";
+        laptop.id = "P3QWTGO-O75MDRX-TIAFVIO-ZHAG4YP-5ECWGAA-35I44T2-LFHSC5M-B2US6QS";
+      };
+      folders = {
+        "/srv/syncthing/whelchel_reunion" = {
+          id = "hb2tz-zl3vr";
+          devices = [
+            "argon"
+            "phosphorous"
+            "laptop"
+          ];
+        };
+      };
+    };
+  };
 }
