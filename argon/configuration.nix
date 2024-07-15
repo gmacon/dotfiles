@@ -62,7 +62,6 @@
   # Enable CUPS to print documents.
   services.printing = {
     enable = true;
-    drivers = with pkgs; [ brlaser ];
   };
   services.avahi = {
     enable = true;
@@ -73,7 +72,7 @@
     {
       name = "home";
       deviceUri = "ipp://silicon/printers/home";
-      model = "drv:///brlaser.drv/brl2340d.ppd";
+      model = "drv:///sample.drv/generic.ppd";
       ppdOptions = {
         PageSize = "Letter";
         Duplex = "DuplexNoTumble";
