@@ -45,6 +45,10 @@
 
   services.printing = {
     enable = true;
+    listenAddresses = [ "*:631" ];
+    allowFrom = [ "all" ];
+    browsing = true;
+    openFirewall = true;
     defaultShared = true;
     drivers = with pkgs; [ brlaser ];
   };
