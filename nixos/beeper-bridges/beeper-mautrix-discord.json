@@ -1,0 +1,151 @@
+{
+  "homeserver": {
+    "address": "https://matrix.beeper.com/_hungryserv/gmacon",
+    "public_address": "https://matrix.beeper.com",
+    "domain": "beeper.local",
+    "software": "hungry",
+    "status_endpoint": null,
+    "message_send_checkpoint_endpoint": null,
+    "async_media": true,
+    "websocket": true,
+    "ping_interval_seconds": 180
+  },
+  "appservice": {
+    "address": null,
+    "hostname": null,
+    "port": null,
+    "database": {
+      "type": "sqlite3-fk-wal",
+      "uri": "file:mautrix-discord.db?_txlock=immediate",
+      "max_open_conns": 5,
+      "max_idle_conns": 2,
+      "max_conn_idle_time": null,
+      "max_conn_lifetime": null
+    },
+    "id": "a82cea27-3800-4a41-a0f2-290c0ac1e69c",
+    "bot": {
+      "username": "sh-discordbot",
+      "displayname": "Discord bridge bot",
+      "avatar": "mxc://maunium.net/nIdEykemnwdisvHbpxflpDlC"
+    },
+    "ephemeral_events": true,
+    "async_transactions": false,
+    "as_token": "${MAUTRIX_DISCORD_AS_TOKEN}",
+    "hs_token": "${MAUTRIX_DISCORD_HS_TOKEN}"
+  },
+  "bridge": {
+    "username_template": "sh-discord_{{.}}",
+    "displayname_template": "{{if .Webhook}}Webhook{{else}}{{or .GlobalName .Username}}{{end}}",
+    "channel_name_template": "{{if or (eq .Type 3) (eq .Type 4)}}{{.Name}}{{else}}#{{.Name}}{{end}}",
+    "guild_name_template": "{{.Name}}",
+    "private_chat_portal_meta": "default",
+    "portal_message_buffer": 128,
+    "startup_private_channel_create_limit": 5,
+    "delivery_receipts": false,
+    "message_status_events": true,
+    "message_error_notices": false,
+    "restricted_rooms": false,
+    "autojoin_thread_on_open": true,
+    "embed_fields_as_tables": true,
+    "mute_channels_on_create": true,
+    "sync_direct_chat_list": false,
+    "resend_bridge_info": false,
+    "custom_emoji_reactions": true,
+    "delete_portal_on_channel_delete": true,
+    "delete_guild_on_leave": true,
+    "federate_rooms": false,
+    "prefix_webhook_messages": true,
+    "enable_webhook_avatars": false,
+    "use_discord_cdn_upload": true,
+    "cache_media": "unencrypted",
+    "media_patterns": {
+      "enabled": false,
+      "attachments": "mxc://discord-media.mau.dev/attachments|{{.ChannelID}}|{{.AttachmentID}}|{{.FileName}}",
+      "emojis": "mxc://discord-media.mau.dev/emojis|{{.ID}}.{{.Ext}}",
+      "stickers": "mxc://discord-media.mau.dev/stickers|{{.ID}}.{{.Ext}}",
+      "avatars": "mxc://discord-media.mau.dev/avatars|{{.UserID}}|{{.AvatarID}}.{{.Ext}}"
+    },
+    "animated_sticker": {
+      "target": "webp",
+      "args": {
+        "width": 320,
+        "height": 320,
+        "fps": 25
+      }
+    },
+    "double_puppet_server_map": {
+      "beeper.com": "https://matrix.beeper.com/_hungryserv/gmacon"
+    },
+    "double_puppet_allow_discovery": false,
+    "login_shared_secret_map": {
+      "beeper.com": "as_token:${MAUTRIX_DISCORD_AS_TOKEN}"
+    },
+    "command_prefix": "!discord",
+    "management_room_text": {
+      "welcome": "Hello, I'm a Discord bridge bot.",
+      "welcome_connected": "Use `help` for help.",
+      "welcome_unconnected": "Use `help` for help or `login` to log in.",
+      "additional_help": ""
+    },
+    "backfill": {
+      "forward_limits": {
+        "initial": {
+          "dm": 50,
+          "channel": 0,
+          "thread": 0
+        },
+        "missed": {
+          "dm": -1,
+          "channel": 50,
+          "thread": 0
+        }
+      },
+      "max_guild_members": 500
+    },
+    "encryption": {
+      "allow": true,
+      "default": true,
+      "appservice": true,
+      "require": true,
+      "allow_key_sharing": true,
+      "plaintext_mentions": true,
+      "delete_keys": {
+        "delete_outbound_on_ack": true,
+        "dont_store_outbound": false,
+        "ratchet_on_decrypt": true,
+        "delete_fully_used_on_decrypt": true,
+        "delete_prev_on_new_session": true,
+        "delete_on_device_delete": true,
+        "periodically_delete_expired": true,
+        "delete_outdated_inbound": false
+      },
+      "verification_levels": {
+        "receive": "cross-signed-tofu",
+        "send": "cross-signed-tofu",
+        "share": "cross-signed-tofu"
+      },
+      "rotation": {
+        "enable_custom": true,
+        "milliseconds": 2592000000,
+        "messages": 10000,
+        "disable_device_change_key_rotation": true
+      }
+    },
+    "provisioning": {
+      "prefix": "/_matrix/provision",
+      "shared_secret": "${MAUTRIX_DISCORD_PROVISIONING_SECRET}"
+    },
+    "permissions": {
+      "@gmacon:beeper.com": "admin"
+    }
+  },
+  "logging": {
+    "min_level": "debug",
+    "writers": [
+      {
+        "type": "stdout",
+        "format": "json"
+      }
+    ]
+  }
+}
