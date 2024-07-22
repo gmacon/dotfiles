@@ -1,14 +1,14 @@
+bridgeName:
 { lib
 , config
 , pkgs
 , ...
 }:
 let
-  cfg = config.services.mautrix-discord;
-  dataDir = "/var/lib/mautrix-discord";
-  registrationFile = "${dataDir}/discord-registration.yaml";
+  cfg = config.services."beeper-mautrix-${bridgeName}";
+  dataDir = "/var/lib/beeper-mautrix-${bridgeName}";
   settingsFile = "${dataDir}/config.yaml";
-  settingsFileUnsubstituted = settingsFormat.generate "mautrix-discord-config-unsubstituted.json" cfg.settings;
+  settingsFileUnsubstituted = settingsFormat.generate "beeper-mautrix-${bridgeName}-config-unsubstituted.json" cfg.settings;
   settingsFormat = pkgs.formats.json { };
   appservicePort = 29328;
 
@@ -21,21 +21,21 @@ let
       hostname = "[::]";
       port = appservicePort;
       database.type = "sqlite3";
-      database.uri = "file:${dataDir}/mautrix-discord.db?_txlock=immediate";
-      id = "discord";
+      database.uri = "file:${dataDir}/beeper-mautrix-${bridgeName}.db?_txlock=immediate";
+      id = "${bridgeName}";
       bot = {
-        username = "discordbot";
-        displayname = "Discord Bridge Bot";
+        username = "${bridgeName}bot";
+        displayname = "${bridgeName} Bridge Bot";
       };
       as_token = "";
       hs_token = "";
     };
     bridge = {
-      username_template = "discord_{{.}}";
+      username_template = "${bridgeName}_{{.}}";
       displayname_template = "{{or .ProfileName .PhoneNumber \"Unknown user\"}}";
       double_puppet_server_map = { };
       login_shared_secret_map = { };
-      command_prefix = "!discord";
+      command_prefix = "!${bridgeName}";
       permissions."*" = "relay";
       relay.enabled = true;
     };
@@ -51,8 +51,8 @@ let
 
 in
 {
-  options.services.mautrix-discord = {
-    enable = lib.mkEnableOption "mautrix-discord, a Matrix-Discord puppeting bridge.";
+  options.services."beeper-mautrix-${bridgeName}" = {
+    enable = lib.mkEnableOption "beeper-mautrix-${bridgeName}, a Matrix-${bridgeName} puppeting bridge.";
 
     settings = lib.mkOption {
       apply = lib.recursiveUpdate defaultConfig;
@@ -61,7 +61,7 @@ in
       description = ''
         {file}`config.yaml` configuration as a Nix attribute set.
         Configuration options should match those described in
-        [example-config.yaml](https://github.com/mautrix/discord/blob/master/example-config.yaml).
+        [example-config.yaml](https://github.com/beeper-mautrix/${bridgeName}/blob/master/example-config.yaml).
         Secret tokens should be specified using {option}`environmentFile`
         instead of this world-readable attribute set.
       '';
@@ -69,9 +69,9 @@ in
         appservice = {
           database = {
             type = "postgres";
-            uri = "postgresql:///mautrix_discord?host=/run/postgresql";
+            uri = "postgresql:///beeper-mautrix_${bridgeName}?host=/run/postgresql";
           };
-          id = "discord";
+          id = "${bridgeName}";
           ephemeral_events = false;
         };
         bridge = {
@@ -99,13 +99,7 @@ in
       type = lib.types.nullOr lib.types.path;
       default = null;
       description = ''
-        File containing environment variables to be passed to the mautrix-discord service.
-        If an environment variable `MAUTRIX_DISCORD_BRIDGE_LOGIN_SHARED_SECRET` is set,
-        then its value will be used in the configuration file for the option
-        `login_shared_secret_map` without leaking it to the store, using the configured
-        `homeserver.domain` as key.
-        See [here](https://github.com/mautrix/discord/blob/main/example-config.yaml)
-        for the documentation of `login_shared_secret_map`.
+        File containing environment variables to be passed to the beeper-mautrix-${bridgeName} service.
       '';
     };
 
@@ -121,40 +115,21 @@ in
         List of systemd units to require and wait for when starting the application service.
       '';
     };
-
-    registerToSynapse = lib.mkOption {
-      type = lib.types.bool;
-      default = config.services.matrix-synapse.enable;
-      defaultText = lib.literalExpression ''
-        config.services.matrix-synapse.enable
-      '';
-      description = ''
-        Whether to add the bridge's app service registration file to
-        `services.matrix-synapse.settings.app_service_config_files`.
-      '';
-    };
   };
 
   config = lib.mkIf cfg.enable {
 
-    users.users.mautrix-discord = {
+    users.users."beeper-mautrix-${bridgeName}" = {
       isSystemUser = true;
-      group = "mautrix-discord";
+      group = "beeper-mautrix-${bridgeName}";
       home = dataDir;
-      description = "Mautrix-Discord bridge user";
+      description = "Beeper-Mautrix-${bridgeName} bridge user";
     };
 
-    users.groups.mautrix-discord = { };
-
-    services.matrix-synapse = lib.mkIf cfg.registerToSynapse {
-      settings.app_service_config_files = [ registrationFile ];
-    };
-    systemd.services.matrix-synapse = lib.mkIf cfg.registerToSynapse {
-      serviceConfig.SupplementaryGroups = [ "mautrix-discord" ];
-    };
+    users.groups."beeper-mautrix-${bridgeName}" = { };
 
     # Note: this is defined here to avoid the docs depending on `config`
-    services.mautrix-discord.settings.homeserver = optOneOf (with config.services; [
+    services."beeper-mautrix-${bridgeName}".settings.homeserver = optOneOf (with config.services; [
       (lib.mkIf matrix-synapse.enable (mkDefaults {
         domain = matrix-synapse.settings.server_name;
       }))
@@ -164,8 +139,8 @@ in
       }))
     ]);
 
-    systemd.services.mautrix-discord = {
-      description = "mautrix-discord, a Matrix-Discord puppeting bridge.";
+    systemd.services."beeper-mautrix-${bridgeName}" = {
+      description = "beeper-mautrix-${bridgeName}, a Matrix-${bridgeName} puppeting bridge.";
 
       wantedBy = [ "multi-user.target" ];
       wants = [ "network-online.target" ] ++ cfg.serviceDependencies;
@@ -183,40 +158,17 @@ in
           -o '${settingsFile}' \
           -i '${settingsFileUnsubstituted}'
         umask $old_umask
-
-        # generate the appservice's registration file if absent
-        if [ ! -f '${registrationFile}' ]; then
-          ${pkgs.mautrix-discord}/bin/mautrix-discord \
-            --generate-registration \
-            --config='${settingsFile}' \
-            --registration='${registrationFile}'
-        fi
-        chmod 640 ${registrationFile}
-
-        umask 0177
-        # 1. Overwrite registration tokens in config
-        # 2. If environment variable MAUTRIX_DISCORD_BRIDGE_LOGIN_SHARED_SECRET
-        #    is set, set it as the login shared secret value for the configured
-        #    homeserver domain.
-        ${pkgs.yq}/bin/yq -s '.[0].appservice.as_token = .[1].as_token
-          | .[0].appservice.hs_token = .[1].hs_token
-          | .[0]
-          | if env.MAUTRIX_DISCORD_BRIDGE_LOGIN_SHARED_SECRET then .bridge.login_shared_secret_map.[.homeserver.domain] = env.MAUTRIX_DISCORD_BRIDGE_LOGIN_SHARED_SECRET else . end' \
-          '${settingsFile}' '${registrationFile}' > '${settingsFile}.tmp'
-        mv '${settingsFile}.tmp' '${settingsFile}'
-        umask $old_umask
       '';
 
       serviceConfig = {
-        User = "mautrix-discord";
-        Group = "mautrix-discord";
+        User = "beeper-mautrix-${bridgeName}";
+        Group = "beeper-mautrix-${bridgeName}";
         EnvironmentFile = cfg.environmentFile;
         StateDirectory = baseNameOf dataDir;
         WorkingDirectory = dataDir;
         ExecStart = ''
-          ${pkgs.mautrix-discord}/bin/mautrix-discord \
-          --config='${settingsFile}' \
-          --registration='${registrationFile}'
+          ${pkgs."mautrix-${bridgeName}"}/bin/mautrix-${bridgeName} \
+          --config='${settingsFile}'
         '';
         LockPersonality = true;
         MemoryDenyWriteExecute = true;
