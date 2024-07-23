@@ -6,6 +6,8 @@ self: super: {
 
   display-switch = self.callPackage ./display-switch.nix { };
 
+  mautrix-gmessages = self.callPackage ./mautrix-gmessages { };
+
   acsaml = self.callPackage ./acsaml.nix { };
   certreq = self.callPackage ./certreq { };
   flake-graph = self.callPackage ./flake-graph { };
