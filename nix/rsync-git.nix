@@ -9,9 +9,11 @@ writeShellApplication {
     dst="''${1?$usage}"
     shift
     exec rsync \
-      --exclude .git \
       --exclude-from <(
         git -C "$src" ls-files --exclude-standard --others --ignored --directory
+      ) \
+      --exclude-from <(
+        git -C "$src" ls-files --exclude-standard --others --directory
       ) \
       "$@" \
       "$src" "$dst"
