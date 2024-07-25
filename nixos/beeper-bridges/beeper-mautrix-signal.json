@@ -1,0 +1,122 @@
+{
+  "homeserver": {
+    "address": "https://matrix.beeper.com/_hungryserv/gmacon",
+    "domain": "beeper.local",
+    "software": "hungry",
+    "status_endpoint": null,
+    "message_send_checkpoint_endpoint": null,
+    "async_media": true,
+    "websocket": true,
+    "ping_interval_seconds": 180
+  },
+  "appservice": {
+    "address": null,
+    "hostname": null,
+    "port": null,
+    "database": {
+      "type": "sqlite3-fk-wal",
+      "uri": "file:mautrix-signal.db?_txlock=immediate",
+      "max_open_conns": 5,
+      "max_idle_conns": 2,
+      "max_conn_idle_time": null,
+      "max_conn_lifetime": null
+    },
+    "id": "ce1e9d60-5957-4a2d-ba17-0421eeab9029",
+    "bot": {
+      "username": "sh-signalbot",
+      "displayname": "Signal bridge bot",
+      "avatar": "mxc://maunium.net/wPJgTQbZOtpBFmDNkiNEMDUp"
+    },
+    "ephemeral_events": true,
+    "async_transactions": false,
+    "as_token": "${MAUTRIX_SIGNAL_AS_TOKEN}",
+    "hs_token": "${MAUTRIX_SIGNAL_HS_TOKEN}"
+  },
+  "metrics": {
+    "enabled": false,
+    "listen": "127.0.0.1:8000"
+  },
+  "signal": {
+    "device_name": "Beeper (self-hosted)"
+  },
+  "bridge": {
+    "username_template": "sh-signal_{{.}}",
+    "displayname_template": "{{or .ContactName .ProfileName .PhoneNumber \"Unknown user\" }}",
+    "private_chat_portal_meta": "default",
+    "use_contact_avatars": true,
+    "use_outdated_profiles": true,
+    "number_in_topic": true,
+    "note_to_self_avatar": "mxc://maunium.net/REBIVrqjZwmaWpssCZpBlmlL",
+    "portal_message_buffer": 128,
+    "personal_filtering_spaces": true,
+    "bridge_notices": true,
+    "delivery_receipts": false,
+    "message_status_events": true,
+    "message_error_notices": false,
+    "sync_direct_chat_list": false,
+    "resend_bridge_info": false,
+    "caption_in_message": true,
+    "double_puppet_server_map": {
+      "beeper.com": "https://matrix.beeper.com/_hungryserv/gmacon"
+    },
+    "double_puppet_allow_discovery": false,
+    "login_shared_secret_map": {
+      "beeper.com": "as_token:${MAUTRIX_SIGNAL_AS_TOKEN}"
+    },
+    "message_handling_timeout": {
+      "error_after": null,
+      "deadline": "120s"
+    },
+    "command_prefix": "!signal",
+    "management_room_text": {
+      "welcome": "Hello, I'm a Signal bridge bot.",
+      "welcome_connected": "Use `help` for help.",
+      "welcome_unconnected": "Use `help` for help or `login` to log in.",
+      "additional_help": ""
+    },
+    "encryption": {
+      "allow": true,
+      "default": true,
+      "appservice": true,
+      "require": true,
+      "allow_key_sharing": true,
+      "delete_keys": {
+        "delete_outbound_on_ack": true,
+        "dont_store_outbound": false,
+        "ratchet_on_decrypt": true,
+        "delete_fully_used_on_decrypt": true,
+        "delete_prev_on_new_session": true,
+        "delete_on_device_delete": true,
+        "periodically_delete_expired": true,
+        "delete_outdated_inbound": false
+      },
+      "verification_levels": {
+        "receive": "cross-signed-tofu",
+        "send": "cross-signed-tofu",
+        "share": "cross-signed-tofu"
+      },
+      "rotation": {
+        "enable_custom": true,
+        "milliseconds": 2592000000,
+        "messages": 10000,
+        "disable_device_change_key_rotation": true
+      }
+    },
+    "provisioning": {
+      "prefix": "/_matrix/provision",
+      "shared_secret": "${MAUTRIX_SIGNAL_PROVISIONING_SECRET}"
+    },
+    "permissions": {
+      "@gmacon:beeper.com": "admin"
+    }
+  },
+  "logging": {
+    "min_level": "debug",
+    "writers": [
+      {
+        "type": "stdout",
+        "format": "json"
+      }
+    ]
+  }
+}

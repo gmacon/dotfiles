@@ -202,9 +202,14 @@
           lix-module.nixosModules.default
           nixpkgsModule
           nixos-hardware.nixosModules.raspberry-pi-4
+          agenix.nixosModules.default
           ./silicon/configuration.nix
           ./nixos/tailscale.nix
           ./nixos/autoupgrade.nix
+          (import ./nixos/modules/beeper-mautrix.nix "signal")
+          (import ./nixos/modules/beeper-mautrix.nix "discord")
+          (import ./nixos/modules/beeper-mautrix.nix "gmessages")
+          ./nixos/beeper-bridges
         ];
       };
 
@@ -276,7 +281,11 @@
         (system: pkgs:
           {
             default = pkgs.mkShell {
-              packages = [ agenix.packages.${system}.default ];
+              packages = [
+                agenix.packages.${system}.default
+                pkgs.bridge-manager
+                pkgs.yq-go
+              ];
             };
           })
         self.legacyPackages;

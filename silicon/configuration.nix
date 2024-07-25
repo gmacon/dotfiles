@@ -74,4 +74,8 @@
     useRoutingFeatures = "server";
     extraUpFlags = [ "--advertise-exit-node" ];
   };
+
+  age.secrets.beeper-mautrix-signal.file = ../secrets/mautrix-signal.env.age;
+  age.secrets.beeper-mautrix-discord.file = ../secrets/mautrix-discord.env.age;
+  age.secrets.beeper-mautrix-gmessages.file = ../secrets/mautrix-gmessages.env.age;
 }
