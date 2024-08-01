@@ -3,7 +3,6 @@
 , fetchFromGitHub
 , olm
 }:
-
 buildGoModule rec {
   pname = "mautrix-gmessages";
   version = "0.4.3";
@@ -15,11 +14,9 @@ buildGoModule rec {
     hash = "sha256-Qh5jlvHOEtEt1IKfSYQsSWzfCrCoo8zVDCZDUZlPKEw=";
   };
 
-  postUnpack = "set -x";
-
   vendorHash = "sha256-VA+PC7TCEGTXG9yRcroPIVQlA5lzq9GlNRgMNPWTMSg=";
 
-  ldflags = [ "-s" "-w" ];
+  ldflags = [ "-X main.Tag=${src.rev}" ];
 
   buildInputs = [ olm ];
 
