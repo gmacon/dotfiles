@@ -38,7 +38,7 @@
     flake_env = {
       url = "sourcehut:~bryan_bennett/flake_env";
       inputs.nixpkgs.follows = "nixpkgs-stable";
-      inputs.pre-commit-hooks.follows = "git-hooks_";
+      inputs.git-hooks.follows = "git-hooks_";
       inputs.flake-parts.follows = "flake-parts_";
     };
     lanzaboote = {
