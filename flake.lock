@@ -159,11 +159,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1723118938,
-        "narHash": "sha256-EklD+BoNP6POieCMUEFLot+Z+n/cx+HyKXUd1j6GsYc=",
+        "lastModified": 1723393137,
+        "narHash": "sha256-WEUzAhPg91ldytOLhJ5q9ILou33rPLKiV2QJcKyvfkk=",
         "owner": "~bryan_bennett",
         "repo": "flake_env",
-        "rev": "bf9aa7e0aa6c9bc55d0f7d2bf3c0e7a47384579c",
+        "rev": "3f5f7a602d98792d489440e5587280fcc8293c7c",
         "type": "sourcehut"
       },
       "original": {
