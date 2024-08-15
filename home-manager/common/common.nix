@@ -95,10 +95,6 @@ in
     '';
   };
 
-  home.shellAliases = {
-    cat = "${pkgs.bat}/bin/bat";
-  };
-
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
