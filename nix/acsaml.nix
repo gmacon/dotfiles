@@ -1,4 +1,5 @@
-{ writeShellApplication, openconnect }: writeShellApplication {
+{ writeShellApplication, openconnect }:
+writeShellApplication {
   name = "acsaml";
   runtimeInputs = [ openconnect ];
   text = ''

@@ -1,10 +1,12 @@
-{ lib
-, stdenvNoCC
-, bash
-, feh
-, graphviz
-, python3
-}: stdenvNoCC.mkDerivation {
+{
+  lib,
+  stdenvNoCC,
+  bash,
+  feh,
+  graphviz,
+  python3,
+}:
+stdenvNoCC.mkDerivation {
   pname = "flake-graph";
   version = "1.0.0";
   src = lib.fileset.toSource {

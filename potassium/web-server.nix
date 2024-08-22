@@ -15,7 +15,10 @@ in
     virtualHosts = {
       "kj4jzy.org" = {
         inherit logFormat;
-        serverAliases = [ "themacons.net" "whelchel.org" ];
+        serverAliases = [
+          "themacons.net"
+          "whelchel.org"
+        ];
         extraConfig = ''
           import standard_headers
           redir https://www.{host}{path}
@@ -79,5 +82,8 @@ in
     };
   };
 
-  networking.firewall.allowedTCPPorts = [ 80 443 ];
+  networking.firewall.allowedTCPPorts = [
+    80
+    443
+  ];
 }

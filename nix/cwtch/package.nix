@@ -1,7 +1,9 @@
-{ buildGoModule
-, fetchgit
-, lib
-}: buildGoModule rec {
+{
+  buildGoModule,
+  fetchgit,
+  lib,
+}:
+buildGoModule rec {
   pname = "libcwtch";
   version = "0.1.2";
   src = fetchgit {
@@ -11,11 +13,13 @@
   };
 
   vendorHash = "sha256-sMAilt5lq+5T2fwSD18SN66gUi4puOq8cexfRoZvOKk=";
-  overrideModAttrs = (old: {
-    preBuild = ''
-      make lib.go
-    '';
-  });
+  overrideModAttrs = (
+    old: {
+      preBuild = ''
+        make lib.go
+      '';
+    }
+  );
 
   postPatch = ''
     substituteInPlace Makefile \

@@ -1,4 +1,12 @@
-{ config, pkgs, username, userEmail, homeDirectory, inputs, ... }:
+{
+  config,
+  pkgs,
+  username,
+  userEmail,
+  homeDirectory,
+  inputs,
+  ...
+}:
 let
   ripgreprc = pkgs.writeText "ripgrep.rc" ''
     --smart-case
@@ -15,7 +23,10 @@ let
   '';
   rebuild-fzf-mark = pkgs.writeShellApplication {
     name = "rebuild-fzf-mark";
-    runtimeInputs = with pkgs; [ findutils gawk ];
+    runtimeInputs = with pkgs; [
+      findutils
+      gawk
+    ];
     text = ''
       find "${config.home.homeDirectory}/code" -type d -name .git \
         | awk 'BEGIN { FS="/"; OFS="/" } { NF=NF-1; print $NF " : " $0 }' \
@@ -30,40 +41,39 @@ in
   home.homeDirectory = homeDirectory;
 
   # Packages that should be installed to the user profile.
-  home.packages = with pkgs;
-    [
-      agedu
-      bat
-      cachix
-      comma
-      cookiecutter
-      fd
-      gh
-      git-absorb
-      git-credential-oauth
-      httpie
-      jq
-      mosh
-      nil
-      nix-init
-      nix-output-monitor
-      nix-prefetch-github
-      nix-tree
-      nixfmt-rfc-style
-      pandoc
-      pushover
-      pv
-      ripgrep
-      shellcheck
-      unzip
-      vim
+  home.packages = with pkgs; [
+    agedu
+    bat
+    cachix
+    comma
+    cookiecutter
+    fd
+    gh
+    git-absorb
+    git-credential-oauth
+    httpie
+    jq
+    mosh
+    nil
+    nix-init
+    nix-output-monitor
+    nix-prefetch-github
+    nix-tree
+    nixfmt-rfc-style
+    pandoc
+    pushover
+    pv
+    ripgrep
+    shellcheck
+    unzip
+    vim
 
-      certreq
-      gitHelpers
-      rebuild-fzf-mark
-      rsync-git
-      wordle
-    ];
+    certreq
+    gitHelpers
+    rebuild-fzf-mark
+    rsync-git
+    wordle
+  ];
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
@@ -128,10 +138,12 @@ in
           return
       fi
     '';
-    plugins = [{
-      name = "fzf-marks";
-      src = inputs.zsh-fzf-marks;
-    }];
+    plugins = [
+      {
+        name = "fzf-marks";
+        src = inputs.zsh-fzf-marks;
+      }
+    ];
   };
 
   programs.starship = {
@@ -221,8 +233,7 @@ in
       assume = "update-index --assume-unchanged";
       unassume = "update-index --no-assume-unchanged";
       assumed = "!git ls-files -v | grep ^h | cut -c 3-";
-      unassumeall =
-        "!git assumed | xargs git update-index --no-assume-unchanged";
+      unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged";
       topush = "log @{u}..";
       pushnew = "push -u origin HEAD";
       wip = "commit -anm WIP";
@@ -255,7 +266,14 @@ in
       receive.fsck.skipList = "${skiplist}";
       init.defaultBranch = "main";
     };
-    ignores = [ ".direnv/" "*~" "\\#*\\#" ".\\#*" ".dir-locals.el" ".DS_Store" ];
+    ignores = [
+      ".direnv/"
+      "*~"
+      "\\#*\\#"
+      ".\\#*"
+      ".dir-locals.el"
+      ".DS_Store"
+    ];
     lfs.enable = true;
     userEmail = userEmail;
     userName = "George Macon";

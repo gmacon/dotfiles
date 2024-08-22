@@ -99,20 +99,21 @@
   };
 
   outputs =
-    { self
-    , agenix
-    , emacs
-    , flake_env
-    , home-manager
-    , lanzaboote
-    , lix-module
-    , nix-direnv
-    , nix-index-database
-    , nixos-hardware
-    , nixpkgs
-    , nixpkgs-stable
-    , ...
-    } @ inputs:
+    {
+      self,
+      agenix,
+      emacs,
+      flake_env,
+      home-manager,
+      lanzaboote,
+      lix-module,
+      nix-direnv,
+      nix-index-database,
+      nixos-hardware,
+      nixpkgs,
+      nixpkgs-stable,
+      ...
+    }@inputs:
     let
       nixpkgsModule = {
         nixpkgs = {
@@ -122,16 +123,20 @@
             nix-direnv.overlays.default
             (import ./nix/overlay.nix)
             (self: super: {
-              beeper = (
-                self.callPackage "${nixpkgs}/pkgs/applications/networking/instant-messengers/beeper" { }
-              );
+              beeper = (self.callPackage "${nixpkgs}/pkgs/applications/networking/instant-messengers/beeper" { });
             })
           ];
           config.allowUnfree = true;
         };
         nix.settings = {
-          experimental-features = [ "nix-command" "flakes" ];
-          trusted-users = [ "root" "@wheel" ];
+          experimental-features = [
+            "nix-command"
+            "flakes"
+          ];
+          trusted-users = [
+            "root"
+            "@wheel"
+          ];
           keep-outputs = true;
           keep-derivations = true;
           auto-optimise-store = true;
@@ -141,10 +146,11 @@
         inherit (nixpkgsModule.nixpkgs) overlays config;
       };
       linuxPkgs = import nixpkgs-stable (nixpkgsArgs // { system = "x86_64-linux"; });
-      darwinPkgs =
-        import nixpkgs-stable (nixpkgsArgs // { system = "x86_64-darwin"; });
+      darwinPkgs = import nixpkgs-stable (nixpkgsArgs // { system = "x86_64-darwin"; });
       unstablePkgs = import nixpkgs (nixpkgsArgs // { system = "x86_64-linux"; });
-      extraSpecialArgs = { inherit inputs unstablePkgs; };
+      extraSpecialArgs = {
+        inherit inputs unstablePkgs;
+      };
     in
     {
       nixosConfigurations.argon = nixpkgs-stable.lib.nixosSystem {
@@ -213,81 +219,75 @@
         ];
       };
 
-      homeConfigurations.work-laptop =
-        home-manager.lib.homeManagerConfiguration {
-          pkgs = darwinPkgs;
+      homeConfigurations.work-laptop = home-manager.lib.homeManagerConfiguration {
+        pkgs = darwinPkgs;
 
-          modules = [
-            nix-index-database.hmModules.nix-index
-            ./home-manager/common/common.nix
-            ./home-manager/common/darwin.nix
-            ./home-manager/graphical/common.nix
-            ./home-manager/work/common.nix
-          ];
+        modules = [
+          nix-index-database.hmModules.nix-index
+          ./home-manager/common/common.nix
+          ./home-manager/common/darwin.nix
+          ./home-manager/graphical/common.nix
+          ./home-manager/work/common.nix
+        ];
 
-          extraSpecialArgs = {
-            username = "gmacon3";
-            userEmail = "george.macon@gtri.gatech.edu";
-            homeDirectory = "/Users/gmacon3";
-          } // extraSpecialArgs;
-        };
+        extraSpecialArgs = {
+          username = "gmacon3";
+          userEmail = "george.macon@gtri.gatech.edu";
+          homeDirectory = "/Users/gmacon3";
+        } // extraSpecialArgs;
+      };
 
-      homeConfigurations.work-desktop =
-        home-manager.lib.homeManagerConfiguration {
-          pkgs = linuxPkgs;
+      homeConfigurations.work-desktop = home-manager.lib.homeManagerConfiguration {
+        pkgs = linuxPkgs;
 
-          modules = [
-            nix-index-database.hmModules.nix-index
-            ./home-manager/common/common.nix
-            ./home-manager/common/linux.nix
-            ./home-manager/common/alien-linux.nix
-            ./home-manager/graphical/common.nix
-            ./home-manager/graphical/linux.nix
-            ./home-manager/work/common.nix
-            ./home-manager/work-graphical/linux.nix
-          ];
+        modules = [
+          nix-index-database.hmModules.nix-index
+          ./home-manager/common/common.nix
+          ./home-manager/common/linux.nix
+          ./home-manager/common/alien-linux.nix
+          ./home-manager/graphical/common.nix
+          ./home-manager/graphical/linux.nix
+          ./home-manager/work/common.nix
+          ./home-manager/work-graphical/linux.nix
+        ];
 
-          extraSpecialArgs = {
-            username = "gmacon3";
-            userEmail = "george.macon@gtri.gatech.edu";
-            homeDirectory = "/home/gmacon3";
-          } // extraSpecialArgs;
-        };
+        extraSpecialArgs = {
+          username = "gmacon3";
+          userEmail = "george.macon@gtri.gatech.edu";
+          homeDirectory = "/home/gmacon3";
+        } // extraSpecialArgs;
+      };
 
-      homeConfigurations.work-server =
-        home-manager.lib.homeManagerConfiguration {
-          pkgs = linuxPkgs;
+      homeConfigurations.work-server = home-manager.lib.homeManagerConfiguration {
+        pkgs = linuxPkgs;
 
-          modules = [
-            nix-index-database.hmModules.nix-index
-            ./home-manager/common/common.nix
-            ./home-manager/common/linux.nix
-            ./home-manager/common/alien-linux.nix
-            ./home-manager/work/common.nix
-          ];
+        modules = [
+          nix-index-database.hmModules.nix-index
+          ./home-manager/common/common.nix
+          ./home-manager/common/linux.nix
+          ./home-manager/common/alien-linux.nix
+          ./home-manager/work/common.nix
+        ];
 
-          extraSpecialArgs = {
-            username = "gmacon3";
-            userEmail = "george.macon@gtri.gatech.edu";
-            homeDirectory = "/home/gmacon3";
-          } // extraSpecialArgs;
-        };
+        extraSpecialArgs = {
+          username = "gmacon3";
+          userEmail = "george.macon@gtri.gatech.edu";
+          homeDirectory = "/home/gmacon3";
+        } // extraSpecialArgs;
+      };
 
       legacyPackages = {
         x86_64-linux = linuxPkgs;
         x86_64-darwin = darwinPkgs;
       };
-      devShells = builtins.mapAttrs
-        (system: pkgs:
-          {
-            default = pkgs.mkShell {
-              packages = [
-                agenix.packages.${system}.default
-                pkgs.bridge-manager
-                pkgs.yq-go
-              ];
-            };
-          })
-        self.legacyPackages;
+      devShells = builtins.mapAttrs (system: pkgs: {
+        default = pkgs.mkShell {
+          packages = [
+            agenix.packages.${system}.default
+            pkgs.bridge-manager
+            pkgs.yq-go
+          ];
+        };
+      }) self.legacyPackages;
     };
 }

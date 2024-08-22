@@ -1,4 +1,11 @@
-{ lib, fetchFromGitHub, rustPlatform, pkg-config, systemd }: rustPlatform.buildRustPackage rec {
+{
+  lib,
+  fetchFromGitHub,
+  rustPlatform,
+  pkg-config,
+  systemd,
+}:
+rustPlatform.buildRustPackage rec {
   pname = "display_switch";
   version = "1.3.1";
   src = fetchFromGitHub {

@@ -1,4 +1,9 @@
-{ lib, stdenvNoCC, python3 }: stdenvNoCC.mkDerivation {
+{
+  lib,
+  stdenvNoCC,
+  python3,
+}:
+stdenvNoCC.mkDerivation {
   pname = "certreq";
   version = "1.0.0";
 
@@ -8,7 +13,12 @@
   };
 
   buildInputs = [
-    (python3.withPackages (ps: with ps; [ click cryptography ]))
+    (python3.withPackages (
+      ps: with ps; [
+        click
+        cryptography
+      ]
+    ))
   ];
 
   installPhase = ''

@@ -1,4 +1,5 @@
-{ stdenv, python3 }: stdenv.mkDerivation {
+{ stdenv, python3 }:
+stdenv.mkDerivation {
   name = "git-helpers";
   src = ./.;
   buildInputs = [ python3 ];

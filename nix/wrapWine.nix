@@ -3,19 +3,25 @@
 { pkgs }:
 let
   inherit (builtins) length concatStringsSep;
-  inherit (pkgs) lib cabextract winetricks writeShellScriptBin;
+  inherit (pkgs)
+    lib
+    cabextract
+    winetricks
+    writeShellScriptBin
+    ;
   inherit (lib) makeBinPath;
 in
-{ is64bits ? false
-, wine ? if is64bits then pkgs.wineWowPackages.stable else pkgs.wine
-, wineFlags ? ""
-, executable
-, chdir ? null
-, name
-, tricks ? [ ]
-, setupScript ? ""
-, firstrunScript ? ""
-, home ? ""
+{
+  is64bits ? false,
+  wine ? if is64bits then pkgs.wineWowPackages.stable else pkgs.wine,
+  wineFlags ? "",
+  executable,
+  chdir ? null,
+  name,
+  tricks ? [ ],
+  setupScript ? "",
+  firstrunScript ? "",
+  home ? "",
 }:
 let
   wineBin = "${wine}/bin/wine${if is64bits then "64" else ""}";

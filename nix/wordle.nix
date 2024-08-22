@@ -1,4 +1,9 @@
-{ writeShellApplication, runCommand, python3, scowl }:
+{
+  writeShellApplication,
+  runCommand,
+  python3,
+  scowl,
+}:
 let
   wordleWords = runCommand "wordles" { buildInputs = [ python3 ]; } ''
     python <<EOF

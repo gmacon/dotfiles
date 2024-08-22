@@ -2,9 +2,7 @@ self: super: {
   bridge-manager = self.callPackage ./bridge-manager { };
 
   cwtch = self.callPackage ./cwtch/package.nix { };
-  cwtch-ui = self.callPackage ./cwtch-ui/package.nix {
-    flutter = self.flutter313;
-  };
+  cwtch-ui = self.callPackage ./cwtch-ui/package.nix { flutter = self.flutter313; };
 
   display-switch = self.callPackage ./display-switch.nix { };
 

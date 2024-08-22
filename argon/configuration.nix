@@ -104,7 +104,10 @@
   users.users.gmacon = {
     isNormalUser = true;
     description = "George Macon";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     shell = pkgs.zsh;
     packages = with pkgs; [
       #  thunderbird
@@ -149,9 +152,7 @@
       directories = [ "/home/gmacon" ];
       checkpointBytes = "10G";
       period = "daily";
-      excludes = [
-        ".cache"
-      ];
+      excludes = [ ".cache" ];
       tarsnapper = {
         enable = true;
         deltas = "1d 7d 28d 364d";

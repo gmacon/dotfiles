@@ -1,4 +1,11 @@
-{ config, pkgs, unstablePkgs, lib, ... }: {
+{
+  config,
+  pkgs,
+  unstablePkgs,
+  lib,
+  ...
+}:
+{
   home.packages = [
     pkgs.slack
     pkgs.vistafonts

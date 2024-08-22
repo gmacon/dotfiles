@@ -1,11 +1,11 @@
-{ config, pkgs, inputs, ... }: {
-  home.packages = builtins.attrValues {
-    inherit (pkgs)
-      acsaml
-      rclone
-      tmux
-      ;
-  };
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
+{
+  home.packages = builtins.attrValues { inherit (pkgs) acsaml rclone tmux; };
 
   # Vagrant
   home.file."${config.home.homeDirectory}/.vagrant.d/Vagrantfile".source = ../config/Vagrantfile;

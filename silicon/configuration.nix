@@ -1,4 +1,5 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }:
+{
   system.stateVersion = "23.11";
 
   networking.hostName = "silicon";
@@ -12,7 +13,10 @@
     "/media" = {
       device = "/dev/sda1";
       fsType = "ext4";
-      options = [ "defaults" "noatime" ];
+      options = [
+        "defaults"
+        "noatime"
+      ];
     };
   };
 
@@ -28,13 +32,7 @@
     };
   };
 
-  environment.systemPackages = lib.attrValues {
-    inherit (pkgs)
-      git
-      vim
-      wakeonlan
-      ;
-  };
+  environment.systemPackages = lib.attrValues { inherit (pkgs) git vim wakeonlan; };
 
   services.jellyfin = {
     enable = true;

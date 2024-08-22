@@ -1,7 +1,14 @@
-{ writeShellApplication, rsync, git }:
+{
+  writeShellApplication,
+  rsync,
+  git,
+}:
 writeShellApplication {
   name = "rsync-git";
-  runtimeInputs = [ rsync git ];
+  runtimeInputs = [
+    rsync
+    git
+  ];
   text = ''
     usage="usage: rsync-git SRC DST <options>"
     src="''${1?$usage}"

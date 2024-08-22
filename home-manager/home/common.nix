@@ -1,4 +1,5 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, ... }:
+{
   home.packages = builtins.attrValues {
     inherit (pkgs)
       beeper
@@ -39,11 +40,13 @@
       font.size = 13.0;
       draw_bold_text_with_bright_colors = true;
       key_bindings = [
-        { key = "N"; mods = "Shift|Control"; action = "SpawnNewInstance"; }
+        {
+          key = "N";
+          mods = "Shift|Control";
+          action = "SpawnNewInstance";
+        }
       ];
-      "import" = [
-        "${inputs.alacritty-theme-penumbra}/penumbra-light.yml"
-      ];
+      "import" = [ "${inputs.alacritty-theme-penumbra}/penumbra-light.yml" ];
     };
   };
 

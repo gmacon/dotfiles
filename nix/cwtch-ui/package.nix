@@ -1,12 +1,16 @@
-{ cwtch
-, fetchgit
-, flutter
-, gnome
-, lib
-, tor
+{
+  cwtch,
+  fetchgit,
+  flutter,
+  gnome,
+  lib,
+  tor,
 }:
 let
-  runtimeBinDependencies = [ tor gnome.zenity ];
+  runtimeBinDependencies = [
+    tor
+    gnome.zenity
+  ];
 in
 flutter.buildFlutterApplication rec {
   pname = "cwtch-ui";
@@ -17,9 +21,7 @@ flutter.buildFlutterApplication rec {
     hash = "sha256-c02s8YFrLwIpvLVMM2d7Ynk02ibIgZmRKOI+mkrttLk=";
   };
 
-  patches = [
-    ./exhaustive-match.patch
-  ];
+  patches = [ ./exhaustive-match.patch ];
 
   pubspecLock = lib.importJSON ./pubspec.json;
   gitHashes = {
