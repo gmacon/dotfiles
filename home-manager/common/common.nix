@@ -49,7 +49,7 @@ in
       nix-output-monitor
       nix-prefetch-github
       nix-tree
-      nixpkgs-fmt
+      nixfmt-rfc-style
       pandoc
       pushover
       pv
