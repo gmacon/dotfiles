@@ -187,7 +187,10 @@
   (with-eval-after-load 'eglot
     (add-to-list
      'eglot-server-programs
-     '(nix-mode . ("nil" :initializationOptions (:formatting (:command ["nixfmt"]))))))
+     '(nix-mode . ("nil" :initializationOptions (:formatting (:command ["nixfmt"])))))
+    (add-to-list 'eglot-server-programs
+             '((rust-ts-mode rust-mode) .
+               ("rust-analyzer" :initializationOptions (:check (:command "clippy"))))))
   :hook
   (python-mode . eglot-ensure)
   (python-ts-mode . eglot-ensure)
