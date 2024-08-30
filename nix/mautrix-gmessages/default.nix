@@ -3,6 +3,12 @@
   buildGoModule,
   fetchFromGitHub,
   olm,
+  # This option enables the use of an experimental pure-Go implementation of the
+  # Olm protocol instead of libolm for end-to-end encryption. Using goolm is not
+  # recommended by the mautrix developers, but they are interested in people
+  # trying it out in non-production-critical environments and reporting any
+  # issues they run into.
+  withGoolm ? false,
 }:
 buildGoModule rec {
   pname = "mautrix-gmessages";
@@ -19,9 +25,10 @@ buildGoModule rec {
 
   ldflags = [ "-X main.Tag=${src.rev}" ];
 
-  buildInputs = [ olm ];
+  buildInputs = lib.optional (!withGoolm) olm;
+  tags = lib.optional withGoolm "goolm";
 
-  excludedPackages = [ "libgm" ];
+  subPackages = [ "cmd/mautrix-gmessages" ];
 
   meta = with lib; {
     description = "A Matrix-Google Messages puppeting bridge";
