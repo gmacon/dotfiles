@@ -28,7 +28,7 @@ buildGoModule rec {
   buildInputs = lib.optional (!withGoolm) olm;
   tags = lib.optional withGoolm "goolm";
 
-  subPackages = [ "cmd/mautrix-gmessages" ];
+  subPackages = [ "." ];
 
   meta = with lib; {
     description = "A Matrix-Google Messages puppeting bridge";
