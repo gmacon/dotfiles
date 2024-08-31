@@ -8,7 +8,7 @@
   # recommended by the mautrix developers, but they are interested in people
   # trying it out in non-production-critical environments and reporting any
   # issues they run into.
-  withGoolm ? true,
+  withGoolm ? false,
 }:
 buildGoModule rec {
   pname = "mautrix-gmessages";
