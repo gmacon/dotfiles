@@ -5,14 +5,14 @@
 }:
 buildGoModule rec {
   pname = "libcwtch";
-  version = "0.1.2";
+  version = "0.1.3";
   src = fetchgit {
     url = "https://git.openprivacy.ca/cwtch.im/autobindings.git";
     rev = "v${version}";
-    hash = "sha256-nf3NAS8RsuyRnO+p+gP+HVOKVSBxSGudOyrPvFoLnYE=";
+    hash = "sha256-Gp6JnyjKChB7w0fUHkreu81QRXQ3YdMb2ReD/VCkVOE=";
   };
 
-  vendorHash = "sha256-sMAilt5lq+5T2fwSD18SN66gUi4puOq8cexfRoZvOKk=";
+  vendorHash = "sha256-UgG/yjupUFrfjPZ4E+OM1VsWi9MuMuHxcZ4yvz+q/Y0=";
   overrideModAttrs = (
     old: {
       preBuild = ''
