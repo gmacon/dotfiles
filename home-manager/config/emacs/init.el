@@ -65,6 +65,9 @@
            "p" #'project-switch-project
            "b" #'project-switch-to-buffer
            gam-default-leader-key #'project-find-file)
+  (:states 'visual
+           :prefix gam-default-leader-key
+           "s" #'sort-lines)
 
   :hook
   (prog-mode . gam-prog-mode-setup)
