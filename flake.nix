@@ -126,7 +126,16 @@
               beeper = (self.callPackage "${nixpkgs}/pkgs/applications/networking/instant-messengers/beeper" { });
             })
           ];
-          config.allowUnfree = true;
+          config = {
+            allowUnfree = true;
+            permittedInsecurePackages = [
+              # Non-constant-time crypto primitives.
+              # In the mautrix bridges,
+              # I feel like this is low risk
+              # since I'm controlling both endpoints.
+              "olm-3.2.16"
+            ];
+          };
         };
         nix.settings = {
           experimental-features = [
