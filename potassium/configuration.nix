@@ -9,6 +9,8 @@
       "noatime"
     ];
   };
+  swapDevices = [ { device = "/var/swapfile"; } ];
+
   services.openssh.ports = [ 46409 ];
   services.fail2ban = {
     enable = true;
