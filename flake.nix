@@ -197,7 +197,7 @@
         ];
       };
 
-      nixosConfigurations.potassium = nixpkgs-stable.lib.nixosSystem {
+      nixosConfigurations."potassium.kj4jzy.org" = nixpkgs-stable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           lix-module.nixosModules.default
