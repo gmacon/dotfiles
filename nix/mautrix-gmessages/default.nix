@@ -12,16 +12,16 @@
 }:
 buildGoModule rec {
   pname = "mautrix-gmessages";
-  version = "0.4.3";
+  version = "0.5.0";
 
   src = fetchFromGitHub {
     owner = "mautrix";
     repo = "gmessages";
     rev = "v${version}";
-    hash = "sha256-Qh5jlvHOEtEt1IKfSYQsSWzfCrCoo8zVDCZDUZlPKEw=";
+    hash = "sha256-3d8bD8y9K/qn3L07nwaAfjKUN8tIIr79tvzEEPmqh2w=";
   };
 
-  vendorHash = "sha256-VA+PC7TCEGTXG9yRcroPIVQlA5lzq9GlNRgMNPWTMSg=";
+  vendorHash = "sha256-5AjYGPq8wJgqHhe4FuAK8sYu5ywQweXrobXEd4sB1ug=";
 
   ldflags = [ "-X main.Tag=${src.rev}" ];
 
