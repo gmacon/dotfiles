@@ -1,26 +1,64 @@
 {
+  "network": {
+    "displayname_template": "{{or .FullName .PhoneNumber}}",
+    "device_meta": {
+      "os": "Beeper (self-hosted)",
+      "browser": "OTHER",
+      "type": "TABLET"
+    },
+    "aggressive_reconnect": true,
+    "initial_chat_sync_count": 25
+  },
+  "bridge": {
+    "command_prefix": "!gm",
+    "personal_filtering_spaces": true,
+    "cleanup_on_logout": {
+      "enabled": true,
+      "manual": {
+        "private": "delete",
+        "relayed": "delete",
+        "shared_no_users": "delete",
+        "shared_has_users": "delete"
+      },
+      "bad_credentials": {
+        "private": "nothing",
+        "relayed": "nothing",
+        "shared_no_users": "nothing",
+        "shared_has_users": "nothing"
+      }
+    },
+    "relay": {
+      "enabled": false,
+      "admin_only": true,
+      "default_relays": []
+    },
+    "permissions": {
+      "@gmacon:beeper.com": "admin"
+    }
+  },
+  "database": {
+    "type": "sqlite3-fk-wal",
+    "uri": "file:mautrix-gmessages.db?_txlock=immediate",
+    "max_open_conns": 5,
+    "max_idle_conns": 2,
+    "max_conn_idle_time": null,
+    "max_conn_lifetime": null
+  },
   "homeserver": {
     "address": "https://matrix.beeper.com/_hungryserv/gmacon",
     "domain": "beeper.local",
     "software": "hungry",
     "status_endpoint": null,
     "message_send_checkpoint_endpoint": null,
-    "async_media": false,
+    "async_media": true,
     "websocket": true,
     "ping_interval_seconds": 180
   },
   "appservice": {
-    "address": null,
-    "hostname": null,
-    "port": null,
-    "database": {
-      "type": "sqlite3-fk-wal",
-      "uri": "file:mautrix-gmessages.db?_txlock=immediate",
-      "max_open_conns": 5,
-      "max_idle_conns": 2,
-      "max_conn_idle_time": null,
-      "max_conn_lifetime": null
-    },
+    "address": "irrelevant",
+    "public_address": null,
+    "hostname": "0.0.0.0",
+    "port": 4000,
     "id": "fa4b8e44-4008-49d1-b719-39b2b25eb9ad",
     "bot": {
       "username": "sh-gmessagesbot",
@@ -30,93 +68,92 @@
     "ephemeral_events": true,
     "async_transactions": false,
     "as_token": "${MAUTRIX_GMESSAGES_AS_TOKEN}",
-    "hs_token": "${MAUTRIX_GMESSAGES_HS_TOKEN}"
+    "hs_token": "${MAUTRIX_GMESSAGES_HS_TOKEN}",
+    "username_template": "sh-gmessages_{{.}}"
   },
-  "segment_key": null,
-  "segment_user_id": null,
-  "metrics": {
-    "enabled": false,
-    "listen": "127.0.0.1:8001"
-  },
-  "google_messages": {
-    "os": "Beeper (self-hosted)",
-    "browser": "OTHER",
-    "device": "TABLET",
-    "aggressive_reconnect": false
-  },
-  "bridge": {
-    "username_template": "sh-gmessages_{{.}}",
-    "displayname_template": "{{or .FullName .PhoneNumber}}",
-    "personal_filtering_spaces": true,
-    "delivery_receipts": false,
+  "matrix": {
     "message_status_events": true,
+    "delivery_receipts": false,
     "message_error_notices": false,
-    "portal_message_buffer": 128,
     "sync_direct_chat_list": false,
-    "initial_chat_sync_count": 25,
-    "backfill": {
-      "initial_limit": 50,
-      "missed_limit": 100
+    "federate_rooms": false
+  },
+  "provisioning": {
+    "prefix": "/_matrix/provision",
+    "shared_secret": "${MAUTRIX_GMESSAGES_PROVISIONING_SECRET}",
+    "allow_matrix_auth": true,
+    "debug_endpoints": true
+  },
+  "public_media": {
+    "enabled": false,
+    "signing_key": "${MAUTRIX_GMESSAGES_PROVISIONING_SECRET}",
+    "expiry": 0,
+    "hash_length": 32
+  },
+  "direct_media": {
+    "enabled": false,
+    "server_name": "discord-media.example.com",
+    "well_known_response": null,
+    "media_id_prefix": null,
+    "allow_proxy": true,
+    "server_key": "ed25519 AAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  "backfill": {
+    "enabled": true,
+    "max_initial_messages": 50,
+    "max_catchup_messages": 500,
+    "unread_hours_threshold": 720,
+    "threads": {
+      "max_initial_messages": 50
     },
-    "double_puppet_server_map": {
+    "queue": {
+      "enabled": true,
+      "batch_size": 50,
+      "batch_delay": 20,
+      "max_batches": 0,
+      "max_batches_override": {
+        "channel": 10,
+        "dm": -1,
+        "group_dm": -1
+      }
+    }
+  },
+  "double_puppet": {
+    "servers": {
       "beeper.com": "https://matrix.beeper.com/_hungryserv/gmacon"
     },
-    "double_puppet_allow_discovery": false,
-    "login_shared_secret_map": {
+    "allow_discovery": false,
+    "secrets": {
       "beeper.com": "as_token:${MAUTRIX_GMESSAGES_AS_TOKEN}"
+    }
+  },
+  "encryption": {
+    "allow": true,
+    "default": true,
+    "require": true,
+    "appservice": true,
+    "allow_key_sharing": true,
+    "pickle_key": "go.mau.fi/mautrix-gmessages",
+    "delete_keys": {
+      "delete_outbound_on_ack": true,
+      "dont_store_outbound": false,
+      "ratchet_on_decrypt": true,
+      "delete_fully_used_on_decrypt": true,
+      "delete_prev_on_new_session": true,
+      "delete_on_device_delete": true,
+      "periodically_delete_expired": true,
+      "delete_outdated_inbound": false
     },
-    "private_chat_portal_meta": "default",
-    "bridge_notices": true,
-    "resend_bridge_info": false,
-    "mute_bridging": false,
-    "archive_tag": null,
-    "pinned_tag": "m.favourite",
-    "tag_only_on_create": true,
-    "federate_rooms": false,
-    "disable_bridge_alerts": true,
-    "caption_in_message": true,
-    "beeper_galleries": false,
-    "command_prefix": "!gm",
-    "management_room_text": {
-      "welcome": "Hello, I'm a Google Messages bridge bot.",
-      "welcome_connected": "Use `help` for help.",
-      "welcome_unconnected": "Use `help` for help or `login` to log in.",
-      "additional_help": ""
+    "verification_levels": {
+      "receive": "cross-signed-tofu",
+      "send": "cross-signed-tofu",
+      "share": "cross-signed-tofu"
     },
-    "encryption": {
-      "allow": true,
-      "default": true,
-      "appservice": true,
-      "require": true,
-      "allow_key_sharing": true,
-      "delete_keys": {
-        "delete_outbound_on_ack": true,
-        "dont_store_outbound": false,
-        "ratchet_on_decrypt": true,
-        "delete_fully_used_on_decrypt": true,
-        "delete_prev_on_new_session": true,
-        "delete_on_device_delete": true,
-        "periodically_delete_expired": true,
-        "delete_outdated_inbound": false
-      },
-      "verification_levels": {
-        "receive": "cross-signed-tofu",
-        "send": "cross-signed-tofu",
-        "share": "cross-signed-tofu"
-      },
-      "rotation": {
-        "enable_custom": true,
-        "milliseconds": 2592000000,
-        "messages": 10000,
-        "disable_device_change_key_rotation": true
-      }
-    },
-    "provisioning": {
-      "prefix": "/_matrix/provision",
-      "shared_secret": "${MAUTRIX_GMESSAGES_PROVISIONING_SECRET}"
-    },
-    "permissions": {
-      "@gmacon:beeper.com": "admin"
+    "rotation": {
+      "enable_custom": true,
+      "milliseconds": 2592000000,
+      "messages": 10000,
+      "disable_device_change_key_rotation": true
     }
   },
   "logging": {
