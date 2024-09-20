@@ -286,6 +286,7 @@
       };
 
       legacyPackages = {
+        aarch64-linux = import nixpkgs-stable (nixpkgsArgs // { system = "aarch64-linux"; });
         x86_64-linux = linuxPkgs;
         x86_64-darwin = darwinPkgs;
       };
