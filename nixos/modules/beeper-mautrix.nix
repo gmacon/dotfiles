@@ -11,44 +11,10 @@ let
   settingsFile = "${dataDir}/config.yaml";
   settingsFileUnsubstituted = settingsFormat.generate "beeper-mautrix-${bridgeName}-config-unsubstituted.json" cfg.settings;
   settingsFormat = pkgs.formats.json { };
-  appservicePort = 29328;
 
   # to be used with a list of lib.mkIf values
   optOneOf = lib.lists.findFirst (value: value.condition) (lib.mkIf false null);
   mkDefaults = lib.mapAttrsRecursive (n: v: lib.mkDefault v);
-  defaultConfig = {
-    homeserver.address = "http://localhost:8448";
-    appservice = {
-      hostname = "[::]";
-      port = appservicePort;
-      database.type = "sqlite3";
-      database.uri = "file:${dataDir}/beeper-mautrix-${bridgeName}.db?_txlock=immediate";
-      id = "${bridgeName}";
-      bot = {
-        username = "${bridgeName}bot";
-        displayname = "${bridgeName} Bridge Bot";
-      };
-      as_token = "";
-      hs_token = "";
-    };
-    bridge = {
-      username_template = "${bridgeName}_{{.}}";
-      displayname_template = "{{or .ProfileName .PhoneNumber \"Unknown user\"}}";
-      double_puppet_server_map = { };
-      login_shared_secret_map = { };
-      command_prefix = "!${bridgeName}";
-      permissions."*" = "relay";
-      relay.enabled = true;
-    };
-    logging = {
-      min_level = "info";
-      writers = lib.singleton {
-        type = "stdout";
-        format = "pretty-colored";
-        time_format = " ";
-      };
-    };
-  };
 
 in
 {
@@ -56,9 +22,8 @@ in
     enable = lib.mkEnableOption "beeper-mautrix-${bridgeName}, a Matrix-${bridgeName} puppeting bridge.";
 
     settings = lib.mkOption {
-      apply = lib.recursiveUpdate defaultConfig;
       type = settingsFormat.type;
-      default = defaultConfig;
+      default = { };
       description = ''
         {file}`config.yaml` configuration as a Nix attribute set.
         Configuration options should match those described in
