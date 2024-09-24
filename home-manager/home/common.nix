@@ -19,7 +19,10 @@
   home.sessionVariables.NIXOS_OZONE_WL = "1";
 
   programs.password-store.enable = true;
-  services.gpg-agent.enable = true;
+  services.gpg-agent = {
+    enable = true;
+    pinentryPackage = pkgs.pinentry-gnome3;
+  };
 
   services.syncthing.enable = true;
 
