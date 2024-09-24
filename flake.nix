@@ -84,10 +84,6 @@
     systems_.url = "github:nix-systems/default";
 
     # Non-flake inputs
-    alacritty-theme-penumbra = {
-      url = "github:pomarec/alacritty-theme-penumbra";
-      flake = false;
-    };
     penumbra = {
       url = "github:nealmckee/penumbra";
       flake = false;
