@@ -1,11 +1,15 @@
 {
   config,
   pkgs,
+  unstablePkgs,
   inputs,
   ...
 }:
 {
-  home.packages = builtins.attrValues { inherit (pkgs) acsaml rclone tmux; };
+  home.packages = builtins.attrValues {
+    inherit (pkgs) acsaml rclone tmux;
+    inherit (unstablePkgs) rye;
+  };
 
   # Vagrant
   home.file."${config.home.homeDirectory}/.vagrant.d/Vagrantfile".source = ../config/Vagrantfile;
