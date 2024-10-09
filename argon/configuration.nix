@@ -142,6 +142,7 @@
     enable = true;
     openFirewall = false; # Only connections over tailscale allowed.
   };
+  services.tailscale.enable = true;
 
   # Backups
   age.secrets.tarsnapKey.file = ../secrets/tarsnap-ar.key.age;
