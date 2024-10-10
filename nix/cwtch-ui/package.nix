@@ -14,18 +14,16 @@ let
 in
 flutter.buildFlutterApplication rec {
   pname = "cwtch-ui";
-  version = "1.14.7";
+  version = "1.15.1";
   src = fetchgit {
     url = "https://git.openprivacy.ca/cwtch.im/cwtch-ui";
     rev = "v${version}";
-    hash = "sha256-c02s8YFrLwIpvLVMM2d7Ynk02ibIgZmRKOI+mkrttLk=";
+    hash = "sha256-+UtWhQMhm0UjY0kx3B5TwcBFhUfJma3rpeYls4XWy7I=";
   };
-
-  patches = [ ./exhaustive-match.patch ];
 
   pubspecLock = lib.importJSON ./pubspec.json;
   gitHashes = {
-    flutter_gherkin = "sha256-NshzlM21x7jSFjP+M0N4S7aV3BcORkZPvzNDwJxuVSA=";
+    flutter_gherkin = "sha256-Y8tR84kkczQPBwh7cGhPFAAqrMZKRfGp/02huPaaQZg=";
   };
 
   flutterBuildFlags = [
