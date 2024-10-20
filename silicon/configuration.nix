@@ -73,6 +73,12 @@
     extraUpFlags = [ "--advertise-exit-node" ];
   };
 
+  services.tt-rss = {
+    enable = true;
+    singleUserMode = true;
+    selfUrlPath = "http://silicon.tail6afb0.ts.net/";
+  };
+
   age.secrets.beeper-mautrix-signal.file = ../secrets/mautrix-signal.env.age;
   age.secrets.beeper-mautrix-discord.file = ../secrets/mautrix-discord.env.age;
   age.secrets.beeper-mautrix-gmessages.file = ../secrets/mautrix-gmessages.env.age;
