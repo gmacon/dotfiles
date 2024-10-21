@@ -70,6 +70,7 @@ in
 
     certreq
     gitHelpers
+    nix-direnv-gc
     rebuild-fzf-mark
     rsync-git
     wordle

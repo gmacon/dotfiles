@@ -12,6 +12,7 @@ self: super: {
   certreq = self.callPackage ./certreq { };
   flake-graph = self.callPackage ./flake-graph { };
   gitHelpers = self.callPackage ./git-helpers { };
+  nix-direnv-gc = self.callPackage ./nix-direnv-gc.nix { };
   pushover = self.callPackage ./pushover.nix { };
   rsync-git = self.callPackage ./rsync-git.nix { };
   wordle = self.callPackage ./wordle.nix { };
