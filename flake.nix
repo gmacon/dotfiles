@@ -233,11 +233,16 @@
           ./home-manager/work/common.nix
         ];
 
-        extraSpecialArgs = {
-          username = "gmacon3";
-          userEmail = "george.macon@gtri.gatech.edu";
-          homeDirectory = "/Users/gmacon3";
-        } // extraSpecialArgs;
+        extraSpecialArgs =
+          {
+            username = "gmacon3";
+            userEmail = "george.macon@gtri.gatech.edu";
+            homeDirectory = "/Users/gmacon3";
+          }
+          // extraSpecialArgs
+          // {
+            unstablePkgs = import nixpkgs (nixpkgsArgs // { system = "x86_64-darwin"; });
+          };
       };
 
       homeConfigurations.work-desktop = home-manager.lib.homeManagerConfiguration {
