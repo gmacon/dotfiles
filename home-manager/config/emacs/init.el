@@ -35,6 +35,7 @@
   (ispell-program-name "hunspell")
   (require-final-newline t)
   (sentence-end-double-space nil)
+  (eglot-extend-to-xref t)
 
   :init
   (global-hl-line-mode 1)
@@ -58,13 +59,25 @@
      tab-width 4                               ; but when encountering a tab, how large is it?
      ))
 
+  (with-eval-after-load 'eglot
+    (add-to-list 'eglot-server-programs
+             '((rust-ts-mode rust-mode) .
+               ("rust-analyzer" :initializationOptions (:check (:command "clippy"))))))
+
   :general
   (:states 'normal
            :prefix gam-default-leader-key
            "." #'find-file
            "p" #'project-switch-project
            "b" #'project-switch-to-buffer
-           gam-default-leader-key #'project-find-file)
+           gam-default-leader-key #'project-find-file
+           "l a" 'eglot-code-actions
+           "l h" 'eldoc
+           "l l" 'eglot
+           "l q" 'eglot-shutdown
+           "l Q" 'eglot-reconnect
+           "l r" 'eglot-rename
+           "l =" 'eglot-format)
   (:states 'visual
            :prefix gam-default-leader-key
            "s" #'sort-lines)
@@ -73,7 +86,11 @@
   (prog-mode . gam-prog-mode-setup)
   (after-init . gam-after-init-hook)
   (before-save . 'whitespace-cleanup)
-  (text-mode . flyspell-mode))
+  (text-mode . flyspell-mode)
+  (python-mode . eglot-ensure)
+  (python-ts-mode . eglot-ensure)
+  (rust-mode . eglot-ensure)
+  (nix-mode . eglot-ensure))
 
 (use-package textsize
   :defer nil
@@ -172,30 +189,6 @@
   (separedit-remove-trailing-spaces-in-comment t)
   :general
   (:states 'normal :prefix gam-default-leader-key "e" 'separedit))
-
-(use-package eglot
-  :defer nil
-  :custom (eglot-extend-to-xref t)
-  :general
-  (:states 'normal
-           :prefix gam-default-leader-key
-           "l a" 'eglot-code-actions
-           "l h" 'eldoc
-           "l l" 'eglot
-           "l q" 'eglot-shutdown
-           "l Q" 'eglot-reconnect
-           "l r" 'eglot-rename
-           "l =" 'eglot-format)
-  :config
-  (with-eval-after-load 'eglot
-    (add-to-list 'eglot-server-programs
-             '((rust-ts-mode rust-mode) .
-               ("rust-analyzer" :initializationOptions (:check (:command "clippy"))))))
-  :hook
-  (python-mode . eglot-ensure)
-  (python-ts-mode . eglot-ensure)
-  (rust-mode . eglot-ensure)
-  (nix-mode . eglot-ensure))
 
 (use-package sideline
   :hook (flymake-mode . sideline-mode))
