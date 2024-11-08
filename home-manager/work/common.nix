@@ -8,7 +8,7 @@
 {
   home.packages = builtins.attrValues {
     inherit (pkgs) acsaml rclone tmux;
-    inherit (unstablePkgs) rye;
+    inherit (unstablePkgs) rye uv;
   };
 
   # Vagrant
