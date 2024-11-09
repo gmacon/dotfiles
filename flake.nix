@@ -33,7 +33,6 @@
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs-stable";
       inputs.nixpkgs-stable.follows = "nixpkgs-stable";
-      inputs.flake-utils.follows = "flake-utils_";
     };
     flake_env = {
       url = "sourcehut:~bryan_bennett/flake_env";
