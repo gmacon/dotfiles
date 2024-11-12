@@ -2,7 +2,7 @@
   "nodes": {
     "agenix": {
       "inputs": {
-        "darwin": [],
+        "darwin": "darwin",
         "home-manager": [
           "home-manager"
         ],
@@ -45,6 +45,28 @@
       "original": {
         "owner": "ipetkov",
         "repo": "crane",
+        "type": "github"
+      }
+    },
+    "darwin": {
+      "inputs": {
+        "nixpkgs": [
+          "agenix",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1731153869,
+        "narHash": "sha256-3Ftf9oqOypcEyyrWJ0baVkRpvQqroK/SVBFLvU3nPuc=",
+        "owner": "lnl7",
+        "repo": "nix-darwin",
+        "rev": "5c74ab862c8070cbf6400128a1b56abb213656da",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lnl7",
+        "ref": "master",
+        "repo": "nix-darwin",
         "type": "github"
       }
     },
@@ -367,6 +389,26 @@
         "type": "github"
       }
     },
+    "nix-system-graphics": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-stable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1729864290,
+        "narHash": "sha256-BBMfemVn4J0HKZ5DFFJf7pfgc9AJijbA7rliSzWFb8s=",
+        "owner": "soupglasses",
+        "repo": "nix-system-graphics",
+        "rev": "5a8d749e977090c7f8c5b920b13262174b2d7b55",
+        "type": "github"
+      },
+      "original": {
+        "owner": "soupglasses",
+        "repo": "nix-system-graphics",
+        "type": "github"
+      }
+    },
     "nixos-hardware": {
       "locked": {
         "lastModified": 1730919458,
@@ -444,10 +486,12 @@
         "lix-module": "lix-module",
         "nix-direnv": "nix-direnv",
         "nix-index-database": "nix-index-database",
+        "nix-system-graphics": "nix-system-graphics",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable",
         "penumbra": "penumbra",
+        "system-manager": "system-manager",
         "systems_": "systems_",
         "zsh-fzf-marks": "zsh-fzf-marks"
       }
@@ -474,6 +518,26 @@
       "original": {
         "owner": "oxalica",
         "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "system-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-stable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1731288010,
+        "narHash": "sha256-ubgnffNuLAoy7IAr1UkZSxZ7svgNlMHI6ica2oPvzh0=",
+        "owner": "numtide",
+        "repo": "system-manager",
+        "rev": "469762c7e864b0ca8d8d398822c9e9c12fd3ca9c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "system-manager",
         "type": "github"
       }
     },

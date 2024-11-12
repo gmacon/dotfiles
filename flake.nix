@@ -20,7 +20,6 @@
     # Flakes used locally
     agenix = {
       url = "github:ryantm/agenix";
-      inputs.darwin.follows = "";
       inputs.home-manager.follows = "home-manager";
       inputs.nixpkgs.follows = "nixpkgs-stable";
       inputs.systems.follows = "systems_";
@@ -62,7 +61,15 @@
       url = "github:Mic92/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
+    nix-system-graphics = {
+      url = "github:soupglasses/nix-system-graphics";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
     nixos-hardware.url = "github:NixOS/nixos-hardware";
+    system-manager = {
+      url = "github:numtide/system-manager";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
 
     # Flakes only needed to reduce duplication
     flake-compat_.url = "github:edolstra/flake-compat";
@@ -104,9 +111,11 @@
       lix-module,
       nix-direnv,
       nix-index-database,
+      nix-system-graphics,
       nixos-hardware,
       nixpkgs,
       nixpkgs-stable,
+      system-manager,
       ...
     }@inputs:
     let
@@ -244,6 +253,18 @@
           };
       };
 
+      systemConfigs.work-desktop = system-manager.lib.makeSystemConfig {
+        modules = [
+          nix-system-graphics.systemModules.default
+          {
+            config = {
+              nixpkgs.hostPlatform = "x86_64-linux";
+              system-graphics.enable = true;
+            };
+          }
+        ];
+      };
+
       homeConfigurations.work-desktop = home-manager.lib.homeManagerConfiguration {
         pkgs = linuxPkgs;
 
@@ -294,6 +315,7 @@
             agenix.packages.${system}.default
             pkgs.bridge-manager
             pkgs.yq-go
+            system-manager.packages.${system}.default
           ];
         };
       }) self.legacyPackages;
