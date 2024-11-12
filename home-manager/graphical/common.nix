@@ -28,4 +28,14 @@
     };
   };
   home.file."${config.xdg.configHome}/emacs/init.el".source = ../config/emacs/init.el;
+
+  # Kitty
+  programs.kitty = {
+    enable = true;
+    font.name = "FiraCode";
+    theme = "Solarized Light";
+    settings = {
+      shell = "zsh";
+    };
+  };
 }
