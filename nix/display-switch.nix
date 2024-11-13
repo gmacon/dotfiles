@@ -1,5 +1,4 @@
 {
-  lib,
   fetchFromGitHub,
   rustPlatform,
   pkg-config,
@@ -7,19 +6,19 @@
 }:
 rustPlatform.buildRustPackage rec {
   pname = "display_switch";
-  version = "1.3.1";
+  version = "1.4.0";
   src = fetchFromGitHub {
     owner = "haimgel";
     repo = "display-switch";
     rev = version;
-    hash = "sha256-9J9VaBUrsWbRmdbfI2lzYIWPtWcZqZgg6jEZTEiHHtM=";
+    hash = "sha256-pUZNIEpzFZN5fc6TBedhL+7LJdw2R10w3BqzvLt+RYk=";
   };
-  cargoHash = "sha256-G+9HFDkdPp7nFfz/SPKUIPSAqZmWVgketF/XxnOTUyc=";
+  cargoHash = "sha256-P0GWQ8zqPQSXqSxYQBEAeAM0aehMM+XvT9v0VlXU17Y=";
   nativeBuildInputs = [ pkg-config ];
   buildInputs = [ systemd ];
   doCheck = false;
 
-  meta = with lib; {
+  meta = {
     mainProgram = "display_switch";
   };
 }
