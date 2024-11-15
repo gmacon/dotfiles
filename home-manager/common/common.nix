@@ -131,6 +131,14 @@ in
     initExtraBeforeCompInit = ''
       zstyle ':completion:*' completer _complete _ignored _correct _approximate
       zstyle ':completion:*' matcher-list "" 'm:{[:lower:]}={[:upper:]}'
+
+      function ssh () {
+        if [ "''${TERM:-}" = "xterm-kitty" ] && command -v kitten >/dev/null 2>&1; then
+          kitten ssh "$@"
+        else
+          command ssh "$@"
+        fi
+      }
     '';
     initExtraFirst = ''
       if [ "$TERM" = "tramp" ]; then
