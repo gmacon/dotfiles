@@ -90,7 +90,9 @@
   (python-mode . eglot-ensure)
   (python-ts-mode . eglot-ensure)
   (rust-mode . eglot-ensure)
-  (nix-mode . eglot-ensure))
+  (rust-ts-mode . eglot-ensure)
+  (nix-mode . eglot-ensure)
+  (nix-ts-mode . eglot-ensure))
 
 (use-package textsize
   :defer nil
@@ -240,6 +242,16 @@
   :init (marginalia-mode))
 
 ;; languages
+
+(use-package treesit-auto
+  :config
+    (treesit-auto-add-to-auto-mode-alist 'all)
+    (global-treesit-auto-mode))
+
+(use-package treesit-fold
+  :config (global-treesit-fold-indicators-mode)
+  :custom-face (treesit-fold-replacement-face ((t (:inherit font-lock-comment :slant normal)))))
+
 (defun gam-before-save-format-buffer () (add-hook 'before-save-hook 'eglot-format-buffer nil t))
 
 (use-package caddyfile-mode
@@ -262,8 +274,8 @@
   :custom (markdown-command "pandoc")
   :mode (("\\.md'" . gfm-mode)))
 
-(use-package nix-mode
-  :hook (nix-mode . gam-before-save-format-buffer))
+(use-package nix-ts-mode
+  :hook (nix-ts-mode . gam-before-save-format-buffer))
 
 (use-package python
   ;; set ensure nil to use built-in version of python.el
@@ -278,7 +290,9 @@
 
 (use-package rust-mode
   :mode ("\\.rs'")
-  :hook (rust-mode . gam-before-save-format-buffer))
+  :hook
+  (rust-mode . gam-before-save-format-buffer)
+  (rust-ts-mode . gam-before-save-format-buffer))
 
 (use-package salt-mode
   :mode ("\\.sls'"))
@@ -295,4 +309,5 @@
   (web-mode-enable-css-colorization t)
   (web-mode-enable-current-column-highlight t)
   (web-mode-enable-auto-quoting nil))
+
 ;;; emacs.el ends here
