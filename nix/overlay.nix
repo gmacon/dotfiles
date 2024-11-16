@@ -1,6 +1,4 @@
 self: super: {
-  bridge-manager = self.callPackage ./bridge-manager { };
-
   cwtch = self.callPackage ./cwtch/package.nix { };
   cwtch-ui = self.callPackage ./cwtch-ui/package.nix { };
 

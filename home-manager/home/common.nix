@@ -13,7 +13,7 @@
       zoom-us
       ;
     inherit (pkgs.gnome) gnome-tweaks;
-    inherit (unstablePkgs) beeper;
+    inherit (unstablePkgs) beeper beeper-bridge-manager;
   };
 
   home.sessionVariables.NIXOS_OZONE_WL = "1";
