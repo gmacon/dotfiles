@@ -310,7 +310,6 @@
         default = pkgs.mkShell {
           packages = [
             agenix.packages.${system}.default
-            pkgs.bridge-manager
             pkgs.yq-go
             system-manager.packages.${system}.default
           ];
