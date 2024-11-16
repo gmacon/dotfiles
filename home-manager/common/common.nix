@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  unstablePkgs,
   username,
   userEmail,
   homeDirectory,
@@ -41,40 +42,43 @@ in
   home.homeDirectory = homeDirectory;
 
   # Packages that should be installed to the user profile.
-  home.packages = with pkgs; [
-    agedu
-    bat
-    cachix
-    comma
-    cookiecutter
-    fd
-    gh
-    git-absorb
-    git-credential-oauth
-    httpie
-    jq
-    mosh
-    nil
-    nix-init
-    nix-output-monitor
-    nix-prefetch-github
-    nix-tree
-    nixfmt-rfc-style
-    pandoc
-    pushover
-    pv
-    ripgrep
-    shellcheck
-    unzip
-    vim
+  home.packages = builtins.attrValues {
+    inherit rebuild-fzf-mark;
+    inherit (pkgs)
+      agedu
+      bat
+      cachix
+      comma
+      cookiecutter
+      fd
+      gh
+      git-absorb
+      git-credential-oauth
+      httpie
+      jq
+      mosh
+      nil
+      nix-init
+      nix-output-monitor
+      nix-prefetch-github
+      nix-tree
+      nixfmt-rfc-style
+      pandoc
+      pushover
+      pv
+      ripgrep
+      shellcheck
+      unzip
+      vim
 
-    certreq
-    gitHelpers
-    nix-direnv-gc
-    rebuild-fzf-mark
-    rsync-git
-    wordle
-  ];
+      certreq
+      gitHelpers
+      nix-direnv-gc
+      rsync-git
+      wordle
+      ;
+    inherit (unstablePkgs) rye uv;
+  };
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
