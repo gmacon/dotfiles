@@ -1,8 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, unstablePkgs, ... }:
 {
   home.packages = builtins.attrValues {
     inherit (pkgs)
-      beeper
       calibre
       cwtch-ui
       genopro
@@ -14,6 +13,7 @@
       zoom-us
       ;
     inherit (pkgs.gnome) gnome-tweaks;
+    inherit (unstablePkgs) beeper;
   };
 
   home.sessionVariables.NIXOS_OZONE_WL = "1";
