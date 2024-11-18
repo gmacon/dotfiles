@@ -131,10 +131,8 @@ in
       path[1,0]=("${config.home.profileDirectory}/bin")
     '';
     history.path = "${config.xdg.dataHome}/zsh/zsh_history";
-    initExtra = direnvLayoutDirSrc;
-    initExtraBeforeCompInit = ''
-      zstyle ':completion:*' completer _complete _ignored _correct _approximate
-      zstyle ':completion:*' matcher-list "" 'm:{[:lower:]}={[:upper:]}'
+    initExtra = ''
+      ${direnvLayoutDirSrc}
 
       function ssh () {
         if [ "''${TERM:-}" = "xterm-kitty" ] && command -v kitten >/dev/null 2>&1; then
@@ -143,6 +141,10 @@ in
           command ssh "$@"
         fi
       }
+    '';
+    initExtraBeforeCompInit = ''
+      zstyle ':completion:*' completer _complete _ignored _correct _approximate
+      zstyle ':completion:*' matcher-list "" 'm:{[:lower:]}={[:upper:]}'
     '';
     initExtraFirst = ''
       if [ "$TERM" = "tramp" ]; then
