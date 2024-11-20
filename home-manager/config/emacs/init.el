@@ -274,8 +274,8 @@
   :custom (markdown-command "pandoc")
   :mode (("\\.md'" . gfm-mode)))
 
-(use-package nix-ts-mode
-  :hook (nix-ts-mode . gam-before-save-format-buffer))
+(use-package nix-mode
+  :hook (nix-mode . gam-before-save-format-buffer))
 
 (use-package python
   ;; set ensure nil to use built-in version of python.el
