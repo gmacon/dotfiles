@@ -1,7 +1,4 @@
 self: super: {
-  cwtch = self.callPackage ./cwtch/package.nix { };
-  cwtch-ui = self.callPackage ./cwtch-ui/package.nix { };
-
   display-switch = self.callPackage ./display-switch.nix { };
 
   mautrix-gmessages = self.callPackage ./mautrix-gmessages { };
