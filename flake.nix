@@ -53,7 +53,7 @@
       inputs.flake-utils.follows = "flake-utils_";
     };
     nix-direnv = {
-      url = "github:nix-community/nix-direnv/3.0.5";
+      url = "github:nix-community/nix-direnv/3.0.6";
       inputs.nixpkgs.follows = "nixpkgs-stable";
       inputs.flake-parts.follows = "flake-parts_";
     };
