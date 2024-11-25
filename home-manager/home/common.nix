@@ -5,6 +5,7 @@
       calibre
       cwtch-ui
       genopro
+      gnome-tweaks
       gnucash
       libreoffice
       mpv
@@ -12,7 +13,6 @@
       yt-dlp
       zoom-us
       ;
-    inherit (pkgs.gnome) gnome-tweaks;
     inherit (unstablePkgs) beeper beeper-bridge-manager;
   };
 

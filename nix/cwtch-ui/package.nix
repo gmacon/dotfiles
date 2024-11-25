@@ -2,14 +2,14 @@
   cwtch,
   fetchgit,
   flutter,
-  gnome,
+  zenity,
   lib,
   tor,
 }:
 let
   runtimeBinDependencies = [
     tor
-    gnome.zenity
+    zenity
   ];
 in
 flutter.buildFlutterApplication rec {

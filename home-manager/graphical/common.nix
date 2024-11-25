@@ -33,7 +33,7 @@
   programs.kitty = {
     enable = true;
     font.name = "FiraCode";
-    theme = "Solarized Light";
+    themeFile = "Solarized_Light";
     settings = {
       shell = "zsh";
     };
