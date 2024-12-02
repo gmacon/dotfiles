@@ -1,7 +1,6 @@
-{ pkgs, inputs, ... }:
+{ inputs, ... }:
 {
   nix = {
-    package = pkgs.nix;
     registry.nixpkgs.flake = inputs.nixpkgs;
   };
 }
