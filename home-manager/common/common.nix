@@ -122,6 +122,7 @@ in
   # Shell
   programs.zsh = {
     enable = true;
+    autosuggestion.enable = true;
     autocd = true;
     defaultKeymap = "emacs";
     syntaxHighlighting.enable = true;
@@ -133,6 +134,8 @@ in
     history.path = "${config.xdg.dataHome}/zsh/zsh_history";
     initExtra = ''
       ${direnvLayoutDirSrc}
+
+      bindkey "^ " autosuggest-accept
 
       function ssh () {
         if [ "''${TERM:-}" = "xterm-kitty" ] && command -v kitten >/dev/null 2>&1; then
