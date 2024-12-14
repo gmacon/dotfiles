@@ -66,10 +66,7 @@
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware";
-    system-manager = {
-      url = "github:numtide/system-manager";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
-    };
+    system-manager.url = "github:numtide/system-manager";
 
     # Flakes only needed to reduce duplication
     flake-compat_.url = "github:edolstra/flake-compat";
