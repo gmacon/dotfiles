@@ -5,7 +5,7 @@
   username,
   userEmail,
   homeDirectory,
-  inputs,
+  sources,
   ...
 }:
 let
@@ -164,7 +164,7 @@ in
     plugins = [
       {
         name = "fzf-marks";
-        src = inputs.zsh-fzf-marks;
+        src = sources.fzf-marks;
       }
     ];
   };

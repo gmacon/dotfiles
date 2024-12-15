@@ -1,0 +1,107 @@
+{
+  "pins": {
+    "agenix": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "ryantm",
+        "repo": "agenix"
+      },
+      "branch": "main",
+      "revision": "f6291c5935fdc4e0bef208cfc0dcab7e3f7a1c41",
+      "url": "https://github.com/ryantm/agenix/archive/f6291c5935fdc4e0bef208cfc0dcab7e3f7a1c41.tar.gz",
+      "hash": "1x8nd8hvsq6mvzig122vprwigsr3z2skanig65haqswn7z7amsvg"
+    },
+    "emacs": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "emacs-overlay"
+      },
+      "branch": "master",
+      "revision": "e621b2624bed4ada7b997845de10537152ba522b",
+      "url": "https://github.com/nix-community/emacs-overlay/archive/e621b2624bed4ada7b997845de10537152ba522b.tar.gz",
+      "hash": "1qsdc74y2idj6haf9sjjmxwqz0f9q12ci1bz3fb8ni3j3lny7f4k"
+    },
+    "fzf-marks": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "urbainvaes",
+        "repo": "fzf-marks"
+      },
+      "branch": "master",
+      "revision": "1adfd272aaae76850789b6106354492c1f05d3cb",
+      "url": "https://github.com/urbainvaes/fzf-marks/archive/1adfd272aaae76850789b6106354492c1f05d3cb.tar.gz",
+      "hash": "0sk778fr8byrbld29i1x9lgjsbl9xch8pblfp68v50gv5i08vm6a"
+    },
+    "home-manager": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "home-manager"
+      },
+      "branch": "release-24.11",
+      "revision": "1318c3f3b068cdcea922fa7c1a0a1f0c96c22f5f",
+      "url": "https://github.com/nix-community/home-manager/archive/1318c3f3b068cdcea922fa7c1a0a1f0c96c22f5f.tar.gz",
+      "hash": "17jgljy3c5v2nq5f5gy04xygbgjaaf1mrmcmrchfv3ypmq4mkgk5"
+    },
+    "lanzaboote": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "lanzaboote"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "version": "v0.4.1",
+      "revision": "53b8af779b23bdc2ca3dc5bae93aa564c334aa03",
+      "url": "https://api.github.com/repos/nix-community/lanzaboote/tarball/v0.4.1",
+      "hash": "1hda4f0xx56r98kp5hy21f0802c0zf8n6g7li1yz183f1ynp49kr"
+    },
+    "nix-direnv": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "nix-direnv"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "version": "3.0.6",
+      "revision": "fed21f2dea4691508a0f81f3c1c9368e8866e460",
+      "url": "https://api.github.com/repos/nix-community/nix-direnv/tarball/3.0.6",
+      "hash": "035xsdnl5cdxxl37dj8g6p4vcxqpz02p59mjqnrdskqhm0za3nm0"
+    },
+    "nixos-hardware": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "NixOS",
+        "repo": "nixos-hardware"
+      },
+      "branch": "master",
+      "revision": "cf737e2eba82b603f54f71b10cb8fd09d22ce3f5",
+      "url": "https://github.com/NixOS/nixos-hardware/archive/cf737e2eba82b603f54f71b10cb8fd09d22ce3f5.tar.gz",
+      "hash": "0rczk0219bz8fdl6yy0bk20aww8ngfxhaasj245jvjf1kyxcyf7s"
+    },
+    "nixpkgs": {
+      "type": "Channel",
+      "name": "nixpkgs-unstable",
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.05pre720687.5a48e3c2e435/nixexprs.tar.xz",
+      "hash": "06g8b0ga935dnziyzhxznwcx1vb2clc84hcxwrcqb26lgjgwsgbf"
+    },
+    "nixpkgs-stable": {
+      "type": "Channel",
+      "name": "nixos-24.11",
+      "url": "https://releases.nixos.org/nixos/24.11/nixos-24.11.710905.a0f3e10d9435/nixexprs.tar.xz",
+      "hash": "01j4fa581yj276fyzsplizr82gckzwn3j6qlwk5phz4idz689v0y"
+    }
+  },
+  "version": 3
+}
