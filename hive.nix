@@ -7,6 +7,13 @@ in
     specialArgs = { inherit sources; };
   };
 
+  defaults =
+    { name, ... }:
+    {
+      networking.hostName = name;
+      deployment.targetUser = null;
+    };
+
   argon = {
     imports = [
       ./nixos/nixpkgs.nix
@@ -48,6 +55,25 @@ in
     deployment = {
       allowLocalDeployment = true;
       targetHost = null;
+    };
+  };
+
+  silicon = {
+    nixpkgs.hostPlatform.system = "aarch64-linux";
+    nixpkgs.buildPlatform.system = "x86_64-linux";
+    imports = [
+      ./nixos/nixpkgs.nix
+      ./nixos/common.nix
+      "${sources.nixos-hardware}/raspberry-pi/4"
+      "${sources.agenix}/modules/age.nix"
+      ./silicon/configuration.nix
+      (import ./nixos/modules/beeper-mautrix.nix "signal")
+      (import ./nixos/modules/beeper-mautrix.nix "discord")
+      (import ./nixos/modules/beeper-mautrix.nix "gmessages")
+      ./nixos/beeper-bridges
+    ];
+    deployment = {
+      targetHost = "silicon.tail6afb0.ts.net";
     };
   };
 }

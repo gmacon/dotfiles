@@ -8,9 +8,10 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
-  boot.initrd.luks.devices."luks-b9f6622d-795d-4765-a9ee-8925a16cf494".device = "/dev/disk/by-uuid/b9f6622d-795d-4765-a9ee-8925a16cf494";
-  networking.hostName = "argon"; # Define your hostname.
+  boot.initrd.luks.devices."luks-b9f6622d-795d-4765-a9ee-8925a16cf494".device =
+    "/dev/disk/by-uuid/b9f6622d-795d-4765-a9ee-8925a16cf494";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
