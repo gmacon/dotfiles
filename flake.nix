@@ -81,7 +81,6 @@
     git-hooks_ = {
       url = "github:cachix/git-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs-stable";
-      inputs.nixpkgs-stable.follows = "";
       inputs.flake-compat.follows = "flake-compat_";
     };
     systems_.url = "github:nix-systems/default";
