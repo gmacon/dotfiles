@@ -2,6 +2,8 @@
 {
   home.packages = builtins.attrValues {
     inherit (pkgs)
+      beeper
+      beeper-bridge-manager
       calibre
       genopro
       gnome-tweaks
@@ -12,7 +14,7 @@
       yt-dlp
       zoom-us
       ;
-    inherit (unstablePkgs) beeper beeper-bridge-manager cwtch-ui;
+    inherit (unstablePkgs) cwtch-ui;
   };
 
   home.sessionVariables.NIXOS_OZONE_WL = "1";
