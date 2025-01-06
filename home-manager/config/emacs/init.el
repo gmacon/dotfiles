@@ -255,6 +255,9 @@
   :general (:map minibuffer-local-map "M-A" 'marginalia-cycle)
   :init (marginalia-mode))
 
+(use-package editorconfig
+  :config (editorconfig-mode 1))
+
 ;; languages
 
 (use-package treesit-auto
