@@ -86,10 +86,6 @@
     systems_.url = "github:nix-systems/default";
 
     # Non-flake inputs
-    penumbra = {
-      url = "github:nealmckee/penumbra";
-      flake = false;
-    };
     zsh-fzf-marks = {
       url = "github:urbainvaes/fzf-marks";
       flake = false;
