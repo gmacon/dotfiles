@@ -187,7 +187,6 @@ in
       use_nix_adhoc() {
         direnv_load nix shell "$@" --command $direnv dump
       }
-      . ${pkgs.flake_env}/share/flake_env/direnvrc
     '';
   };
 

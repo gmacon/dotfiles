@@ -33,12 +33,6 @@
       inputs.nixpkgs.follows = "nixpkgs-stable";
       inputs.nixpkgs-stable.follows = "nixpkgs-stable";
     };
-    flake_env = {
-      url = "sourcehut:~bryan_bennett/flake_env";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
-      inputs.git-hooks.follows = "git-hooks_";
-      inputs.flake-parts.follows = "flake-parts_";
-    };
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.1";
       inputs.nixpkgs.follows = "nixpkgs-stable";
@@ -97,7 +91,6 @@
       self,
       agenix,
       emacs,
-      flake_env,
       home-manager,
       lanzaboote,
       lix-module,
@@ -115,7 +108,6 @@
         nixpkgs = {
           overlays = [
             emacs.overlays.default
-            flake_env.overlays.default
             nix-direnv.overlays.default
             (import ./nix/overlay.nix)
           ];

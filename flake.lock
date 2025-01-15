@@ -148,33 +148,6 @@
         "type": "github"
       }
     },
-    "flake_env": {
-      "inputs": {
-        "flake-parts": [
-          "flake-parts_"
-        ],
-        "git-hooks": [
-          "git-hooks_"
-        ],
-        "nix-filter": "nix-filter",
-        "nixpkgs": [
-          "nixpkgs-stable"
-        ]
-      },
-      "locked": {
-        "lastModified": 1723901781,
-        "narHash": "sha256-MJHHCYPXlFsa9P8WSPveRqI5ANX+Be1hQyPkZZDNWTI=",
-        "owner": "~bryan_bennett",
-        "repo": "flake_env",
-        "rev": "8627db86be3a7bbf34793ff2da796588c33e8791",
-        "type": "sourcehut"
-      },
-      "original": {
-        "owner": "~bryan_bennett",
-        "repo": "flake_env",
-        "type": "sourcehut"
-      }
-    },
     "flakey-profile": {
       "locked": {
         "lastModified": 1712898590,
@@ -353,21 +326,6 @@
         "type": "github"
       }
     },
-    "nix-filter": {
-      "locked": {
-        "lastModified": 1710156097,
-        "narHash": "sha256-1Wvk8UP7PXdf8bCCaEoMnOT1qe5/Duqgj+rL8sRQsSM=",
-        "owner": "numtide",
-        "repo": "nix-filter",
-        "rev": "3342559a24e85fc164b295c3444e8a139924675b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "nix-filter",
-        "type": "github"
-      }
-    },
     "nix-index-database": {
       "inputs": {
         "nixpkgs": [
@@ -478,7 +436,6 @@
         "flake-compat_": "flake-compat_",
         "flake-parts_": "flake-parts_",
         "flake-utils_": "flake-utils_",
-        "flake_env": "flake_env",
         "git-hooks_": "git-hooks_",
         "home-manager": "home-manager",
         "lanzaboote": "lanzaboote",
