@@ -152,7 +152,7 @@
         inherit (nixpkgsModule.nixpkgs) overlays config;
       };
       linuxPkgs = import nixpkgs-stable (nixpkgsArgs // { system = "x86_64-linux"; });
-      darwinPkgs = import nixpkgs-stable (nixpkgsArgs // { system = "x86_64-darwin"; });
+      darwinPkgs = import nixpkgs-stable (nixpkgsArgs // { system = "aarch64-darwin"; });
       unstablePkgs = import nixpkgs (nixpkgsArgs // { system = "x86_64-linux"; });
       extraSpecialArgs = {
         inherit inputs unstablePkgs;
