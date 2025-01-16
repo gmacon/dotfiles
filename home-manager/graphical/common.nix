@@ -38,10 +38,4 @@
       shell = "zsh";
     };
   };
-  xdg.configFile."kitty/ssh.conf".text = ''
-    remote_kitty no
-    share_connections no
-    askpass ssh
-    forward_remote_control no
-  '';
 }

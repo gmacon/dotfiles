@@ -138,8 +138,8 @@ in
       bindkey "^ " autosuggest-accept
 
       function ssh () {
-        if [ "''${TERM:-}" = "xterm-kitty" ] && command -v kitten >/dev/null 2>&1; then
-          kitten ssh "$@"
+        if [ "''${TERM:-}" = "xterm-kitty" ]; then
+          TERM=xterm-256color command ssh "$@"
         else
           command ssh "$@"
         fi
