@@ -18,6 +18,8 @@
     extraPackages = [ pkgs.ipset ];
   };
 
+  networking.firewall.logRefusedConnections = false;
+
   # Backups
   age.secrets.tarsnapKey.file = ../secrets/tarsnap-k.key.age;
   services.tarsnap = {
