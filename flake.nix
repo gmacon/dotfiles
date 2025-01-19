@@ -41,11 +41,6 @@
       inputs.flake-utils.follows = "flake-utils_";
       inputs.flake-compat.follows = "flake-compat_";
     };
-    lix-module = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.91.1-1.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
-      inputs.flake-utils.follows = "flake-utils_";
-    };
     nix-direnv = {
       url = "github:nix-community/nix-direnv/3.0.6";
       inputs.nixpkgs.follows = "nixpkgs-stable";
@@ -93,7 +88,6 @@
       emacs,
       home-manager,
       lanzaboote,
-      lix-module,
       nix-direnv,
       nix-index-database,
       nix-system-graphics,
@@ -150,7 +144,7 @@
       nixosConfigurations.argon = nixpkgs-stable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          lix-module.nixosModules.default
+          ./nixos/common.nix
           nixpkgsModule
           lanzaboote.nixosModules.lanzaboote
           ./nixos/secure-boot.nix
@@ -184,7 +178,7 @@
       nixosConfigurations."potassium.kj4jzy.org" = nixpkgs-stable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          lix-module.nixosModules.default
+          ./nixos/common.nix
           nixpkgsModule
           "${nixpkgs-stable}/nixos/modules/virtualisation/digital-ocean-config.nix"
           ./nixos/tarsnap.nix
@@ -198,7 +192,7 @@
       nixosConfigurations.silicon = nixpkgs-stable.lib.nixosSystem {
         system = "aarch64-linux";
         modules = [
-          lix-module.nixosModules.default
+          ./nixos/common.nix
           nixpkgsModule
           nixos-hardware.nixosModules.raspberry-pi-4
           agenix.nixosModules.default
