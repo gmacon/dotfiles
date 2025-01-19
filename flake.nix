@@ -175,7 +175,7 @@
         ];
       };
 
-      nixosConfigurations."potassium.kj4jzy.org" = nixpkgs-stable.lib.nixosSystem {
+      nixosConfigurations.potassium = nixpkgs-stable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./nixos/common.nix
@@ -188,6 +188,7 @@
           ./nixos/autoupgrade.nix
         ];
       };
+      nixosConfigurations."potassium.kj4jzy.org" = self.nixosConfigurations.potassium;
 
       nixosConfigurations.silicon = nixpkgs-stable.lib.nixosSystem {
         system = "aarch64-linux";
