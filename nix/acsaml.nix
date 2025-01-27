@@ -28,8 +28,8 @@ writeShellApplication {
         "$openconnect" \
             "$@" \
             --authenticate \
-            --external-browser "$browser" \
-            --useragent "AnyConnect Linux_64")"
+            --external-browser "$browser"
+    )"
 
     if [ -z "$COOKIE" ]; then
         echo "OpenConnect didn't set the expected variables!" 1>&2
