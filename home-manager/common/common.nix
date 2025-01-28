@@ -190,6 +190,7 @@ in
     stdlib = ''
       ${direnvLayoutDirSrc}
       use_nix_adhoc() {
+        watch_file flake.nix default.nix shell.nix
         direnv_load nix shell "$@" --command $direnv dump
       }
     '';
