@@ -62,7 +62,10 @@
   (with-eval-after-load 'eglot
     (add-to-list 'eglot-server-programs
              '((rust-ts-mode rust-mode) .
-               ("rust-analyzer" :initializationOptions (:check (:command "clippy"))))))
+               ("rust-analyzer" :initializationOptions (:check (:command "clippy")))))
+    (add-to-list 'eglot-server-programs
+             '(nix-mode .
+               ("nil" :initializationOptions (:formatting (:command "nixfmt"))))))
 
   :general
   (:states 'normal
