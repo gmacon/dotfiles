@@ -18,8 +18,13 @@ let
   # From https://github.com/nix-community/nix-direnv#storing-direnv-outside-the-project-directory
   direnvLayoutDirSrc = ''
     direnv_layout_dir() {
-      echo -n "${config.xdg.cacheHome}/direnv/layouts/"
-      echo -n "$PWD" | ${pkgs.b2sum}/bin/b2sum -l160 | cut -d ' ' -f 1
+      layout_base="${config.xdg.cacheHome}/direnv/layouts"
+      layout_hash="$(echo -n "$PWD" | ${pkgs.b2sum}/bin/b2sum -l160 | cut -d ' ' -f 1)"
+      layout_basename="$(basename "$PWD")"
+      layout_dir="$layout_base/$layout_hash-$layout_basename"
+      mkdir -p "$layout_dir"
+      echo "$PWD" > "$layout_dir/.origin"
+      echo "$layout_dir"
     }
   '';
   rebuild-fzf-mark = pkgs.writeShellApplication {
