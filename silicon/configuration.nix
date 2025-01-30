@@ -29,6 +29,7 @@
       ];
     };
   };
+  security.sudo.wheelNeedsPassword = false;
 
   environment.systemPackages = lib.attrValues { inherit (pkgs) git vim wakeonlan; };
 
@@ -69,12 +70,6 @@
     enable = true;
     useRoutingFeatures = "server";
     extraUpFlags = [ "--advertise-exit-node" ];
-  };
-
-  services.tt-rss = {
-    enable = true;
-    singleUserMode = true;
-    selfUrlPath = "http://silicon.tail6afb0.ts.net/";
   };
 
   age.secrets.beeper-mautrix-signal.file = ../secrets/mautrix-signal.env.age;

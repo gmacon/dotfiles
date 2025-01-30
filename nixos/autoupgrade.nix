@@ -12,10 +12,4 @@
     # Note: This must be during the reboot window for the reboot to happen.
     dates = "06:00";
   };
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    randomizedDelaySec = "1h";
-    options = "--delete-older-than 30d";
-  };
 }

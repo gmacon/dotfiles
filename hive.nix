@@ -60,7 +60,6 @@ in
 
   silicon = {
     nixpkgs.hostPlatform.system = "aarch64-linux";
-    nixpkgs.buildPlatform.system = "x86_64-linux";
     imports = [
       ./nixos/nixpkgs.nix
       ./nixos/common.nix
@@ -73,6 +72,7 @@ in
       ./nixos/beeper-bridges
     ];
     deployment = {
+      buildOnTarget = true;
       targetHost = "silicon.tail6afb0.ts.net";
     };
   };
