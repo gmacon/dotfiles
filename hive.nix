@@ -8,10 +8,10 @@ in
   };
 
   defaults =
-    { name, ... }:
+    { lib, name, ... }:
     {
       networking.hostName = name;
-      deployment.targetUser = null;
+      deployment.targetUser = lib.mkDefault null;
     };
 
   argon = {
@@ -74,6 +74,22 @@ in
     deployment = {
       buildOnTarget = true;
       targetHost = "silicon.tail6afb0.ts.net";
+    };
+  };
+
+  potassium = {
+    imports = [
+      ./nixos/nixpkgs.nix
+      ./nixos/common.nix
+      "${sources.nixpkgs-stable}/nixos/modules/virtualisation/digital-ocean-config.nix"
+      ./nixos/tarsnap.nix
+      ./potassium/configuration.nix
+      "${sources.agenix}/modules/age.nix"
+      ./potassium/web-server.nix
+    ];
+    deployment = {
+      targetHost = "potassium.kj4jzy.org";
+      targetUser = "root";
     };
   };
 }
