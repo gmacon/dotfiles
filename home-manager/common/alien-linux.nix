@@ -1,6 +1,6 @@
-{ inputs, ... }:
+{ sources, ... }:
 {
   nix = {
-    registry.nixpkgs.flake = inputs.nixpkgs;
+    registry.nixpkgs.flake = sources.nixpkgs-stable;
   };
 }
