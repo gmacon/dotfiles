@@ -65,7 +65,7 @@
                ("rust-analyzer" :initializationOptions (:check (:command "clippy")))))
     (add-to-list 'eglot-server-programs
              '(nix-mode .
-               ("nil" :initializationOptions (:formatting (:command "nixfmt"))))))
+               ("nil" :initializationOptions (:formatting (:command ["nixfmt"]))))))
 
   :general
   (:states 'normal
