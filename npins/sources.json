@@ -20,9 +20,9 @@
         "repo": "emacs-overlay"
       },
       "branch": "master",
-      "revision": "7d96066f80c93ecc62620e925d1fb8edfa6dbbc6",
-      "url": "https://github.com/nix-community/emacs-overlay/archive/7d96066f80c93ecc62620e925d1fb8edfa6dbbc6.tar.gz",
-      "hash": "19swlghjrqlznbi2xrsk6a0yxhl6pvm5dm5fvr2q8gf523yzdqw8"
+      "revision": "2c113c718a7cbe167e6e5ac7f9228f02c815c8e5",
+      "url": "https://github.com/nix-community/emacs-overlay/archive/2c113c718a7cbe167e6e5ac7f9228f02c815c8e5.tar.gz",
+      "hash": "1xkrfik4lpchd2hpkmnmb564jifc6rb5wzdx6bh6w9bl3y7lvybw"
     },
     "fzf-marks": {
       "type": "Git",
@@ -86,21 +86,21 @@
         "repo": "nixos-hardware"
       },
       "branch": "master",
-      "revision": "dfad538f751a5aa5d4436d9781ab27a6128ec9d4",
-      "url": "https://github.com/NixOS/nixos-hardware/archive/dfad538f751a5aa5d4436d9781ab27a6128ec9d4.tar.gz",
-      "hash": "0gm73dkbcbhzhda0yi3g467idk3bqk3108kvm6q6ivwkv0kwwik4"
+      "revision": "34b64e4e1ddb14e3ffc7db8d4a781396dbbab773",
+      "url": "https://github.com/NixOS/nixos-hardware/archive/34b64e4e1ddb14e3ffc7db8d4a781396dbbab773.tar.gz",
+      "hash": "03gj9sad6cbwa35zizq7pbik3amp4la80d0hs41dnxd3ybq3jwp8"
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.05pre744748.f898cbfddfab/nixexprs.tar.xz",
-      "hash": "0zpdl5dcdki57a8kmmb9n7cd4pm8rsxzg7xsppn0gg13y2asyni5"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.05pre745949.9189ac18287c/nixexprs.tar.xz",
+      "hash": "0pwsp7kvjajg4blz0bv3g9a800cjjkh0gi6injqgqx935qw4zc2q"
     },
     "nixpkgs-stable": {
       "type": "Channel",
       "name": "nixos-24.11",
-      "url": "https://releases.nixos.org/nixos/24.11/nixos-24.11.713719.4e96537f163f/nixexprs.tar.xz",
-      "hash": "0kr9k8ar0xlwl19rh01pnp00z03wzd69jj201sgsll36n64cr41w"
+      "url": "https://releases.nixos.org/nixos/24.11/nixos-24.11.713895.666e1b3f09c2/nixexprs.tar.xz",
+      "hash": "0r33yrwyy7p1hl0fawgzb4yw9il4hbgvzl0y76vr6qdj95s6v0qw"
     }
   },
   "version": 3
