@@ -8,7 +8,7 @@ target="${1?Need a target}"
 shift
 
 cmd="${1:-switch}"
-shift
+shift || true
 
 nixpkgs_pin="$(nix eval --raw -f npins/default.nix nixpkgs-stable)"
 homemanager_pin="$(nix eval --raw -f npins/default.nix home-manager)"
