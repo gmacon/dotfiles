@@ -2,18 +2,24 @@
 {
   home.packages = with pkgs; [
     flake-graph
-    hunspell
+    aspell
+    aspellDicts.en
+    aspellDicts.en-computers
+    aspellDicts.en-science
     remmina
 
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
     noto-fonts
   ];
 
+  home.file."${config.home.homeDirectory}/.aspell.conf".text = ''
+    master en_US
+    extra-dicts en-computers.rws,en_US-science.rws
+  '';
+
   home.sessionVariables = {
-    DICPATH = "${config.xdg.dataHome}/hunspell";
     MOZ_ENABLE_WAYLAND = "1";
   };
-  home.file."${config.xdg.dataHome}/hunspell".source = "${pkgs.hunspellDicts.en_US}/share/hunspell";
 
   fonts.fontconfig.enable = true;
 

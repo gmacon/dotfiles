@@ -32,7 +32,7 @@
   (default-frame-alist '((menu-bar-lines . 0)
                          (tool-bar-lines . 0)
                          (vertical-scroll-bars . nil)))
-  (ispell-program-name "hunspell")
+  (ispell-program-name "aspell")
   (require-final-newline t)
   (sentence-end-double-space nil)
   (eglot-extend-to-xref t)
