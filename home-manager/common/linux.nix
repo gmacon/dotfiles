@@ -19,6 +19,5 @@
 
   home.packages = with pkgs; [
     htop
-    dua
   ];
 }
