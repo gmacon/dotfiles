@@ -1,5 +1,6 @@
 {
   config,
+  lib,
   pkgs,
   unstablePkgs,
   username,
@@ -124,6 +125,13 @@ in
     nixpkgs = "builtins.getFlake \"nixpkgs\""
   '';
 
+  # Mark activation
+  home.activation = {
+    markActivation = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      run touch ${config.xdg.stateHome}/hm-activation-stamp
+    '';
+  };
+
   # Shell
   programs.zsh = {
     enable = true;
@@ -159,6 +167,15 @@ in
           unsetopt zle
           PS1='$ '
           return
+      fi
+    '';
+    loginExtra = ''
+      if [[ -e ${config.xdg.stateHome}/hm-activation-stamp ]]; then
+        activation_age=$(($(date +%s) - $(stat -c %Y -- ${config.xdg.stateHome}/hm-activation-stamp)))
+        if [[ $activation_age > 604800 ]]; then
+          echo "Home Manager last activated $(($activation_age / 86400)) days ago."
+        fi
+        unset activation_age
       fi
     '';
     plugins = [
