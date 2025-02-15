@@ -4,7 +4,12 @@ let
 in
 pkgs.mkShell {
   packages = builtins.attrValues {
-    inherit (pkgs) yq-go npins colmena;
+    inherit (pkgs)
+      colmena
+      npins
+      nvd
+      yq-go
+      ;
     agenix = pkgs.callPackage "${sources.agenix}/pkgs/agenix.nix" { };
     home-manager = pkgs.callPackage "${sources.home-manager}/home-manager" { };
   };
