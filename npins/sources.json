@@ -20,9 +20,9 @@
         "repo": "emacs-overlay"
       },
       "branch": "master",
-      "revision": "0bfadcfd92855d3eb7e5c6401aff2ba348b1e7b7",
-      "url": "https://github.com/nix-community/emacs-overlay/archive/0bfadcfd92855d3eb7e5c6401aff2ba348b1e7b7.tar.gz",
-      "hash": "17lch07i5vv1gkrfashh7j1afswgdj843c1iavvy3b6dn688jl31"
+      "revision": "3a93a0a8f94fd52260b39aefc05e7bc667ded0ab",
+      "url": "https://github.com/nix-community/emacs-overlay/archive/3a93a0a8f94fd52260b39aefc05e7bc667ded0ab.tar.gz",
+      "hash": "1r1z7mx392cm9hjd37nnq33pvvkykda8yyam8cfgwpjcdfa6mxav"
     },
     "fzf-marks": {
       "type": "Git",
@@ -44,9 +44,9 @@
         "repo": "home-manager"
       },
       "branch": "release-24.11",
-      "revision": "bd65bc3cde04c16755955630b344bc9e35272c56",
-      "url": "https://github.com/nix-community/home-manager/archive/bd65bc3cde04c16755955630b344bc9e35272c56.tar.gz",
-      "hash": "15k41il0mvmwyv6jns4z8k6khhmb22jk5gpcqs1paym3l01g6abn"
+      "revision": "254d47082e23dbf72fdeca1da6fe1da420f478d8",
+      "url": "https://github.com/nix-community/home-manager/archive/254d47082e23dbf72fdeca1da6fe1da420f478d8.tar.gz",
+      "hash": "1dga3vsd60v9mfyhwgbil13mrchw5crbpgh4zjw9fghv1vyk89vq"
     },
     "lanzaboote": {
       "type": "GitRelease",
@@ -93,14 +93,14 @@
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.05pre750459.e8d0b02af095/nixexprs.tar.xz",
-      "hash": "0nfs7xgzyhbmq916s2y39lzw1xf3n4vbrynxf5c7pcismic6s8nn"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.05pre752767.1128e89fd5e1/nixexprs.tar.xz",
+      "hash": "0gv3g4rdys58r451w8klnb8r7mz10l35b4sr2iwiklvli4n0kilf"
     },
     "nixpkgs-stable": {
       "type": "Channel",
       "name": "nixos-24.11",
-      "url": "https://releases.nixos.org/nixos/24.11/nixos-24.11.714127.f5a32fa27df9/nixexprs.tar.xz",
-      "hash": "11ih450r75h5qi3mv1kzwfkl7dhgp517rx1l3cs61zg3k335yqfi"
+      "url": "https://releases.nixos.org/nixos/24.11/nixos-24.11.714433.0ff09db9d034/nixexprs.tar.xz",
+      "hash": "0pln0ywq9abi7lrgsgrn1q4fhvqar0j69v1n292rpq5lzs5kjkrf"
     }
   },
   "version": 3
