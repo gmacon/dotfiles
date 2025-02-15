@@ -5,12 +5,12 @@ in
 pkgs.mkShell {
   packages = builtins.attrValues {
     inherit (pkgs)
-      colmena
       npins
       nvd
       yq-go
       ;
     agenix = pkgs.callPackage "${sources.agenix}/pkgs/agenix.nix" { };
+    colmena = pkgs.callPackage "${sources.colmena}/package.nix" { };
     home-manager = pkgs.callPackage "${sources.home-manager}/home-manager" { };
   };
 }

@@ -11,7 +11,14 @@ in
     { lib, name, ... }:
     {
       networking.hostName = name;
-      deployment.targetUser = lib.mkDefault null;
+      deployment = {
+        targetUser = lib.mkDefault null;
+        sshOptions = [
+          "-o" "ConnectTimeout=30"
+          "-o" "ServerAliveInterval=30"
+          "-o" "ServerAliveCountMax=2"
+        ];
+      };
     };
 
   argon = {

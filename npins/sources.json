@@ -12,6 +12,18 @@
       "url": "https://github.com/ryantm/agenix/archive/e600439ec4c273cf11e06fe4d9d906fb98fa097c.tar.gz",
       "hash": "006ngydiykjgqs85cl19h9klq8kaqm5zs0ng51dnwy7nzgqxzsdr"
     },
+    "colmena": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "zhaofengli",
+        "repo": "colmena"
+      },
+      "branch": "main",
+      "revision": "a6b51f5feae9bfb145daa37fd0220595acb7871e",
+      "url": "https://github.com/zhaofengli/colmena/archive/a6b51f5feae9bfb145daa37fd0220595acb7871e.tar.gz",
+      "hash": "0a8wilc4hw22lgx7c990vydci7s8wiyifzdc8mljl1l6yfln5fic"
+    },
     "emacs": {
       "type": "Git",
       "repository": {
