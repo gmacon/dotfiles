@@ -90,6 +90,18 @@
       "url": "https://api.github.com/repos/nix-community/nix-direnv/tarball/3.0.6",
       "hash": "035xsdnl5cdxxl37dj8g6p4vcxqpz02p59mjqnrdskqhm0za3nm0"
     },
+    "nix-system-graphics": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "soupglasses",
+        "repo": "nix-system-graphics"
+      },
+      "branch": "main",
+      "revision": "9c875e0c56cf2eb272b9102a4f3e24e4e31629fd",
+      "url": "https://github.com/soupglasses/nix-system-graphics/archive/9c875e0c56cf2eb272b9102a4f3e24e4e31629fd.tar.gz",
+      "hash": "1wnx42r465biph28cmc79hjc61cyh7z8lgvch682830kh335szwx"
+    },
     "nixos-hardware": {
       "type": "Git",
       "repository": {
@@ -113,6 +125,18 @@
       "name": "nixos-24.11",
       "url": "https://releases.nixos.org/nixos/24.11/nixos-24.11.714433.0ff09db9d034/nixexprs.tar.xz",
       "hash": "0pln0ywq9abi7lrgsgrn1q4fhvqar0j69v1n292rpq5lzs5kjkrf"
+    },
+    "system-manager": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "numtide",
+        "repo": "system-manager"
+      },
+      "branch": "main",
+      "revision": "82d5a9ecd15ec48bcbfbacf5462066ee267d6aae",
+      "url": "https://github.com/numtide/system-manager/archive/82d5a9ecd15ec48bcbfbacf5462066ee267d6aae.tar.gz",
+      "hash": "18h18zpm0vprkrizhh2xx4akfgi0m1a26s9pdc2bga963yslm40m"
     }
   },
   "version": 3
