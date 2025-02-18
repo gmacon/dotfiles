@@ -84,6 +84,7 @@
   (:states 'visual
            :prefix gam-default-leader-key
            "s" #'sort-lines)
+  (:prefix "C-x x" "w" #'toggle-word-wrap)
 
   :hook
   (prog-mode . gam-prog-mode-setup)
