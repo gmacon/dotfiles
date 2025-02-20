@@ -37,5 +37,8 @@
     settings = {
       shell = "zsh";
     };
+    extraConfig = ''
+      mouse_map left click ungrabbed
+    '';
   };
 }
