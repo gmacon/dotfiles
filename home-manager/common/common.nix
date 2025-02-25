@@ -56,7 +56,6 @@ in
       agedu
       bat
       cachix
-      comma
       cookiecutter
       fd
       gh
@@ -218,6 +217,7 @@ in
   programs.fzf.enable = true;
 
   programs.nix-index.enable = true;
+  programs.nix-index-database.comma.enable = true;
 
   programs.eza.enable = true;
 
