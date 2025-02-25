@@ -90,6 +90,18 @@
       "url": "https://api.github.com/repos/nix-community/nix-direnv/tarball/3.0.6",
       "hash": "035xsdnl5cdxxl37dj8g6p4vcxqpz02p59mjqnrdskqhm0za3nm0"
     },
+    "nix-index-database": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "nix-index-database"
+      },
+      "branch": "main",
+      "revision": "465792533d03e6bb9dc849d58ab9d5e31fac9023",
+      "url": "https://github.com/nix-community/nix-index-database/archive/465792533d03e6bb9dc849d58ab9d5e31fac9023.tar.gz",
+      "hash": "19kcjxmymp4vrwj02d84piwk8mixlhi8vczzaql5zc1m0in9r5bm"
+    },
     "nix-system-graphics": {
       "type": "Git",
       "repository": {
