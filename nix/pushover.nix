@@ -11,7 +11,7 @@ writeShellApplication {
     # USER_KEY='pushover_target_user_key another_target_user_key'
 
     # shellcheck source=/dev/null
-    . "''${XDG_CONFIG_HOME:-$HOME/.config}/pushover.sh"
+    source "''${XDG_CONFIG_HOME:-$HOME/.config}/pushover.sh"
 
     for user in $USER_KEY; do
       curl https://api.pushover.net/1/messages.json \
