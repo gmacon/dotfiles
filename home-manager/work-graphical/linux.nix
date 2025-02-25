@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  unstablePkgs,
   lib,
   ...
 }:
@@ -9,7 +8,7 @@
   home.packages = [
     pkgs.slack
     pkgs.vistafonts
-    unstablePkgs.zotero_7
+    pkgs.zotero
   ];
   systemd.user.services.rclone = {
     Unit = {
