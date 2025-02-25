@@ -1,4 +1,5 @@
 *.local
 node_modules
 .*.stamp
-result*
+/result*
+/.gcroots
