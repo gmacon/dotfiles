@@ -158,6 +158,14 @@ in
           command ssh "$@"
         fi
       }
+
+      if [[ -e ${config.xdg.stateHome}/hm-activation-stamp ]]; then
+        activation_age=$(($(date +%s) - $(stat -c %Y -- ${config.xdg.stateHome}/hm-activation-stamp)))
+        if [[ $activation_age > 604800 ]]; then
+          echo "Home Manager last activated $(($activation_age / 86400)) days ago." 1>&2
+        fi
+        unset activation_age
+      fi
     '';
     initExtraBeforeCompInit = ''
       zstyle ':completion:*' completer _complete _ignored _correct _approximate
@@ -168,15 +176,6 @@ in
           unsetopt zle
           PS1='$ '
           return
-      fi
-    '';
-    loginExtra = ''
-      if [[ -e ${config.xdg.stateHome}/hm-activation-stamp ]]; then
-        activation_age=$(($(date +%s) - $(stat -c %Y -- ${config.xdg.stateHome}/hm-activation-stamp)))
-        if [[ $activation_age > 604800 ]]; then
-          echo "Home Manager last activated $(($activation_age / 86400)) days ago."
-        fi
-        unset activation_age
       fi
     '';
     plugins = [
