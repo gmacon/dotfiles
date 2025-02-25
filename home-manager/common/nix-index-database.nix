@@ -1,5 +1,6 @@
-{ sources, pkgs, ... }:
+{ pkgs, ... }:
 let
+  sources = import ../../npins;
   packages = (import sources.nix-index-database) { inherit pkgs; };
   dummyFlake = {
     packages.${pkgs.stdenv.system} = packages;
