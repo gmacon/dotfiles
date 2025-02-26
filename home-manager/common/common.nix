@@ -161,7 +161,7 @@ in
 
       if [[ -e ${config.xdg.stateHome}/hm-activation-stamp ]]; then
         activation_age=$(($(date +%s) - $(stat -c %Y -- ${config.xdg.stateHome}/hm-activation-stamp)))
-        if [[ $activation_age > 604800 ]]; then
+        if [[ $activation_age -gt 604800 ]]; then
           echo "Home Manager last activated $(($activation_age / 86400)) days ago." 1>&2
         fi
         unset activation_age
