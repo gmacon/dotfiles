@@ -10,6 +10,7 @@
       gnucash
       libreoffice
       mpv
+      nixpkgs-review
       thunderbird
       yt-dlp
       zoom-us
