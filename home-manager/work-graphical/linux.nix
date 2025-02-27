@@ -8,6 +8,7 @@
   home.packages = [
     pkgs.slack
     pkgs.vistafonts
+    pkgs.zotero-gtri
   ];
   systemd.user.services.rclone = {
     Unit = {
