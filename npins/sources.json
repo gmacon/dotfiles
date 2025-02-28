@@ -32,9 +32,9 @@
         "repo": "emacs-overlay"
       },
       "branch": "master",
-      "revision": "10d666ad8ae003661063ac31ec97bf8412365e00",
-      "url": "https://github.com/nix-community/emacs-overlay/archive/10d666ad8ae003661063ac31ec97bf8412365e00.tar.gz",
-      "hash": "0nk4fsm8vspqncl7mvshgfaiann2wsnjysnzgg6yj55z5n69zdz2"
+      "revision": "4a462936ca22eae70fd47fa3c9bef7f00153d2a1",
+      "url": "https://github.com/nix-community/emacs-overlay/archive/4a462936ca22eae70fd47fa3c9bef7f00153d2a1.tar.gz",
+      "hash": "0jjbqsz7rsv8jar55sm70wvmfiikkn6w6xpg8b98iqabrzd87s9a"
     },
     "fzf-marks": {
       "type": "Git",
@@ -122,21 +122,21 @@
         "repo": "nixos-hardware"
       },
       "branch": "master",
-      "revision": "18e9f9753e9ae261bcc7d3abe15745686991fd30",
-      "url": "https://github.com/NixOS/nixos-hardware/archive/18e9f9753e9ae261bcc7d3abe15745686991fd30.tar.gz",
-      "hash": "1hr0di8cknxj39yn20m5pqargqi3r3vprl1q5n5w0fx82l62dgv3"
+      "revision": "009b764ac98a3602d41fc68072eeec5d24fc0e49",
+      "url": "https://github.com/NixOS/nixos-hardware/archive/009b764ac98a3602d41fc68072eeec5d24fc0e49.tar.gz",
+      "hash": "1cg4qrzwkd3xdmp70rniync25kgm123400i5l8m7jjqv186mxi3l"
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.05pre755883.dad564433178/nixexprs.tar.xz",
-      "hash": "13b4ywwnid3pqy1fzlf5hz165xzrwrd80diyiy2mdvarwphs18wp"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.05pre759303.3a05eebede89/nixexprs.tar.xz",
+      "hash": "0m5436kzlbmvhjg13d7sjvrwsgiy7xh7d1j5p433s34kykr702c4"
     },
     "nixpkgs-stable": {
       "type": "Channel",
       "name": "nixos-24.11",
-      "url": "https://releases.nixos.org/nixos/24.11/nixos-24.11.714685.36864ed72f23/nixexprs.tar.xz",
-      "hash": "0l0s2ybfwaxywdf4629nfb1jd1bv802ks9blsmlafglk87fc1pbb"
+      "url": "https://releases.nixos.org/nixos/24.11/nixos-24.11.714925.f44bd8ca21e0/nixexprs.tar.xz",
+      "hash": "07i2f5smg4yy17q1s86ckkwzzgvy02jn7i6drwmid6pxjdidlg60"
     },
     "system-manager": {
       "type": "Git",
@@ -146,9 +146,9 @@
         "repo": "system-manager"
       },
       "branch": "main",
-      "revision": "82d5a9ecd15ec48bcbfbacf5462066ee267d6aae",
-      "url": "https://github.com/numtide/system-manager/archive/82d5a9ecd15ec48bcbfbacf5462066ee267d6aae.tar.gz",
-      "hash": "18h18zpm0vprkrizhh2xx4akfgi0m1a26s9pdc2bga963yslm40m"
+      "revision": "2e5bcfaf4a8194e70bbfc9c4eda3897dc84ff3b3",
+      "url": "https://github.com/numtide/system-manager/archive/2e5bcfaf4a8194e70bbfc9c4eda3897dc84ff3b3.tar.gz",
+      "hash": "1c73w2xpfi9rf3s3h5p06l1xjw5wy238s83bwx78334dk3b9qsiy"
     }
   },
   "version": 3
