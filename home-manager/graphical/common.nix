@@ -17,7 +17,13 @@
 
   fonts.fontconfig.enable = true;
 
-  programs.librewolf.enable = true;
+  programs.librewolf = {
+    enable = true;
+    settings = {
+      "privacy.clearOnShutdown.history" = false;
+      "webgl.disabled" = false;
+    };
+  };
 
   # Emacs
   programs.emacs = {
