@@ -2,7 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   # Bootloader.
@@ -19,7 +24,10 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    plugins = lib.mkForce [ pkgs.networkmanager-openconnect ];
+  };
   hardware.enableRedistributableFirmware = true;
   systemd.services.NetworkManager-wait-online.enable = false;
   services.resolved.enable = true;
@@ -118,7 +126,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     firefox
-    networkmanager-openconnect
   ];
   programs.zsh.enable = true;
   programs._1password.enable = true;
