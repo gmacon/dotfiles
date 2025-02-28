@@ -17,6 +17,8 @@
 
   fonts.fontconfig.enable = true;
 
+  programs.librewolf.enable = true;
+
   # Emacs
   programs.emacs = {
     enable = true;
