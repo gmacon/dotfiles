@@ -225,6 +225,10 @@ in
     enable = true;
     controlMaster = "auto";
     controlPersist = "5m";
+    serverAliveInterval = 30;
+    extraConfig = ''
+      ConnectTimeout 30
+    '';
     extraOptionOverrides = {
       # Mozilla Cryptography Recommendations
       HostKeyAlgorithms = builtins.concatStringsSep "," [
