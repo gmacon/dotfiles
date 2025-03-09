@@ -1,22 +1,8 @@
-# Home Manager Configuration
+# Nix Configurations
 
 Bootstrapping:
 
 1.  [Install Nix](https://nixos.org/download.html)
-2.  Run:
-
-    ```console
-    $ nix build \
-          --extra-experimental-features nix-command \
-          --extra-experimental-features flakes \
-          github:gmacon/dotfiles#homeConfigurations.home-laptop.activationPackage
-    $ ./result/activate
-    $ rm result
-    $ clone https://github.com/gmacon/dotfiles
-    ```
-    
-Updates:
-
-```console
-$ home-manager switch --flake ~/code/github.com/gmacon/dotfiles#home-laptop
-```
+2.  Clone (or otherwise obtain) this repository.
+3.  Run `nix-shell` in the repo root to get a shell containing the deploy tools.
+4.  Run `colmena apply-local --sudo` or `./hm.sh work-desktop` as appropriate.
