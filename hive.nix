@@ -47,7 +47,6 @@ in
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.gmacon.imports = [
-            # nix-index-database.hmModules.nix-index
             ./home-manager/common/common.nix
             ./home-manager/common/linux.nix
             ./home-manager/graphical/common.nix
