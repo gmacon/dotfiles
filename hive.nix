@@ -10,23 +10,30 @@ in
   defaults =
     { lib, name, ... }:
     {
-      networking.hostName = name;
-      deployment = {
-        targetUser = lib.mkDefault null;
-        sshOptions = [
-          "-o" "ConnectTimeout=30"
-          "-o" "ServerAliveInterval=30"
-          "-o" "ServerAliveCountMax=2"
-        ];
+      imports = [
+        ./nixos/nixpkgs.nix
+        ./nixos/common.nix
+      ];
+      config = {
+        networking.hostName = name;
+        deployment = {
+          targetUser = lib.mkDefault null;
+          sshOptions = [
+            "-o"
+            "ConnectTimeout=30"
+            "-o"
+            "ServerAliveInterval=30"
+            "-o"
+            "ServerAliveCountMax=2"
+          ];
+        };
       };
     };
 
   argon = {
     imports = [
-      ./nixos/nixpkgs.nix
       ((import sources.lanzaboote).nixosModules.lanzaboote)
       ./nixos/secure-boot.nix
-      ./nixos/common.nix
       ./nixos/tarsnap.nix
       ./argon/configuration.nix
       ./argon/display-switch.nix
@@ -68,8 +75,6 @@ in
   silicon = {
     nixpkgs.hostPlatform.system = "aarch64-linux";
     imports = [
-      ./nixos/nixpkgs.nix
-      ./nixos/common.nix
       "${sources.nixos-hardware}/raspberry-pi/4"
       "${sources.agenix}/modules/age.nix"
       ./silicon/configuration.nix
@@ -86,8 +91,6 @@ in
 
   potassium = {
     imports = [
-      ./nixos/nixpkgs.nix
-      ./nixos/common.nix
       "${sources.nixpkgs-stable}/nixos/modules/virtualisation/digital-ocean-config.nix"
       ./nixos/tarsnap.nix
       ./potassium/configuration.nix
