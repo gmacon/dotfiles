@@ -22,7 +22,6 @@
     enable = true;
     package = pkgs.emacsWithPackagesFromUsePackage {
       config = ../config/emacs/init.el;
-      package = pkgs.emacs-pgtk;
       extraEmacsPackages = epkgs: [ epkgs.treesit-grammars.with-all-grammars ];
       alwaysEnsure = true;
     };
