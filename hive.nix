@@ -83,7 +83,6 @@ in
       ./nixos/beeper-bridges
     ];
     deployment = {
-      buildOnTarget = true;
       targetHost = "silicon.tail6afb0.ts.net";
     };
   };
