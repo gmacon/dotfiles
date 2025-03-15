@@ -32,9 +32,9 @@
         "repo": "emacs-overlay"
       },
       "branch": "master",
-      "revision": "04892169ec614a3ddeb1ca4a8e6a86e9d410d30c",
-      "url": "https://github.com/nix-community/emacs-overlay/archive/04892169ec614a3ddeb1ca4a8e6a86e9d410d30c.tar.gz",
-      "hash": "10xp3y1wyk1br4n6aq9cn8wgwsjin7a3450i5s2d5ps198vdr0ns"
+      "revision": "5d6c484290f0754ce745ea6f7e2b7d037bdc7b76",
+      "url": "https://github.com/nix-community/emacs-overlay/archive/5d6c484290f0754ce745ea6f7e2b7d037bdc7b76.tar.gz",
+      "hash": "1y2yi1i6iqh9nriy57yw48f0rzvlfzg5bjc7zxk5qyg650d11k8g"
     },
     "fzf-marks": {
       "type": "Git",
@@ -122,21 +122,21 @@
         "repo": "nixos-hardware"
       },
       "branch": "master",
-      "revision": "b48cc4dab0f9711af296fc367b6108cf7b8ccb16",
-      "url": "https://github.com/NixOS/nixos-hardware/archive/b48cc4dab0f9711af296fc367b6108cf7b8ccb16.tar.gz",
-      "hash": "0nlfz0sq3fyav21y9wlhmxdws6imc9xvprxbygw4zsjrqx7ish25"
+      "revision": "e1f12151258b12c567f456d8248e4694e9390613",
+      "url": "https://github.com/NixOS/nixos-hardware/archive/e1f12151258b12c567f456d8248e4694e9390613.tar.gz",
+      "hash": "0k6q8blcaf1jjgclsxrcm6s3i233hwgsrdzs8c1hvg6wbyvmah3z"
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.05pre764897.212518a3623f/nixexprs.tar.xz",
-      "hash": "0dmvbvq0giw3fr5l64y5kb6s0cr0jfjcspn58wrwqh5yp32zsp7p"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.05pre767417.573c650e8a14/nixexprs.tar.xz",
+      "hash": "1zzjrcpqyir2q2bzaxl2sk5vfq0sv4m8xx0q9bf21dsfafcv42qr"
     },
     "nixpkgs-stable": {
       "type": "Channel",
       "name": "nixos-24.11",
-      "url": "https://releases.nixos.org/nixos/24.11/nixos-24.11.715519.ebe2788eafd5/nixexprs.tar.xz",
-      "hash": "1wi810wqwsr5vk83gl1b5djka3m38ajray5vc16k1dsndzwbs1c1"
+      "url": "https://releases.nixos.org/nixos/24.11/nixos-24.11.715614.cdd2ef009676/nixexprs.tar.xz",
+      "hash": "1ila630hqmk7gqiib1vhyr4rdx9ncq7ymjl7wcxcnmcsmswha2hm"
     },
     "system-manager": {
       "type": "Git",
