@@ -13,4 +13,11 @@ shift || true
 nixpkgs_pin="$(nix eval --raw -f npins/default.nix nixpkgs-stable)"
 homemanager_pin="$(nix eval --raw -f npins/default.nix home-manager)"
 
-NIX_PATH="nixpkgs=$nixpkgs_pin:home-manager=$homemanager_pin" home-manager -f home.nix -A "$target" "$@" "$cmd"
+home_manager="$(nix build --no-link --print-out-paths -f hm.nix)"
+
+NIX_PATH="nixpkgs=$nixpkgs_pin:home-manager=$homemanager_pin" \
+        "$home_manager/bin/home-manager" \
+        -f home.nix \
+        -A "$target" \
+        "$@" \
+        "$cmd"
