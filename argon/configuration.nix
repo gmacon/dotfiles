@@ -117,16 +117,12 @@
       "wheel"
     ];
     shell = pkgs.zsh;
-    packages = with pkgs; [
-      #  thunderbird
-    ];
+    packages = [ ];
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    firefox
-  ];
+  environment.systemPackages = [ ];
   programs.zsh.enable = true;
   programs._1password.enable = true;
   programs._1password-gui = {

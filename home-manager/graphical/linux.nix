@@ -5,12 +5,7 @@
     xsel
   ];
 
-  programs.librewolf = {
+  programs.firefox = {
     enable = true;
-    settings = {
-      "privacy.clearOnShutdown.history" = false;
-      "privacy.resistFingerprinting" = false;
-      "webgl.disabled" = false;
-    };
   };
 }
