@@ -61,7 +61,6 @@ in
       gh
       git-absorb
       git-credential-oauth
-      httpie
       jq
       mosh
       nil
@@ -77,6 +76,7 @@ in
       shellcheck
       unzip
       vim
+      xh
 
       certreq
       gitHelpers
