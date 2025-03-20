@@ -4,15 +4,18 @@
   openconnect,
 }:
 let
-  openconnect-git = openconnect.overrideAttrs {
+  openconnect-git = openconnect.overrideAttrs (old: {
     version = "9.12+git";
+    patches = (old.patches or [ ]) ++ [
+      ./browser-ipv4.patch
+    ];
     src = fetchFromGitLab {
       owner = "openconnect";
       repo = "openconnect";
       rev = "f17fe20d337b400b476a73326de642a9f63b59c8"; # head 1/21/25
       hash = "sha256-OBEojqOf7cmGtDa9ToPaJUHrmBhq19/CyZ5agbP7WUw=";
     };
-  };
+  });
 in
 writeShellApplication {
   name = "acsaml";

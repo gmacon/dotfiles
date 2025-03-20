@@ -3,7 +3,7 @@ self: super: {
 
   mautrix-gmessages = self.callPackage ./mautrix-gmessages { };
 
-  acsaml = self.callPackage ./acsaml.nix { };
+  acsaml = self.callPackage ./acsaml { };
   certreq = self.callPackage ./certreq { };
   flake-graph = self.callPackage ./flake-graph { };
   gitHelpers = self.callPackage ./git-helpers { };
