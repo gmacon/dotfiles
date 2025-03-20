@@ -4,8 +4,9 @@ Bootstrapping for Alien Nix:
 
 1.  [Install Nix](https://nixos.org/download.html)
 2.  Install [nsncd](https://github.com/twosigma/nsncd)
-2.  Clone (or otherwise obtain) this repository.
-3.  Run `./hm.sh work-desktop`
+3.  Clone (or otherwise obtain) this repository.
+4.  Run `./sm.sh work-desktop`
+5.  Run `./hm.sh work-desktop`
     (replacing `work-desktop` with the appropriate attribute).
 
 Bootstrapping for NixOS:
