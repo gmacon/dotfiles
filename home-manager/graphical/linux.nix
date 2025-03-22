@@ -7,5 +7,8 @@
 
   programs.firefox = {
     enable = true;
+    policies = {
+      DisablePocket = true;
+    };
   };
 }
