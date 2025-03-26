@@ -11,4 +11,6 @@
       DisablePocket = true;
     };
   };
+
+  programs.chromium.enable = true;
 }
