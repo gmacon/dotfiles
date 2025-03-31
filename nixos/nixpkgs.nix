@@ -1,4 +1,4 @@
-{ sources, ... }:
+{ lib, sources, ... }:
 {
   nixpkgs = {
     overlays = [
@@ -7,7 +7,17 @@
       (import ./../nix/overlay.nix)
     ];
     config = {
-      allowUnfree = true;
+      allowUnfreePredicate =
+        pkg:
+        builtins.elem (lib.getName pkg) [
+          "1password"
+          "1password-cli"
+          "beeper"
+          "slack"
+          "tarsnap"
+          "vista-fonts"
+          "zoom"
+        ];
       permittedInsecurePackages = [
         # Non-constant-time crypto primitives.
         # In the mautrix bridges,
