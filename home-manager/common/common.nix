@@ -323,4 +323,15 @@ in
     userEmail = userEmail;
     userName = "George Macon";
   };
+
+  programs.jujutsu = {
+    enable = true;
+    settings = {
+      user = {
+        name = "George Macon";
+        email = userEmail;
+      };
+      ui.default-command = "log";
+    };
+  };
 }
