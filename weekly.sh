@@ -23,7 +23,10 @@ git add npins
 git commit -m 'Update inputs'
 
 colmena apply --reboot --keep-result
-colmena apply-local boot --sudo
 
+echo Ready for root?
+read
+colmena apply-local boot --sudo
 sudo nix-collect-garbage --delete-older-than 30d
+
 nix-collect-garbage --delete-older-than 30d
