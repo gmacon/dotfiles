@@ -24,6 +24,10 @@
         # I feel like this is low risk
         # since I'm controlling both endpoints.
         "olm-3.2.16"
+        # No SHA1 collision detection (in gitoxide).
+        # I'm not using this for "production" yet,
+        # and have no shared repos, so I'm not worried.
+        "jujutsu-0.23.0"
       ];
     };
   };
