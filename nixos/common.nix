@@ -1,6 +1,11 @@
 { pkgs, sources, ... }:
 {
   nixpkgs.flake.source = sources.nixpkgs-stable;
+
+  # Workaround for CVE-2025-32438
+  # https://github.com/NixOS/nixpkgs/security/advisories/GHSA-m7pq-h9p4-8rr4
+  systemd.shutdownRamfs.enable = false;
+
   nix = {
     package = pkgs.lix;
     settings = {
