@@ -32,9 +32,9 @@
         "repo": "emacs-overlay"
       },
       "branch": "master",
-      "revision": "90642af1fb7ab5e4c6deb221305acf6fc4472582",
-      "url": "https://github.com/nix-community/emacs-overlay/archive/90642af1fb7ab5e4c6deb221305acf6fc4472582.tar.gz",
-      "hash": "16nyn8p57vykp0ajh8hrb9zzgk9lwj53cvmg9ayvk8s9hjg261v0"
+      "revision": "9232d20ad5eb26fc56f16bdb5d4dca44ad74a1d4",
+      "url": "https://github.com/nix-community/emacs-overlay/archive/9232d20ad5eb26fc56f16bdb5d4dca44ad74a1d4.tar.gz",
+      "hash": "1h2yqw53i432daahp4wk4z5q8h577ny1w8hfz3vqr24drhxjyaib"
     },
     "fzf-marks": {
       "type": "Git",
@@ -56,9 +56,9 @@
         "repo": "home-manager"
       },
       "branch": "release-24.11",
-      "revision": "c61bfe3ae692f42ce688b5865fac9e0de58e1387",
-      "url": "https://github.com/nix-community/home-manager/archive/c61bfe3ae692f42ce688b5865fac9e0de58e1387.tar.gz",
-      "hash": "024jcyjxsr0cj4ycz4r8i60bydrl13l6vc16innv6wq32rcgyacb"
+      "revision": "dd26f75fb4ec1c731d4b1396eaf4439ce40a91c1",
+      "url": "https://github.com/nix-community/home-manager/archive/dd26f75fb4ec1c731d4b1396eaf4439ce40a91c1.tar.gz",
+      "hash": "1qsvg11b5d05z2gvxq2pp6xfg3gpcd363id0h52sicikx3vai93s"
     },
     "lanzaboote": {
       "type": "GitRelease",
@@ -98,9 +98,9 @@
         "repo": "nix-index-database"
       },
       "branch": "main",
-      "revision": "4fc9ea78c962904f4ea11046f3db37c62e8a02fd",
-      "url": "https://github.com/nix-community/nix-index-database/archive/4fc9ea78c962904f4ea11046f3db37c62e8a02fd.tar.gz",
-      "hash": "0vp6ggq44z08d2hqpg33mln2barzchp91b7cxvz4nbyk0xcm5c24"
+      "revision": "69716041f881a2af935021c1182ed5b0cc04d40e",
+      "url": "https://github.com/nix-community/nix-index-database/archive/69716041f881a2af935021c1182ed5b0cc04d40e.tar.gz",
+      "hash": "0wa39n801jsqhnppn6hv1vckcchk2s9nkwak9nkjcwdv1xak8153"
     },
     "nix-system-graphics": {
       "type": "Git",
@@ -122,21 +122,21 @@
         "repo": "nixos-hardware"
       },
       "branch": "master",
-      "revision": "9a049b4a421076d27fee3eec664a18b2066824cb",
-      "url": "https://github.com/NixOS/nixos-hardware/archive/9a049b4a421076d27fee3eec664a18b2066824cb.tar.gz",
-      "hash": "0fadhgi4dba981fdr6l5m6916g5qillzp9x88gsf3sbhgbhq9dbx"
+      "revision": "f7bee55a5e551bd8e7b5b82c9bc559bc50d868d1",
+      "url": "https://github.com/NixOS/nixos-hardware/archive/f7bee55a5e551bd8e7b5b82c9bc559bc50d868d1.tar.gz",
+      "hash": "1311w59q8rcjnj8415z1pjlz5c1lsfrgxz9wg78fgc6mlfys6hbd"
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.05pre782598.18dd725c2960/nixexprs.tar.xz",
-      "hash": "1p7kgyph7xkj57p19nbxpycmbchc6d9gwdznsmxhymrzyzi3if21"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.05pre788066.507b63021ada/nixexprs.tar.xz",
+      "hash": "1mx9ls3i1j4ydvi2pili1b68akr3i2zgdkddpsxnr2ql5l4ys9hl"
     },
     "nixpkgs-stable": {
       "type": "Channel",
       "name": "nixos-24.11",
-      "url": "https://releases.nixos.org/nixos/24.11/nixos-24.11.716947.26d499fc9f1d/nixexprs.tar.xz",
-      "hash": "01ssp6v1h64fahbzjr4zcg9pacr9sfx9bahyr9j6iarxghq85ap7"
+      "url": "https://releases.nixos.org/nixos/24.11/nixos-24.11.717296.5630cf13ccea/nixexprs.tar.xz",
+      "hash": "1gv0fmlpf4ilflls7y60ihp3mg69iv7f9yx9f44glj96hhs179f7"
     },
     "system-manager": {
       "type": "Git",
