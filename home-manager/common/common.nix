@@ -220,6 +220,11 @@ in
 
   programs.eza.enable = true;
 
+  programs.tmux = {
+    enable = true;
+    historyLimit = 1000000;
+  };
+
   # SSH
   programs.ssh = {
     enable = true;
