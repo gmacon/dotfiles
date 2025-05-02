@@ -16,6 +16,7 @@ in
       ./home-manager/common/darwin.nix
       ./home-manager/graphical/common.nix
       ./home-manager/work/common.nix
+      ./home-manager/work-graphical/common.nix
     ];
     _module.args = extraSpecialArgs // {
       homeDirectory = "/Users/gmacon3";
@@ -31,6 +32,7 @@ in
       ./home-manager/graphical/common.nix
       ./home-manager/graphical/linux.nix
       ./home-manager/work/common.nix
+      ./home-manager/work-graphical/common.nix
       ./home-manager/work-graphical/linux.nix
     ];
 
