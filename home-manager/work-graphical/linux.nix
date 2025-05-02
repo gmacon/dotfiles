@@ -11,10 +11,6 @@
     pkgs.zotero-gtri
   ];
 
-  home.sessionVariables = {
-    "SSH_AUTH_SOCK" = "${config.home.homeDirectory}/.1password/agent.sock";
-  };
-
   systemd.user.services.rclone = {
     Unit = {
       Description = "Mount Box with rclone";
