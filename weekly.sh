@@ -7,20 +7,20 @@ trap 'rm -rf before after' EXIT
 
 rm -rf .gcroots
 
-colmena build --keep-result --on argon
-mv .gcroots/* before
+before_drv="$(colmena eval --instantiate ./merged.nix)"
+before="$(nix-store --realise $before_drv)"
 
 npins update
 
-colmena build --keep-result --on argon
-mv .gcroots/* after
+after_drv="$(colmena eval --instantiate ./merged.nix)"
+after="$(nix-store --realise $after_drv)"
 
-nvd diff before after
+version_diff="$(nvd diff $before $after)"
 
 read
 
 git add npins
-git commit -m 'Update inputs'
+git commit -m "Update inputs\n\n$version_diff"
 
 colmena apply --reboot --keep-result
 
