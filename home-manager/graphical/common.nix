@@ -25,7 +25,7 @@
   # Set up 1Password SSH Agent
   programs.zsh.envExtra = ''
     if [ -z "$SSH_CONNECTION" ]; then
-      SSH_AUTH_SOCK="$HOME/.1password/agent.sock";
+      export SSH_AUTH_SOCK="$HOME/.1password/agent.sock";
     fi
   '';
 
