@@ -232,7 +232,7 @@ in
     controlPersist = "5m";
     serverAliveInterval = 30;
     extraConfig = ''
-      ConnectTimeout 30
+      ConnectTimeout 120
     '';
     extraOptionOverrides = {
       # Mozilla Cryptography Recommendations
