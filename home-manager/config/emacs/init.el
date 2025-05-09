@@ -10,6 +10,15 @@
 
 (use-package general)
 
+(use-package exec-path-from-shell
+  :if
+  (display-graphic-p)
+  :custom
+  (exec-path-from-shell-variables '("PATH" "MANPATH" "SSH_AUTH_SOCK" "LANG" "NIX_SSL_CERT_FILE" "NIX_PATH"))
+  (exec-path-from-shell-arguments nil)
+  :config
+  (exec-path-from-shell-initialize))
+
 (use-package emacs
   :custom
   (custom-file null-device "disable customizations")
