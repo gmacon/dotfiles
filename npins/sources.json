@@ -20,9 +20,9 @@
         "repo": "colmena"
       },
       "branch": "main",
-      "revision": "2370d4336eda2a9ef29fce10fa7076ae011983ab",
-      "url": "https://github.com/zhaofengli/colmena/archive/2370d4336eda2a9ef29fce10fa7076ae011983ab.tar.gz",
-      "hash": "08ykrxzq4viaf0rzs5x7nznr612yp15fk211cwmhcrc01szqpx44"
+      "revision": "df694ee23be7ed7b2d8b42c245a640f0724eb06c",
+      "url": "https://github.com/zhaofengli/colmena/archive/df694ee23be7ed7b2d8b42c245a640f0724eb06c.tar.gz",
+      "hash": "1lxx48c14wcpa2jqx7qsfk6swiwcrpx6v1lq8hzkymf7nxg36r6a"
     },
     "emacs": {
       "type": "Git",
@@ -32,9 +32,9 @@
         "repo": "emacs-overlay"
       },
       "branch": "master",
-      "revision": "a738f51b28507d1c68ec612d75840a6165ebe1bf",
-      "url": "https://github.com/nix-community/emacs-overlay/archive/a738f51b28507d1c68ec612d75840a6165ebe1bf.tar.gz",
-      "hash": "0wj6g6k5523nlywycc7xjsl3gypz24fhcz8nb0g90gwxhhwyy9ab"
+      "revision": "8a79c78b3d84b550eb48a9988ab79a63478a5768",
+      "url": "https://github.com/nix-community/emacs-overlay/archive/8a79c78b3d84b550eb48a9988ab79a63478a5768.tar.gz",
+      "hash": "12iyz2d3d7yyvbl2n1ivbsnhi8hk33apha6wz76k1aj7gch2yrh7"
     },
     "fzf-marks": {
       "type": "Git",
@@ -85,10 +85,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "3.0.6",
-      "revision": "fed21f2dea4691508a0f81f3c1c9368e8866e460",
-      "url": "https://api.github.com/repos/nix-community/nix-direnv/tarball/3.0.6",
-      "hash": "035xsdnl5cdxxl37dj8g6p4vcxqpz02p59mjqnrdskqhm0za3nm0"
+      "version": "3.0.7",
+      "revision": "48ddf8e45e0bbe321e0d732837b827731028ef11",
+      "url": "https://api.github.com/repos/nix-community/nix-direnv/tarball/3.0.7",
+      "hash": "1bhv57pdk273bkybnd69p9v5vmnq5xr932mj11ykkxchdhr4r7qz"
     },
     "nix-index-database": {
       "type": "Git",
@@ -98,9 +98,9 @@
         "repo": "nix-index-database"
       },
       "branch": "main",
-      "revision": "13ba07d54c6ccc5af30a501df669bf3fe3dd4db8",
-      "url": "https://github.com/nix-community/nix-index-database/archive/13ba07d54c6ccc5af30a501df669bf3fe3dd4db8.tar.gz",
-      "hash": "14736a4d8gpwqgclnkjncpq0gm47ccjmyhd3cdfdvms9crsa47w9"
+      "revision": "e9b21b01e4307176b9718a29ac514838e7f6f4ff",
+      "url": "https://github.com/nix-community/nix-index-database/archive/e9b21b01e4307176b9718a29ac514838e7f6f4ff.tar.gz",
+      "hash": "085414ygbi9pnv8qmx7mpjklcdiwx5881vqnjaih831cbpwa4zny"
     },
     "nix-system-graphics": {
       "type": "Git",
@@ -122,21 +122,21 @@
         "repo": "nixos-hardware"
       },
       "branch": "master",
-      "revision": "72081c9fbbef63765ae82bff9727ea79cc86bd5b",
-      "url": "https://github.com/NixOS/nixos-hardware/archive/72081c9fbbef63765ae82bff9727ea79cc86bd5b.tar.gz",
-      "hash": "16ipk0wlj0a5p7vlhp8qcmia1npjswsjg9q9vc2ycdshz2h7crcs"
+      "revision": "3c5e12673265dfb0de3d9121420c0c2153bf21e0",
+      "url": "https://github.com/NixOS/nixos-hardware/archive/3c5e12673265dfb0de3d9121420c0c2153bf21e0.tar.gz",
+      "hash": "06fadvksf8hzr9sx86d00d88p3ilz6crkhiipfb01h3k48habzc5"
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.05pre793031.032bc6539bd5/nixexprs.tar.xz",
-      "hash": "1n1f0dygzkg1ng8v5mz80y2siqk1sg2cqchsqzd1ihzk8cn644m2"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.05pre796313.b3582c75c7f2/nixexprs.tar.xz",
+      "hash": "1hy9mx89v6vcb2jwqa1dfpqnalc2pak27r7d82v3w6j5fhbbh34j"
     },
     "nixpkgs-stable": {
       "type": "Channel",
       "name": "nixos-24.11",
-      "url": "https://releases.nixos.org/nixos/24.11/nixos-24.11.717608.bf3287dac860/nixexprs.tar.xz",
-      "hash": "1qf7ccpbad2p58q894g4zij3nvsqw503615apjb3iz06yribbrwb"
+      "url": "https://releases.nixos.org/nixos/24.11/nixos-24.11.717822.0c0bf9c05738/nixexprs.tar.xz",
+      "hash": "10lhpdmyp0v3ds3f2fxnh6c5lfq8c5ifn8jx8q6kysqny5byrg36"
     },
     "system-manager": {
       "type": "Git",
