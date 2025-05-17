@@ -5,8 +5,6 @@ set -euo pipefail
 
 trap 'rm -rf before after' EXIT
 
-rm -rf .gcroots
-
 before_drv="$(colmena eval --instantiate ./merged.nix)"
 before="$(nix-store --realise $before_drv)"
 
