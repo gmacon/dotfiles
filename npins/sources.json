@@ -129,14 +129,14 @@
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.05pre800239.b1bebd0fe266/nixexprs.tar.xz",
-      "hash": "0vnfj9d7kzk673i7s1vnkbx513a4gh5mfcd8fag2c7wi6hz471n6"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre803292.359c442b7d1f/nixexprs.tar.xz",
+      "hash": "1nsqc3kq7ihqrlpzdfgmh87czca3h7id3mv8ywkayiwngn5qbag4"
     },
     "nixpkgs-stable": {
       "type": "Channel",
       "name": "nixos-24.11",
-      "url": "https://releases.nixos.org/nixos/24.11/nixos-24.11.717921.5d736263df90/nixexprs.tar.xz",
-      "hash": "1dsmalm3r9vap9w34m5v0z59qhr23gykficgprqjp2sm0fykbmqh"
+      "url": "https://releases.nixos.org/nixos/24.11/nixos-24.11.718112.72841a4a8761/nixexprs.tar.xz",
+      "hash": "183sx7d58jkqh6032dhzg6bcr9kgbhysz8h56srrsy7jpaw85pdd"
     },
     "system-manager": {
       "type": "Git",
