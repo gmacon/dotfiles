@@ -8,6 +8,7 @@
         "repo": "agenix"
       },
       "branch": "main",
+      "submodules": false,
       "revision": "96e078c646b711aee04b82ba01aefbff87004ded",
       "url": "https://github.com/ryantm/agenix/archive/96e078c646b711aee04b82ba01aefbff87004ded.tar.gz",
       "hash": "1sy6gf4pgrvv93m918fwdl6n7qs0nww5p6jvjpb7iwdfcy08aw3c"
@@ -20,6 +21,7 @@
         "repo": "colmena"
       },
       "branch": "main",
+      "submodules": false,
       "revision": "df694ee23be7ed7b2d8b42c245a640f0724eb06c",
       "url": "https://github.com/zhaofengli/colmena/archive/df694ee23be7ed7b2d8b42c245a640f0724eb06c.tar.gz",
       "hash": "1lxx48c14wcpa2jqx7qsfk6swiwcrpx6v1lq8hzkymf7nxg36r6a"
@@ -32,6 +34,7 @@
         "repo": "emacs-overlay"
       },
       "branch": "master",
+      "submodules": false,
       "revision": "1799cf8c9df7186a23e0a69ab74d2a310b628f98",
       "url": "https://github.com/nix-community/emacs-overlay/archive/1799cf8c9df7186a23e0a69ab74d2a310b628f98.tar.gz",
       "hash": "19637m6p8idj63fqp8nn87qpdwki2zss1d57693zvviiry086x2j"
@@ -44,6 +47,7 @@
         "repo": "fzf-marks"
       },
       "branch": "master",
+      "submodules": false,
       "revision": "1adfd272aaae76850789b6106354492c1f05d3cb",
       "url": "https://github.com/urbainvaes/fzf-marks/archive/1adfd272aaae76850789b6106354492c1f05d3cb.tar.gz",
       "hash": "0sk778fr8byrbld29i1x9lgjsbl9xch8pblfp68v50gv5i08vm6a"
@@ -55,10 +59,11 @@
         "owner": "nix-community",
         "repo": "home-manager"
       },
-      "branch": "release-24.11",
-      "revision": "1eec32f0efe3b830927989767a9e6ece0d82d608",
-      "url": "https://github.com/nix-community/home-manager/archive/1eec32f0efe3b830927989767a9e6ece0d82d608.tar.gz",
-      "hash": "03z2v28ac11bisxf9n73brrjp85878wapqs9853p0f73vx8a5jfw"
+      "branch": "release-25.05",
+      "submodules": false,
+      "revision": "d0bbd221482c2713cccb80220f3c9d16a6e20a33",
+      "url": "https://github.com/nix-community/home-manager/archive/d0bbd221482c2713cccb80220f3c9d16a6e20a33.tar.gz",
+      "hash": "1iqfq5lz3102cp3ryqqqs2hr2bdmwn0mdajprh1ls5h5nsfkigs1"
     },
     "lanzaboote": {
       "type": "GitRelease",
@@ -70,6 +75,7 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "v0.4.2",
       "revision": "f0212638a2ec787a7841882f4477d40ae24f0a5d",
       "url": "https://api.github.com/repos/nix-community/lanzaboote/tarball/v0.4.2",
@@ -85,6 +91,7 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "3.0.7",
       "revision": "48ddf8e45e0bbe321e0d732837b827731028ef11",
       "url": "https://api.github.com/repos/nix-community/nix-direnv/tarball/3.0.7",
@@ -98,6 +105,7 @@
         "repo": "nix-index-database"
       },
       "branch": "main",
+      "submodules": false,
       "revision": "e9b21b01e4307176b9718a29ac514838e7f6f4ff",
       "url": "https://github.com/nix-community/nix-index-database/archive/e9b21b01e4307176b9718a29ac514838e7f6f4ff.tar.gz",
       "hash": "085414ygbi9pnv8qmx7mpjklcdiwx5881vqnjaih831cbpwa4zny"
@@ -110,6 +118,7 @@
         "repo": "nix-system-graphics"
       },
       "branch": "main",
+      "submodules": false,
       "revision": "9c875e0c56cf2eb272b9102a4f3e24e4e31629fd",
       "url": "https://github.com/soupglasses/nix-system-graphics/archive/9c875e0c56cf2eb272b9102a4f3e24e4e31629fd.tar.gz",
       "hash": "1wnx42r465biph28cmc79hjc61cyh7z8lgvch682830kh335szwx"
@@ -122,6 +131,7 @@
         "repo": "nixos-hardware"
       },
       "branch": "master",
+      "submodules": false,
       "revision": "e81fd167b33121269149c57806599045fd33eeed",
       "url": "https://github.com/NixOS/nixos-hardware/archive/e81fd167b33121269149c57806599045fd33eeed.tar.gz",
       "hash": "1a48x06dnlc78ddz0dwsfq77xv3isf7b08dqwf2q0y86jq1jaxrg"
@@ -134,9 +144,9 @@
     },
     "nixpkgs-stable": {
       "type": "Channel",
-      "name": "nixos-24.11",
-      "url": "https://releases.nixos.org/nixos/24.11/nixos-24.11.718112.72841a4a8761/nixexprs.tar.xz",
-      "hash": "183sx7d58jkqh6032dhzg6bcr9kgbhysz8h56srrsy7jpaw85pdd"
+      "name": "nixos-25.05",
+      "url": "https://releases.nixos.org/nixos/25.05/nixos-25.05beta802025.cd2812de55cf/nixexprs.tar.xz",
+      "hash": "17hapgczf0ijk6lcrp3cgb5hrpssqf4nnr421azi1kbwb9p006w2"
     },
     "system-manager": {
       "type": "Git",
@@ -146,10 +156,11 @@
         "repo": "system-manager"
       },
       "branch": "main",
+      "submodules": false,
       "revision": "803322102ed51f29c250d4bff2973625adc4a521",
       "url": "https://github.com/numtide/system-manager/archive/803322102ed51f29c250d4bff2973625adc4a521.tar.gz",
       "hash": "02bxnjjgwsgchiikryw2p31p6yw5s9yaimwwliypzwyz3jdiq4h0"
     }
   },
-  "version": 3
+  "version": 5
 }
