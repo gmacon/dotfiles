@@ -14,11 +14,14 @@ after_drv="$(colmena eval --instantiate ./merged.nix)"
 after="$(nix-store --realise $after_drv)"
 
 version_diff="$(nvd diff $before $after)"
+echo "$version_diff"
 
 read
 
 git add npins
-git commit -m "Update inputs\n\n$version_diff"
+git commit -m "Update inputs
+
+$version_diff"
 
 colmena apply --reboot --keep-result
 
