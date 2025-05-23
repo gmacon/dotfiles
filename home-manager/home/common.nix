@@ -23,7 +23,7 @@
   programs.password-store.enable = true;
   services.gpg-agent = {
     enable = true;
-    pinentryPackage = pkgs.pinentry-gnome3;
+    pinentry.package = pkgs.pinentry-gnome3;
   };
 
   services.syncthing.enable = true;

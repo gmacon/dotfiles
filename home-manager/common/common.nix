@@ -146,38 +146,40 @@ in
       path[1,0]=("${config.home.profileDirectory}/bin")
     '';
     history.path = "${config.xdg.dataHome}/zsh/zsh_history";
-    initExtra = ''
-      ${direnvLayoutDirSrc}
-
-      bindkey "^ " autosuggest-accept
-
-      function ssh () {
-        if [ "''${TERM:-}" = "xterm-kitty" ]; then
-          TERM=xterm-256color command ssh "$@"
-        else
-          command ssh "$@"
+    initContent = lib.mkMerge [
+      (lib.mkBefore ''
+        if [ "$TERM" = "tramp" ]; then
+            unsetopt zle
+            PS1='$ '
+            return
         fi
-      }
+      '')
+      (lib.mkOrder 550 ''
+        zstyle ':completion:*' completer _complete _ignored _correct _approximate
+        zstyle ':completion:*' matcher-list "" 'm:{[:lower:]}={[:upper:]}'
+      '')
+      ''
+        ${direnvLayoutDirSrc}
 
-      if [[ -e ${config.xdg.stateHome}/hm-activation-stamp ]]; then
-        activation_age=$(($(date +%s) - $(${lib.getExe' pkgs.coreutils "stat"} -c %Y -- ${config.xdg.stateHome}/hm-activation-stamp)))
-        if [[ $activation_age -gt 604800 ]]; then
-          echo "Home Manager last activated $(($activation_age / 86400)) days ago." 1>&2
+        bindkey "^ " autosuggest-accept
+
+        function ssh () {
+          if [ "''${TERM:-}" = "xterm-kitty" ]; then
+            TERM=xterm-256color command ssh "$@"
+          else
+            command ssh "$@"
+          fi
+        }
+
+        if [[ -e ${config.xdg.stateHome}/hm-activation-stamp ]]; then
+          activation_age=$(($(date +%s) - $(${lib.getExe' pkgs.coreutils "stat"} -c %Y -- ${config.xdg.stateHome}/hm-activation-stamp)))
+          if [[ $activation_age -gt 604800 ]]; then
+            echo "Home Manager last activated $(($activation_age / 86400)) days ago." 1>&2
+          fi
+          unset activation_age
         fi
-        unset activation_age
-      fi
-    '';
-    initExtraBeforeCompInit = ''
-      zstyle ':completion:*' completer _complete _ignored _correct _approximate
-      zstyle ':completion:*' matcher-list "" 'm:{[:lower:]}={[:upper:]}'
-    '';
-    initExtraFirst = ''
-      if [ "$TERM" = "tramp" ]; then
-          unsetopt zle
-          PS1='$ '
-          return
-      fi
-    '';
+      ''
+    ];
     plugins = [
       {
         name = "fzf-marks";

@@ -5,14 +5,17 @@
   ...
 }:
 {
-  home.packages = with pkgs; [
-    flake-graph
-    hunspell
-    remmina
-
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
-    noto-fonts
-  ];
+  home.packages = builtins.attrValues {
+    inherit (pkgs)
+      flake-graph
+      hunspell
+      noto-fonts
+      remmina
+      ;
+    inherit (pkgs.nerd-fonts)
+      fira-code
+      ;
+  };
 
   home.sessionVariables = {
     DICPATH = "${config.xdg.dataHome}/hunspell";
