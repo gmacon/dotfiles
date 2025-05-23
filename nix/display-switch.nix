@@ -13,7 +13,7 @@ rustPlatform.buildRustPackage rec {
     rev = version;
     hash = "sha256-pUZNIEpzFZN5fc6TBedhL+7LJdw2R10w3BqzvLt+RYk=";
   };
-  cargoHash = "sha256-P0GWQ8zqPQSXqSxYQBEAeAM0aehMM+XvT9v0VlXU17Y=";
+  cargoHash = "sha256-AF6A880V4rZSxpfdnYNbXSi0Mz1Ig+ZOFMtI6pxKqeA=";
   nativeBuildInputs = [ pkg-config ];
   buildInputs = [ systemd ];
   doCheck = false;
