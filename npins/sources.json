@@ -9,9 +9,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "96e078c646b711aee04b82ba01aefbff87004ded",
-      "url": "https://github.com/ryantm/agenix/archive/96e078c646b711aee04b82ba01aefbff87004ded.tar.gz",
-      "hash": "1sy6gf4pgrvv93m918fwdl6n7qs0nww5p6jvjpb7iwdfcy08aw3c"
+      "revision": "4835b1dc898959d8547a871ef484930675cb47f1",
+      "url": "https://github.com/ryantm/agenix/archive/4835b1dc898959d8547a871ef484930675cb47f1.tar.gz",
+      "hash": "0ngkhf7qamibhbl9z1dryzscd36y4fz1m1h6fb2z6fylw0b8029p"
     },
     "colmena": {
       "type": "Git",
@@ -35,9 +35,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "1799cf8c9df7186a23e0a69ab74d2a310b628f98",
-      "url": "https://github.com/nix-community/emacs-overlay/archive/1799cf8c9df7186a23e0a69ab74d2a310b628f98.tar.gz",
-      "hash": "19637m6p8idj63fqp8nn87qpdwki2zss1d57693zvviiry086x2j"
+      "revision": "d818fd9717043b794d0012fbc9f6422e12915eaf",
+      "url": "https://github.com/nix-community/emacs-overlay/archive/d818fd9717043b794d0012fbc9f6422e12915eaf.tar.gz",
+      "hash": "04wy7knpjlmz0zd1mifli3dyvld8c389ds7mbaj94fvb0xh3ypl3"
     },
     "fzf-marks": {
       "type": "Git",
@@ -106,9 +106,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "e9b21b01e4307176b9718a29ac514838e7f6f4ff",
-      "url": "https://github.com/nix-community/nix-index-database/archive/e9b21b01e4307176b9718a29ac514838e7f6f4ff.tar.gz",
-      "hash": "085414ygbi9pnv8qmx7mpjklcdiwx5881vqnjaih831cbpwa4zny"
+      "revision": "ec179dd13fb7b4c6844f55be91436f7857226dce",
+      "url": "https://github.com/nix-community/nix-index-database/archive/ec179dd13fb7b4c6844f55be91436f7857226dce.tar.gz",
+      "hash": "0nyj8bpjxd508bgp9zl19gm47784q307f86npy8lnkf9bpir043k"
     },
     "nix-system-graphics": {
       "type": "Git",
@@ -132,21 +132,21 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "e81fd167b33121269149c57806599045fd33eeed",
-      "url": "https://github.com/NixOS/nixos-hardware/archive/e81fd167b33121269149c57806599045fd33eeed.tar.gz",
-      "hash": "1a48x06dnlc78ddz0dwsfq77xv3isf7b08dqwf2q0y86jq1jaxrg"
+      "revision": "11f2d9ea49c3e964315215d6baa73a8d42672f06",
+      "url": "https://github.com/NixOS/nixos-hardware/archive/11f2d9ea49c3e964315215d6baa73a8d42672f06.tar.gz",
+      "hash": "166nv0i8p4lsmyjxx99ldy6srx5v5v8v66awdvil8b3i1wzbhzkn"
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre803292.359c442b7d1f/nixexprs.tar.xz",
-      "hash": "1nsqc3kq7ihqrlpzdfgmh87czca3h7id3mv8ywkayiwngn5qbag4"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre804599.fe51d34885f7/nixexprs.tar.xz",
+      "hash": "0kdx95afc44j1n29a9py90vq90yr365hm63c4ws22i8b6245llb1"
     },
     "nixpkgs-stable": {
       "type": "Channel",
       "name": "nixos-25.05",
-      "url": "https://releases.nixos.org/nixos/25.05/nixos-25.05beta802025.cd2812de55cf/nixexprs.tar.xz",
-      "hash": "17hapgczf0ijk6lcrp3cgb5hrpssqf4nnr421azi1kbwb9p006w2"
+      "url": "https://releases.nixos.org/nixos/25.05/nixos-25.05.802216.55d1f923c480/nixexprs.tar.xz",
+      "hash": "1vsl3j33q85skkjbjy2nrba7cdraa9kd6cpn8anng9rzc3pcf1bm"
     },
     "system-manager": {
       "type": "Git",
@@ -157,9 +157,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "803322102ed51f29c250d4bff2973625adc4a521",
-      "url": "https://github.com/numtide/system-manager/archive/803322102ed51f29c250d4bff2973625adc4a521.tar.gz",
-      "hash": "02bxnjjgwsgchiikryw2p31p6yw5s9yaimwwliypzwyz3jdiq4h0"
+      "revision": "94f1c8d9c562e96358dddddb8e276ba8ac16c9ae",
+      "url": "https://github.com/numtide/system-manager/archive/94f1c8d9c562e96358dddddb8e276ba8ac16c9ae.tar.gz",
+      "hash": "1c6p6ml9dxj6jwxmy0x28f25dq0n3rjx0vzxxqc9lbl16xv40niw"
     }
   },
   "version": 5
