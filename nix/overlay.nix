@@ -1,22 +1,22 @@
-self: super: {
-  display-switch = self.callPackage ./display-switch.nix { };
+final: prev: {
+  display-switch = final.callPackage ./display-switch.nix { };
 
-  mautrix-gmessages = self.callPackage ./mautrix-gmessages { };
+  mautrix-gmessages = final.callPackage ./mautrix-gmessages { };
 
-  acsaml = self.callPackage ./acsaml { };
-  certreq = self.callPackage ./certreq { };
-  flake-graph = self.callPackage ./flake-graph { };
-  gitHelpers = self.callPackage ./git-helpers { };
-  nix-direnv-gc = self.callPackage ./nix-direnv-gc.nix { };
-  pushover = self.callPackage ./pushover.nix { };
-  rsync-git = self.callPackage ./rsync-git.nix { };
-  wordle = self.callPackage ./wordle.nix { };
+  acsaml = final.callPackage ./acsaml { };
+  certreq = final.callPackage ./certreq { };
+  flake-graph = final.callPackage ./flake-graph { };
+  gitHelpers = final.callPackage ./git-helpers { };
+  nix-direnv-gc = final.callPackage ./nix-direnv-gc.nix { };
+  pushover = final.callPackage ./pushover.nix { };
+  rsync-git = final.callPackage ./rsync-git.nix { };
+  wordle = final.callPackage ./wordle.nix { };
 
-  wrapWine = import ./wrapWine.nix { pkgs = self; };
-  genopro = self.callPackage ./genopro.nix { };
+  wrapWine = import ./wrapWine.nix { pkgs = final; };
+  genopro = final.callPackage ./genopro.nix { };
 
   # https://forums.zotero.org/discussion/comment/463954/#Comment_463954
-  zotero-gtri = super.zotero.overrideAttrs (
+  zotero-gtri = prev.zotero.overrideAttrs (
     old:
     let
       # Domain where Zotero self-host server is running
@@ -27,8 +27,8 @@ self: super: {
     in
     {
       nativeBuildInputs = old.nativeBuildInputs ++ [
-        self.unzip
-        self.zip
+        final.unzip
+        final.zip
       ];
       postPatch = ''
         sourceDir=$(pwd)
@@ -51,7 +51,7 @@ self: super: {
     }
   );
 
-  _1password-gui = super._1password-gui.overrideAttrs (_old: {
+  _1password-gui = prev._1password-gui.overrideAttrs (_old: {
     postFixup = ''
       wrapProgram $out/bin/1password --set ELECTRON_OZONE_PLATFORM_HINT x11
     '';
