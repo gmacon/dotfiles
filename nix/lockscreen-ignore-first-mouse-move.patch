@@ -1,0 +1,23 @@
+diff -ur a/desktoppackage/contents/lockscreen/LockScreenUi.qml b/desktoppackage/contents/lockscreen/LockScreenUi.qml
+--- a/desktoppackage/contents/lockscreen/LockScreenUi.qml	2025-05-06 13:58:31.000000000 -0400
++++ b/desktoppackage/contents/lockscreen/LockScreenUi.qml	2025-05-24 17:39:22.245342122 -0400
+@@ -107,6 +107,7 @@
+     MouseArea {
+         id: lockScreenRoot
+ 
++        property bool ignorePositionChanged: true
+         property bool uiVisible: false
+         property bool blockUI: mainStack.depth > 1 || mainBlock.mainPasswordBox.text.length > 0 || inputPanel.keyboardActive
+ 
+@@ -118,7 +119,10 @@
+         cursorShape: uiVisible ? Qt.ArrowCursor : Qt.BlankCursor
+         drag.filterChildren: true
+         onPressed: uiVisible = true;
+-        onPositionChanged: uiVisible = true;
++        onPositionChanged: {
++            uiVisible = !ignorePositionChanged;
++            ignorePositionChanged = false;
++        }
+         onUiVisibleChanged: {
+             if (blockUI) {
+                 fadeoutTimer.running = false;

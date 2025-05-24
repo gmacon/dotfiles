@@ -1,4 +1,14 @@
 final: prev: {
+  kdePackages = prev.kdePackages.overrideScope (
+    kdeFinal: kdePrev: {
+      plasma-desktop = kdePrev.plasma-desktop.overrideAttrs (old: {
+        patches = old.patches or [ ] ++ [
+          ./lockscreen-ignore-first-mouse-move.patch
+        ];
+      });
+    }
+  );
+
   display-switch = final.callPackage ./display-switch.nix { };
 
   mautrix-gmessages = final.callPackage ./mautrix-gmessages { };
