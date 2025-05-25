@@ -61,6 +61,16 @@
   services.desktopManager.plasma6.enable = true;
   hardware.bluetooth.enable = true;
 
+  # Fonts
+  fonts.packages = builtins.attrValues {
+    inherit (pkgs)
+      noto-fonts
+      ;
+    inherit (pkgs.nerd-fonts)
+      fira-code
+      ;
+  };
+
   # Enable CUPS to print documents.
   services.printing = {
     enable = true;
