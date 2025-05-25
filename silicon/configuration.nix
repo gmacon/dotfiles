@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 {
   system.stateVersion = "23.11";
 
@@ -72,6 +77,12 @@
     useRoutingFeatures = "server";
     extraUpFlags = [ "--advertise-exit-node" ];
   };
+
+  services.tang = {
+    enable = true;
+    ipAddressAllow = [ "192.168.86.0/24" ];
+  };
+  networking.firewall.allowedTCPPorts = [ 7654 ];
 
   age.secrets.beeper-mautrix-signal.file = ../secrets/mautrix-signal.env.age;
   age.secrets.beeper-mautrix-discord.file = ../secrets/mautrix-discord.env.age;
