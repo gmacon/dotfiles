@@ -5,8 +5,8 @@
 
 (defvar gam-default-leader-key "<SPC>")
 
-(set-face-attribute 'default nil :family "FiraCode Nerd Font")
-(set-face-attribute 'line-number-current-line nil :family "FiraCode Nerd Font")
+(set-face-attribute 'default nil :family "FiraCode Nerd Font Mono")
+(set-face-attribute 'line-number-current-line nil :family "FiraCode Nerd Font Mono")
 
 (use-package general)
 
