@@ -37,4 +37,16 @@
       smtpserverport = 465;
     };
   };
+
+  programs.firefox = {
+    enable = true;
+    policies = {
+      DisablePocket = true;
+    };
+  };
+
+  programs.chromium = {
+    enable = true;
+    package = pkgs.ungoogled-chromium;
+  };
 }
