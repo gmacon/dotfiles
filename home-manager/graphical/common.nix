@@ -38,9 +38,7 @@
     package = pkgs.emacsWithPackagesFromUsePackage {
       config = ../config/emacs/init.el;
       extraEmacsPackages = epkgs: [
-        (epkgs.treesit-grammars.with-grammars (
-          g: lib.lists.remove g.tree-sitter-html (builtins.attrValues g)
-        ))
+        epkgs.treesit-grammars.with-all-grammars
       ];
       alwaysEnsure = true;
     };
