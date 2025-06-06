@@ -7,7 +7,7 @@
 {
   home.packages = [
     pkgs.slack
-    pkgs.vistafonts
+    pkgs.vista-fonts
     pkgs.zotero-gtri
   ];
 
