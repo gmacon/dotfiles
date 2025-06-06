@@ -6,6 +6,7 @@
 (defvar gam-default-leader-key "<SPC>")
 
 (set-face-attribute 'default nil :family "FiraCode Nerd Font Mono")
+(set-face-attribute 'variable-pitch nil :family "FiraCode Nerd Font Propo")
 (set-face-attribute 'line-number-current-line nil :family "FiraCode Nerd Font Mono")
 
 (use-package general)
@@ -100,6 +101,7 @@
   (after-init . gam-after-init-hook)
   (before-save . 'whitespace-cleanup)
   (text-mode . flyspell-mode)
+  (text-mode . variable-pitch-mode)
   (python-mode . eglot-ensure)
   (python-ts-mode . eglot-ensure)
   (rust-mode . eglot-ensure)
