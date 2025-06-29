@@ -10,6 +10,7 @@
       genopro
       gnome-tweaks
       gnucash
+      inkscape
       libreoffice
       mpv
       nixpkgs-review
