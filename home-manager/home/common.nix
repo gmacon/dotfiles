@@ -2,6 +2,7 @@
 {
   home.packages = builtins.attrValues {
     inherit (pkgs)
+      audacity
       beeper
       beeper-bridge-manager
       cwtch-ui
