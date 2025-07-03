@@ -343,4 +343,6 @@
   (web-mode-enable-current-column-highlight t)
   (web-mode-enable-auto-quoting nil))
 
+(use-package powershell)
+
 ;;; emacs.el ends here
