@@ -22,9 +22,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "3ceec72cfb396a8a8de5fe96a9d75a9ce88cc18e",
-      "url": "https://github.com/zhaofengli/colmena/archive/3ceec72cfb396a8a8de5fe96a9d75a9ce88cc18e.tar.gz",
-      "hash": "15frnhjazdk524ql3qakm2jlfsh0mdlyi52jayv6wwm1masjf0kj"
+      "revision": "d2beb694d54db653399b8597c0f6e15e20b26405",
+      "url": "https://github.com/zhaofengli/colmena/archive/d2beb694d54db653399b8597c0f6e15e20b26405.tar.gz",
+      "hash": "0d38nkc8jh7lzl45fg2b4gs26zblha0y94x77mmj9035ghb2lljk"
     },
     "emacs": {
       "type": "Git",
