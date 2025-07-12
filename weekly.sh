@@ -3,8 +3,6 @@
 set -x
 set -euo pipefail
 
-trap 'rm -rf before after' EXIT
-
 before_drv="$(colmena eval --instantiate ./merged.nix)"
 before="$(nix-store --realise $before_drv)"
 
