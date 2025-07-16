@@ -115,7 +115,9 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = [ ];
+  environment.systemPackages = builtins.attrValues {
+    inherit (pkgs.kdePackages) koi;
+  };
   programs.zsh.enable = true;
   programs._1password.enable = true;
   programs._1password-gui = {
