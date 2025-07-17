@@ -131,7 +131,7 @@
 (use-package auto-dark
   :after doom-themes
   :custom
-  (auto-dark-dark-theme 'doom-solarized-dark)
+  (auto-dark-dark-theme 'doom-solarized-dark-high-contrast)
   (auto-dark-light-theme 'doom-solarized-light)
   :init (auto-dark-mode))
 
