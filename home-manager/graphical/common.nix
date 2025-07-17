@@ -49,7 +49,6 @@
   programs.kitty = {
     enable = true;
     font.name = "FiraCode";
-    themeFile = "Solarized_Light";
     settings = {
       shell = "zsh";
     };
@@ -57,4 +56,13 @@
       mouse_map left click ungrabbed
     '';
   };
+  xdg.configFile =
+    let
+      t = n: "${pkgs.kitty-themes}/share/kitty-themes/themes/${n}.conf";
+    in
+    {
+      "kitty/light-theme.auto.conf".source = t "Solarized_Light";
+      "kitty/no-preference-theme.auto.conf".source = t "Solarized_Light";
+      "kitty/dark-theme.auto.conf".source = t "Solarized_Dark_Higher_Contrast";
+    };
 }
