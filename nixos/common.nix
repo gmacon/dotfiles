@@ -6,6 +6,8 @@
   # https://github.com/NixOS/nixpkgs/security/advisories/GHSA-m7pq-h9p4-8rr4
   systemd.shutdownRamfs.enable = false;
 
+  security.sudo-rs.enable = true;
+
   nix = {
     package = pkgs.lix;
     settings = {
