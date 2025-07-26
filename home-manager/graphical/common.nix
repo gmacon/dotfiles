@@ -49,6 +49,7 @@
   programs.kitty = {
     enable = true;
     font.name = "FiraCode";
+    shellIntegration.mode = "no-rc no-sudo";
     settings = {
       shell = "zsh";
     };
