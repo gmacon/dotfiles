@@ -6,7 +6,6 @@
 }:
 {
   home.packages = [
-    pkgs.slack
     pkgs.vista-fonts
     pkgs.zotero-gtri
   ];

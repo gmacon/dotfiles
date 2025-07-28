@@ -13,7 +13,6 @@
           "1password"
           "1password-cli"
           "beeper"
-          "slack"
           "tarsnap"
           "vista-fonts"
           "zoom"
