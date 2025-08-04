@@ -86,6 +86,7 @@
            gam-default-leader-key #'project-find-file
            "l a" 'eglot-code-actions
            "l h" 'eldoc
+           "l i" 'eglot-inlay-hints-mode
            "l l" 'eglot
            "l q" 'eglot-shutdown
            "l Q" 'eglot-reconnect
