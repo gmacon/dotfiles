@@ -14,6 +14,7 @@ final: prev: {
   mautrix-gmessages = final.callPackage ./mautrix-gmessages { };
 
   acsaml = final.callPackage ./acsaml { };
+  attic-quick-token = final.callPackage ./attic-quick-token.nix { };
   certreq = final.callPackage ./certreq { };
   flake-graph = final.callPackage ./flake-graph { };
   gitHelpers = final.callPackage ./git-helpers { };

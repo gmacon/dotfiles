@@ -78,6 +78,7 @@ in
       vim
       xh
 
+      attic-quick-token
       certreq
       gitHelpers
       nix-direnv-gc
