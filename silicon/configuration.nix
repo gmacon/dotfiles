@@ -35,7 +35,7 @@
       ];
     };
   };
-  security.sudo.wheelNeedsPassword = false;
+  security.sudo-rs.wheelNeedsPassword = false;
 
   environment.systemPackages = lib.attrValues { inherit (pkgs) git vim wakeonlan; };
 
