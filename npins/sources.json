@@ -9,9 +9,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "531beac616433bac6f9e2a19feb8e99a22a66baf",
-      "url": "https://github.com/ryantm/agenix/archive/531beac616433bac6f9e2a19feb8e99a22a66baf.tar.gz",
-      "hash": "103slb8xy5sb68zxjjbb9d0svq8xz751a7yrg6vrz5rh4374bzgl"
+      "revision": "9edb1787864c4f59ae5074ad498b6272b3ec308d",
+      "url": "https://github.com/ryantm/agenix/archive/9edb1787864c4f59ae5074ad498b6272b3ec308d.tar.gz",
+      "hash": "06w2dxnf8qxwcmqvgyxnrrx62ca5x1cw3lminpgs112md17wa3rl"
     },
     "colmena": {
       "type": "Git",
@@ -22,9 +22,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "342054695f53c4a27c8dce0a8c9f35ade6d963d6",
-      "url": "https://github.com/zhaofengli/colmena/archive/342054695f53c4a27c8dce0a8c9f35ade6d963d6.tar.gz",
-      "hash": "1418a178apqks7yr9bkl0r7f0rwk4fnbh005vwk64j78al08y25n"
+      "revision": "5e0fbc4dbc50b3a38ecdbcb8d0a5bbe12e3f9a72",
+      "url": "https://github.com/zhaofengli/colmena/archive/5e0fbc4dbc50b3a38ecdbcb8d0a5bbe12e3f9a72.tar.gz",
+      "hash": "0z6mmn4iq3wjysnnznivdd1wcsrkpz49ln1bsp5gin89i7kvf2xz"
     },
     "emacs": {
       "type": "Git",
@@ -35,9 +35,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "a2c4e31c1f77ddc72342af1ab4f90847d46e1cc6",
-      "url": "https://github.com/nix-community/emacs-overlay/archive/a2c4e31c1f77ddc72342af1ab4f90847d46e1cc6.tar.gz",
-      "hash": "1rsp2gyfl1y2l8h8xqpabx6j512gd3f8l1n32pb3y53ahhll4q1r"
+      "revision": "edf36b816e5e0a209727ffc402f0501264ada1bb",
+      "url": "https://github.com/nix-community/emacs-overlay/archive/edf36b816e5e0a209727ffc402f0501264ada1bb.tar.gz",
+      "hash": "0704irvyv7097d9336f3b54398wv60ciin98hh9wq19z1h2xclz6"
     },
     "fzf-marks": {
       "type": "Git",
@@ -106,9 +106,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "f0736b09c43028fd726fb70c3eb3d1f0795454cf",
-      "url": "https://github.com/nix-community/nix-index-database/archive/f0736b09c43028fd726fb70c3eb3d1f0795454cf.tar.gz",
-      "hash": "0rgfjjrh7zri5591px1lhvygzhlg4r3zk85ymrja2x3nq1q6alnb"
+      "revision": "b7fcd4e26d67fca48e77de9b0d0f954b18ae9562",
+      "url": "https://github.com/nix-community/nix-index-database/archive/b7fcd4e26d67fca48e77de9b0d0f954b18ae9562.tar.gz",
+      "hash": "086rmkzlyak4bfnp4w4f88ilk86750ab7009vq3yhfpn8whgbgk0"
     },
     "nix-system-graphics": {
       "type": "Git",
@@ -132,21 +132,21 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "cc66fddc6cb04ab479a1bb062f4d4da27c936a22",
-      "url": "https://github.com/NixOS/nixos-hardware/archive/cc66fddc6cb04ab479a1bb062f4d4da27c936a22.tar.gz",
-      "hash": "10xfsi90sy0kflswv7dhg9nfv1r55rn0m98hjygg29ixb7r48p4w"
+      "revision": "26ed7a0d4b8741fe1ef1ee6fa64453ca056ce113",
+      "url": "https://github.com/NixOS/nixos-hardware/archive/26ed7a0d4b8741fe1ef1ee6fa64453ca056ce113.tar.gz",
+      "hash": "0l2xkflhjyhppiqh4j6gvl3vw9f5pm2656pk73rnikdfy7gg8gbp"
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre837798.e7eabdc701d7/nixexprs.tar.xz",
-      "hash": "1d2wx8lx1sai5bpxh7gf4h7qf65617f27fias2vl3sdfqy16yn6d"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre841522.b069b7c1e2fe/nixexprs.tar.xz",
+      "hash": "1ayzqsj5n9qdvi38pij8yl12amvkvv7r5wzfa7c6zxinc0j3xfq7"
     },
     "nixpkgs-stable": {
       "type": "Channel",
       "name": "nixos-25.05",
-      "url": "https://releases.nixos.org/nixos/25.05/nixos-25.05.807209.1f08a4df998e/nixexprs.tar.xz",
-      "hash": "0vzrvf96ghvadg3iqnjbr9w2ggf8i072h89jkrcxh896nxp2s32s"
+      "url": "https://releases.nixos.org/nixos/25.05/nixos-25.05.807900.fc756aa6f5d3/nixexprs.tar.xz",
+      "hash": "0xpy576clbbj009wcr6apbl50yfvx05v61bwp196i585bl4hpn5h"
     },
     "system-manager": {
       "type": "Git",
@@ -157,9 +157,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "c6850451ef769fd03d0ad5474f928b916aa23775",
-      "url": "https://github.com/numtide/system-manager/archive/c6850451ef769fd03d0ad5474f928b916aa23775.tar.gz",
-      "hash": "0vrfi6qjfn3dad0w6mf00b2n877k50j0x5vn25hjpvfm1gkzjwpa"
+      "revision": "7865b4a207e46afa5c2e264de550730f8e281176",
+      "url": "https://github.com/numtide/system-manager/archive/7865b4a207e46afa5c2e264de550730f8e281176.tar.gz",
+      "hash": "1kflgxz758cqf0zmqf341nhzvl88pwz0rdd6jsycr09l3xfi57xm"
     }
   },
   "version": 5
