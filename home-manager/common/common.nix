@@ -179,6 +179,11 @@ in
           fi
           unset activation_age
         fi
+
+        # Ad-hoc local aliases
+        if [ -e "$HOME/.aliases" ]; then
+          source "$HOME/.aliases"
+        fi
       ''
     ];
     plugins = [
