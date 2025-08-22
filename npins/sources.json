@@ -35,9 +35,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "5d7b6b2d78415c0bcc19e3e651b0ec997a9acbad",
-      "url": "https://github.com/nix-community/emacs-overlay/archive/5d7b6b2d78415c0bcc19e3e651b0ec997a9acbad.tar.gz",
-      "hash": "08qdf3is271r2mdp56kkwwrcvw56qpfd8b3j1r0ypbl8gp5j7l8l"
+      "revision": "016d29b671ddce7500e7b7d448259008fe9ad6c3",
+      "url": "https://github.com/nix-community/emacs-overlay/archive/016d29b671ddce7500e7b7d448259008fe9ad6c3.tar.gz",
+      "hash": "1brfmm1g6cdmpkwbkcm6541am1jk39ndyzmjq6ngglfc57l8k206"
     },
     "fzf-marks": {
       "type": "Git",
@@ -61,9 +61,9 @@
       },
       "branch": "release-25.05",
       "submodules": false,
-      "revision": "fc3add429f21450359369af74c2375cb34a2d204",
-      "url": "https://github.com/nix-community/home-manager/archive/fc3add429f21450359369af74c2375cb34a2d204.tar.gz",
-      "hash": "026rvynmzmpigax9f8gy9z67lsl6dhzv2p6s8wz4w06v3gjvspm1"
+      "revision": "4fb695d10890e9fc6a19deadf85ff79ffb78da86",
+      "url": "https://github.com/nix-community/home-manager/archive/4fb695d10890e9fc6a19deadf85ff79ffb78da86.tar.gz",
+      "hash": "1qkffckwzyx4k6ngpfzmkc8ajdr20crvzji7pmxlrccwdv73pwq8"
     },
     "lanzaboote": {
       "type": "GitRelease",
@@ -139,14 +139,14 @@
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre844992.32f313e49e42/nixexprs.tar.xz",
-      "hash": "04wxwmhvc8y3gdkgzgh4zlwbv6jh21v3qdsmzbfy73q6ywqvb34s"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre847334.596312aae914/nixexprs.tar.xz",
+      "hash": "1cnkxqyx3p6zn2wcrc0j9r9qi41k5ppnzniwsag70hap7kdynmpk"
     },
     "nixpkgs-stable": {
       "type": "Channel",
       "name": "nixos-25.05",
-      "url": "https://releases.nixos.org/nixos/25.05/nixos-25.05.808338.ad7196ae55c2/nixexprs.tar.xz",
-      "hash": "112p1zcydr3379ld73skrw3n5azjyzxfbjbmx7lnb8v78wa1gjg9"
+      "url": "https://releases.nixos.org/nixos/25.05/nixos-25.05.808519.9cb344e96d5b/nixexprs.tar.xz",
+      "hash": "145sr1c4kh7mpg43cd6gz2674xdqqqv5qd0b8k42swz78867pwh8"
     },
     "system-manager": {
       "type": "Git",
@@ -157,9 +157,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "c3689ad206950aedc4bc287f1f8cbaec9aeacaff",
-      "url": "https://github.com/numtide/system-manager/archive/c3689ad206950aedc4bc287f1f8cbaec9aeacaff.tar.gz",
-      "hash": "00m8dvw2valkn6vrk4wnidjj0k8z4nryjy6fnmxrc2xp4bjwjks1"
+      "revision": "3219a927e180f52112088d02e8d000017e63a943",
+      "url": "https://github.com/numtide/system-manager/archive/3219a927e180f52112088d02e8d000017e63a943.tar.gz",
+      "hash": "076b4f29jaxxkz49yqr27zkc4x59ypsnza6fhyix74gx3lr655mi"
     }
   },
   "version": 5
