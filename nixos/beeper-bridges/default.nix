@@ -4,8 +4,6 @@
     lib.genAttrs
       [
         "beeper-mautrix-discord"
-        "beeper-mautrix-signal"
-        "beeper-mautrix-gmessages"
       ]
       (name: {
         enable = true;
