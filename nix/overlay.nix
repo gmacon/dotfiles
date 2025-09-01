@@ -11,8 +11,6 @@ final: prev: {
 
   display-switch = final.callPackage ./display-switch.nix { };
 
-  mautrix-gmessages = final.callPackage ./mautrix-gmessages { };
-
   acsaml = final.callPackage ./acsaml { };
   attic-quick-token = final.callPackage ./attic-quick-token.nix { };
   certreq = final.callPackage ./certreq { };
