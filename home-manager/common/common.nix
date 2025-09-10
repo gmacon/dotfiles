@@ -200,7 +200,8 @@ in
       shlvl.disabled = false;
       status.disabled = false;
       env_var.NIX_DIRENV_DID_FALLBACK = {
-        format = "⚠️";
+        format = "⚠️ ";
+        description = "nix-direnv did fallback";
       };
     };
   };
