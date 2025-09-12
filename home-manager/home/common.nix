@@ -1,11 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, unstablePkgs, ... }:
 {
   home.packages = builtins.attrValues {
     inherit (pkgs)
       audacity
       beeper
       beeper-bridge-manager
-      cwtch-ui
       calibre
       genopro
       gnome-tweaks
@@ -17,6 +16,9 @@
       thunderbird
       yt-dlp
       zoom-us
+      ;
+    inherit (unstablePkgs)
+      cwtch-ui
       ;
   };
 
