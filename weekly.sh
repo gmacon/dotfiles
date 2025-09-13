@@ -4,15 +4,16 @@ set -x
 set -euo pipefail
 
 before_drv="$(colmena eval --instantiate ./merged.nix)"
-before="$(nix-store --realise $before_drv)"
+nix-store --realise --log-format internal-json --add-root before "$before_drv" |& nom --json
 
 npins update
 
 after_drv="$(colmena eval --instantiate ./merged.nix)"
-after="$(nix-store --realise $after_drv)"
+nix-store --realise --log-format internal-json --add-root after "$after_drv" |& nom --json
 
-version_diff="$(nvd diff $before $after)"
+version_diff="$(nvd diff before after)"
 echo "$version_diff"
+rm before after
 
 read
 
